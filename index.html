@@ -13,13 +13,21 @@
    </head>
 
    <body>
-
      <!-- Navbar goes here -->
-     <nav class="navbar-fixed">
-       <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo black white-text">PortaPC</a>
+     <nav class="navbar">
 
-         <!-- search bar goes here -->
-         <div class="nav-wrapper">
+       <div class="nav-wrapper">
+        <a id="logo-container" href="index.html" class="brand-logo">PortaPC</a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a class="waves-effect waves-light btn black">Anmelden</a>
+          </li>
+        </ul>
+       </div>
+
+       <!-- searchbar goes here -->
+       <div class="nav-content">
+        <div class="nav-wrapper">
           <form>
             <div class="input-field">
               <input id="search" type="search" required>
@@ -28,48 +36,186 @@
             </div>
           </form>
         </div>
-        
-    </div>
+      </div>
+      <!-- searchbar goes here -->
+
      </nav>
+     <!-- Navbar ends here -->
 
      <!-- Page content goes here -->
-     <div class="container">
+     <main>
 
-     </div>
-
-     <!-- Footer goes here -->
-     <footer class="page-footer white">
-       <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="black-text">PortaPC</h5>
-          <p class="grey-text">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+         <div class="col left">
+          <!-- Katorgie goes here -->
+           <div class="container">
+             <ul class="collection with-header left">
+              <li class="collection-header"><h3>Entdecken</h3></li>
+              <li class="collection-item">Alle Katergorien</li>
+              <li href="#!" class="collection-item">CPUs</li>
+              <li href="#!" class="collection-item">GPUs</li>
+              <li href="#!" class="collection-item">Motherboards</li>
+              <li href="#!" class="collection-item">Netzteile</li>
+              <li href="#!" class="collection-item">RAMs</li>
+              <li href="#!" class="collection-item">Speicher</li>
+              <li href="#!" class="collection-item">Peripheriegerate</li>
+              <li href="#!" class="collection-item">Komplettsysteme</li>
+            </ul>
+           </div>
+           <!-- Katorgie ends here -->
+         </div>
 
 
+         <div class="col">
+           <!-- Slider goes here -->
+           <div class="container">
+             <div class="slideshow-container">
+               <div class="mySlides fade">
+                 <div class="numbertext">1 / 3</div>
+                 <img src="images/gpu.jpg" style="width:100%">
+               </div>
+               <div class="mySlides fade">
+                 <div class="numbertext">2 / 3</div>
+                 <img src="images/gpu.jpg" style="width:100%">
+               </div>
+               <div class="mySlides fade">
+                 <div class="numbertext">3 / 3</div>
+                 <img src="images/gpu.jpg" style="width:100%">
+               </div>
+               <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+               <a class="next" onclick="plusSlides(1)">&#10095;</a>
+             </div>
+             <br>
+             <div style="text-align:center">
+                 <span class="dot" onclick="currentSlide(1)"></span>
+                 <span class="dot" onclick="currentSlide(2)"></span>
+                 <span class="dot" onclick="currentSlide(3)"></span>
+             </div>
+           </div>
+           <!-- Slider ends here -->
+
+          <!-- Zuletzt Ansehen goes here -->
+          <div class="container">
+           <div class="row">
+             <div class="col l12">
+               <h3>Zuletzt Gesehen</h3>
+             </div>
+             <div class="col s3">
+               <div class="card">
+                 <div class="card-image">
+                   <a href="#!"><img src="images/gpu.jpg"></a>
+                   <span class="card-title">RTX 30390</span>
+                   <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                 </div>
+                 <div class="card-content">
+                   <p>300$</p>
+                 </div>
+               </div>
+             </div>
+           </div>
+          </div>
+          <!-- Zuletzt Ansehen ends here -->
+
+          <!-- Neuste Anzeigen goes here -->
+          <div class="container">
+            <div class="row">
+              <div class="col l12">
+                <h3>Neuste Anzeigen</h3>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <span class="card-title">RTX 30390</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                  </div>
+                  <div class="card-content">
+                    <p>300$</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <span class="card-title">RTX 30390</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                  </div>
+                  <div class="card-content">
+                    <p>300$</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <span class="card-title">RTX 30390</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                  </div>
+                  <div class="card-content">
+                    <p>300$</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <span class="card-title">RTX 30390</span>
+                    <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                  </div>
+                  <div class="card-content">
+                    <p>300$</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+           <!-- Neuste Anzeigen ends here -->
+         </div>
         </div>
-        <div class="col l3 s12">
-          <h5 class="black-text">Informationen</h5>
-          <ul>
-            <li><a class="grey-text" href="#!">Über uns</a></li>
-            <li><a class="grey-text" href="impressium.html">Imrepssium</a></li>
-            <li><a class="grey-text" href="#!">Datenschutzerklärung</a></li>
-            <li><a class="grey-text" href="impressium.html">AGB</a></li>
-            <li><a class="grey-text" href="#!">DSGVO</a></li>
-          </ul>
+
+      </main>
+      <!-- Page content ends here -->
+
+      <!-- Footer goes here -->
+      <footer class="page-footer white">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="black-text">PortaPC</h5>
+              <p class="grey-text">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="black-text">Informationen</h5>
+              <ul>
+                <li><a class="grey-text" href="#!">Über uns</a></li>
+                <li><a class="grey-text" href="impressium.html">Imrepssium</a></li>
+                <li><a class="grey-text" href="#!">Datenschutzerklärung</a></li>
+                <li><a class="grey-text" href="agb.html">AGB</a></li>
+                <li><a class="grey-text" href="#!">DSGVO</a></li>
+              </ul>
+            </div>
+            <div class="col l3 s12">
+              <h5 class="black-text">Kontakt</h5>
+              <ul>
+                <li><a class="email grey-text" href="#!">kontakt@portapc.de</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="col l3 s12">
-          <h5 class="black-text">Kontakt</h5>
-          <ul>
-            <li><a class="email grey-text" href="#!">kontakt@portapc.de</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
      </footer>
+     <!-- Footer ends here -->
 
 
      <!--Import the minified script of materialize.js (materilize.min.js)-->
      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
      <script src="js/materialize.js"></script>
+     <script src="js/slider.js"></script>
    </body>
  </html>
