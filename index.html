@@ -1,371 +1,327 @@
 <!DOCTYPE html>
- <html>
-   <head>
-     <!--Import Google Icon Font-->
-     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     <!--Import materialize.css-->
-     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-     <!--Import styles.css (our own custom css)-->
-     <link type="text/css" rel="stylesheet" href="css/styles.css"  media="screen,projection"/>
+<html>
 
-     <!--Let browser know that the website is optimized for mobile-->
-     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <!--Import styles.css (our own custom css)-->
+  <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
 
-     <title>PortaPC</title>
-   </head>
+  <!--Let browser know that the website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-   <body>
-     <header>
+  <title>PortaPC</title>
+</head>
 
-     </header>
-     <!-- Navbar goes here -->
-     <nav>
-         <div class="container">
-           <div class="row">
+<body>
+  <header>
 
-             <div class="col s2 left">
-               <div class="nav-wrapper">
-                 <a id="logo-container" href="index.html" class="brand-logo">PortaPC</a>
-               </div>
-             </div>
+  </header>
+  <!-- Navbar goes here -->
+  <div class="navbar-fixed">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <a href="#">
+            <div class="website-logo" alt="Website-Logo"></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-             <!-- searchbar goes here -->
-             <div class="col s8 center">
-               <div class="nav-wrapper">
-                 <form>
-                   <div class="input-field">
-                     <input id="search" type="search" required>
-                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                     <i class="material-icons">close</i>
-                   </div>
-                 </form>
-               </div>
-             </div>
-             <!-- searchbar ends here -->
+  <!-- Navbar ends here -->
 
-             <div class="col s2 right">
-               <div class="nav-wrapper right">
-                 <ul>
-                   <li>
-                     <a class="waves-effect waves-light btn black ">Anmelden</a>
-                   </li>
-                 </ul>
-               </div>
-             </div>
+  <!-- Page content goes here -->
+  <main>
+    <div class="container">
+      <div class="row">
 
-           </div>
-         </div>
-     </nav>
-     <!-- Navbar ends here -->
+        <!-- Katorgie goes here -->
+        <div class="col s3">
+          <h5 style="text-transform:uppercase "><strong>Entdecken</strong></h5>
+          <ul class="collection section">
+            <li href="#!" class="collection-item">Alle Katergorien</li>
+            <li href="#!" class="collection-item">CPUs</li>
+            <li href="#!" class="collection-item">GPUs</li>
+            <li href="#!" class="collection-item">Motherboards</li>
+            <li href="#!" class="collection-item">Netzteile</li>
+            <li href="#!" class="collection-item">RAMs</li>
+            <li href="#!" class="collection-item">Speicher</li>
+            <li href="#!" class="collection-item">Peripheriegerate</li>
+            <li href="#!" class="collection-item">Komplettsysteme</li>
+          </ul>
 
-     <!-- Page content goes here -->
-     <main>
-       <div class="container">
-         <div class="row">
+        </div>
+        <!-- Katorgie ends here -->
 
-           <!-- Katorgie goes here -->
-            <div class="col s3">
-              <h5 style="text-transform:uppercase "><strong>Entdecken</strong></h5>
-             <ul class="collection section">
-              <li href="#!" class="collection-item">Alle Katergorien</li>
-              <li href="#!" class="collection-item">CPUs</li>
-              <li href="#!" class="collection-item">GPUs</li>
-              <li href="#!" class="collection-item">Motherboards</li>
-              <li href="#!" class="collection-item">Netzteile</li>
-              <li href="#!" class="collection-item">RAMs</li>
-              <li href="#!" class="collection-item">Speicher</li>
-              <li href="#!" class="collection-item">Peripheriegerate</li>
-              <li href="#!" class="collection-item">Komplettsysteme</li>
-             </ul>
-
-            </div>
-            <!-- Katorgie ends here -->
-
-             <!-- Slider goes here -->
-            <div class="col s9 right">
-              <div class="row">
-
-              </div>
-              <div class="row">
-                <div class="slideshow-container">
-                  <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
-                  </div>
-                  <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="images/cpu.png" style="width:100%; height:200px; object-fit:cover">
-                  </div>
-                  <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="images/motherboard.png" style="width:100%; height:200px; object-fit:cover">
-                  </div>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-              </div>
-              <!-- Slider ends here -->
-
-             <!-- Zuletzt Ansehen goes here
-             <div class="row">
-
-               <div class="col left">
-                 <div style="text-transform:uppercase">
-                   <h5><strong>Zuletzt Ansehen</strong></h5>
-                 </div>
-               </div>
-
-               <div class="col right">
-                 <a class="waves-effect waves-teal btn-flat">Alle Anzeigen</a>
-               </div>
-
-             </div>
-
-              - Posts goes here -
-
-             <div class="row">
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/gpu.jpg" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">Nvidia RTX 3090</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/cpu.png" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">AMD Ryzen 9 5900X</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/motherboard.png" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">ASUS ROG CROSSHAIR VIII HERO</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/gpu.jpg" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">Nvidia RTX 3090</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-              - Posts ends here -
-
-             </div>
-              Zuletzt Ansehen ends here -->
-
-             <!-- Neuste Anzeigen goes here -->
-             <div class="row">
-               <div class="col s12">
-                 <h5 style="text-transform:uppercase "><strong>Neuste Anzeigen</strong></h5>
-               </div>
-             </div>
-
-             <!-- Posts goes here -->
-             <div class="row">
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/gpu.jpg" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">Nvidia RTX 3090</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/cpu.png" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">AMD Ryzen 9 5900X</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/motherboard.png" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">ASUS ROG CROSSHAIR VIII HERO</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/gpu.jpg" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">Nvidia RTX 3090</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/gpu.jpg" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">Nvidia RTX 3090</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/cpu.png" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">AMD Ryzen 9 5900X</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/motherboard.png" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">ASUS ROG CROSSHAIR VIII HERO</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-
-               <div class="col s3">
-                 <div class="card">
-                   <div class="card-image">
-                     <a href="#!"><img src="images/gpu.jpg" style="height:200px;object-fit:cover"></a>
-                     <span class="card-title">Nvidia RTX 3090</span>
-                   </div>
-                   <div class="card-content">
-                     <p>300$</p>
-                   </div>
-                 </div>
-               </div>
-               <!-- Posts ends here -->
-
-             </div>
-              <!-- Neuste Anzeigen ends here -->
-
-              <div class="row center">
-                <div>
-                  <a class="waves-effect waves-light btn" style="text-transform:none">Mehr anzeigen</a>
-                </div>
-              </div>
-            </div>
-
-           </div>
-       </div>
-
-       <div class="pinned" style="bottom:0;right:0">
-         <a class="waves-effect waves-light btn black white-text" style="text-transform:lowercase"><i class="material-icons right">arrow_upward</i>nach oben</a>
-       </div>
-
-      </main>
-      <!-- Page content ends here -->
-
-      <!-- Footer goes here -->
-      <footer class="page-footer white">
-        <div class="container">
+        <!-- Slider goes here -->
+        <div class="col s9 right">
           <div class="row">
 
-            <div class="col s7">
-              <h5 class="black-text">PortaPC</h5>
+          </div>
+          <div class="row">
+            <div class="slideshow-container">
+              <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
+              </div>
+              <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
+              </div>
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+          </div>
+          <!-- Slider ends here -->
 
-              <p class="grey-text">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+          <div class="row">
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
             </div>
 
             <div class="col s3">
-              <h5 class="black-text">Informationen</h5>
-              <ul>
-                <li><a class="grey-text" href="#!">Über uns</a></li>
-                <li><a class="grey-text" href="pages/informationen/impressium.html">Imrepssium</a></li>
-                <li><a class="grey-text" href="#!">Datenschutzerklärung</a></li>
-                <li><a class="grey-text" href="pages/informationen/agb.html">AGB</a></li>
-                <li><a class="grey-text" href="#!">DSGVO</a></li>
-              </ul>
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
             </div>
 
-            <div class="col s2 right">
-              <h5 class="black-text">Kontakt</h5>
-              <ul>
-                <li><a class="email grey-text" href="mailto:kontakt@portapc.de">kontakt@portapc.de</a></li>
-              </ul>
-
-                <h5 class="black-text">Folge uns</h5>
-
-                <div class="row">
-                  <div class="col s1">
-                    <a href="index.html"><img src="images/footer/social_icons/facebook.png" style="max-width:20px"></a>
-                  </div>
-
-                  <div class="col s1">
-                    <a href="index.html"><img src="images/footer/social_icons/instagram.png" style="max-width:20px"></a>
-                  </div>
-
-                  <div class="col s1">
-                    <a href="index.html"><img src="images/footer/social_icons/snapchat.png" style="max-width:20px"></a>
-                  </div>
-
-                  <div class="col s1">
-                    <a href="index.html"><img src="images/footer/social_icons/whatsapp.png" style="max-width:20px"></a>
-                  </div>
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
                 </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Zuletzt Ansehen ends here -->
+
+          <!-- Neuste Anzeigen goes here -->
+          <div class="row">
+            <div class="col s12">
+              <h5 style="text-transform:uppercase "><strong>Neuste Anzeigen</strong></h5>
+            </div>
+
+
+          </div>
+
+          <div class="row">
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <span class="card-title">RTX 3090</span>
+                </div>
+                <div class="card-content">
+                  <p>300$</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!-- Neuste Anzeigen ends here -->
+          <div class="row center">
+            <div>
+              <a class="waves-effect waves-light btn" style="text-transform:none">Mehr anzeigen</a>
             </div>
           </div>
         </div>
-     </footer>
-     <!-- Footer ends here -->
+
+      </div>
+    </div>
 
 
-     <!--Import the minified script of materialize.js (materilize.min.js)-->
-     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-     <script src="js/materialize.js"></script>
-     <script src="js/slider.js"></script>
-   </body>
- </html>
+  </main>
+  <!-- Page content ends here -->
+
+  <!-- Footer goes here -->
+  <footer class="page-footer white">
+    <div class="container">
+      <div class="row">
+        <div class="col s1">
+
+        </div>
+
+        <div class="col s5">
+          <h5 class="black-text">PortaPC</h5>
+          <p class="grey-text">Hier eine einfache, kurze Beschreibung von uns. <br>Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+        </div>
+
+        <div class="col s3">
+          <h5 class="black-text">Informationen</h5>
+          <ul>
+            <li><a class="grey-text" href="#!">Über uns</a></li>
+            <li><a class="grey-text" href="pages/informationen/impressium.html">Imrepssium</a></li>
+            <li><a class="grey-text" href="#!">Datenschutzerklärung</a></li>
+            <li><a class="grey-text" href="pages/informationen/agb.html">AGB</a></li>
+            <li><a class="grey-text" href="#!">DSGVO</a></li>
+          </ul>
+        </div>
+
+        <div class="col s3">
+          <h5 class="black-text">Kontakt</h5>
+          <ul>
+            <li><a class="email grey-text" href="mailto:kontakt@portapc.de">kontakt@portapc.de</a></li>
+          </ul>
+
+          <h5 class="black-text">Folge uns</h5>
+
+          <div class="row">
+            <div class="col s1">
+              <a href="index.html"><img src="images/footer/social_icons/facebook.png" style="max-width:20px"></a>
+            </div>
+
+            <div class="col s1">
+              <a href="index.html"><img src="images/footer/social_icons/instagram.png" style="max-width:20px"></a>
+            </div>
+
+            <div class="col s1">
+              <a href="index.html"><img src="images/footer/social_icons/snapchat.png" style="max-width:20px"></a>
+            </div>
+
+            <div class="col s1">
+              <a href="index.html"><img src="images/footer/social_icons/whatsapp.png" style="max-width:20px"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer ends here -->
+
+
+  <!--Import the minified script of materialize.js (materilize.min.js)-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/slider.js"></script>
+</body>
+
+</html>
