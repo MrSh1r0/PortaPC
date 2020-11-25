@@ -5,33 +5,64 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <!-- TODO: minify materialize.css after the needed changes -->
+  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
   <!--Import styles.css (our own custom css)-->
   <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
-
+  <!-- Import JQuery at the start, we need it in our script headtags -->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!--Let browser know that the website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>PortaPC</title>
+
+  <script type="text/javascript">
+    // We will use JQuery
+    // First, we check if the document is ready for any changes
+    $(document).ready(function() {
+      // Log the message to let the developer know.
+      console.log("The document is ready!");
+
+      // initialize the dropdown (MaterializeCSS) using JQuery.
+      $('.dropdown-trigger').dropdown();
+    });
+  </script>
 </head>
 
 <body>
-  <header>
 
-  </header>
   <!-- Navbar goes here -->
-  <div class="navbar-fixed">
+  <header class="header">
     <div class="container">
       <div class="row">
-        <div class="col s12">
+        <div class="col s12 m12 l2">
           <a href="#">
             <div class="website-logo" alt="Website-Logo"></div>
           </a>
         </div>
+        <div class="col s12 m12 l7">
+          <div class="row search-container">
+            <div class="col s12 m12 l10">
+              <div class="input-field margin-0">
+                <i class="material-icons prefix">account_circle</i>
+                <input class="search-input margin-y-0" placeholder="Placeholder" id="icon_prefix" type="text">
+              </div>
+            </div>
+            <div class="col s12 m12 l2 vertical-line">
+              <p class='dropdown-trigger' data-target='dropdown1'>Drop Me!</p>
+
+              <!-- Dropdown Structure -->
+              <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+                <li class="divider" tabindex="-1"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-
+  </header>
   <!-- Navbar ends here -->
 
   <!-- Page content goes here -->
@@ -319,7 +350,6 @@
 
 
   <!--Import the minified script of materialize.js (materilize.min.js)-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/slider.js"></script>
 </body>
