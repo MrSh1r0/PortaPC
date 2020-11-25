@@ -1,7 +1,15 @@
 <?php
+/*
+We will use a Helper class in PHP to get our Json content.
+If we use JavaScript, our Json file will be exposed.
+We want to try our best to keep it a bit secure, even if it's not the best approach.
 
-// We Setup the php enivornment for later usage.
-// Currently, we don't need to add anything.
+First, include the class once. We don't want any duplicated includes of the same file (prevent any conflicts)
+*/
+include_once("utilities/Helper.php");
+
+// We then create an instance of our class
+$helper = new Helper();
 
 ?>
 
@@ -29,7 +37,14 @@
   <script type="text/javascript">
     // We will use JQuery
     // First, we check if the document is ready for any changes
+
     $(document).ready(function() {
+      /*
+      Dropdown should be ONLY initilized after the dynamic content is populated.
+      This means: Add the item of the dropdown, then initilize it.
+
+      */
+      populateDropdown();
       // Log the message to let the developer know.
       console.log("The document is ready!");
 
@@ -39,10 +54,37 @@
 
     });
 
+    // Create a function to add items to our categories
+    function populateDropdown(){
+      // Get the categories from our PHP helper
+      // We use "let" instead of "var" because we are going to use it locally and not globally
+      // The encoded Json getCategories() will be parsed automatically to JSON
+      let categories = <?php echo $helper->getCategories()?>;
+
+
+      // We now have an array, the "Alle Kategorien" option is NOT included in the categories
+      // There are a lot of ways to do it, but... we will do it "hardcoded", which is a bad way
+      // but already does the job for us :) Using "unshift()" method, we will add an element to the start of the array
+      categories.unshift("Alle Kategorien");
+
+      // Create a for-loop, then use JQuery to "append/add" the HTML to the div #searchbar-category
+      for(let i = 0; i < categories.length; i++){
+        let category = categories[i];
+        let category_html = `<li><a>${category}</a></li>`;
+        $("#searchbar-category").append(category_html);
+      }
+
+    }
+
+    // If there's a change in the selected dropdown, we need to change the text to that selected option
+    function setSearchbarCategoryText(){
+
+    }
+
     // Normal Javascript function to redirect the user using Javascript to a specific page
     // Paramter is a String
-    function visitURL(urlName){
-      if(urlName === "homepage"){
+    function visitURL(urlName) {
+      if (urlName === "homepage") {
         // The "location" of the current page should be redirected to the "slash /" which is
         // a shortcut for the root page of this website (basically from website.com/blabla/caca to website.com/)
         location.href = "/";
@@ -53,38 +95,45 @@
 
 <body>
 
-  <!-- Navbar goes here -->
+  <!-- Navbar -->
   <header class="header">
     <div class="container">
       <div class="row">
+        <!-- Logo column -->
         <div class="col s12 m12 l3">
-            <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
+          <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
         </div>
+        <!-- End of Logo column -->
+        <!-- Search & Category parent -->
         <div class="col s12 m12 l7">
+          <!-- Search & Category row -->
           <div class="row search-container">
+            <!-- Search column -->
             <div class="col s12 m9 l9 fill-height">
               <div class="input-field margin-0 fill-height">
+                <!-- Search icon -->
                 <i class="material-icons prefix search-icon">search</i>
+                <!-- Search input -->
                 <input class="search-input margin-y-0" placeholder="Wonach suche Sie?" id="icon_prefix" type="text">
               </div>
             </div>
+            <!-- End of Search column -->
             <div class="col s12 m3 l3 vertical-left-line">
-                <p class='dropdown-trigger searchbar-category-dropdown' data-target='searchbar-category'>Alle Kategorien</p>
+              <!--  -->
+              <p class='dropdown-trigger searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
 
-
-              <!-- Dropdown Structure -->
+              <!-- It's going to be a dynamic dropdown, the content will be added using JavaScript -->
               <ul id='searchbar-category' class='dropdown-content'>
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li class="divider" tabindex="-1"></li>
               </ul>
             </div>
           </div>
+          <!-- End of Search & Categroy row -->
         </div>
+        <!-- End of Search & Category parent -->
       </div>
     </div>
   </header>
-  <!-- Navbar ends here -->
+  <!-- End of Navbar -->
 
   <!-- Page content goes here -->
   <main>
@@ -136,7 +185,7 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
               </div>
             </div>
-            </div>
+          </div>
           <!-- Slider ends here -->
 
           <!-- Posts goes here -->
@@ -166,7 +215,7 @@
                   <a href="#!"><img src="images/gpu.jpg"></a>
                 </div>
                 <div class="card-content">
-                  <a href="#!"style="color:black"><span class="card-title grey-text text-darken-4">RTX 3090</span></a>
+                  <a href="#!" style="color:black"><span class="card-title grey-text text-darken-4">RTX 3090</span></a>
                 </div>
               </div>
             </div>
@@ -178,7 +227,9 @@
                   <a href="#!"><img src="images/gpu.jpg"></a>
                 </div>
                 <div class="card-content">
-                  <a href="#!" style="color:black"><p>RTX 3090</p></a>
+                  <a href="#!" style="color:black">
+                    <p>RTX 3090</p>
+                  </a>
                 </div>
               </div>
             </div>
@@ -199,128 +250,128 @@
           <!-- Posts goes here -->
 
 
-            <!-- Neuste Anzeigen goes here -->
-            <div class="row">
-              <div class="col s12">
-                <h5 style="text-transform:uppercase "><strong>Neuste Anzeigen</strong></h5>
-              </div>
-
-
+          <!-- Neuste Anzeigen goes here -->
+          <div class="row">
+            <div class="col s12">
+              <h5 style="text-transform:uppercase "><strong>Neuste Anzeigen</strong></h5>
             </div>
 
-            <div class="row">
-              <div class="col s3">
-                <div class="card">
-                  <div class="card-image">
-                    <a href="#!"><img src="images/gpu.jpg"></a>
-                    <!--<span class="card-title">RTX 3090</span>-->
-                  </div>
-                  <div class="card-content">
-                    <p>RTX 3090</p>
-                  </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <!--<span class="card-title">RTX 3090</span>-->
+                </div>
+                <div class="card-content">
+                  <p>RTX 3090</p>
                 </div>
               </div>
-
-              <div class="col s3">
-                <div class="card">
-                  <div class="card-image">
-                    <a href="#!"><img src="images/gpu.jpg"></a>
-                    <!--<span class="card-title">RTX 3090</span>-->
-                  </div>
-                  <div class="card-content">
-                    <p>RTX 3090</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col s3">
-                <div class="card">
-                  <div class="card-image">
-                    <a href="#!"><img src="images/gpu.jpg"></a>
-                    <!--<span class="card-title">RTX 3090</span>-->
-                  </div>
-                  <div class="card-content">
-                    <p>RTX 3090</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col s3">
-                <div class="card">
-                  <div class="card-image">
-                    <a href="#!"><img src="images/gpu.jpg"></a>
-                    <!--<span class="card-title">RTX 3090</span>-->
-                  </div>
-                  <div class="card-content">
-                    <p>RTX 3090</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col s3">
-                <div class="card">
-                  <div class="card-image">
-                    <a href="#!"><img src="images/gpu.jpg"></a>
-                    <!--<span class="card-title">RTX 3090</span>-->
-                  </div>
-                  <div class="card-content">
-                    <p>RTX 3090</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col s3">
-                <div class="card">
-                  <div class="card-image">
-                    <a href="#!"><img src="images/gpu.jpg"></a>
-                    <!--<span class="card-title">RTX 3090</span>-->
-                  </div>
-                  <div class="card-content">
-                    <p>RTX 3090</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col s3">
-                <div class="card">
-                  <div class="card-image">
-                    <a href="#!"><img src="images/gpu.jpg"></a>
-                    <!--<span class="card-title">RTX 3090</span>-->
-                  </div>
-                  <div class="card-content">
-                    <p>RTX 3090</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col s3">
-                <div class="card">
-                  <div class="card-image">
-                    <a href="#!"><img src="images/gpu.jpg"></a>
-                    <!--<span class="card-title">RTX 3090</span>-->
-                  </div>
-                  <div class="card-content">
-                    <p>RTX 3090</p>
-                  </div>
-                </div>
-              </div>
-
             </div>
-            <!-- Neuste Anzeigen ends here -->
 
-            <div class="row center">
-              <div>
-                <a class="waves-effect waves-light btn" style="text-transform:none">Mehr anzeigen</a>
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <!--<span class="card-title">RTX 3090</span>-->
+                </div>
+                <div class="card-content">
+                  <p>RTX 3090</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <!--<span class="card-title">RTX 3090</span>-->
+                </div>
+                <div class="card-content">
+                  <p>RTX 3090</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <!--<span class="card-title">RTX 3090</span>-->
+                </div>
+                <div class="card-content">
+                  <p>RTX 3090</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <!--<span class="card-title">RTX 3090</span>-->
+                </div>
+                <div class="card-content">
+                  <p>RTX 3090</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <!--<span class="card-title">RTX 3090</span>-->
+                </div>
+                <div class="card-content">
+                  <p>RTX 3090</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <!--<span class="card-title">RTX 3090</span>-->
+                </div>
+                <div class="card-content">
+                  <p>RTX 3090</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col s3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <!--<span class="card-title">RTX 3090</span>-->
+                </div>
+                <div class="card-content">
+                  <p>RTX 3090</p>
+                </div>
               </div>
             </div>
 
           </div>
+          <!-- Neuste Anzeigen ends here -->
 
-
+          <div class="row center">
+            <div>
+              <a class="waves-effect waves-light btn" style="text-transform:none">Mehr anzeigen</a>
+            </div>
+          </div>
 
         </div>
 
+
+
       </div>
+
+    </div>
     </div>
 
 
@@ -384,6 +435,7 @@
 
 
   <!--Import the minified script of materialize.js (materilize.min.js)-->
+  <!-- TODO: minify the materialize.js afterthe needed changes -->
   <script src="js/materialize.js"></script>
   <script src="js/slider.js"></script>
 </body>

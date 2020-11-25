@@ -37,7 +37,7 @@ html {
   background-position: center;
   padding: 0px;
   margin: 0px;
-  width: 200px;
+  width: 150px;
   height: 50px;
   cursor: pointer;
 }
@@ -108,7 +108,7 @@ html {
 
 /*
   Override MaterializeCSS's class
-  Change text's color and dropdown's background on :hover or :active
+  Change text's color and dropdown's background on :hover or
 */
 
 .dropdown-content {

@@ -2746,7 +2746,7 @@ $jscomp.polyfill = function (e, r, p, m) {
 		// PortaPC: Added more top-margin
         this.dropdownEl.style.top = (positionInfo.y + 30) + 'px';
         this.dropdownEl.style.height = positionInfo.height + 'px';
-        this.dropdownEl.style.width = positionInfo.width + 'px';
+        this.dropdownEl.style.width = (positionInfo.width + 20) + 'px';
         this.dropdownEl.style.transformOrigin = (positionInfo.horizontalAlignment === 'left' ? '0' : '100%') + " " + (positionInfo.verticalAlignment === 'top' ? '0' : '100%');
       }
 
