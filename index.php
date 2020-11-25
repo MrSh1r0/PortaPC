@@ -91,7 +91,7 @@ $helper = new Helper();
       if (urlName === "homepage") {
         // The "location" of the current page should be redirected to the "slash /" which is
         // a shortcut for the root page of this website (basically from website.com/blabla/caca to website.com/)
-        location.href = "/";
+        location.href = location.protocol + '//' + location.host + "/PortaPC";
       }
     }
   </script>
