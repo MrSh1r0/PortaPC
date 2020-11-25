@@ -91,199 +91,212 @@
         <!-- Slider goes here -->
         <div class="col s9 right">
           <div class="row">
-
-          </div>
-          <div class="row">
-            <div class="slideshow-container">
-              <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
+            <div class="col s12">
+              <div class="slideshow-container">
+                <div class="mySlides fade">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
+                </div>
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="images/cpu.png" style="width:100%; height:200px; object-fit:cover">
+                </div>
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="images/motherboard.png" style="width:100%; height:200px; object-fit:cover">
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
               </div>
-              <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
+              <br>
+              <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
               </div>
-              <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
-                <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
-              </div>
-              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-              <a class="next" onclick="plusSlides(1)">&#10095;</a>
             </div>
-            <br>
-            <div style="text-align:center">
-              <span class="dot" onclick="currentSlide(1)"></span>
-              <span class="dot" onclick="currentSlide(2)"></span>
-              <span class="dot" onclick="currentSlide(3)"></span>
             </div>
-          </div>
           <!-- Slider ends here -->
 
+          <!-- Posts goes here -->
           <div class="row">
+
+            <!-- 1st Style with Card reveal -->
             <div class="col s3">
               <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
+                <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="images/gpu.jpg">
                 </div>
                 <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">RTX 3090</span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">RTX 3090<i class="material-icons right">close</i></span>
                   <p>300$</p>
+                  <p><a href="#">Details</a></p>
                 </div>
               </div>
             </div>
 
+            <!-- 2nd Style without Card reveal -->
             <div class="col s3">
               <div class="card">
-                <div class="card-image">
+                <div class="card-image waves-effect waves-block waves-light">
                   <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
                 </div>
                 <div class="card-content">
-                  <p>300$</p>
+                  <a href="#!"style="color:black"><span class="card-title grey-text text-darken-4">RTX 3090</span></a>
                 </div>
               </div>
             </div>
 
+            <!-- 3rd Style with link -->
             <div class="col s3">
               <div class="card">
                 <div class="card-image">
                   <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
                 </div>
                 <div class="card-content">
-                  <p>300$</p>
+                  <a href="#!" style="color:black"><p>RTX 3090</p></a>
                 </div>
               </div>
             </div>
 
+            <!-- Original Style -->
             <div class="col s3">
               <div class="card">
                 <div class="card-image">
                   <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
                 </div>
                 <div class="card-content">
-                  <p>300$</p>
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <!-- Zuletzt Ansehen ends here -->
-
-          <!-- Neuste Anzeigen goes here -->
-          <div class="row">
-            <div class="col s12">
-              <h5 style="text-transform:uppercase "><strong>Neuste Anzeigen</strong></h5>
-            </div>
-
-
-          </div>
-
-          <div class="row">
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
-                </div>
-                <div class="card-content">
-                  <p>300$</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
-                </div>
-                <div class="card-content">
-                  <p>300$</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
-                </div>
-                <div class="card-content">
-                  <p>300$</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
-                </div>
-                <div class="card-content">
-                  <p>300$</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
-                </div>
-                <div class="card-content">
-                  <p>300$</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
-                </div>
-                <div class="card-content">
-                  <p>300$</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
-                </div>
-                <div class="card-content">
-                  <p>300$</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <span class="card-title">RTX 3090</span>
-                </div>
-                <div class="card-content">
-                  <p>300$</p>
+                  <p>RTX 3090</p>
                 </div>
               </div>
             </div>
 
           </div>
-          <!-- Neuste Anzeigen ends here -->
-          <div class="row center">
-            <div>
-              <a class="waves-effect waves-light btn" style="text-transform:none">Mehr anzeigen</a>
+          <!-- Posts goes here -->
+
+
+            <!-- Neuste Anzeigen goes here -->
+            <div class="row">
+              <div class="col s12">
+                <h5 style="text-transform:uppercase "><strong>Neuste Anzeigen</strong></h5>
+              </div>
+
+
             </div>
+
+            <div class="row">
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <!--<span class="card-title">RTX 3090</span>-->
+                  </div>
+                  <div class="card-content">
+                    <p>RTX 3090</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <!--<span class="card-title">RTX 3090</span>-->
+                  </div>
+                  <div class="card-content">
+                    <p>RTX 3090</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <!--<span class="card-title">RTX 3090</span>-->
+                  </div>
+                  <div class="card-content">
+                    <p>RTX 3090</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <!--<span class="card-title">RTX 3090</span>-->
+                  </div>
+                  <div class="card-content">
+                    <p>RTX 3090</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <!--<span class="card-title">RTX 3090</span>-->
+                  </div>
+                  <div class="card-content">
+                    <p>RTX 3090</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <!--<span class="card-title">RTX 3090</span>-->
+                  </div>
+                  <div class="card-content">
+                    <p>RTX 3090</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <!--<span class="card-title">RTX 3090</span>-->
+                  </div>
+                  <div class="card-content">
+                    <p>RTX 3090</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col s3">
+                <div class="card">
+                  <div class="card-image">
+                    <a href="#!"><img src="images/gpu.jpg"></a>
+                    <!--<span class="card-title">RTX 3090</span>-->
+                  </div>
+                  <div class="card-content">
+                    <p>RTX 3090</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- Neuste Anzeigen ends here -->
+
+            <div class="row center">
+              <div>
+                <a class="waves-effect waves-light btn" style="text-transform:none">Mehr anzeigen</a>
+              </div>
+            </div>
+
           </div>
+
+
+
         </div>
 
       </div>
