@@ -3,42 +3,63 @@
  * Use this file to override the default/Materialize styles.
 */
 
-/* Override the document styles */
+/*
+  Override the document styles
+  Set the font-family of all texts
+  It might cause conflicts, if anothere css class[es] use[s] '!important' tag
+  If the font doesn't change on other elements, check if they have any fonts applied on them
+*/
 html {
-  /* Set the font-family of all texts
-     It might cause conflicts, if anothere css class[es] use[s] '!important' tag
-     If the font doesn't change on other elements, check if they have any fonts applied on them */
   font-family: 'Roboto', sans-serif !important;
 }
 
-/* Navbar, we are using our own because MaterializeCSS's navbar is NOT what we want
-   This margin will be removed later */
+/*
+  Navbar, we are using our own because MaterializeCSS's navbar is NOT what we want
+   This margin will be removed later
+*/
 .header {
   margin-top: 5px;
 }
 
-/* Website logo  */
+/*
+  Website logo
+  background-size: We are using "contain" to prevent any scaling
+  background-position: We are using "center" to keep the image in the center vertically
+  margin/padding: We don't want any margin or padding, it will make our work confusing
+  width/height: These props (width & height) will be later on responsive
+  width: This value will create some space, because we don't want the logo to take the whole width of the grid's column
+  cursor: We want the image to look "clickable", therefore, we need to this prop
+*/
 .website-logo {
   background-image: url("../images/logo/default.png");
   background-repeat: no-repeat;
-  /* We are using "contain" to prevent any scaling */
   background-size: contain;
-  /* We are using "center" to keep the image in the center vertically */
   background-position: center;
-  /* We don't want any margin or padding, it will make our work confusing */
   padding: 0px;
   margin: 0px;
-  /* These props (width & height) will be later on responsive */
   width: 200px;
   height: 50px;
-  /* We want the image to look "clickable", therefore, we need to this prop */
   cursor: pointer;
 }
 
+/*
+  Search icon
+  text-align: the width of the material-icons class is bigger than the icon's actual size, so let's center it
+  top: override the default top margin, and set our own to make it center vertically (we might need to make it responsive!)
+  color: Set the color to the same placeholder's color
+*/
 .search-icon {
+  text-align: center;
+  top: 20% !important;
   color: #d1d1d1 !important;
 }
 
+/*
+  Search container, it's also the container of the categories dropdown
+  height: Same as our navbar's height, this means, this will be changed too in responsive elements
+  width: Take the whole width of our parent (grid's column)
+  background-color: Background color is set according to the mockup
+*/
 .search-container {
   border-radius: 15px;
   height: 50px;
@@ -47,15 +68,42 @@ html {
 }
 
 .search-input, input:focus {
+  height: 100% !important;
   border-bottom: 0px !important;
   -webkit-box-shadow: 0px !important;
           box-shadow: 0px !important;
 }
 
-.vertical-line {
-  border-left: 1px solid #ff0000;
+/*
+  vertical line (divider)
+  height: let this take the whole available height
+  border-left: Set a vertical line on the left of the div
+*/
+.vertical-left-line {
+  height: 100% !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.searchbar-category-dropdown {
+  text-align: center;
+}
+
+
+/*
+  the "after" prop means to set this after the div's content
+  We are using this to insert the dropdown icon (small arrow)
+  font-family: We need to tell css that it's a font of the icons family (Material Icons)
+  content: this is similar to "<i>expand_more</i>", we need to specifiy the icon
+  margin-left: an elegant margin to make it sexy :)
+  vertical-align: keep it in the middle vertically
+*/
+.searchbar-category-dropdown:after {
+  font-size: 15px !important;
+  font-family: "Material Icons";
+  content: "expand_more";
+  margin-left: 5px;
+  vertical-align: middle;
+}
 
 /* Slideshow container */
 .slideshow-container {
@@ -141,6 +189,24 @@ html {
 }
 
 /*
+  width & height helpers
+  it overrides the default values
+*/
+
+.fill-height {
+  height: 100% !important;
+}
+
+.fill-width {
+  width: 100% !important;
+}
+
+.fill-all {
+  height: 100% !important;
+  width: 100% !important;
+}
+
+/*
   marging & padding helpers
   (-number) stands for the amount of px
   x stands for horizontal
@@ -155,6 +221,10 @@ html {
 
 .margin-0 {
   margin: 0 !important;
+}
+
+.padding-0 {
+  padding: 0 !important;
 }
 
 .margin-y-0 {

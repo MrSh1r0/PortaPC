@@ -62,17 +62,18 @@
         </div>
         <div class="col s12 m12 l7">
           <div class="row search-container">
-            <div class="col s12 m12 l10">
-              <div class="input-field margin-0">
+            <div class="col s12 m9 l9 fill-height">
+              <div class="input-field margin-0 fill-height">
                 <i class="material-icons prefix search-icon">search</i>
                 <input class="search-input margin-y-0" placeholder="Wonach suche Sie?" id="icon_prefix" type="text">
               </div>
             </div>
-            <div class="col s12 m12 l2 vertical-line">
-              <p class='dropdown-trigger' data-target='dropdown1'>Drop Me!</p>
+            <div class="col s12 m3 l3 vertical-left-line">
+                <p class='dropdown-trigger searchbar-category-dropdown' data-target='searchbar-category'>Alle Kategorien</p>
+
 
               <!-- Dropdown Structure -->
-              <ul id='dropdown1' class='dropdown-content'>
+              <ul id='searchbar-category' class='dropdown-content'>
                 <li><a href="#!">one</a></li>
                 <li><a href="#!">two</a></li>
                 <li class="divider" tabindex="-1"></li>
