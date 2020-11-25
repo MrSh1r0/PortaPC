@@ -1,3 +1,10 @@
+<?php
+
+// We Setup the php enivornment for later usage.
+// Currently, we don't need to add anything.
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -25,7 +32,19 @@
 
       // initialize the dropdown (MaterializeCSS) using JQuery.
       $('.dropdown-trigger').dropdown();
+
+
     });
+
+    // Normal Javascript function to redirect the user using Javascript to a specific page
+    // Paramter is a String
+    function visitURL(urlName){
+      if(urlName === "homepage"){
+        // The "location" of the current page should be redirected to the "slash /" which is
+        // a shortcut for the root page of this website (basically from website.com/blabla/caca to website.com/)
+        location.href = "/";
+      }
+    }
   </script>
 </head>
 
@@ -35,10 +54,8 @@
   <header class="header">
     <div class="container">
       <div class="row">
-        <div class="col s12 m12 l2">
-          <a href="#">
-            <div class="website-logo" alt="Website-Logo"></div>
-          </a>
+        <div class="col s12 m12 l3">
+            <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
         </div>
         <div class="col s12 m12 l7">
           <div class="row search-container">
