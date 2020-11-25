@@ -3,21 +3,40 @@
  * Use this file to override the default/Materialize styles.
 */
 
+/* Override the document styles */
+html {
+  /* Set the font-family of all texts
+     It might cause conflicts, if anothere css class[es] use[s] '!important' tag
+     If the font doesn't change on other elements, check if they have any fonts applied on them */
+  font-family: 'Roboto', sans-serif !important;
+}
+
+/* Navbar, we are using our own because MaterializeCSS's navbar is NOT what we want
+   This margin will be removed later */
 .header {
   margin-top: 5px;
 }
 
-
+/* Website logo  */
 .website-logo {
   background-image: url("../images/logo/default.png");
   background-repeat: no-repeat;
+  /* We are using "contain" to prevent any scaling */
   background-size: contain;
+  /* We are using "center" to keep the image in the center vertically */
   background-position: center;
+  /* We don't want any margin or padding, it will make our work confusing */
   padding: 0px;
   margin: 0px;
+  /* These props (width & height) will be later on responsive */
   width: 200px;
   height: 50px;
+  /* We want the image to look "clickable", therefore, we need to this prop */
   cursor: pointer;
+}
+
+.search-icon {
+  color: #d1d1d1 !important;
 }
 
 .search-container {

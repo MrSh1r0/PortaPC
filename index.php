@@ -18,6 +18,9 @@
   <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
   <!-- Import JQuery at the start, we need it in our script headtags -->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <!-- Import Google's Roboto font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   <!--Let browser know that the website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -61,8 +64,8 @@
           <div class="row search-container">
             <div class="col s12 m12 l10">
               <div class="input-field margin-0">
-                <i class="material-icons prefix">account_circle</i>
-                <input class="search-input margin-y-0" placeholder="Placeholder" id="icon_prefix" type="text">
+                <i class="material-icons prefix search-icon">search</i>
+                <input class="search-input margin-y-0" placeholder="Wonach suche Sie?" id="icon_prefix" type="text">
               </div>
             </div>
             <div class="col s12 m12 l2 vertical-line">
