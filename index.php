@@ -37,7 +37,8 @@ $helper = new Helper();
   <script type="text/javascript">
     // We will use JQuery
     // First, we check if the document is ready for any changes
-
+    var categories = [];
+    var category_selected = "Alle Kategorien";
     $(document).ready(function() {
       /*
       Dropdown should be ONLY initilized after the dynamic content is populated.
@@ -57,9 +58,8 @@ $helper = new Helper();
     // Create a function to add items to our categories
     function populateDropdown(){
       // Get the categories from our PHP helper
-      // We use "let" instead of "var" because we are going to use it locally and not globally
       // The encoded Json getCategories() will be parsed automatically to JSON
-      let categories = <?php echo $helper->getCategories()?>;
+      categories = <?php echo $helper->getCategories()?>;
 
 
       // We now have an array, the "Alle Kategorien" option is NOT included in the categories
@@ -70,15 +70,19 @@ $helper = new Helper();
       // Create a for-loop, then use JQuery to "append/add" the HTML to the div #searchbar-category
       for(let i = 0; i < categories.length; i++){
         let category = categories[i];
-        let category_html = `<li><a>${category}</a></li>`;
+        let category_html = `<li><a onclick="setSearchbarCategoryText(${i})">${category}</a></li>`;
         $("#searchbar-category").append(category_html);
       }
 
     }
 
     // If there's a change in the selected dropdown, we need to change the text to that selected option
-    function setSearchbarCategoryText(){
-
+    function setSearchbarCategoryText(elementIndex){
+      // We have the index
+      // Get the category from the categories array using the passed parameter (index)
+      category_selected = categories[elementIndex];
+      // We got it? Nice, now, update the text using JQuery
+      $("#searchbar-category-text").text(category_selected);
     }
 
     // Normal Javascript function to redirect the user using Javascript to a specific page
