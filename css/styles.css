@@ -105,6 +105,24 @@ html {
   vertical-align: middle;
 }
 
+
+/*
+  Override MaterializeCSS's class
+  Change text's color and dropdown's background on :hover or :active
+*/
+
+.dropdown-content {
+  background-color: #f2f2f2  !important;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #232323 !important;
+}
+
+.dropdown-content li:hover, .dropdown-content li.active {
+  background-color: rgba(0, 0, 0, 0.09) !important;
+}
+
 /* Slideshow container */
 .slideshow-container {
   width: 100%;
