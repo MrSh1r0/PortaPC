@@ -43,18 +43,6 @@ html {
 }
 
 /*
-  Search icon
-  text-align: the width of the material-icons class is bigger than the icon's actual size, so let's center it
-  top: override the default top margin, and set our own to make it center vertically (we might need to make it responsive!)
-  color: Set the color to the same placeholder's color
-*/
-.search-icon {
-  text-align: center;
-  top: 20% !important;
-  color: #d1d1d1 !important;
-}
-
-/*
   Search container, it's also the container of the categories dropdown
   height: Same as our navbar's height, this means, this will be changed too in responsive elements
   width: Take the whole width of our parent (grid's column)
@@ -67,6 +55,20 @@ html {
   background-color: #f2f2f2;
 }
 
+
+/*
+  Search icon
+  text-align: the width of the material-icons class is bigger than the icon's actual size, so let's center it
+  top: override the default top margin, and set our own to make it center vertically (we might need to make it responsive!)
+  color: Set the color to the same placeholder's color
+*/
+.search-icon {
+  text-align: center;
+  top: 20% !important;
+  color: #d1d1d1 !important;
+}
+
+
 .search-input, input:focus {
   height: 100% !important;
   border-bottom: 0px !important;
@@ -74,20 +76,9 @@ html {
           box-shadow: 0px !important;
 }
 
-/*
-  vertical line (divider)
-  height: let this take the whole available height
-  border-left: Set a vertical line on the left of the div
-*/
-.vertical-left-line {
-  height: 100% !important;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-}
-
 .searchbar-category-dropdown {
   text-align: center;
 }
-
 
 /*
   the "after" prop means to set this after the div's content
@@ -104,6 +95,19 @@ html {
   margin-left: 5px;
   vertical-align: middle;
 }
+
+/*
+  vertical line (divider)
+  height: let this take the whole available height
+  border-left: Set a vertical line on the left of the div
+*/
+.vertical-left-line {
+  height: 100% !important;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
 
 
 /*
