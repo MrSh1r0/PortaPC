@@ -34,6 +34,7 @@ $helper = new Helper();
 
   <title>PortaPC</title>
 
+
   <script type="text/javascript">
     // We will use JQuery
     // First, we check if the document is ready for any changes
@@ -94,48 +95,61 @@ $helper = new Helper();
         location.href = location.protocol + '//' + location.host + "/PortaPC";
       }
     }
+
   </script>
+
+
 </head>
 
 <body>
 
   <!-- Navbar -->
   <header class="header">
+
     <div class="container">
       <div class="row">
-        <!-- Logo column -->
+        <!--Logo column-->
         <div class="col s12 m12 l3">
           <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
         </div>
-        <!-- End of Logo column -->
-        <!-- Search & Category parent -->
-        <div class="col s12 m12 l7">
-          <!-- Search & Category row -->
+        <!--End of Logo column-->
+
+        <!--Search & Category parent-->
+        <div class="col s12 m12 l9">
+
+          <!--Search & Category row-->
           <div class="row search-container">
-            <!-- Search column -->
+
+            <!--Search column-->
             <div class="col s12 m9 l9 fill-height">
               <div class="input-field margin-0 fill-height">
-                <!-- Search icon -->
+
+                <!--Search icon-->
                 <i class="material-icons prefix search-icon">search</i>
-                <!-- Search input -->
+
+                <!--Search input-->
                 <input class="search-input margin-y-0" placeholder="Wonach suche Sie?" id="icon_prefix" type="text">
               </div>
             </div>
-            <!-- End of Search column -->
+            <!--End of Search column-->
+
             <div class="col s12 m3 l3 vertical-left-line">
-              <!--  -->
+
               <p class='dropdown-trigger searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
 
-              <!-- It's going to be a dynamic dropdown, the content will be added using JavaScript -->
+               <!--It's going to be a dynamic dropdown, the content will be added using JavaScript-->
               <ul id='searchbar-category' class='dropdown-content'>
               </ul>
             </div>
           </div>
-          <!-- End of Search & Categroy row -->
+          <!--End of Search & Categroy row-->
+
         </div>
-        <!-- End of Search & Category parent -->
+        <!--End of Search & Category parent-->
+
       </div>
     </div>
+
   </header>
   <!-- End of Navbar -->
 
@@ -144,40 +158,40 @@ $helper = new Helper();
     <div class="container">
       <div class="row">
 
-        <!-- Katorgie goes here -->
-        <div class="col s3">
+        <!-- Entdecken goes here -->
+        <div class="col s12 m4 l3">
           <h5 style="text-transform:uppercase "><strong>Entdecken</strong></h5>
           <ul class="collection section">
-            <li href="#!" class="collection-item">Alle Katergorien</li>
-            <li href="#!" class="collection-item">CPUs</li>
-            <li href="#!" class="collection-item">GPUs</li>
-            <li href="#!" class="collection-item">Motherboards</li>
-            <li href="#!" class="collection-item">Netzteile</li>
-            <li href="#!" class="collection-item">RAMs</li>
-            <li href="#!" class="collection-item">Speicher</li>
-            <li href="#!" class="collection-item">Peripheriegerate</li>
-            <li href="#!" class="collection-item">Komplettsysteme</li>
+            <li onclick="visitURL('homepage')" class="collection-item">Alle Katergorien</li>
+            <li onclick="visitURL('homepage')" class="collection-item">CPUs</li>
+            <li onclick="visitURL('homepage')" class="collection-item">GPUs</li>
+            <li onclick="visitURL('homepage')" class="collection-item">Motherboards</li>
+            <li onclick="visitURL('homepage')" class="collection-item">Netzteile</li>
+            <li onclick="visitURL('homepage')" class="collection-item">RAMs</li>
+            <li onclick="visitURL('homepage')" class="collection-item">Speicher</li>
+            <li onclick="visitURL('homepage')" class="collection-item">Peripheriegerate</li>
+            <li onclick="visitURL('homepage')" class="collection-item">Komplettsysteme</li>
           </ul>
 
         </div>
         <!-- Katorgie ends here -->
 
         <!-- Slider goes here -->
-        <div class="col s9 right">
+        <div class="col s12 m8 l9 right">
           <div class="row">
-            <div class="col s12">
+            <div class="col">
               <div class="slideshow-container">
                 <div class="mySlides fade">
                   <div class="numbertext">1 / 3</div>
-                  <img src="images/gpu.jpg" style="width:100%; height:200px; object-fit:cover">
+                  <img src="images/gpu.jpg" style="width:100%; max-height:300px; object-fit:cover">
                 </div>
                 <div class="mySlides fade">
                   <div class="numbertext">2 / 3</div>
-                  <img src="images/cpu.png" style="width:100%; height:200px; object-fit:cover">
+                  <img src="images/gpu.jpg" style="width:100%; max-height:300px; object-fit:cover">
                 </div>
                 <div class="mySlides fade">
                   <div class="numbertext">3 / 3</div>
-                  <img src="images/motherboard.png" style="width:100%; height:200px; object-fit:cover">
+                  <img src="images/gpu.jpg" style="width:100%; max-height:300px; object-fit:cover">
                 </div>
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -195,63 +209,63 @@ $helper = new Helper();
           <!-- Posts goes here -->
           <div class="row">
 
-            <!-- 1st Style with Card reveal -->
-            <div class="col s3">
+            <!-- Posts goes here -->
+            <div class="col s6 m4 l3">
               <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
+                <div class="card-image">
                   <img class="activator" src="images/gpu.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light teal center">900€</a>
                 </div>
                 <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">RTX 3090</span>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">RTX 3090<i class="material-icons right">close</i></span>
-                  <p>300$</p>
-                  <p><a href="#">Details</a></p>
+                  <h6><strong>Nvidia RTX 3090</strong></h6>
+                  <p>Ehrang</p>
                 </div>
               </div>
             </div>
 
-            <!-- 2nd Style without Card reveal -->
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image waves-effect waves-block waves-light">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                </div>
-                <div class="card-content">
-                  <a href="#!" style="color:black"><span class="card-title grey-text text-darken-4">RTX 3090</span></a>
-                </div>
-              </div>
-            </div>
-
-            <!-- 3rd Style with link -->
-            <div class="col s3">
+            <div class="col s6 m4 l3">
               <div class="card">
                 <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <img class="activator" src="images/gpu.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light teal center">900€</a>
                 </div>
                 <div class="card-content">
-                  <a href="#!" style="color:black">
-                    <p>RTX 3090</p>
-                  </a>
+                  <h6><strong>Nvidia RTX 3090</strong></h6>
+                  <p>Ehrang</p>
                 </div>
               </div>
             </div>
 
-            <!-- Original Style -->
-            <div class="col s3">
+            <div class="col s6 m4 l3">
               <div class="card">
                 <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
+                  <img class="activator" src="images/gpu.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light teal center">900€</a>
                 </div>
                 <div class="card-content">
-                  <p>RTX 3090</p>
+                  <h6><strong>Nvidia RTX 3090</strong></h6>
+                  <p>Ehrang</p>
                 </div>
               </div>
             </div>
 
-          </div>
-          <!-- Posts goes here -->
+            <div class="col s6 m4 l3">
+              <div class="card">
+                <div class="card-image">
+                  <img class="activator" src="images/gpu.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light teal center">900€</a>
+                </div>
+                <div class="card-content">
+                  <h6><strong>Nvidia RTX 3090</strong></h6>
+                  <p>Ehrang</p>
+                </div>
+              </div>
+            </div>
+            <!-- Posts ends here -->
+
+
+        </div>
+          <!-- Posts ends here -->
 
 
           <!-- Neuste Anzeigen goes here -->
@@ -264,114 +278,81 @@ $helper = new Helper();
           </div>
 
           <div class="row">
-            <div class="col s3">
+            <!-- Posts goes here -->
+            <div class="col s6 m4 l3">
               <div class="card">
                 <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <!--<span class="card-title">RTX 3090</span>-->
+                  <img class="activator" src="images/gpu.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light teal center">900€</a>
                 </div>
                 <div class="card-content">
-                  <p>RTX 3090</p>
+                  <h6><strong>Nvidia RTX 3090</strong></h6>
+                  <p>Ehrang</p>
                 </div>
               </div>
             </div>
 
-            <div class="col s3">
+            <div class="col s6 m4 l3">
               <div class="card">
                 <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <!--<span class="card-title">RTX 3090</span>-->
+                  <img class="activator" src="images/gpu.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light teal center">900€</a>
                 </div>
                 <div class="card-content">
-                  <p>RTX 3090</p>
+                  <h6><strong>Nvidia RTX 3090</strong></h6>
+                  <p>Ehrang</p>
                 </div>
               </div>
             </div>
 
-            <div class="col s3">
+            <div class="col s6 m4 l3">
               <div class="card">
                 <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <!--<span class="card-title">RTX 3090</span>-->
+                  <img class="activator" src="images/gpu.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light teal center">900€</a>
                 </div>
                 <div class="card-content">
-                  <p>RTX 3090</p>
+                  <h6><strong>Nvidia RTX 3090</strong></h6>
+                  <p>Ehrang</p>
                 </div>
               </div>
             </div>
 
-            <div class="col s3">
+            <div class="col s6 m4 l3">
               <div class="card">
                 <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <!--<span class="card-title">RTX 3090</span>-->
+                  <img class="activator" src="images/gpu.jpg">
+                  <a class="btn-floating halfway-fab waves-effect waves-light teal center">900€</a>
                 </div>
                 <div class="card-content">
-                  <p>RTX 3090</p>
+                  <h6><strong>Nvidia RTX 3090</strong></h6>
+                  <p>Ehrang</p>
                 </div>
               </div>
             </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <!--<span class="card-title">RTX 3090</span>-->
-                </div>
-                <div class="card-content">
-                  <p>RTX 3090</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <!--<span class="card-title">RTX 3090</span>-->
-                </div>
-                <div class="card-content">
-                  <p>RTX 3090</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <!--<span class="card-title">RTX 3090</span>-->
-                </div>
-                <div class="card-content">
-                  <p>RTX 3090</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col s3">
-              <div class="card">
-                <div class="card-image">
-                  <a href="#!"><img src="images/gpu.jpg"></a>
-                  <!--<span class="card-title">RTX 3090</span>-->
-                </div>
-                <div class="card-content">
-                  <p>RTX 3090</p>
-                </div>
-              </div>
-            </div>
+            <!-- Posts ends here -->
 
           </div>
           <!-- Neuste Anzeigen ends here -->
 
-          <div class="row center">
-            <div>
-              <a class="waves-effect waves-light btn" style="text-transform:none">Mehr anzeigen</a>
+          <div class="row">
+            <div class="col s12 center">
+              <div>
+                <a class="waves-effect waves-light btn black-text" style="text-transform:none; background-color:#ccc">Mehr anzeigen</a>
+              </div>
             </div>
+
+            <!--<div class="col s3 right">
+              <div>
+                <a class="waves-effect waves-light btn black white-text" style="text-transform:lowercase; border-radius:5px"><i class="material-icons right">arrow_upward</i>nach oben</a>
+              </div>
+            </div>-->
+
           </div>
 
         </div>
-
-
+        <!--<button  title="Go to top">Top</button>-->
+        <a class="waves-effect waves-light btn black white-text" style="text-transform:lowercase; border-radius:5px" onclick="topFunction()" id="ScrollTop"><i class="material-icons right">arrow_upward</i>nach oben</a>
 
       </div>
 
@@ -383,19 +364,27 @@ $helper = new Helper();
   <!-- Page content ends here -->
 
   <!-- Footer goes here -->
+
   <footer class="page-footer white">
+
+    <div class="container" style="border: 1px solid #ccc">
+
+    </div>
+
     <div class="container">
+
       <div class="row">
-        <div class="col s1">
 
-        </div>
+      </div>
 
-        <div class="col s5">
+      <div class="row">
+
+        <div class="col l6 m12 s12">
           <h5 class="black-text">PortaPC</h5>
           <p class="grey-text">Hier eine einfache, kurze Beschreibung von uns. <br>Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
         </div>
 
-        <div class="col s3">
+        <div class="col l3 m6 s12">
           <h5 class="black-text">Informationen</h5>
           <ul>
             <li><a class="grey-text" href="#!">Über uns</a></li>
@@ -406,7 +395,7 @@ $helper = new Helper();
           </ul>
         </div>
 
-        <div class="col s3">
+        <div class="col l3 m6 s12">
           <h5 class="black-text">Kontakt</h5>
           <ul>
             <li><a class="email grey-text" href="mailto:kontakt@portapc.de">kontakt@portapc.de</a></li>
@@ -415,19 +404,19 @@ $helper = new Helper();
           <h5 class="black-text">Folge uns</h5>
 
           <div class="row">
-            <div class="col s1">
+            <div class="col l1 m1 s1">
               <a href="index.html"><img src="images/footer/social_icons/facebook.png" style="max-width:20px"></a>
             </div>
 
-            <div class="col s1">
+            <div class="col l1 m1 s1">
               <a href="index.html"><img src="images/footer/social_icons/instagram.png" style="max-width:20px"></a>
             </div>
 
-            <div class="col s1">
+            <div class="col l1 m1 s1">
               <a href="index.html"><img src="images/footer/social_icons/snapchat.png" style="max-width:20px"></a>
             </div>
 
-            <div class="col s1">
+            <div class="col l1 m1 s1">
               <a href="index.html"><img src="images/footer/social_icons/whatsapp.png" style="max-width:20px"></a>
             </div>
           </div>
@@ -440,8 +429,9 @@ $helper = new Helper();
 
   <!--Import the minified script of materialize.js (materilize.min.js)-->
   <!-- TODO: minify the materialize.js afterthe needed changes -->
-  <script src="js/materialize.js"></script>
-  <script src="js/slider.js"></script>
+  <script src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/slider.js"></script>
+  <script type="text/javascript" src="js/scrolltop.js"></script>
 </body>
 
 </html>
