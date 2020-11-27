@@ -117,6 +117,29 @@ $helper = new Helper();
         location.href = location.protocol + '//' + location.host + "/PortaPC";
       }
     }
+
+    $(document).ready(function(){
+    //Get the button:
+    //var mybutton = $("#ScrollTopButton");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    $(function()  {
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 20)
+        {
+          $("#ScrollTopButton").fadeIn(200);
+        }
+        else
+        {
+          $("#ScrollTopButton").fadeOut(200);
+        }
+      });
+
+      $("#ScrollTopButton").click(function()  {
+        $('body,html').animate({scrollTop: 0}, 800);
+      });
+    });
+    })
   </script>
 
 </head>
@@ -458,7 +481,7 @@ $helper = new Helper();
   <!-- TODO: minify the materialize.js afterthe needed changes -->
   <script src="js/materialize.min.js"></script>
   <script type="text/javascript" src="js/slider.js"></script>
-  <script type="text/javascript" src="js/scrolltop.js"></script>
+
 </body>
 
 </html>

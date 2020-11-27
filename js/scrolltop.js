@@ -16,7 +16,7 @@ $(function()  {
   });
 
   $("#ScrollTopButton").click(function()  {
-    $('body').animate({scrollTop() = 0}, 800);
+    $('body').animate({scrollTop: 0}, 800);
   });
 });
 });
