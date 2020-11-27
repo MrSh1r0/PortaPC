@@ -117,9 +117,7 @@ $helper = new Helper();
         location.href = location.protocol + '//' + location.host + "/PortaPC";
       }
     }
-
   </script>
-
 
 </head>
 
@@ -380,14 +378,14 @@ $helper = new Helper();
           </div>
 
         </div>
-        <!--<button  title="Go to top">Top</button>-->
-        <a class="waves-effect waves-light btn black white-text" style="text-transform:lowercase; border-radius:5px" onclick="topFunction()" id="ScrollTop"><i class="material-icons right">arrow_upward</i>nach oben</a>
 
       </div>
 
     </div>
     </div>
 
+    <!--<button  title="Go to top">Top</button>-->
+    <a class="btn black white-text" id="ScrollTopButton"><i class="material-icons right">arrow_upward</i>nach oben</a>
 
   </main>
   <!-- Page content ends here -->
@@ -410,7 +408,7 @@ $helper = new Helper();
 
         <div class="col l6 m12 s12">
           <h5 class="black-text">PortaPC</h5>
-          <p class="grey-text">Hier eine einfache, kurze Beschreibung von uns. <br>Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+          <p class="grey-text">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
         </div>
 
         <div class="col l3 m6 s12">
