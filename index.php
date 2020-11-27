@@ -118,7 +118,7 @@ $helper = new Helper();
       }
     }
 
-    $(document).ready(function(){
+    /*$(document).ready(function(){
     //Get the button:
     //var mybutton = $("#ScrollTopButton");
 
@@ -139,7 +139,7 @@ $helper = new Helper();
         $('body,html').animate({scrollTop: 0}, 800);
       });
     });
-    })
+  })*/
   </script>
 
 </head>
@@ -408,7 +408,7 @@ $helper = new Helper();
     </div>
 
     <!--<button  title="Go to top">Top</button>-->
-    <a class="btn black white-text" id="ScrollTopButton"><i class="material-icons right">arrow_upward</i>nach oben</a>
+    <a class="btn black white-text" onclick="topFunction()" id="ScrollTopButton"><i class="material-icons right">arrow_upward</i>nach oben</a>
 
   </main>
   <!-- Page content ends here -->
@@ -481,6 +481,7 @@ $helper = new Helper();
   <!-- TODO: minify the materialize.js afterthe needed changes -->
   <script src="js/materialize.min.js"></script>
   <script type="text/javascript" src="js/slider.js"></script>
+  <script type="text/javascript" src="js/scrolltop.js"></script>
 
 </body>
 
