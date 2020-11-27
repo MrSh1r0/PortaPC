@@ -34,7 +34,19 @@ $helper = new Helper();
 
   <title>PortaPC</title>
 
+  <script type="text/javascript">
+  categories = <?php echo $helper->getCategories()?>;
 
+  function visitURL(urlName) {
+    if (urlName === "homepage") {
+      // The "location" of the current page should be redirected to the "slash /" which is
+      // a shortcut for the root page of this website (basically from website.com/blabla/caca to website.com/)
+      location.href = location.protocol + '//' + location.host + "/PortaPC";
+    }
+  }
+  </script>
+
+<!--
   <script type="text/javascript">
     // We will use JQuery
     // First, we check if the document is ready for any changes
@@ -82,7 +94,7 @@ $helper = new Helper();
     function populateDropdown(){
       // Get the categories from our PHP helper
       // The encoded Json getCategories() will be parsed automatically to JSON
-      categories = <?php echo $helper->getCategories()?>;
+      categories = ?php echo $helper->getCategories()?>;
 
 
       // We now have an array, the "Alle Kategorien" option is NOT included in the categories
@@ -141,6 +153,7 @@ $helper = new Helper();
     });
   })*/
   </script>
+-->
 
 </head>
 
@@ -414,7 +427,6 @@ $helper = new Helper();
   <!-- Page content ends here -->
 
   <!-- Footer goes here -->
-
   <footer class="page-footer white">
 
     <div class="container" style="border: 1px solid #ccc">
@@ -482,6 +494,8 @@ $helper = new Helper();
   <script src="js/materialize.min.js"></script>
   <script type="text/javascript" src="js/slider.js"></script>
   <script type="text/javascript" src="js/scrolltop.js"></script>
+  <script type="text/javascript" src="js/dropdown.js"></script>
+
 
 </body>
 
