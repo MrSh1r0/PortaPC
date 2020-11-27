@@ -52,6 +52,7 @@ color: hange the text's color color
 
 /*
   Website logo
+  margin: to center the image (mobile view, etc), we need to set it to auto
   background-size: We are using "contain" to prevent any scaling
   background-position: We are using "center" to keep the image in the center vertically
   margin/padding: We don't want any margin or padding, it will make our work confusing
@@ -60,12 +61,12 @@ color: hange the text's color color
   cursor: We want the image to look "clickable", therefore, we need to this prop
 */
 .website-logo {
+  margin: auto;
   background-image: url("../images/logo/default.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   padding: 0px;
-  margin: 0px;
   width: 150px;
   height: 50px;
   cursor: pointer;
@@ -73,11 +74,13 @@ color: hange the text's color color
 
 /*
   Search container, it's also the container of the categories dropdown
+  margin: to center the view (mobile view, etc), we need to set it to auto. !important prop because "row" class has margin and we want to cancel that margin from it (check the html markup)
   height: Same as our navbar's height, this means, this will be changed too in responsive elements
   width: Take the whole width of our parent (grid's column)
   background-color: Background color is set according to the mockup
 */
 .search-container {
+  margin: auto !important;
   border-radius: 15px;
   height: 50px;
   width: 100%;
@@ -105,8 +108,18 @@ color: hange the text's color color
           box-shadow: 0px !important;
 }
 
+/*
+  Modify the text in the search category dropdown
+  text-align: center the text
+  text-overflow, overflow, white-space: replace the text with dots if there's no space for it (helpful with responsive design)
+  width: let it take the available space
+*/
 .searchbar-category-dropdown {
   text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
 }
 
 /*

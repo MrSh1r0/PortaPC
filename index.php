@@ -152,7 +152,7 @@ $helper = new Helper();
           <div class="row search-container">
 
             <!--Search column-->
-            <div class="col s12 m9 l9 fill-height">
+            <div class="col s8 m9 l9 fill-height">
               <div class="input-field margin-0 fill-height">
 
                 <!--Search icon-->
@@ -164,7 +164,7 @@ $helper = new Helper();
             </div>
             <!--End of Search column-->
 
-            <div class="col s12 m3 l3 vertical-left-line">
+            <div class="col s4 m3 l3 vertical-left-line">
 
               <p class='dropdown-trigger searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
 
