@@ -13,13 +13,42 @@ html {
   font-family: 'Roboto', sans-serif !important;
 }
 
-/*
-  Navbar, we are using our own because MaterializeCSS's navbar is NOT what we want
-   This margin will be removed later
-*/
-.header {
-  margin-top: 5px;
+/* Override the nav class, change the background color */
+nav {
+  background-color: #fff !important;
 }
+
+/* By default, the navbar is hidden */
+.nav-default {
+  display: none;
+}
+
+/* To show the navbar, we will add this class using JQuery */
+.nav-visible {
+  display: inherit !important;
+}
+
+/*
+Override MaterializeCSS' class
+width: We need to set the width 100% for text-align to work
+text-align: center the text
+color: hange the text's color color
+*/
+.brand-logo {
+  width: 100%;
+  text-align: center;
+  color: #232323 !important;
+}
+
+/*
+  Top bar, we are using our own because MaterializeCSS's navbar is NOT what we want
+  This margin will be removed later
+*/
+.top-bar {
+  padding-top: 5px;
+  overflow: hidden;
+}
+
 
 /*
   Website logo

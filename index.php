@@ -53,8 +53,30 @@ $helper = new Helper();
       // initialize the dropdown (MaterializeCSS) using JQuery.
       $('.dropdown-trigger').dropdown();
 
+      handleNavbar();
 
     });
+
+    /*
+    This function shows the navbar after we reached the page content block/div.
+    We basically check what's the offset of the #homepage-content regarding the top of the whole document
+    then we add an eventlistener using JQuery to the scroll event
+    once we are past that offset (scrollTop() > offset)
+    then we add the css class to show the navbar
+    */
+    function handleNavbar(){
+      var offset = $("#homepage-content").offset().top;
+      $(window).bind('scroll', function() {
+        if ($(window).scrollTop() > offset) {
+          $('#nav').addClass('nav-visible');
+          $('#nav-container').addClass('nav-visible');
+        }
+        else {
+         $('#nav').removeClass('nav-visible');
+         $('#nav-container').removeClass('nav-visible');
+        }
+      });
+    }
 
     // Create a function to add items to our categories
     function populateDropdown(){
@@ -104,9 +126,18 @@ $helper = new Helper();
 <body>
 
   <!-- Navbar -->
-  <header class="header">
+  <!-- By default, the navbar is hidden -->
+  <div class="navbar-fixed nav-default" id="nav-container">
+    <nav class="nav-default" id="nav">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Logo</a>
+      </div>
+    </nav>
+  </div>
 
-    <div class="container">
+
+  <!-- Top bar -->
+    <div class="container top-bar" id="top-bar">
       <div class="row">
         <!--Logo column-->
         <div class="col s12 m12 l3">
@@ -149,12 +180,10 @@ $helper = new Helper();
 
       </div>
     </div>
-
-  </header>
-  <!-- End of Navbar -->
+  <!-- End of Top bar -->
 
   <!-- Page content goes here -->
-  <main>
+  <main id="homepage-content">
     <div class="container">
       <div class="row">
 
