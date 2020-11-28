@@ -1,0 +1,23 @@
+footer .header {
+  color:black;
+}
+
+footer .content {
+  color:grey;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color:grey;
+}
+
+footer img {
+  border-style: none;
+  float:right;
+}
