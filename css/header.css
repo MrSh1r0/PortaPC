@@ -1,21 +1,3 @@
-html {
-  font-family: 'Roboto', sans-serif !important;
-}
-
-/* Override the nav class, change the background color */
-nav {
-  background-color: #fff !important;
-}
-
-/* By default, the navbar is hidden */
-.nav-default {
-  display: none;
-}
-
-/* To show the navbar, we will add this class using JQuery */
-.nav-visible {
-  display: inherit !important;
-}
 
 /*
 Override MaterializeCSS' class
@@ -91,11 +73,13 @@ color: hange the text's color color
 
 
 .search-input, input:focus {
-
   height: 100% !important;
   border-bottom: 0px !important;
   -webkit-box-shadow: 0px !important;
           box-shadow: 0px !important;
+  background-color: transparent;
+  border: none;
+  outline:none;
 }
 
 /*
@@ -105,6 +89,7 @@ color: hange the text's color color
   width: let it take the available space
 */
 .searchbar-category-dropdown {
+  vertical-align: middle;
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -121,11 +106,13 @@ color: hange the text's color color
   vertical-align: keep it in the middle vertically
 */
 .searchbar-category-dropdown:after {
+  display: none;
   font-size: 15px !important;
   font-family: "Material Icons";
-  /*content: "expand_more";*/
+  content: "expand_more";
   margin-left: 5px;
   vertical-align: middle;
+  text-align: center;
 }
 
 /*

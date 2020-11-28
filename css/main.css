@@ -1,30 +1,45 @@
-#categories {
+html {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+.categories {
   margin: 0.5rem 0 0.5rem 0;
   border: 2px solid #e0e0e0;
   border-radius: 2px;
   overflow: hidden;
   position: relative;
+  box-sizing: inherit;
+  padding: 10px 20px;
 }
 
-#categories .header {
+.category-header {
   color:black;
   text-transform:uppercase;
 }
 
-#categories .content {
+.category-content {
   color:black;
+  padding: 10px 20px;
+  line-height: 1.5rem;
+  margin: auto;
+  border-bottom: 1px solid #e0e0e0;
+  display:block;
+
 }
 
-#categories a {
+.categories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categories a {
     text-decoration: none;
 }
 
 #more {
   display: block; /* Hidden by default */
-
   z-index: 99; /* Make sure it does not overlap */
   cursor: pointer; /* Add a mouse pointer on hover */
-  text-transform:lowercase;
   background-color: #c7b198;
   color: black;
   border: none;
@@ -36,5 +51,7 @@
   margin-left: auto;
   margin-right: auto;
   -webkit-tap-highlight-color: transparent;
+  border: none;
+  outline:none;
 
 }

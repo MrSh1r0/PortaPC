@@ -17,6 +17,7 @@
   text-transform: lowercase;
   vertical-align: middle;
   -webkit-tap-highlight-color: transparent;
+  outline:none;
 
 }
 
