@@ -20,12 +20,8 @@ $helper = new Helper();
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <!-- TODO: minify materialize.css after the needed changes -->
-  <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection" />
   <!--Import styles.css (our own custom css)-->
   <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
-  <!-- Import JQuery at the start, we need it in our script headtags -->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -490,8 +486,6 @@ $helper = new Helper();
 
 
   <!--Import the minified script of materialize.js (materilize.min.js)-->
-  <!-- TODO: minify the materialize.js afterthe needed changes -->
-  <script src="js/materialize.min.js"></script>
   <script type="text/javascript" src="js/slider.js"></script>
   <script type="text/javascript" src="js/scrolltop.js"></script>
   <script type="text/javascript" src="js/dropdown.js"></script>
