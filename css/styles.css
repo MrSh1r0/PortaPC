@@ -270,6 +270,41 @@ color: hange the text's color color
   width: 100% !important;
 }
 
+.categories {
+  margin: 0.5rem 0 0.5rem 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+  box-sizing: inherit;
+  padding: 10px 20px;
+}
+
+.category-header {
+  color:black;
+  text-transform:uppercase;
+}
+
+.category-content {
+  color:black;
+  padding: 10px 20px;
+  line-height: 1.5rem;
+  margin: auto;
+  border-bottom: 1px solid #e0e0e0;
+  display:block;
+
+}
+
+.categories ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categories a {
+    text-decoration: none;
+}
+
+
 /*
   marging & padding helpers
   (-number) stands for the amount of px
@@ -282,6 +317,8 @@ color: hange the text's color color
 
   if you don't see any letters, it means all sides
 */
+
+
 
 .margin-0 {
   margin: 0 !important;
@@ -325,10 +362,211 @@ color: hange the text's color color
   z-index: 99; /* Make sure it does not overlap */
   cursor: pointer; /* Add a mouse pointer on hover */
   text-transform:lowercase;
-  border-radius:5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-transform: lowercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  outline:none;
 
 }
 
 #ScrollTopButton:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  /* Add a dark-grey background on hover */
+}
+
+
+
+/* This makes sure that the padding and border are included in the total width and height of the elements */
+* {
+  box-sizing: border-box;
+}
+
+.separator-line {
+  border: 1px solid #ccc;
+}
+
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+}
+
+#more {
+  display: block; /* Hidden by default */
+  z-index: 99; /* Make sure it does not overlap */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  background-color: #c7b198;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  outline:none;
+
+}
+
+@media only screen and (max-width: 600px) {
+  .col-s-1 {width: 8.33%;}
+  .col-s-2 {width: 16.66%;}
+  .col-s-3 {width: 25%;}
+  .col-s-4 {width: 33.33%;}
+  .col-s-5 {width: 41.66%;}
+  .col-s-6 {width: 50%;}
+  .col-s-7 {width: 58.33%;}
+  .col-s-8 {width: 66.66%;}
+  .col-s-9 {width: 75%;}
+  .col-s-10 {width: 83.33%;}
+  .col-s-11 {width: 91.66%;}
+  .col-s-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 601px) {
+  .col-m-1 {width: 8.33%;}
+  .col-m-2 {width: 16.66%;}
+  .col-m-3 {width: 25%;}
+  .col-m-4 {width: 33.33%;}
+  .col-m-5 {width: 41.66%;}
+  .col-m-6 {width: 50%;}
+  .col-m-7 {width: 58.33%;}
+  .col-m-8 {width: 66.66%;}
+  .col-m-9 {width: 75%;}
+  .col-m-10 {width: 83.33%;}
+  .col-m-11 {width: 91.66%;}
+  .col-m-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 993px) {
+  /* For desktop: */
+  .col-l-1 {width: 8.33%;}
+  .col-l-2 {width: 16.66%;}
+  .col-l-3 {width: 25%;}
+  .col-l-4 {width: 33.33%;}
+  .col-l-5 {width: 41.66%;}
+  .col-l-6 {width: 50%;}
+  .col-l-7 {width: 58.33%;}
+  .col-l-8 {width: 66.66%;}
+  .col-l-9 {width: 75%;}
+  .col-l-10 {width: 83.33%;}
+  .col-l-11 {width: 91.66%;}
+  .col-l-12 {width: 100%;}
+}
+
+
+@media only screen and (min-width: 601px) {
+  .container {
+    width: 85%;
+  }
+}
+
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 70%;
+  }
+}
+
+footer .header {
+  color:black;
+}
+
+footer .content {
+  color:grey;
+}
+
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color:grey;
+}
+
+footer img {
+  border-style: none;
+  float:right;
+}
+
+.class {
+  position: relative;
+  margin: 0.5rem 0 1rem 0;
+  background-color: #fff;
+  -webkit-transition: -webkit-box-shadow .25s;
+  transition: -webkit-box-shadow .25s;
+  transition: box-shadow .25s;
+  transition: box-shadow .25s, -webkit-box-shadow .25s;
+  border-radius: 2px;
+}
+
+
+
+.card .card-content {
+  max-height: 100%;
+  overflow: hidden;
+  padding: 0px;
+  border-radius: 0 0 2px 2px;
+}
+
+.card .card-content p {
+  margin: 0;
+}
+
+.card .card-image {
+  max-height: 0%;
+  overflow: hidden;
+    position: relative;
+}
+
+.card .card-image img {
+  display: block;
+  border-radius: 2px 2px 0 0;
+  position: relative;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+#PreisButton {
+  text-transform:lowercase;
+  width: 100%;
+  background-color: red;
+  color: white;
+  border: none;
+  border-radius: 0;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
 }

@@ -26,13 +26,6 @@ $helper = new Helper();
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <link type="text/css" rel="stylesheet" href="css/card.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/grid.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/header.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/footer.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/slide.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/scrolltop.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
     <script type="text/javascript">
     categories = <?php echo $helper->getCategories()?>;
@@ -325,7 +318,7 @@ $helper = new Helper();
     </main>
 
     <footer>
-      <div class="seperate">
+      <div class="separator-line">
       </div>
 
       <div class="container">
