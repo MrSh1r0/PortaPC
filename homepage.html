@@ -8,63 +8,227 @@
 
     <link type="text/css" rel="stylesheet" href="css/card.css" media="screen,projection" />
 
-    <link type="text/css" rel="stylesheet" href="css/footer.css" media="screen,projection" />
-
     <link type="text/css" rel="stylesheet" href="css/grid.css" media="screen,projection" />
 
     <link type="text/css" rel="stylesheet" href="css/header.css" media="screen,projection" />
 
-    <link type="text/css" rel="stylesheet" href="css/scrolltop.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/footer.css" media="screen,projection" />
+
+    <link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection" />
 
     <link type="text/css" rel="stylesheet" href="css/slide.css" media="screen,projection" />
+
+    <link type="text/css" rel="stylesheet" href="css/scrolltop.css" media="screen,projection" />
+
     <title>testpage</title>
   </head>
   <body>
     <header>
+      <div class="container top-bar" id="top-bar">
+        <div class="row">
+          <!--Logo column-->
+          <div class="col-s-12 col-m-12 col-l-3">
+            <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
+          </div>
+          <!--End of Logo column-->
 
+          <!--Search & Category parent-->
+          <div class="col-s-12 col-m-12 col-l-9">
+
+            <!--Search & Category row-->
+            <div class="row search-container">
+
+              <!--Search column-->
+              <div class="col-s-8 col-m-9 col-l-9 fill-height">
+                <div class="input-field margin-0 fill-height">
+
+                  <!--Search input-->
+                  <input class="search-input margin-y-0" placeholder="Wonach suche Sie?" id="icon_prefix" type="text">
+                </div>
+              </div>
+              <!--End of Search column-->
+
+              <div class="col-s-4 col-m-3 col-l-3 vertical-left-line">
+
+                <p class='dropdown-trigger searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
+
+                 <!--It's going to be a dynamic dropdown, the content will be added using JavaScript-->
+                <ul id='searchbar-category' class='dropdown-content'>
+                </ul>
+              </div>
+            </div>
+            <!--End of Search & Categroy row-->
+
+          </div>
+          <!--End of Search & Category parent-->
+
+        </div>
+      </div>
     </header>
 
-    <menu>
-
-    </menu>
-
     <main>
+      <div class="container">
+        <div class="row">
+          <div class="col-s-12 col-m-4 col-l-3" id="categories">
+            <h3 class="header"><strong>Entdecken</strong></h3>
+            <div class="row">
+              <a class="content" href="#!">Alle Katergorien</a>
+            </div>
+            <div class="row">
+              <a class="content" href="#!">CPUs</a>
+            </div>
+            <div class="row">
+              <a class="content" href="#!">GPUs</a>
+            </div>
+            <div class="row">
+              <a class="content" href="#!">Motherboards</a>
+            </div>
+            <div class="row">
+              <a class="content" href="#!">Netzteile</a>
+            </div>
+            <div class="row">
+              <a class="content" href="#!">RAMs</a>
+            </div>
+            <div class="row">
+              <a class="content" href="#!">Speicher</a>
+            </div>
+            <div class="row">
+              <a class="content" href="#!">Peripheriegerate</a>
+            </div>
+            <div class="row">
+              <a class="content" href="#!">Komplettsysteme</a>
+            </div>
+          </div>
 
+          <div>
+            <div class="col-s-12 col-m-8 col-l-9">
+              <div class="row">
+                <div class="slideshow-container">
+                  <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img src="images/gpu.jpg">
+                  </div>
+                  <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img src="images/gpu.jpg">
+                  </div>
+                  <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img src="images/gpu.jpg">
+                  </div>
+                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+                <div style="text-align:center">
+                  <span class="dot" onclick="currentSlide(1)"></span>
+                  <span class="dot" onclick="currentSlide(2)"></span>
+                  <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-s-6 col-m-4 col-l-3">
+                  <div class="card">
+                    <div class="card-image">
+                      <img class="activator" src="images/gpu.jpg">
+                      <button id="PreisButton" title="preis">900€</button>
+                    </div>
+                    <div class="card-content">
+                      <h4><strong>Nvidia RTX 3090</strong></h4>
+                      <p>Ehrang</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-s-6 col-m-4 col-l-3">
+                  <div class="card">
+                    <div class="card-image">
+                      <img class="activator" src="images/gpu.jpg">
+                      <button id="PreisButton" title="preis">900€</button>
+                    </div>
+                    <div class="card-content">
+                      <h4><strong>Nvidia RTX 3090</strong></h4>
+                      <p>Ehrang</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <h3 style="text-transform:uppercase "><strong>Neuste Anzeigen</strong></h3>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-s-6 col-m-4 col-l-3">
+                  <div class="card">
+                    <div class="card-image">
+                      <img class="activator" src="images/gpu.jpg">
+                      <button id="PreisButton" title="preis">900€</button>
+                    </div>
+                    <div class="card-content">
+                      <h4><strong>Nvidia RTX 3090</strong></h4>
+                      <p>Ehrang</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-s-6 col-m-4 col-l-3">
+                  <div class="card">
+                    <div class="card-image">
+                      <img class="activator" src="images/gpu.jpg">
+                      <button id="PreisButton" title="preis">900€</button>
+                    </div>
+                    <div class="card-content">
+                      <h4><strong>Nvidia RTX 3090</strong></h4>
+                      <p>Ehrang</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <button onclick="#!" id="more" title="View more">Mehr anzeigen</button>
+              </div>
+
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer class="page-footer white">
-
+    <footer>
       <div class="seperate">
-
       </div>
 
       <div class="container">
-
         <div class="row">
-
           <div class="col-l-6 col-m-12 col-s-12">
-            <h5 class="footer-header">PortaPC</h5>
-            <p class="footer-text">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+            <h3 class="header">PortaPC</h3>
+            <p class="content">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
           </div>
 
           <div class="col-l-3 col-m-6 col-s-12">
-            <h5 class="footer-header">Informationen</h5>
+            <h3 class="header">Informationen</h3>
             <ul>
-              <li><a class="footer-text" href="#!">Über uns</a></li>
-              <li><a class="footer-text" href="pages/informationen/impressium.html">Imrepssium</a></li>
-              <li><a class="footer-text" href="#!">Datenschutzerklärung</a></li>
-              <li><a class="footer-text" href="pages/informationen/agb.html">AGB</a></li>
-              <li><a class="footer-text" href="#!">DSGVO</a></li>
+              <li><a class="content" href="#!">Über uns</a></li>
+              <li><a class="content" href="pages/informationen/impressium.html">Imrepssium</a></li>
+              <li><a class="content" href="#!">Datenschutzerklärung</a></li>
+              <li><a class="content" href="pages/informationen/agb.html">AGB</a></li>
+              <li><a class="content" href="#!">DSGVO</a></li>
             </ul>
           </div>
 
           <div class="col-l-3 col-m-6 col-s-12">
-            <h4 class="footer-header">Kontakt</h4>
+            <h3 class="header">Kontakt</h3>
             <ul>
-              <li><a class="footer-text" href="mailto:kontakt@portapc.de">kontakt@portapc.de</a></li>
+              <li><a class="content" href="mailto:kontakt@portapc.de">kontakt@portapc.de</a></li>
             </ul>
 
-            <h5 class="footer-header">Folge uns</h5>
+            <h3 class="header">Folge uns</h3>
 
             <div class="row">
               <div class="col-l-1 col-m-1 col-s-1">
@@ -88,7 +252,7 @@
       </div>
     </footer>
 
-    <button onclick="topFunction()" id="ScrollTopButton" title="nach oben">Top</button>
+    <button onclick="topFunction()" id="ScrollTopButton" title="nach oben">nach oben</button>
 
     <script type="text/javascript" src="js/slide.js"></script>
     <script type="text/javascript" src="js/scrolltop.js"></script>

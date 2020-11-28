@@ -6,10 +6,20 @@
   z-index: 99; /* Make sure it does not overlap */
   cursor: pointer; /* Add a mouse pointer on hover */
   text-transform:lowercase;
-  border-radius:5px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-transform: lowercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
 
 }
 
 #ScrollTopButton:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  /* Add a dark-grey background on hover */
 }

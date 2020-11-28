@@ -1,0 +1,40 @@
+#categories {
+  margin: 0.5rem 0 0.5rem 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+#categories .header {
+  color:black;
+  text-transform:uppercase;
+}
+
+#categories .content {
+  color:black;
+}
+
+#categories a {
+    text-decoration: none;
+}
+
+#more {
+  display: block; /* Hidden by default */
+
+  z-index: 99; /* Make sure it does not overlap */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  text-transform:lowercase;
+  background-color: #c7b198;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  vertical-align: middle;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-tap-highlight-color: transparent;
+
+}

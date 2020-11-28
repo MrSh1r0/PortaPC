@@ -1,9 +1,18 @@
-.footer-header {
+footer .header {
   color:black;
 }
 
-.footer-text {
+footer .content {
   color:grey;
-  text-decoration: none;
+}
+
+footer ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer a {
+    text-decoration: none;
+    color:grey;
 }
