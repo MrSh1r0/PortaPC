@@ -25,17 +25,7 @@ $helper = new Helper();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<<<<<<< HEAD
-    <link type="text/css" rel="stylesheet" href="css/card.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/grid.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/header.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/footer.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/slide.css" media="screen,projection" />
-    <link type="text/css" rel="stylesheet" href="css/scrolltop.css" media="screen,projection" />
-=======
 
->>>>>>> 463dfccdc9a9435bdaf9dae2879dc3ae0fe7fa4b
     <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
     <script type="text/javascript">
     categories = <?php echo $helper->getCategories()?>;
