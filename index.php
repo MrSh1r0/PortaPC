@@ -25,7 +25,6 @@ $helper = new Helper();
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
     <link type="text/css" rel="stylesheet" href="css/card.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="css/grid.css" media="screen,projection" />
     <link type="text/css" rel="stylesheet" href="css/header.css" media="screen,projection" />
@@ -325,7 +324,7 @@ $helper = new Helper();
     </main>
 
     <footer>
-      <div class="seperate">
+      <div class="separator-line">
       </div>
 
       <div class="container">
