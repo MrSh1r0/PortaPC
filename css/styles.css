@@ -1,6 +1,36 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   font-family: 'Roboto', sans-serif !important;
 }
+
+/* Override the nav class, change the background color */
+nav {
+  background-color: #fff !important;
+}
+
+/* By default, the navbar is hidden */
+.nav-default {
+  display: none;
+}
+
+/* To show the navbar, we will add this class using JQuery */
+.nav-visible {
+  display: inherit !important;
+}
+
+.navbar-fixed {
+  position: relative;
+  height: 56px;
+  z-index: 997;
+}
+
+.navbar-fixed nav {
+  position: fixed;
+}
+
 
 .categories {
   margin: 0.5rem 0 0.5rem 0;
@@ -57,9 +87,7 @@ html {
 }
 
 
-* {
-  box-sizing: border-box;
-}
+
 
 .row::after {
   content: "";
@@ -304,6 +332,7 @@ color: hange the text's color color
   background-color: transparent;
   border: none;
   outline:none;
+  width: 100%;
 }
 
 /*
