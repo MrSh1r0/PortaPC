@@ -155,7 +155,7 @@ $helper = new Helper();
   <div class="navbar-fixed nav-default" id="nav-container">
     <nav class="nav-default" id="nav">
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo">Logo</a>
+        <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
       </div>
     </nav>
   </div>
@@ -163,20 +163,20 @@ $helper = new Helper();
   <div class="container top-bar" id="top-bar">
     <div class="row">
       <!--Logo column-->
-      <div class="col-s-12 col-m-12 col-l-3">
+      <div class="col-sm-12 col-md-12 col-lg-2">
         <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
       </div>
       <!--End of Logo column-->
 
       <!--Search & Category parent-->
-      <div class="col-s-12 col-m-12 col-l-9">
+      <div class="col-sm-12 col-md-12 col-lg-10">
 
         <!--Search & Category row-->
         <div class="row search-container">
 
           <!--Search column-->
-          <div class="col-s-8 col-m-9 col-l-9 fill-height">
-            <div class="input-field margin-0 fill-height">
+          <div class="col-sm-8 col-md-9 col-lg-9 fill-height margin-a-0">
+            <div class="input-field margin-a-0 fill-height">
 
               <!--Search input-->
               <input class="search-input margin-y-0" placeholder="Wonach suchen Sie?" id="icon_prefix" type="text">
@@ -184,20 +184,8 @@ $helper = new Helper();
           </div>
           <!--End of Search column-->
 
-          <div class="col-s-4 col-m-3 col-l-3 vertical-left-line">
-            <select class='dropdown-trigger searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">
-              <option value="Alle Kategorien">Alle Kategorien</option>
-              <option value="GPUs">GPUs</option>
-              <option value="CPUs">CPUs</option>
-              <option value="Motherboards">Motherboards</option>
-              <option value="Netzteile">Netzteile</option>
-              <option value="Arbeitsspeicher">Arbeitsspeicher</option>
-              <option value="Peripheriegeräte">Peripheriegeräte</option>
-              <option value="Komplettsysteme">Komplettsysteme</option>
-            </select>
-            <!--It's going to be a dynamic dropdown, the content will be added using JavaScript-->
-            <ul id='searchbar-category' class='dropdown-content'>
-            </ul>
+          <div class="col-sm-4 col-md-3 col-lg-3 margin-a-0 searchbar-category-container vertical-left-line">
+            <p class='searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
           </div>
         </div>
         <!--End of Search & Categroy row-->
@@ -208,27 +196,86 @@ $helper = new Helper();
     </div>
   </div>
 
-  <main>
+  <main id="homepage-content">
     <div class="container">
       <div class="row">
-        <div class="col-s-12 col-m-4 col-l-3 categories">
-          <p class="category-header"><strong>Entdecken</strong></p>
-          <ul>
-            <li><a class="category-content" onclick="">Alle Katergorien</a></li>
-            <li><a class="category-content" onclick="">CPUs</a></li>
-            <li><a class="category-content" onclick="">GPUs</a></li>
-            <li><a class="category-content" onclick="">Motherboards</a></li>
-            <li><a class="category-content" onclick="">Netzteile</a></li>
-            <li><a class="category-content" onclick="">RAMs</a></li>
-            <li><a class="category-content" onclick="">Speicher</a></li>
-            <li><a class="category-content" onclick="">Peripheriegerate</a></li>
-            <li><a class="category-content" onclick="">Komplettsysteme</a></li>
-            <li></li>
-          </ul>
+
+        <!-- Left side of the content -->
+        <div class="col-sm-12 col-md-4 col-lg-3 margin-a-0 padding-a-0">
+          <div class="row">
+            <!-- Category title -->
+            <div class="col-sm-12">
+              <p class="category-title text-uppercase"><strong>Entdecken</strong></p>
+            </div>
+
+            <!-- Category card -->
+            <div class="col-sm-12">
+              <div class="categories">
+                <ul>
+                  <li><a class="category-content" onclick="">Alle Katergorien</a></li>
+                  <li><a class="category-content" onclick="">CPUs</a></li>
+                  <li><a class="category-content" onclick="">GPUs</a></li>
+                  <li><a class="category-content" onclick="">Motherboards</a></li>
+                  <li><a class="category-content" onclick="">Netzteile</a></li>
+                  <li><a class="category-content" onclick="">RAMs</a></li>
+                  <li><a class="category-content" onclick="">Speicher</a></li>
+                  <li><a class="category-content" onclick="">Peripheriegerate</a></li>
+                  <li><a class="category-content" onclick="">Komplettsysteme</a></li>
+                  <li></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side of the content -->
+        <div class="col-sm-12 col-md-8 col-lg-9 margin-a-0 padding-a-0">
+          <div class="row">
+
+            <div class="col-sm-12">
+              <p class="category-title text-uppercase"><strong>Homepage</strong></p>
+            </div>
+
+            <!-- Slider placeholder -->
+            <!-- TODO: Add an actual slider, currently it's a picture -->
+            <div class="col-sm-12">
+              <img class="placeholder-image" src="images/placeholders/slider.png"></img>
+            </div>
+
+            <div class="col-sm-12">
+              <p class="category-title text-uppercase"><strong>Neueste Anzeige</strong></p>
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="row">
+                <!-- image part -->
+                <div class="col-sm-12 margin-a-0 product-image-container">
+                  <img src="images/placeholders/product.png" class="product-image"></img>
+                  <div class="product-price-container">
+                    <p class="product-price">€400</p>
+                  </div>
+                </div>
+
+                <!-- title -->
+                <div class="col-sm-12 margin-a-0 margin-t-3">
+                  <p class="product-title">RTX 3090</p>
+                </div>
+
+                <!-- location -->
+                <div class="col-sm-12 margin-a-0 margin-t-2">
+                  <p class="product-location">Trier-Nord</p>
+                </div>
+                
+              </div>
+
+            </div>
+
+
+          </div>
         </div>
 
         <div>
-          <div class="col-s-12 col-m-8 col-l-9">
+          <div class="col-sm-12 col-md-8 col-lg-9">
             <!-- TODO: Slider -->
             <!-- <div class="row">
                 <div class="slideshow-container">
@@ -256,214 +303,6 @@ $helper = new Helper();
               </div> -->
 
 
-            <div class="row">
-              <div class="col">
-                <h3><strong>Neuste Anzeigen</strong></h3>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-s-6 col-m-4 col-l-3">
-                <div class="card">
-                  <div class="card-image">
-                    <img class="activator" src="images/gpu.jpg">
-                    <button id="PreisButton" title="preis">900€</button>
-                  </div>
-                  <div class="card-content">
-                    <h4><strong>Nvidia RTX 3090</strong></h4>
-                    <p>Ehrang</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <div class="row">
-              <button onclick="#!" id="more" title="View more">Mehr anzeigen</button>
-            </div>
-
           </div>
         </div>
       </div>
@@ -475,12 +314,12 @@ $helper = new Helper();
 
     <div class="container">
       <div class="row">
-        <div class="col-l-6 col-m-12 col-s-12">
+        <div class="col-lg-6 col-md-12 col-sm-12">
           <h3 class="header">PortaPC</h3>
           <p class="content">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
         </div>
 
-        <div class="col-l-3 col-m-6 col-s-12">
+        <div class="col-lg-3 col-md-6 col-sm-12">
           <h3 class="header">Informationen</h3>
           <ul>
             <li><a class="content" href="#!">Über uns</a></li>
@@ -491,7 +330,7 @@ $helper = new Helper();
           </ul>
         </div>
 
-        <div class="col-l-3 col-m-6 col-s-12">
+        <div class="col-lg-3 col-md-6 col-sm-12">
           <h3 class="header">Kontakt</h3>
           <ul>
             <li><a class="content" href="mailto:kontakt@portapc.de">kontakt@portapc.de</a></li>
@@ -500,19 +339,19 @@ $helper = new Helper();
           <h3 class="header">Folge uns</h3>
 
           <div class="row">
-            <div class="col-l-1 col-m-1 col-s-1">
+            <div class="col-lg-1 col-md-1 col-sm-1">
               <a href="index.html"><img src="images/footer/social_icons/facebook.png" style="max-width:20px"></a>
             </div>
 
-            <div class="col-l-1 col-m-1 col-s-1">
+            <div class="col-lg-1 col-md-1 col-sm-1">
               <a href="index.html"><img src="images/footer/social_icons/instagram.png" style="max-width:20px"></a>
             </div>
 
-            <div class="col-l-1 col-m-1 col-s-1">
+            <div class="col-lg-1 col-md-1 col-sm-1">
               <a href="index.html"><img src="images/footer/social_icons/snapchat.png" style="max-width:20px"></a>
             </div>
 
-            <div class="col-l-1 col-m-1 col-s-1">
+            <div class="col-lg-1 col-md-1 col-sm-1">
               <a href="index.html"><img src="images/footer/social_icons/whatsapp.png" style="max-width:20px"></a>
             </div>
           </div>
