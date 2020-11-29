@@ -35,6 +35,7 @@ $helper = new Helper();
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
         handleNavbar();
+        handleScrollTop();
         populateSearchCategories(categories);
         handleSearchCategroyText(categories, null);
         populateDiscoverCategories(categories);
@@ -352,7 +353,7 @@ $helper = new Helper();
 
   </footer>
 
-  <button onclick="topFunction()" id="ScrollTopButton" title="nach oben">nach oben</button>
+  <button id="scroll-top-button" title="Nach oben scrollen">nach oben</button>
 
   <script type="text/javascript" src="js/slide.js"></script>
   <script type="text/javascript" src="js/scrolltop.js"></script>

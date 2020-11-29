@@ -339,12 +339,12 @@ color: hange the text's color color
 }
 
 
-#ScrollTopButton {
+#scroll-top-button {
   display: block;
   /* Hidden by default */
   position: fixed;
   /* Fixed/sticky position */
-  bottom: 20px;
+  bottom: 30px;
   /* Place the button at the bottom of the page */
   right: 30px;
   /* Place the button 30px from the right */
@@ -359,15 +359,11 @@ color: hange the text's color color
   border-radius: 5px;
   display: inline-block;
   height: 36px;
-  line-height: 36px;
   padding: 0 16px;
-  text-transform: lowercase;
-  vertical-align: middle;
-  -webkit-tap-highlight-color: transparent;
   outline: none;
 }
 
-#ScrollTopButton:hover {
+#scroll-top-button:hover {
   /* Add a dark-grey background on hover */
 }
 

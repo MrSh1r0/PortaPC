@@ -34,18 +34,49 @@ function handleSearchCategroyText(categories, selected_item) {
   }
 }
 
-function populateDiscoverCategories(categories){
+function populateDiscoverCategories(categories) {
   let element_list = document.getElementById("categories-list");
 
   let all_categories_text = "Alle Kategorien";
   let all_categories_html = `<li><a class="categories-item" href="pages/products/category.php?categories=${all_categories_text}">${all_categories_text}</a></li>`;
   element_list.innerHTML = element_list.innerHTML + all_categories_html
 
-  for(let i = 0; i < categories.length; i++){
+  for (let i = 0; i < categories.length; i++) {
     let category = categories[i];
     let category_html = `<li><a class="categories-item" href="pages/products/category.php?categories=${category}">${category}</a></li>`;
     element_list.innerHTML = element_list.innerHTML + category_html
   }
+}
+
+function handleScrollTop() {
+  let element_button = document.getElementById("scroll-top-button");
+
+
+  window.onscroll = function() {
+    scrollFunction()
+  };
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      element_button.style.display = "block";
+    } else {
+      element_button.style.display = "none";
+    }
+  };
+
+  element_button.addEventListener("click", function() {
+    document.body.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+    document.documentElement.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
+  });
+
 }
 
 function visitURL(urlName) {
