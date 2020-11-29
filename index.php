@@ -188,8 +188,13 @@ $helper = new Helper();
           </div>
           <!--End of Search column-->
 
-          <div class="col-sm-4 col-md-3 col-lg-3 margin-a-0 searchbar-category-container vertical-left-line">
-            <p class='searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
+          <div class="col-sm-4 col-md-3 col-lg-3 margin-a-0 fill-height searchbar-category-container vertical-left-line">
+              <p class='searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
+              <div class="categories-dropdown-content">
+                <p class="categories-dropdown-item">Test</p>
+                <p class="categories-dropdown-item">Test §2</p>
+              </div>
+
           </div>
         </div>
         <!--End of Search & Categroy row-->
@@ -355,8 +360,7 @@ $helper = new Helper();
 
   <button id="scroll-top-button" title="Nach oben scrollen">nach oben</button>
 
-  <script type="text/javascript" src="js/slide.js"></script>
-  <script type="text/javascript" src="js/scrolltop.js"></script>
+  <!-- <script type="text/javascript" src="js/slide.js"></script> -->
 </body>
 
 </html>

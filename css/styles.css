@@ -183,6 +183,36 @@ color: hange the text's color color
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.categories-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Change color of dropdown links on hover */
+.categories-dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.categories-dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.categories-dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.categories-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.categories-dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
 /*
   background-color: flat white color.
   border-radius: flat radius.
