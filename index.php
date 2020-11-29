@@ -209,7 +209,7 @@ $helper = new Helper();
 
         <div class="col-xs-12 col-m-4 col-lg-4">
           <p class="footer-title">PortaPC</p>
-          <p class="footer-content">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+          <p class="footer-content">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine Zusammenfassung von diesem Projekt sein.</p>
         </div>
 
         <div class="col-xs-12 col-m-2 col-lg-2">
