@@ -1,242 +1,429 @@
+
+
 <!DOCTYPE html>
- <html>
-   <head>
-     <meta charset="utf-8">
+<html lang="de" dir="ltr">
 
-     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <title>PortaPC</title>
+  <meta charset="utf-8">
+  <!-- Import Google's Roboto font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+  <!--Let browser know that the website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-     <link type="text/css" rel="stylesheet" href="css/card.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
+  <script type="text/javascript" src="js/scripts.js"></script>
+  <script type="text/javascript">
+    var categories = ["CPUs"];
 
-     <link type="text/css" rel="stylesheet" href="css/grid.css" media="screen,projection" />
+    document.onreadystatechange = function() {
+      if (document.readyState == "complete") {
+        handleNavbar();
+        handleScrollTop();
+        populateSearchCategories(categories);
+        handleSearchCategroyText(categories, null);
+        populateDiscoverCategories(categories);
+      }
+    }
+  </script>
+</head>
 
-     <link type="text/css" rel="stylesheet" href="css/header.css" media="screen,projection" />
+<body>
 
-     <link type="text/css" rel="stylesheet" href="css/footer.css" media="screen,projection" />
+  <!-- Navbar -->
+  <!-- By default, the navbar is hidden -->
+  <div class="navbar-fixed nav-default" id="nav-container">
+    <nav class="nav-default" id="nav">
+      <div class="nav-wrapper">
+        <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
+      </div>
+    </nav>
+  </div>
 
-     <link type="text/css" rel="stylesheet" href="css/main.css" media="screen,projection" />
+  <div class="container top-bar" id="top-bar">
+    <div class="row">
+      <!--Logo column-->
+      <div class="col-sm-12 col-md-12 col-lg-2">
+        <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
+      </div>
+      <!--End of Logo column-->
 
-     <link type="text/css" rel="stylesheet" href="css/slide.css" media="screen,projection" />
+      <!--Search & Category parent-->
+      <div class="col-sm-12 col-md-12 col-lg-10">
 
-     <link type="text/css" rel="stylesheet" href="css/scrolltop.css" media="screen,projection" />
+        <!--Search & Category row-->
+        <div class="row search-container">
 
-     <title>PortaPC</title>
-   </head>
+          <!--Search column-->
+          <div class="col-sm-8 col-md-9 col-lg-9 fill-height margin-a-0">
+            <div class="input-field margin-a-0 fill-height">
 
-   <body>
-     <header>
-       <div class="container top-bar" id="top-bar">
-         <div class="row">
-           <!--Logo column-->
-           <div class="col-s-12 col-m-12 col-l-3">
-             <div class="website-logo" onclick="visitURL('homepage')" alt="Website-Logo"></div>
-           </div>
-           <!--End of Logo column-->
-
-           <!--Search & Category parent-->
-           <div class="col-s-12 col-m-12 col-l-9">
-
-             <!--Search & Category row-->
-             <div class="row search-container">
-
-               <!--Search column-->
-               <div class="col-s-8 col-m-9 col-l-9 fill-height">
-                 <div class="input-field margin-0 fill-height">
-
-                   <!--Search input-->
-                   <input class="search-input margin-y-0" placeholder="Wonach suchen Sie?" id="icon_prefix" type="text">
-                 </div>
-               </div>
-               <!--End of Search column-->
-
-               <div class="col-s-4 col-m-3 col-l-3 vertical-left-line">
-                 <select class='dropdown-trigger searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">
-                    <option value="Alle Kategorien">Alle Kategorien</option>
-                    <option value="GPUs">GPUs</option>
-                    <option value="CPUs">CPUs</option>
-                    <option value="Motherboards">Motherboards</option>
-                    <option value="Netzteile">Netzteile</option>
-                    <option value="Arbeitsspeicher">Arbeitsspeicher</option>
-                    <option value="Peripheriegeräte">Peripheriegeräte</option>
-                    <option value="Komplettsysteme">Komplettsysteme</option>
-                 </select>
-                  <!--It's going to be a dynamic dropdown, the content will be added using JavaScript-->
-                 <ul id='searchbar-category' class='dropdown-content'>
-                 </ul>
-               </div>
-             </div>
-             <!--End of Search & Categroy row-->
-
-           </div>
-           <!--End of Search & Category parent-->
-
-         </div>
-       </div>
-     </header>
-     <h2>Allgemeine Verkaufsbedingungen</h2>
-     <div class="Geltungsbereich">
-       <h4>Geltungsbereich</h4>
-       <p>Diese Geschäftsbedingungen gelten für alle Käufe bei PortaPC <a href="impressum">Impressum</a>, die von Privatkunden getätigt werden.
-Privatkunden in diesem Sinne sind Personen mit Wohnsitz und Lieferadresse in der Bundesrepublik Deutschland, soweit die von ihnen bestellten Waren weder ihrer gewerblichen noch ihrer selbstständigen beruflichen Tätigkeit zugerechnet werden können.
-Geschäftskunden werden gebeten, Bestellungen auf den über den Geschäftskunden-Login erreichbaren Bestellseiten [Link auf Geschäftskunden-Login] zu tätigen.
-</p>
-     </div>
-     <div class="Vertragsabschluss">
-       <h2>Vertragsabschluss</h2>
-       <p>Die Präsentation unserer Waren und der Einräumung der Möglichkeit zur Bestellung stellt unsererseits ein konkretes Angebot zum Abschluss eines Kaufvertrages dar.
-Durch Ihre Bestellung nehmen Sie das Angebot an und der Kaufvertrag ist zustande gekommen.
-Hierüber erhalten Sie eine Bestellbestätigung per E-Mail an die von Ihnen angegebene E-Mail-Adresse.
-</p>
-     </div>
-     <div class="Preise und Versandkosten">
-       <h2>Preise und Versandkosten</h2>
-       <p>Die ausgezeichneten Preise sind Endpreise inkl. Umsatzsteuer. Es gilt der Betrag, der jeweils zum Zeitpunkt der verbindlichen Bestellung ausgewiesen ist. Hinzu kommen Versandkosten, die von der Versandart und der Größe und dem Gewicht der von Ihnen bestellten Ware(n) abhängig sind. Über die Einzelheiten können Sie sich unter [Link auf „Versandkosten"] informieren. Die regelmäßigen Kosten der Rücksendung, die im Falle einer Rückgabe der Ware durch Sie in Ausübung Ihres Widerrufsrechts [Link auf „Widerrufsrecht"] entstehen, tragen wir. Bei Ausübung Ihres Widerrufsrechts erstatten wir Ihnen auch die Versandkosten zurück.</p>
-     </div>
-     <div class="Zahlung">
-       <h2>Zahlung</h2>
-       <p>Die Bezahlung erfolgt bei Lieferung mittels
-	- Apple Pay
-	- Google Pay
-	- Lastschrift
-	- Bezahlung bei Abholung
-	- PayPal
-</p>
-     </div>
-     <div class="Zahlungsverzug">
-       <h2>Zahlungsverzug</h2>
-       <p>Kommen Sie in Zahlungsverzug, so ist PortaPC berechtigt, Verzugszinsen in Höhe von 5 Prozentpunkten über dem von der Deutschen Bundesbank für den Zeitpunkt der Bestellung bekannt gegebenen Basiszinssatz p.a. zu fordern. Falls PortaPC ein höherer Verzugsschaden nachweisbar entstanden ist, ist PortaPC berechtigt, diesen geltend zu machen.</p>
-     </div>
-     <div class="Zurückbehaltungsrecht">
-       <h2>Zurückbehaltungsrecht</h2>
-       <p>Zur Ausübung eines Zurückbehaltungsrechts ist der Kunde nur insoweit befugt, als sein Gegenanspruch auf demselben Vertragsverhältnis beruht.</p>
-     </div>
-     <div class="Lieferung">
-       <h2>Lieferung</h2>
-       <p>(1) Die Lieferung erfolgt an die vom Kunden angegebene Lieferanschrift, innerhalb von
-	- Deutschland
-(2) Macht höhere Gewalt (Naturkatastrophen, Krieg, Bürgerkrieg, Terroranschlag) die Lieferung oder eine sonstige Leistung dauerhaft unmöglich, ist eine Leistungspflicht von PortaPC ausgeschlossen. Bereits gezahlte Beträge werden von PortaPC unverzüglich erstattet.
-(3) PortaPC kann außerdem die Leistung verweigern, soweit diese einen Aufwand erfordert, der unter Beachtung des Inhalts des Kaufvertrages und der Gebote von Treu und Glauben in einem groben Missverhältnis zu dem Interesse des Kunden an der Erfüllung des Kaufvertrages steht. Bereits gezahlte Beträge werden von PortaPC unverzüglich erstattet.
-(4) Sperrgut (Pakete mit einem größeren Volumen als 1 qm) werden in der Regel per Spedition geliefert. PortaPC weist ausdrücklich darauf hin, dass diese Ware nicht ins Haus getragen wird.
-
-Günstige Versandart bei Rücksendung
-(1) Bitte verwenden Sie bei der Rücksendung der Ware und des Zubehörs nach Möglichkeit die Originalverpackung, auch wenn diese durch eine Öffnung zur Funktionsprüfung beschädigt sein sollte.
-(2) Bitte verwenden Sie zur Rücksendung den der Warenlieferung beigefügten, vollständig frankierten und adressierten Rücksendeaufkleber. Es handelt sich dabei um die einfachste und kostengünstigste Versandmöglichkeit. Sie trifft keine Verpflichtung zur Verwendung dieses Rücksendeverfahrens. Wenn Sie allerdings eine unnötig teure Versandart wählen, können Sie unter Umständen verpflichtet sein, die gegenüber einer günstigen Versandart erhöhten Kosten an uns zu zahlen.
-</p>
-     </div>
-     <div class="Eigentumsvorbehalt">
-       <h2>Eigentumsvorbehalt</h2>
-       <p>Bis zur vollständigen Begleichung aller gegen den Kunden bestehender Ansprüche aus dem Kaufvertrag bleibt die gelieferte Ware im Eigentum von PortaPC. Solange dieser Eigentumsvorbehalt besteht, darf der Kunde die Ware weder weiterveräußern noch über die Ware verfügen; insbesondere darf der Kunde Dritten vertraglich keine Nutzung an der Ware einräumen. </p>
-     </div>
-     <div class="Mängelrechte">
-       <h2>Mängelrechte</h2>
-       <p>(1) Ein bereits bei der Lieferung mangelhaftes Produkt (Gewährleistungsfall) wird PortaPC nach Wahl des Kunden auf Kosten von PortaPC durch ein mangelfreies ersetzen oder fachgerecht reparieren lassen (Nacherfüllung). Der Kunde wird darauf hingewiesen, dass kein Gewährleistungsfall vorliegt, wenn das Produkt bei Gefahrübergang die vereinbarte Beschaffenheit hatte. Ein Gewährleistungsfall liegt insbesondere in folgenden Fällen nicht vor:
-a)	bei Schäden, die beim Kunden durch Missbrauch oder unsachgemäßen Gebrauch entstanden sind,
-b)	bei Schäden, die dadurch entstanden sind, dass die Produkte beim Kunden schädlichen äußeren Einflüssen ausgesetzt worden sind (insbesondere extremen Temperaturen, Feuchtigkeit, außergewöhnlicher physikalischer oder elektrischer Beanspruchung, Spannungsschwankungen, Blitzschlag, statischer Elektrizität, Feuer).
-(2) PortaPC leistet ferner keine Gewähr für einen Fehler, der durch unsachgemäße Reparatur durch einen nicht vom Hersteller autorisierten Servicepartner entstanden ist.
-(3) Erfordert die vom Kunden gewünschte Art der Nacherfüllung (Ersatzlieferung oder Reparatur) einen Aufwand, der in Anbetracht des Produktpreises unter Beachtung des Vertragsinhaltes und der Gebote von Treu und Glauben in einem groben Missverhältnis zu dem Leistungsinteresse des Kunden steht – wobei insbesondere der Wert des Kaufgegenstandes im mangelfreien Zustand, die Bedeutung des Mangels und die Frage zu berücksichtigen sind, ob auf die andere Art der Nacherfüllung ohne erhebliche Nachteile für den Kunden zurückgegriffen werden kann – beschränkt sich der Anspruch des Kunden auf die jeweils andere Art der Nacherfüllung. Das Recht von PortaPC, auch diese andere Art der Nacherfüllung unter der vorgenannten Voraussetzung zu verweigern, bleibt unberührt.
-(4) Sowohl für den Fall der Reparatur als auch für den Fall der Ersatzlieferung ist der Kunde verpflichtet, das Produkt auf Kosten von PortaPC unter Angabe der Auftragsnummer an die von ihr angegebene Rücksendeadresse einzusenden. Vor der Einsendung hat der Kunde von ihm eingefügte Gegenstände aus dem Produkt zu entfernen. PortaPC ist nicht verpflichtet, das Produkt auf den Einbau solcher Gegenstände zu untersuchen. Für den Verlust solcher Gegenstände haftet PortaPC nicht, es sei denn, es war bei Rücknahme des Produktes für PortaPC ohne Weiteres erkennbar, dass ein solcher Gegenstand in das Produkt eingefügt worden ist (in diesem Fall informiert PortaPC den Kunden und hält den Gegenstand für den Kunden zur Abholung bereit; der Kunde trägt die dabei entstehenden Kosten). Der Kunde hat zudem, bevor er ein Produkt zur Reparatur oder zum Austausch einsendet, gegebenenfalls separate Sicherungskopien der auf dem Produkt befindlichen Systemsoftware, der Anwendungen und aller Daten auf einem separaten Datenträger zu erstellen und alle Passwörter zu deaktivieren. Eine Haftung für Datenverlust wird nicht übernommen. Ebenso obliegt es dem Kunden, nachdem ihm das reparierte Produkt oder das Ersatzprodukt zurückgesandt worden ist, die Software und Daten zu installieren und die Passwörter zu reaktivieren.
-(5) Sendet der Kunde die Ware ein, um ein Austauschprodukt zu bekommen, richtet sich die Rückgewähr des mangelhaften Produktes nach folgender Maßgabe: Sofern der Kunde die Ware zwischen Lieferung und Rücksendung in mangelfreiem Zustand benutzen konnte, hat dieser den Wert der von ihm gezogenen Nutzungen zu erstatten. Für einen nicht durch den Mangel eingetretenen Untergang oder die weitere Verschlechterung der Ware sowie für die nicht durch den Mangel eingetretene Unmöglichkeit der Herausgabe der Ware im Zeitraum zwischen Lieferung der Ware und Rücksendung der Ware hat der Kunde Wertersatz zu leisten. Der Kunde hat keinen Wertersatz für die durch den bestimmungsgemäßen Gebrauch der Ware entstandene Verschlechterung der Ware zu leisten. Die Pflicht zum Wertersatz entfällt für die Rücksendung eines mangelhaften Produktes im Gewährleistungsfall ferner,
-a)	wenn sich der zum Rücktritt berechtigende Mangel erst während der Verarbeitung oder Umgestaltung gezeigt hat,
-b)	wenn PortaPC die Verschlechterung oder den Untergang zu vertreten hat oder der Schaden auch bei PortaPC eingetreten wäre,
-c)	wenn die Verschlechterung oder der Untergang beim Kunden eingetreten ist, obwohl dieser diejenige Sorgfalt beachtet hat, die er in eigenen Angelegenheiten anzuwenden pflegt.
-(6) Die Schadensersatzpflicht des Kunden bei einer vom Kunden zu vertretenden Verletzung der Rücksendungspflicht richtet sich nach Maßgabe der gesetzlichen Bestimmungen.
-(7) Der Kunde kann nach seiner Wahl vom Vertrag zurücktreten oder den Kaufpreis mindern, wenn die Reparatur oder Ersatzlieferung innerhalb einer angemessenen Frist nicht zu einem vertragsgerechten Zustand des Produktes geführt hat.
-(8) Darüber hinaus können auch Ansprüche gegen den Hersteller im Rahmen einer von diesem eingeräumten Garantie bestehen, die sich nach den entsprechenden Garantiebedingungen richten.
-(9) Die gesetzliche Gewährleistung von PortaPC endet zwei Jahre ab Lieferung der Ware. Die Frist beginnt mit dem Erhalt der Ware.
-</p>
-     </div>
-     <div class="Haftung">
-       <h2>Haftung</h2>
-       <p>(1) Bei leichter Fahrlässigkeit haftet PortaPC nur bei der Verletzung vertragswesentlicher Pflichten und beschränkt auf den vorhersehbaren Schaden. Diese Beschränkung gilt nicht bei der Verletzung von Leben, Körper und Gesundheit. Für sonstige leicht fahrlässig durch einen Mangel des Kaufgegenstandes verursachte Schäden haftet PortaPC nicht.
-(2) Unabhängig von einem Verschulden von PortaPC bleibt eine Haftung von PortaPC bei arglistigem Verschweigen des Mangels oder aus der Übernahme einer Garantie unberührt. Die Herstellergarantie ist eine Garantie des Herstellers und stellt keine Übernahme einer Garantie durch PortaPC dar.
-(3) PortaPC ist auch für die während ihres Verzugs durch Zufall eintretende Unmöglichkeit der Lieferung verantwortlich, es sei denn, dass der Schaden auch bei rechtzeitiger Lieferung eingetreten wäre.
-(4) Ausgeschlossen ist die persönliche Haftung der gesetzlichen Vertreter, Erfüllungsgehilfen und Betriebsangehörigen von PortaPC für von ihnen durch leichte Fahrlässigkeit verursachte Schäden.
-</p>
-     </div>
-     <div class="Anwendbares Recht">
-       <h2>Anwendbares Recht</h2>
-       <p>Der zwischen Ihnen und PortaPC abgeschlossene Vertrag unterliegt ausschließlich dem Recht der Bundesrepublik Deutschland unter ausdrücklichem Ausschluss des UN-Kaufrechts. Unberührt davon bleiben die zwingenden Bestimmungen des Staates, in dem Sie Ihren gewöhnlichen Aufenthalt haben.</p>
-     </div>
-     <div class="Gerichtsstand">
-       <h2>Gerichtsstand</h2>
-       <p>Sofern Sie entgegen Ihren Angaben bei der Bestellung keinen Wohnsitz in der Bundesrepublik Deutschland haben oder nach Vertragsabschluss Ihren Wohnsitz ins Ausland verlegen oder Ihr Wohnsitz zum Zeitpunkt der Klageerhebung nicht bekannt ist, ist Gerichtsstand für alle Streitigkeiten aus und im Zusammenhang mit dem Vertragsverhältnis [Sitz des Betreibers des Online-Shops]. </p>
-     </div>
-     <div class="Streitbeilegung">
-       <h2>Streitbeilegung</h2>
-       <p>Allgemeine Informationspflichten zur alternativen Streitbeilegung nach Art. 14 Abs. 1 ODR-VO und § 36 VSBG (Verbraucherstreitbeilegungsgesetz):
-Die europäische Kommission stellt eine Plattform zur Online-Streitbelegung (OS) zur Verfügung, die Sie unter dieser Adresse finden: http://ec.europa.eu/consumers/odr/ . Zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle sind wir nicht verpflichtet und auch nicht bereit.
-</p>
-     </div>
-     <div class="Schlussbestimmungen">
-       <h2>Schlussbestimmungen</h2>
-       <p>(1) Sollten einzelne Bestimmungen dieses Vertrages ganz oder teilweise unwirksam oder nichtig sein oder werden, so wird dadurch die Wirksamkeit des Vertrages im Übrigen nicht berührt, insoweit ein Vertragspartner hierdurch nicht unangemessen benachteiligt wird.
-(2) Änderungen oder Ergänzungen dieses Vertrages bedürfen der Schriftform.
-</p>
-     </div>
-        <!-- Footer goes here -->
-
-          <footer class="page-footer white">
-
-            <div class="container" style="border: 1px solid #ccc">
-
+              <!--Search input-->
+              <input class="search-input margin-y-0" placeholder="Wonach suchen Sie?" id="icon_prefix" type="text">
             </div>
+          </div>
+          <!--End of Search column-->
 
-            <div class="container">
-
-              <div class="row">
-
+          <div class="col-sm-4 col-md-3 col-lg-3 margin-a-0 fill-height searchbar-category-container vertical-left-line">
+              <p class='searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
+              <div class="categories-dropdown-content">
               </div>
 
-              <div class="row">
+          </div>
+        </div>
+        <!--End of Search & Categroy row-->
 
-                <div class="col l6 m12 s12">
-                  <h5 class="black-text">PortaPC</h5>
-                  <p class="grey-text">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+      </div>
+      <!--End of Search & Category parent-->
+
+    </div>
+  </div>
+
+  <main id="homepage-content" class="margin-t-4">
+    <h1>Allgemeine Geschäftsbedingungen der Firma Porta Pc</h1>
+
+
+<p style="font-weight: bold; padding-bottom: 10px;">§1 Geltung gegenüber Unternehmern und Begriffsdefinitionen</p>
+(1) Die nachfolgenden Allgemeinen Geschäftbedingungen gelten für alle Lieferungen zwischen uns und einem Verbraucher
+in ihrer zum Zeitpunkt der Bestellung gültigen Fassung.<br />
+<br />
+Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder
+ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können (§ 13 BGB).
+<br />
+
+    <br />
+<p style="font-weight: bold; padding-bottom: 10px;">§2 Zustandekommen eines Vertrages, Speicherung des Vertragstextes</p>
+(1) Die folgenden Regelungen über den Vertragsabschluss gelten für Bestellungen über unseren Internetshop http://www.porta.pc .<br />
+<br />
+<b>(2) Im Falle des Vertragsschlusses kommt der Vertrag mit<br />
+
+<div style="font-weight: bold; margin-left: 20px;" >
+<br />
+Porta Pc<br />
+Leon Busert<br />
+Schneidershof <br />
+D-54293 Trier<br />
+Registernummer 13370815<br />
+Registergericht Amtsgericht Trier<br />
+<br />
+</div>
+zustande.<br /></b>
+<br />
+(3) Die Präsentation der Waren in unserem Internetshop stellen kein rechtlich bindendes Vertragsangebot unsererseits dar,
+sondern sind nur eine unverbindliche Aufforderungen an den Verbraucher, Waren zu bestellen. Mit der Bestellung der gewünschten Ware gibt der Verbraucher ein für
+ihn verbindliches Angebot auf Abschluss eines Kaufvertrages ab.<br />
+(4) Bei Eingang einer Bestellung in unserem Internetshop gelten folgende Regelungen:
+Der Verbraucher gibt ein bindendes Vertragsangebot ab, indem er die in unserem Internetshop vorgesehene Bestellprozedur erfolgreich durchläuft.<br />
+<br />
+Die Bestellung erfolgt in folgenden Schritten:<br />
+<br />
+<div class="ml20">
+
+    1) Auswahl der gewünschten Ware<br />
+
+    2) Bestätigen durch Anklicken der Buttons „Bestellen“ <br />
+
+    3) Prüfung der Angaben im Warenkorb<br />
+
+    4) Betätigung des Buttons „zur Kasse“ <br />
+
+    5) Anmeldung im Internetshop nach Registrierung und Eingabe der Anmelderangaben (E-Mail-Adresse und Passwort). <br />
+
+    6) Nochmalige Prüfung bzw. Berichtigung der jeweiligen eingegebenen Daten.<br />
+
+    7) Verbindliche Absendung der Bestellung durch Anklicken des Buttons „kostenpflichtig bestellen“ bzw. „kaufen“<br />
+
+<br />
+</div>
+Der Verbraucher kann vor dem verbindlichen Absenden der Bestellung durch Betätigen der in dem von ihm verwendeten Internet-Browser enthaltenen „Zurück“-Taste nach
+Kontrolle seiner Angaben wieder zu der Internetseite gelangen, auf der die Angaben des Kunden erfasst werden und Eingabefehler berichtigen bzw. durch Schließen des
+Internetbrowsers den Bestellvorgang abbrechen.
+Wir bestätigen den Eingang der Bestellung unmittelbar durch eine automatisch generierte E-Mail („Auftragsbestätigung“). Mit dieser nehmen wir Ihr Angebot an.
+<br />
+<br />
+(5) Speicherung des Vertragstextes bei Bestellungen über unseren Internetshop : Wir senden Ihnen die Bestelldaten und unsere AGB per
+E-Mail zu. Die AGB können Sie jederzeit auch unter http://www.porta.pc/agb  einsehen.
+
+Ihre Bestelldaten sind aus Sicherheitsgründen nicht mehr über das Internet zugänglich.
+<br />
+
+
+    <br />
+<p style="font-weight: bold; padding-bottom: 10px;">§3 Preise, Versandkosten, Zahlung, Fälligkeit</p>
+(1) Die angegebenen Preise enthalten die gesetzliche Umsatzsteuer und sonstige Preisbestandteile. Hinzu kommen etwaige Versandkosten.<br />
+<br />
+(2) Der Verbraucher hat die Möglichkeit der Zahlung per
+            Bankeinzug,
+
+
+
+
+            PayPal,
+
+
+
+
+     Kreditkarte(
+                Visa
+         )
+
+
+
+
+.<br />
+<br />
+
+
+<br />
+<p style="font-weight: bold; padding-bottom: 10px;">§4 Lieferung</p>
+(1) Sofern wir dies in der Produktbeschreibung nicht deutlich anders angegeben haben, sind alle von uns angebotenen Artikel sofort versandfertig.
+Die Lieferung erfolgt hier spätesten innerhalb von 5 Werktagen.
+Dabei beginnt die Frist für die Lieferung im Falle der Zahlung per Vorkasse am Tag nach
+Zahlungsauftrag an die mit der Überweisung beauftragte Bank und bei allen anderen Zahlungsarten am Tag nach Vertragsschluss zu laufen.
+Fällt das Fristende auf einen Samstag, Sonntag oder gesetzlichen Feiertag am Lieferort, so endet die Frist am nächsten Werktag.
+<br /><br />
+
+(2) Die Gefahr des zufälligen Untergangs und der zufälligen Verschlechterung der
+verkauften Sache geht auch beim Versendungskauf erst mit der Übergabe der Sache an den Käufer auf diesen über.  <br />
+
+
+<br />
+<p style="font-weight: bold; padding-bottom: 10px;">§5 Eigentumsvorbehalt</p>
+Wir behalten uns das Eigentum an der Ware bis zur vollständigen Bezahlung des Kaufpreises vor. <br />
+
+
+
+            <br />
+
+****************************************************************************************************
+<br />
+<p style="font-weight: bold; padding-bottom: 10px;">§6 Widerrufsrecht des Kunden als Verbraucher
+</p>
+
+<b>
+    Widerrufsrecht für Verbraucher<br /></b>
+    <br />
+    Verbrauchern steht ein Widerrufsrecht nach folgender Maßgabe zu, wobei Verbraucher jede natürliche Person ist,
+    die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend weder ihrer gewerblichen noch ihrer selbständigen
+    beruflichen Tätigkeit zugerechnet werden können:
+
+    <br />
+    <br />
+
+    <p style="font-weight: bold; padding-bottom: 10px;">Widerrufsbelehrung</p>
+    <br />
+   <b>Widerrufsrecht</b><br />
+    <br />
+    Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
+    <br />
+
+    Die Widerrufsfrist beträgt vierzehn Tage, ab dem Tag des Vertragsabschlusses.
+        <br />
+        <br />
+
+
+    Um Ihr Widerrufsrecht auszuüben, müssen Sie uns<br />
+    <div style="margin-left:20px; margin-top: 5px; margin-bottom: 5px;">
+        Porta Pc<br />
+        Leon Busert<br />
+        Schneidershof <br />
+        D-54293 Trier<br />
+        E-Mail Porta@pc.com<br />
+            </div>
+    mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss,
+    diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist.
+    <br />
+    <br />
+    Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
+    <br />
+    <br />
+
+    <b>Widerrufsfolgen</b><br /><br />
+    Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben,
+    einschließlich der Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben,
+    dass Sie eine andere Art der Lieferung als die von uns angebotene, günstigste Standardlieferung gewählt haben),
+    unverzüglich und spätestens binnen vierzehn Tagen ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren
+    Widerruf dieses Vertrags bei uns eingegangen ist. Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel,
+    das Sie bei der ursprünglichen Transaktion eingesetzt haben, es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart;
+    in keinem Fall werden Ihnen wegen dieser Rückzahlung Entgelte berechnet.<br />
+<br />
+    Haben Sie verlangt, dass die Dienstleistungen  während der Widerrufsfrist beginnen soll,
+    so haben Sie uns einen angemessenen Betrag zu zahlen, der dem Anteil der bis zu dem Zeitpunkt,
+    zu dem Sie uns von der Ausübung des Widerrufsrechts hinsichtlich dieses Vertrags unterrichten,
+    bereits erbrachten Dienstleistungen im Vergleich zum Gesamtumfang der im Vertrag vorgesehenen Dienstleistungen entspricht.
+    <br />
+    <br />
+
+
+    <b>Ende der Widerrufsbelehrung</b>
+<br />
+<br />
+****************************************************************************************************
+
+<br />
+
+
+
+
+
+<p style="font-weight: bold; padding-bottom: 10px;">§7 Widerrufsformular</p>
+
+<p style="text-align: center; font-weight: bold;">Muster-Widerrufsformular</p>
+(Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es zurück.)<br />
+<div style="border: 1px solid #000000;padding: 10px;">
+An :<br />
+Porta Pc<br />
+Leon Busert<br />
+Schneidershof <br />
+D-54293 Trier<br />
+E-Mail Porta@pc.com<br />
+<br />
+
+Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der folgenden Waren (*)/die Erbringung der folgenden Dienstleistung (*)<br />
+<br />
+_____________________________________________________<br />
+<br />
+Bestellt am (*)/erhalten am (*)<br />
+<br />
+__________________<br />
+<br />
+Name des/der Verbraucher(s)<br />
+<br />
+_____________________________________________________<br />
+<br />
+Anschrift des/der Verbraucher(s)<br />
+<br />
+<br />
+_____________________________________________________<br />
+<br />
+Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)<br />
+<br />
+__________________<br />
+<br />
+Datum<br />
+<br />
+__________________<br />
+<br />
+</div>
+(*) Unzutreffendes streichen.<br />
+
+
+
+<br />
+<p style="font-weight: bold; padding-bottom: 10px;">§8 Gewährleistung
+</p>
+
+Es gelten die gesetzlichen Gewährleistungsregelungen.
+<br />
+
+<br />
+<p style="font-weight: bold; padding-bottom: 10px;">§9 Verhaltenskodex</p>
+    Wir haben uns den Verhaltenskodizes der folgenden Einrichtungen unterworfen:
+    <br />
+<p style="margin-left: 20px;margin-top: 20px;">
+Euro-Label Germany<br />
+EHI-EuroHandelsinstitut GmbH<br />
+Spichernstraße 55<br />
+50672 Köln<br />
+</p>
+Den Euro-Label Verhaltenskodex können Sie durch Anklicken des auf unserer Webseite angebrachten Euro-Label-Siegels oder unter http://www.euro-label.com abrufen.<br />
+<br />und <br /><br />
+<p style="margin-left: 20px;">
+Trusted Shops GmbH<br />
+Colonius Carré<br />
+Subbelrather Straße 15c<br />
+50823 Köln<br />
+</p>
+Den Trusted Shops Verhaltenskodex können Sie durch Anklicken des auf unserer Webseite angebrachten Trusted-Shops-Siegels oder unter www.trustedshops.de abrufen.<br />
+
+<br />
+<p style="font-weight: bold; padding-bottom: 10px;">§10 Vertragssprache</p>
+ Als Vertragssprache steht ausschließlich Deutsch zur Verfügung.<br />
+
+    <br />
+****************************************************************************************************<br />
+<p style="font-weight: bold; padding-bottom: 10px;">§11 Kundendienst</p>
+<b>
+Unser Kundendienst für Fragen, Reklamationen und Beanstandungen steht Ihnen werktags von
+9:00 Uhr bis
+17:30 Uhr unter<br />
+<br />
+<p style="margin-left: 20px">
+Telefon: 0151 123456789<br />
+Telefax: 0151 123456789<br />
+E-Mail: Porta@support.com<br />
+</p>
+
+
+zur Verfügung.</b>
+<br />
+<br />
+****************************************************************************************************
+
+<br />
+<br />
+<p>Stand der AGB Nov.2020</p>
+
+<p><i><a href="http://www.agb.de">Gratis AGB</a> erstellt von agb.de</i></p>
+  </main>
+
+  <footer class="margin-t-4">
+    <div class="container">
+      <div class="row row-center">
+
+        <div class="col-xs-12 padding-a-0 margin-a-0 margin-b-4">
+          <div class="separator-line"></div>
+        </div>
+
+        <div class="col-xs-12 col-m-4 col-lg-4">
+          <p class="footer-title">PortaPC</p>
+          <p class="footer-content">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine Zusammenfassung von diesem Projekt sein.</p>
+        </div>
+
+        <div class="col-xs-12 col-m-2 col-lg-2">
+          <p class="footer-title">Informationen</p>
+          <p class="footer-content">Über uns</p>
+          <p class="footer-content">Impressum</p>
+          <p class="footer-content">AGB</p>
+        </div>
+
+        <div class="col-xs-12 col-m-2 col-lg-2 margin-a-0">
+          <div class="row">
+            <div class="col-xs-12">
+              <p class="footer-title">Kontakt</p>
+              <p class="footer-content">kontakt@portapc.de</p>
+            </div>
+
+            <div class="col-xs-12 ma-0">
+              <p class="footer-title">Folge uns</p>
+              <div class="row margin-t-2">
+                <div class="col-xs margin-a-0 padding-a-0 margin-r-1">
+                  <a href="#"><img class="footer-social-icon" src="images/footer/social_icons/facebook.svg" alt="Facebook"></a>
                 </div>
-
-                <div class="col l3 m6 s12">
-                  <h5 class="black-text">Informationen</h5>
-                  <ul>
-                    <li><a class="grey-text" href="#!">Über uns</a></li>
-                    <li><a class="grey-text" href="pages/informationen/impressium.html">Imrepssium</a></li>
-                    <li><a class="grey-text" href="#!">Datenschutzerklärung</a></li>
-                    <li><a class="grey-text" href="pages/informationen/agb.html">AGB</a></li>
-                    <li><a class="grey-text" href="#!">DSGVO</a></li>
-                  </ul>
+                <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
+                  <a href="#"><img class="footer-social-icon" src="images/footer/social_icons/twitter.svg" alt="Twitter"></a>
                 </div>
-
-                <div class="col l3 m6 s12">
-                  <h5 class="black-text">Kontakt</h5>
-                  <ul>
-                    <li><a class="email grey-text" href="mailto:kontakt@portapc.de">kontakt@portapc.de</a></li>
-                  </ul>
-
-                  <h5 class="black-text">Folge uns</h5>
-
-                  <div class="row">
-                    <div class="col l1 m1 s1">
-                      <a href="index.html"><img src="images/footer/social_icons/facebook.png" style="max-width:20px"></a>
-                    </div>
-
-                    <div class="col l1 m1 s1">
-                      <a href="index.html"><img src="images/footer/social_icons/instagram.png" style="max-width:20px"></a>
-                    </div>
-
-                    <div class="col l1 m1 s1">
-                      <a href="index.html"><img src="images/footer/social_icons/snapchat.png" style="max-width:20px"></a>
-                    </div>
-
-                    <div class="col l1 m1 s1">
-                      <a href="index.html"><img src="images/footer/social_icons/whatsapp.png" style="max-width:20px"></a>
-                    </div>
-                  </div>
+                <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
+                  <a href="#"><img class="footer-social-icon" src="images/footer/social_icons/instagram.svg" alt="Instagram"></a>
+                </div>
+                <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
+                  <a href="#"><img class="footer-social-icon" src="images/footer/social_icons/youtube.svg" alt="Youtube"></a>
                 </div>
               </div>
             </div>
-          </footer>
-       <!-- Footer ends here -->
+          </div>
+        </div>
+      </div>
+    </div>
 
-     <!--Import the minified script of materialize.js (materilize.min.js)-->
-     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-     <script src="js/materialize.js"></script>
-   </body>
- </html>
+  </footer>
+
+  <button id="scroll-top-button" title="Nach oben scrollen">nach oben</button>
+
+  <!-- <script type="text/javascript" src="js/slide.js"></script> -->
+</body>
+
+</html>
