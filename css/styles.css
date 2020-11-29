@@ -397,6 +397,28 @@ color: hange the text's color color
   /* Add a dark-grey background on hover */
 }
 
+#see-all-button {
+
+  float: right;
+  /* Make sure it does not overlap */
+  cursor: pointer;
+  /* Add a mouse pointer on hover */
+  text-transform: uppercase;
+  background-color: transparent;
+  color: black;
+  border: none;
+  font-size: 18px;
+  outline: none;
+  margin: 0;
+
+
+  color: black;
+}
+
+#see-all-button:hover {
+  /* Add a dark-grey background on hover */
+}
+
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;

@@ -132,7 +132,7 @@
                 <div class="mySlides fade">
                   <div class="numbertext">1 / 3</div>
                   <img src="images/placeholders/slider.png" style="width:100%">
-                  <div class="text">Caption Text</div>
+                  <div class="text"></div>
                 </div>
 
                 <!--<div class="mySlides fade">
@@ -161,8 +161,13 @@
               </div>
             </div>
 
-            <div class="col-sm-12">
+            <div class="col-sm-6">
               <p class="category-title text-uppercase"><strong>Neueste Anzeige</strong></p>
+            </div>
+
+            <div class="col-sm-6">
+
+              <a href="pages/products/neuanzeige.html"><button id="see-all-button"><strong>alles anzeigen</strong></button></a>
             </div>
 
             <div class="col-sm-6 col-md-4 col-lg-3">
@@ -189,37 +194,37 @@
 
             </div>
 
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="row">
+                <!-- image part -->
+                <div class="col-sm-12 margin-a-0 product-image-container">
+                  <img src="images/placeholders/product.png" class="product-image"></img>
+                  <div class="product-price-container">
+                    <p class="product-price">€700</p>
+                  </div>
+                </div>
+
+                <!-- title -->
+                <div class="col-sm-12 margin-a-0 margin-t-3">
+                  <p class="product-title">RTX 3080</p>
+                </div>
+
+                <!-- location -->
+                <div class="col-sm-12 margin-a-0 margin-t-2">
+                  <p class="product-location">Trier-S&uuml;d</p>
+                </div>
+
+              </div>
+
+            </div>
+
 
           </div>
         </div>
 
         <div>
           <div class="col-sm-12 col-md-8 col-lg-9">
-            <!-- TODO: Slider -->
-            <!-- <div class="row">
-                <div class="slideshow-container">
-                  <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="images/gpu.jpg">
-                  </div>
-                  <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="images/gpu.jpg">
-                  </div>
-                  <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="images/gpu.jpg">
-                  </div>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                  <span class="dot" onclick="currentSlide(1)"></span>
-                  <span class="dot" onclick="currentSlide(2)"></span>
-                  <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-              </div> -->
+
 
 
           </div>
@@ -278,7 +283,7 @@
 
   </footer>
 
-  <button id="scroll-top-button" title="Nach oben scrollen">nach oben</button>
+  <button id="scroll-top-button" onclick="scrollFunction()"title="Nach oben scrollen">nach oben</button>
 
   <!-- <script type="text/javascript" src="js/slide.js"></script> -->
 </body>
