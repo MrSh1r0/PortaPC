@@ -1,21 +1,44 @@
-/**
- * Custom Stylesheet
- * Use this file to override the default/Materialize styles.
-*/
-
-/*
-  Override the document styles
-  Set the font-family of all texts
-  It might cause conflicts, if anothere css class[es] use[s] '!important' tag
-  If the font doesn't change on other elements, check if they have any fonts applied on them
-*/
 html {
   font-family: 'Roboto', sans-serif !important;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0px !important;
+}
+
 /* Override the nav class, change the background color */
 nav {
-  background-color: #fff !important;
+  background-color: #ffffff !important;
+  color: #fff;
+  width: 100%;
+  height: 56px;
+  line-height: 56px;
+}
+
+nav .nav-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+.navbar-fixed {
+  position: relative;
+  height: 56px;
+  z-index: 997;
 }
 
 /* By default, the navbar is hidden */
@@ -26,6 +49,16 @@ nav {
 /* To show the navbar, we will add this class using JQuery */
 .nav-visible {
   display: inherit !important;
+}
+
+.navbar-fixed nav {
+  position: fixed;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1152px;
+  width: 90%;
 }
 
 /*
@@ -41,16 +74,6 @@ color: hange the text's color color
 }
 
 /*
-  Top bar, we are using our own because MaterializeCSS's navbar is NOT what we want
-  This margin will be removed later
-*/
-.top-bar {
-  padding-top: 5px;
-  overflow: hidden;
-}
-
-
-/*
   Website logo
   margin: to center the image (mobile view, etc), we need to set it to auto
   background-size: We are using "contain" to prevent any scaling
@@ -61,14 +84,12 @@ color: hange the text's color color
   cursor: We want the image to look "clickable", therefore, we need to this prop
 */
 .website-logo {
-  margin: auto;
   background-image: url("../images/logo/default.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
   padding: 0px;
-  width: 150px;
-  height: 50px;
+  height: 56px;
   cursor: pointer;
 }
 
@@ -82,11 +103,10 @@ color: hange the text's color color
 .search-container {
   margin: auto !important;
   border-radius: 15px;
-  height: 50px;
+  height: 56px;
   width: 100%;
   background-color: #f2f2f2;
 }
-
 
 /*
   Search icon
@@ -100,12 +120,23 @@ color: hange the text's color color
   color: #d1d1d1 !important;
 }
 
-
 .search-input, input:focus {
+  font-size: 16px;
   height: 100% !important;
   border-bottom: 0px !important;
   -webkit-box-shadow: 0px !important;
-          box-shadow: 0px !important;
+  box-shadow: 0px !important;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+/*
+  display: flex, so that we can "center" the content of the div
+*/
+.searchbar-category-container {
+  display: flex;
 }
 
 /*
@@ -115,11 +146,13 @@ color: hange the text's color color
   width: let it take the available space
 */
 .searchbar-category-dropdown {
+  vertical-align: middle;
   text-align: center;
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
   white-space: nowrap;
+  align-self: center;
 }
 
 /*
@@ -131,11 +164,13 @@ color: hange the text's color color
   vertical-align: keep it in the middle vertically
 */
 .searchbar-category-dropdown:after {
+  display: none;
   font-size: 15px !important;
   font-family: "Material Icons";
   content: "expand_more";
   margin-left: 5px;
   vertical-align: middle;
+  text-align: center;
 }
 
 /*
@@ -144,11 +179,127 @@ color: hange the text's color color
   border-left: Set a vertical line on the left of the div
 */
 .vertical-left-line {
-  height: 100% !important;
+  height: 1px !important;
   border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.categories-dropdown {
+  position: relative;
+  display: inline-block;
+}
 
+/* Change color of dropdown links on hover */
+.categories-dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.categories-dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.categories-dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.categories-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.categories-dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/*
+  background-color: flat white color.
+  border-radius: flat radius.
+  padding: to keep the image small and put more attention for the design
+  position: relative would alloww us to set elements inside in relativity to the container (src: https://www.w3schools.com/css/css_positioning.asp)
+*/
+.product-image-container {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 35px !important;
+  position: relative;
+}
+
+/*
+  width: let it take full width
+  height: let it take full width
+  object-fit: it's similar to background-fit, we contain the image and we don't scale it. We lit it fit well in its own image-ratio.
+  object-position: position the image in the center.
+*/
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/*
+  font-size: Title should be bigger than the location and smaller than the whole view of the image
+  font-weight: Make it bold, but not too much bold
+*/
+.product-title {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/*
+  font-size: just like before, it should be smaller than the title
+  font-weight: the text should be light but "normal", we could call it "regular" size accoring to the Roboto font family.
+*/
+.product-location {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/*
+  position: the position is absolute inside the relative container, which let us make the element hover
+  bottom: bottom margin regarding to the container
+  right: right margin regarding to the container
+*/
+.product-price-container {
+  position: absolute;
+  top: 15px;
+  right: 0px;
+}
+
+/*
+  font-size: just like the location, this is a minimal info and shouldn't take the attention from the title. The color of the price's background already does the job
+  font-weight: bold but not that much
+  background-color: to give it its own space
+  border-top-left-radius: we want this to look like it's combined with the product grey rounded background
+  border-bottom-left-radius: same as above
+  padding-top: minimal padding, the main focus is on the x-axis and not the y-axis
+  padding-bottom: just like above
+  padding-right: we make the illusion that we made the price's background so wide, but it's actually just padding to make it a good design
+  padding-left: just like above
+*/
+.product-price {
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #dcbb76;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right: 14px;
+  padding-left: 14px;
+}
+
+/*
+  font-size: Category should have a big font size to grab the reader's attention
+  font-weight: bold and thick, to give it proper attention
+*/
+.category-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: black;
+}
 
 
 
@@ -156,12 +307,11 @@ color: hange the text's color color
   Override MaterializeCSS's class
   Change text's color and dropdown's background on :hover or
 */
-
 .dropdown-content {
-  background-color: #f2f2f2  !important;
+  background-color: #f2f2f2 !important;
 }
 
-.dropdown-content li > a, .dropdown-content li > span {
+.dropdown-content li>a, .dropdown-content li>span {
   color: #232323 !important;
 }
 
@@ -169,79 +319,82 @@ color: hange the text's color color
   background-color: rgba(0, 0, 0, 0.09) !important;
 }
 
-/* Slideshow container */
-.slideshow-container {
-  width: 100%;
-  position: relative;
-  margin: auto;
+.categories-container {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 10px;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+/*
+  lis-style-type: none, to remove the bullets from the items
+*/
+.categories-list {
+  list-style-type: none;
 }
 
-/* Next & previous buttons */
-.prev, .next {
+.categories-list li{
+  margin-top: 14px;
+}
+
+
+.categories-item {
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+
+
+.separator-line {
+  border-top: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.footer-title {
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+
+}
+
+.footer-content {
+  color: rgba(0, 0, 0, 0.75);
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.footer-social-icon {
+  width: 24px;
+  height: 24px;
+}
+
+
+#scroll-top-button {
+  display: block;
+  /* Hidden by default */
+  position: fixed;
+  /* Fixed/sticky position */
+  bottom: 30px;
+  /* Place the button at the bottom of the page */
+  right: 30px;
+  /* Place the button 30px from the right */
+  z-index: 99;
+  /* Make sure it does not overlap */
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
+  /* Add a mouse pointer on hover */
+  text-transform: lowercase;
+  background-color: black;
   color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 10px;
-  width: 10px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
+  border: none;
+  border-radius: 5px;
   display: inline-block;
-  transition: background-color 0.6s ease;
+  height: 36px;
+  padding: 0 16px;
+  outline: none;
 }
 
-/*.active,*/ .dot:hover {
-  background-color: #717171;
+#scroll-top-button:hover {
+  /* Add a dark-grey background on hover */
 }
 
 /* Fading animation */
@@ -252,11 +405,38 @@ color: hange the text's color color
   animation-duration: 1.5s;
 }
 
+@-webkit-keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: .4
+  }
+
+  to {
+    opacity: 1
+  }
+}
+
+
+/*
+  helper class to make the text uppercase
+*/
+.text-uppercase {
+  text-transform: uppercase;
+}
+
 /*
   width & height helpers
   it overrides the default values
 */
-
 .fill-height {
   height: 100% !important;
 }
@@ -282,12 +462,11 @@ color: hange the text's color color
 
   if you don't see any letters, it means all sides
 */
-
-.margin-0 {
+.margin-a-0 {
   margin: 0 !important;
 }
 
-.padding-0 {
+.padding-a-0 {
   padding: 0 !important;
 }
 
@@ -296,37 +475,470 @@ color: hange the text's color color
   margin-bottom: 0 !important;
 }
 
+.margin-x-1 {
+  margin-right: 4px !important;
+  margin-left: 4px !important;
+}
 
-@-webkit-keyframes fade {
-  from {
-    opacity: .4
+.margin-x-2 {
+  margin-right: 8px !important;
+  margin-left: 8px !important;
+}
+
+.margin-t-1 {
+  margin-top: 4px !important;
+}
+
+.margin-t-2 {
+  margin-top: 8px !important;
+}
+
+.margin-t-3 {
+  margin-top: 12px !important;
+}
+
+.margin-t-4 {
+  margin-top: 16px !important;
+}
+
+.margin-b-1 {
+  margin-bottom: 4px !important;
+}
+
+.margin-b-2 {
+  margin-bottom: 8px !important;
+}
+
+.margin-b-3 {
+  margin-bottom: 12px !important;
+}
+
+.margin-b-4 {
+  margin-bottom: 16px !important;
+}
+
+.margin-r-1 {
+  margin-right: 4px !important;
+}
+
+.margin-r-2 {
+  margin-right: 8px !important;
+}
+
+.margin-r-3 {
+  margin-right: 12px !important;
+}
+
+.margin-r-4 {
+  margin-right: 16px !important;
+}
+
+.padding-r-1 {
+  padding-right: 4px !important;
+}
+
+.margin-r-2 {
+  padding-right: 8px !important;
+}
+
+.padding-r-3 {
+  padding-right: 12px !important;
+}
+
+.padding-r-4 {
+  padding-right: 16px !important;
+}
+
+/*
+  Grid system
+    We are using flexbox to implement a responsive, dynamic grid that would help us achieve what we want.
+    Basically, it consists of a row class and a col class. ]
+    The col class has many subclasses for many screen sizes (xl, x, sm, lg)
+*/
+/*
+  box-sizing: border-box to eleminate unwanted padding (src: https://www.w3schools.com/css/css3_box-sizing.asp)
+  display: flex, to mark this a flex grid
+  flex-wrap: wrap, so that when it reaches the maximum width, it gets to the other line
+  flex-direction: row (left-to-right), so that we have multiple elements beside each other
+*/
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.row-center {
+  justify-content: center;
+}
+
+/*
+  each col class would have the same attributes but with different values
+  box-sizing: border-box to eleminate unwanted padding (src: https://www.w3schools.com/css/css3_box-sizing.asp)
+  flex: (src: https://css-tricks.com/almanac/properties/f/flex/)
+  padding-right: Relative to font-size of the root element (responsive)
+  padding-left: Relative to font-size of the root element (responsive)
+  flex-grow: how much space it would take (src: https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+  flex-basis: the base, default value before any content/space taken (src: https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+*/
+.col-xs,
+.col-xs-1,
+.col-xs-2,
+.col-xs-3,
+.col-xs-4,
+.col-xs-5,
+.col-xs-6,
+.col-xs-7,
+.col-xs-8,
+.col-xs-9,
+.col-xs-10,
+.col-xs-11,
+.col-xs-12 {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin: 8px 0;
+}
+
+col-xs {
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 100%;
+}
+
+.col-xs-1 {
+  flex-basis: 8.333%;
+  max-width: 8.333%;
+}
+
+.col-xs-2 {
+  flex-basis: 16.667%;
+  max-width: 16.667%;
+}
+
+.col-xs-3 {
+  flex-basis: 25%;
+  max-width: 25%;
+}
+
+.col-xs-4 {
+  flex-basis: 33.333%;
+  max-width: 33.333%;
+}
+
+.col-xs-5 {
+  flex-basis: 41.667%;
+  max-width: 41.667%;
+}
+
+.col-xs-6 {
+  flex-basis: 50%;
+  max-width: 50%;
+}
+
+.col-xs-7 {
+  flex-basis: 58.333%;
+  max-width: 58.333%;
+}
+
+.col-xs-8 {
+  flex-basis: 66.667%;
+  max-width: 66.667%;
+}
+
+.col-xs-9 {
+  flex-basis: 75%;
+  max-width: 75%;
+}
+
+.col-xs-10 {
+  flex-basis: 83.333%;
+  max-width: 83.333%;
+}
+
+.col-xs-11 {
+  flex-basis: 91.667%;
+  max-width: 91.667%;
+}
+
+.col-xs-12 {
+  flex-basis: 100%;
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+  .container {
+    width: 750px;
   }
 
-  to {
-    opacity: 1
+  .col-sm,
+  .col-sm-1,
+  .col-sm-2,
+  .col-sm-3,
+  .col-sm-4,
+  .col-sm-5,
+  .col-sm-6,
+  .col-sm-7,
+  .col-sm-8,
+  .col-sm-9,
+  .col-sm-10,
+  .col-sm-11,
+  .col-sm-12 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin: 8px 0;
+  }
+
+  .col-sm {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .col-sm-1 {
+    flex-basis: 8.333%;
+    max-width: 8.333%;
+  }
+
+  .col-sm-2 {
+    flex-basis: 16.667%;
+    max-width: 16.667%;
+  }
+
+  .col-sm-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .col-sm-4 {
+    flex-basis: 33.333%;
+    max-width: 33.333%;
+  }
+
+  .col-sm-5 {
+    flex-basis: 41.667%;
+    max-width: 41.667%;
+  }
+
+  .col-sm-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .col-sm-7 {
+    flex-basis: 58.333%;
+    max-width: 58.333%;
+  }
+
+  .col-sm-8 {
+    flex-basis: 66.667%;
+    max-width: 66.667%;
+  }
+
+  .col-sm-9 {
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+
+  .col-sm-10 {
+    flex-basis: 83.333%;
+    max-width: 83.333%;
+  }
+
+  .col-sm-11 {
+    flex-basis: 91.667%;
+    max-width: 91.667%;
+  }
+
+  .col-sm-12 {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
-@keyframes fade {
-  from {
-    opacity: .4
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 970px;
   }
 
-  to {
-    opacity: 1
+  .col-md,
+  .col-md-1,
+  .col-md-2,
+  .col-md-3,
+  .col-md-4,
+  .col-md-5,
+  .col-md-6,
+  .col-md-7,
+  .col-md-8,
+  .col-md-9,
+  .col-md-10,
+  .col-md-11,
+  .col-md-12 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin: 8px 0;
+  }
+
+  .col-md {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .col-md-1 {
+    flex-basis: 8.333%;
+    max-width: 8.333%;
+  }
+
+  .col-md-2 {
+    flex-basis: 16.667%;
+    max-width: 16.667%;
+  }
+
+  .col-md-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .col-md-4 {
+    flex-basis: 33.333%;
+    max-width: 33.333%;
+  }
+
+  .col-md-5 {
+    flex-basis: 41.667%;
+    max-width: 41.667%;
+  }
+
+  .col-md-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .col-md-7 {
+    flex-basis: 58.333%;
+    max-width: 58.333%;
+  }
+
+  .col-md-8 {
+    flex-basis: 66.667%;
+    max-width: 66.667%;
+  }
+
+  .col-md-9 {
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+
+  .col-md-10 {
+    flex-basis: 83.333%;
+    max-width: 83.333%;
+  }
+
+  .col-md-11 {
+    flex-basis: 91.667%;
+    max-width: 91.667%;
+  }
+
+  .col-md-12 {
+    flex-basis: 100%;
+    max-width: 100%;
   }
 }
 
-#ScrollTop {
-  display: block; /* Hidden by default */
-  position: fixed; /* Fixed/sticky position */
-  bottom: 20px; /* Place the button at the bottom of the page */
-  right: 30px; /* Place the button 30px from the right */
-  z-index: 99; /* Make sure it does not overlap */
-  cursor: pointer; /* Add a mouse pointer on hover */
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 1170px;
+  }
 
-}
+  .col-lg,
+  .col-lg-1,
+  .col-lg-2,
+  .col-lg-3,
+  .col-lg-4,
+  .col-lg-5,
+  .col-lg-6,
+  .col-lg-7,
+  .col-lg-8,
+  .col-lg-9,
+  .col-lg-10,
+  .col-lg-11,
+  .col-lg-12 {
+    box-sizing: border-box;
+    flex: 0 0 auto;
+    padding-right: 8px;
+    padding-left: 8px;
+    margin: 8px 0;
+  }
 
-#ScrollTop:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  .col-lg {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+
+  .col-lg-1 {
+    flex-basis: 8.333%;
+    max-width: 8.333%;
+  }
+
+  .col-lg-2 {
+    flex-basis: 16.667%;
+    max-width: 16.667%;
+  }
+
+  .col-lg-3 {
+    flex-basis: 25%;
+    max-width: 25%;
+  }
+
+  .col-lg-4 {
+    flex-basis: 33.333%;
+    max-width: 33.333%;
+  }
+
+  .col-lg-5 {
+    flex-basis: 41.667%;
+    max-width: 41.667%;
+  }
+
+  .col-lg-6 {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .col-lg-7 {
+    flex-basis: 58.333%;
+    max-width: 58.333%;
+  }
+
+  .col-lg-8 {
+    flex-basis: 66.667%;
+    max-width: 66.667%;
+  }
+
+  .col-lg-9 {
+    flex-basis: 75%;
+    max-width: 75%;
+  }
+
+  .col-lg-10 {
+    flex-basis: 83.333%;
+    max-width: 83.333%;
+  }
+
+  .col-lg-11 {
+    flex-basis: 91.667%;
+    max-width: 91.667%;
+  }
+
+  .col-lg-12 {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
 }
