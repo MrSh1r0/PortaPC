@@ -125,7 +125,7 @@ color: hange the text's color color
   height: 100% !important;
   border-bottom: 0px !important;
   -webkit-box-shadow: 0px !important;
-  box-shadow: 0px !important;
+  box-shadow: none !important;
   background-color: transparent;
   border: none;
   outline: none;
