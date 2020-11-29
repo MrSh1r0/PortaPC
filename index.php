@@ -30,11 +30,14 @@ $helper = new Helper();
   <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen,projection" />
   <script type="text/javascript" src="js/scripts.js"></script>
   <script type="text/javascript">
-    //categories = <?php echo $helper -> getCategories() ?>;
+    var categories = <?php echo $helper -> getCategories() ?>;
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
         handleNavbar();
+        populateSearchCategories(categories);
+        handleSearchCategroyText(categories, null);
+        populateDiscoverCategories(categories);
       }
     }
   </script>
@@ -196,12 +199,12 @@ $helper = new Helper();
     </div>
   </div>
 
-  <main id="homepage-content">
+  <main id="homepage-content" class="margin-t-4">
     <div class="container">
       <div class="row">
 
         <!-- Left side of the content -->
-        <div class="col-sm-12 col-md-4 col-lg-3 margin-a-0 padding-a-0">
+        <div class="col-sm-12 col-md-4 col-lg-3 margin-a-0 padding-a-0 padding-r-3">
           <div class="row">
             <!-- Category title -->
             <div class="col-sm-12">
@@ -210,18 +213,8 @@ $helper = new Helper();
 
             <!-- Category card -->
             <div class="col-sm-12">
-              <div class="categories">
-                <ul>
-                  <li><a class="category-content" onclick="">Alle Katergorien</a></li>
-                  <li><a class="category-content" onclick="">CPUs</a></li>
-                  <li><a class="category-content" onclick="">GPUs</a></li>
-                  <li><a class="category-content" onclick="">Motherboards</a></li>
-                  <li><a class="category-content" onclick="">Netzteile</a></li>
-                  <li><a class="category-content" onclick="">RAMs</a></li>
-                  <li><a class="category-content" onclick="">Speicher</a></li>
-                  <li><a class="category-content" onclick="">Peripheriegerate</a></li>
-                  <li><a class="category-content" onclick="">Komplettsysteme</a></li>
-                  <li></li>
+              <div class="categories-container">
+                <ul class="categories-list" id="categories-list">
                 </ul>
               </div>
             </div>
@@ -265,7 +258,7 @@ $helper = new Helper();
                 <div class="col-sm-12 margin-a-0 margin-t-2">
                   <p class="product-location">Trier-Nord</p>
                 </div>
-                
+
               </div>
 
             </div>
@@ -308,56 +301,55 @@ $helper = new Helper();
       </div>
   </main>
 
-  <footer>
-    <div class="separator-line">
-    </div>
-
+  <footer class="margin-t-4">
     <div class="container">
-      <div class="row">
-        <div class="col-lg-6 col-md-12 col-sm-12">
-          <h3 class="header">PortaPC</h3>
-          <p class="content">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
+      <div class="row row-center">
+
+        <div class="col-xs-12 padding-a-0 margin-a-0 margin-b-4">
+          <div class="separator-line"></div>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <h3 class="header">Informationen</h3>
-          <ul>
-            <li><a class="content" href="#!">Über uns</a></li>
-            <li><a class="content" href="pages/informationen/impressium.html">Imrepssium</a></li>
-            <li><a class="content" href="#!">Datenschutzerklärung</a></li>
-            <li><a class="content" href="pages/informationen/agb.html">AGB</a></li>
-            <li><a class="content" href="#!">DSGVO</a></li>
-          </ul>
+        <div class="col-xs-12 col-m-4 col-lg-4">
+          <p class="footer-title">PortaPC</p>
+          <p class="footer-content">Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine zusammen fassung von diesem Projeckt sein.</p>
         </div>
 
-        <div class="col-lg-3 col-md-6 col-sm-12">
-          <h3 class="header">Kontakt</h3>
-          <ul>
-            <li><a class="content" href="mailto:kontakt@portapc.de">kontakt@portapc.de</a></li>
-          </ul>
+        <div class="col-xs-12 col-m-2 col-lg-2">
+          <p class="footer-title">Informationen</p>
+          <p class="footer-content">Über uns</p>
+          <p class="footer-content">Impressum</p>
+          <p class="footer-content">AGB</p>
+        </div>
 
-          <h3 class="header">Folge uns</h3>
-
+        <div class="col-xs-12 col-m-2 col-lg-2 margin-a-0">
           <div class="row">
-            <div class="col-lg-1 col-md-1 col-sm-1">
-              <a href="index.html"><img src="images/footer/social_icons/facebook.png" style="max-width:20px"></a>
+            <div class="col-xs-12">
+              <p class="footer-title">Kontakt</p>
+              <p class="footer-content">kontakt@portapc.de</p>
             </div>
 
-            <div class="col-lg-1 col-md-1 col-sm-1">
-              <a href="index.html"><img src="images/footer/social_icons/instagram.png" style="max-width:20px"></a>
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-              <a href="index.html"><img src="images/footer/social_icons/snapchat.png" style="max-width:20px"></a>
-            </div>
-
-            <div class="col-lg-1 col-md-1 col-sm-1">
-              <a href="index.html"><img src="images/footer/social_icons/whatsapp.png" style="max-width:20px"></a>
+            <div class="col-xs-12 ma-0">
+              <p class="footer-title">Folge uns</p>
+              <div class="row margin-t-2">
+                <div class="col-xs margin-a-0 padding-a-0 margin-r-1">
+                  <a href="#"><img class="footer-social-icon" src="images/footer/social_icons/facebook.svg" alt="Facebook"></a>
+                </div>
+                <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
+                  <a href="#"><img class="footer-social-icon" src="images/footer/social_icons/twitter.svg" alt="Twitter"></a>
+                </div>
+                <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
+                  <a href="#"><img class="footer-social-icon" src="images/footer/social_icons/instagram.svg" alt="Instagram"></a>
+                </div>
+                <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
+                  <a href="#"><img class="footer-social-icon" src="images/footer/social_icons/youtube.svg" alt="Youtube"></a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+
   </footer>
 
   <button onclick="topFunction()" id="ScrollTopButton" title="nach oben">nach oben</button>
