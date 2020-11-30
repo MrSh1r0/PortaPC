@@ -1,10 +1,8 @@
-
-
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
 
 <head>
-  <title>PortaPC</title>
+  <title>PortaPC - Über uns</title>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -15,20 +13,18 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
-  <!--<script type="text/javascript" src="js/scripts.js"></script>
-  <script type="text/javascript">
-    var categories = ["CPUs"];
+  <script src="../../js/scripts.js"></script>
+  <script>
+    var categories = ["Alle Kategorien", "CPUs", "GPUs", "Motherboards", "Netzteile", "Arbeitspeicher", "Periherierger", "Komplettsysteme"];
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
         handleNavbar();
         handleScrollTop();
-        populateSearchCategories(categories);
-        handleSearchCategroyText(categories, null);
-        populateDiscoverCategories(categories);
+        handleSearchCategoryList(categories);
       }
     }
-  </script>-->
+  </script>
 </head>
 
 <body>
@@ -67,12 +63,12 @@
           </div>
           <!--End of Search column-->
 
-          <div class="col-sm-4 col-md-3 col-lg-3 margin-a-0 fill-height searchbar-category-container vertical-left-line">
-              <p class='searchbar-category-dropdown' data-target='searchbar-category' id="searchbar-category-text">Alle Kategorien</p>
-              <div class="categories-dropdown-content">
-                <p class="categories-dropdown-item">Test</p>
-                <p class="categories-dropdown-item">Test §2</p>
+          <div class="col-sm-4 col-md-3 col-lg-3 margin-a-0 fill-height searchbar-category-container vertical-left-line categories-dropdown-container">
+            <div class="categories-dropdown">
+              <p class='searchbar-category-dropdown' id="searchbar-category-text"></p>
+              <div id="categories-dropdown-content" class="categories-dropdown-content">
               </div>
+            </div>
 
           </div>
         </div>
@@ -93,21 +89,16 @@
           <div class="row">
             <!-- Category title -->
             <div class="col-sm-12">
-              <p class="category-title text-uppercase"><strong>Entdecken</strong></p>
+              <p class="category-title text-uppercase">Informationen</p>
             </div>
 
             <!-- Category card -->
             <div class="col-sm-12">
               <div class="categories-container">
                 <ul class="categories-list" id="categories-list">
-                  <li class="categories-item">Alle Kategorien</li>
-                  <li class="categories-item">CPUs</li>
-                  <li class="categories-item">GPUs</li>
-                  <li class="categories-item">Motherboards</li>
-                  <li class="categories-item">Netzteile</li>
-                  <li class="categories-item">Arbeitspeicher</li>
-                  <li class="categories-item">Periherierger&auml;te</li>
-                  <li class="categories-item">Komplettsysteme</li>
+                  <li><a class="categories-item categories-item-selected" href="about_us.html">Über uns</a></li>
+                  <li><a class="categories-item" href="agb.html">AGB</a></li>
+                  <li><a class="categories-item" href="impressum.html">Impressum</a></li>
                 </ul>
               </div>
             </div>
@@ -118,71 +109,18 @@
         <div class="col-sm-12 col-md-8 col-lg-9 margin-a-0 padding-a-0">
           <div class="row">
 
-
+            <div class="col-sm-12">
+              <p class="category-title text-uppercase">Über uns</p>
+            </div>
 
             <div class="col-sm-12">
-              <p class="category-title text-uppercase"><strong>Neueste Anzeige</strong></p>
+              <p class="text-subtitle text-weight-medium">Titel</p>
+              <p class="text-body-1 text-weight-regular">Beschreibung</p>
             </div>
-
-            <div class="col-sm-6 col-md-4 col-lg-3">
-              <div class="row">
-                <!-- image part -->
-                <div class="col-sm-12 margin-a-0 product-image-container">
-                  <img src="../../images/placeholders/product.png" class="product-image" alt="product">
-                  <div class="product-price-container">
-                    <p class="product-price">€400</p>
-                  </div>
-                </div>
-
-                <!-- title -->
-                <div class="col-sm-12 margin-a-0 margin-t-3">
-                  <p class="product-title">RTX 3090</p>
-                </div>
-
-                <!-- location -->
-                <div class="col-sm-12 margin-a-0 margin-t-2">
-                  <p class="product-location">Trier-Nord</p>
-                </div>
-
-              </div>
-
-            </div>
-
 
           </div>
         </div>
 
-        <div>
-          <div class="col-sm-12 col-md-8 col-lg-9">
-            <!-- TODO: Slider -->
-            <!-- <div class="row">
-                <div class="slideshow-container">
-                  <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="images/gpu.jpg">
-                  </div>
-                  <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="images/gpu.jpg">
-                  </div>
-                  <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="images/gpu.jpg">
-                  </div>
-                  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                  <a class="next" onclick="plusSlides(1)">&#10095;</a>
-                </div>
-                <br>
-                <div style="text-align:center">
-                  <span class="dot" onclick="currentSlide(1)"></span>
-                  <span class="dot" onclick="currentSlide(2)"></span>
-                  <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-              </div> -->
-
-
-          </div>
-        </div>
       </div>
     </div>
   </main>
@@ -202,9 +140,18 @@
 
         <div class="col-xs-12 col-m-2 col-lg-2">
           <p class="footer-title">Informationen</p>
-          <a href="#"><p class="footer-content">Über uns</p></a>
-          <a href="../informationen/impressum.html"><p class="footer-content">Impressum</p></a>
-          <a href="../informationen/agb.html"><p class="footer-content">AGB</p></a>
+
+          <a href="about_us.html">
+            <p class="footer-content">Über uns</p>
+          </a>
+          <a href="impressum.html">
+            <p class="footer-content">Impressum</p>
+          </a>
+          <a href="agb.html">
+            <p class="footer-content">AGB</p>
+          </a>
+
+
         </div>
 
         <div class="col-xs-12 col-m-2 col-lg-2 margin-a-0">
@@ -238,7 +185,7 @@
 
   </footer>
 
-  <button id="scroll-top-button" title="Nach oben scrollen">nach oben</button>
+  <button class="scroll-top-button" id="scroll-top-button" title="Nach oben scrollen">nach oben</button>
 
   <!-- <script type="text/javascript" src="js/slide.js"></script> -->
 </body>

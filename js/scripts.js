@@ -20,26 +20,50 @@ function handleNavbar() {
   }
 }
 
-function populateSearchCategories(categories) {
-
-}
 
 // categories are given by the php file
-// selected item is the text of the selected search item, if it's null, then it's FIRST TIME initilization
-function handleSearchCategroyText(categories, selected_item) {
+function handleSearchCategoryList(categories){
+  let element_categories_dropdown_content = document.getElementById("categories-dropdown-content");
+  let element_searchbar_categories_text = document.getElementById("searchbar-category-text");
 
-  // if this variable is NOT set, it means it's null or undefined
-  if (!selected_item) {
+  // event listener for the text
+  element_searchbar_categories_text.addEventListener("click", function() {
+    // add/remove the class based if it already exists or not
+    if (element_categories_dropdown_content.classList.contains("display-block-show")) {
+      element_categories_dropdown_content.classList.remove("display-block-show");
+    } else {
+      element_categories_dropdown_content.classList.add("display-block-show");
+    }
+  });
 
+
+  // if clicked outside the dropdown text or even in the dropdown => close it
+  window.onclick = function(event) {
+    if (!event.target.matches('.searchbar-category-dropdown')) {
+      element_categories_dropdown_content.classList.remove("display-block-show");
+    }
   }
+
+  let element_list = document.getElementById("categories-dropdown-content");
+
+  for (let i = 0; i < categories.length; i++) {
+    let category = categories[i];
+    let category_html = `<p class="categories-dropdown-item" onclick="handleSearchCategroyText('${category}')">${category}</p>`;
+    element_list.innerHTML = element_list.innerHTML + category_html
+  }
+
+  // Set the default text to be the first element of the categories list
+  handleSearchCategroyText(categories[0]);
+}
+
+// selected_item is the text of the selected category
+function handleSearchCategroyText(selected_item) {
+  let element_searchbar_categories_text = document.getElementById("searchbar-category-text");
+  element_searchbar_categories_text.innerHTML = selected_item;
 }
 
 function populateDiscoverCategories(categories) {
   let element_list = document.getElementById("categories-list");
-
-  let all_categories_text = "Alle Kategorien";
-  let all_categories_html = `<li><a class="categories-item" href="pages/products/category.php?categories=${all_categories_text}">${all_categories_text}</a></li>`;
-  element_list.innerHTML = element_list.innerHTML + all_categories_html
 
   for (let i = 0; i < categories.length; i++) {
     let category = categories[i];
@@ -51,17 +75,8 @@ function populateDiscoverCategories(categories) {
 function handleScrollTop() {
   let element_button = document.getElementById("scroll-top-button");
 
-
   window.onscroll = function() {
-    scrollFunction()
-  };
-
-  function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      element_button.style.display = "block";
-    } else {
-      element_button.style.display = "none";
-    }
+    scrollToTop(element_button)
   };
 
   element_button.addEventListener("click", function() {
@@ -78,6 +93,14 @@ function handleScrollTop() {
   });
 
 }
+
+function scrollToTop(element_button) {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    element_button.classList.add("display-block-show");
+  } else {
+    element_button.classList.remove("display-block-show");
+  }
+};
 
 function visitURL(urlName) {
   if (urlName === "homepage") {

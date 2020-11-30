@@ -2,7 +2,7 @@
 <html lang="de" dir="ltr">
 
 <head>
-  <title>PortaPC - Impressum</title>
+  <title>PortaPC</title>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,6 +22,7 @@
         handleNavbar();
         handleScrollTop();
         handleSearchCategoryList(categories);
+        populateDiscoverCategories(categories);
       }
     }
   </script>
@@ -89,16 +90,13 @@
           <div class="row">
             <!-- Category title -->
             <div class="col-sm-12">
-              <p class="category-title text-uppercase">Informationen</p>
+              <p class="category-title text-uppercase">Entdecken</p>
             </div>
 
             <!-- Category card -->
             <div class="col-sm-12">
               <div class="categories-container">
                 <ul class="categories-list" id="categories-list">
-                  <li><a class="categories-item" href="about_us.html">Über uns</a></li>
-                  <li><a class="categories-item" href="agb.html">AGB</a></li>
-                  <li><a class="categories-item categories-item-selected" href="impressum.html">Impressum</a></li>
                 </ul>
               </div>
             </div>
@@ -110,61 +108,137 @@
           <div class="row">
 
             <div class="col-sm-12">
-              <p class="category-title text-uppercase">Impressum</p>
+              <p class="category-title text-uppercase">Neueste Anzeige</p>
             </div>
 
-            <div class="col-sm-12">
-              <p class="text-subtitle text-weight-medium">Angaben gemäß § 5 TMG</p>
-              <p class="text-body-1 text-weight-regular">Max Muster<br>
-                Musterweg<br>
-                12345 Musterstadt<br>
-              </p>
-              <br></br>
-              <p class="text-subtitle text-weight-medium">Vertreten durch:</p>
-              <p class="text-body-1 text-weight-regular">
-                Hochschule Trier
-              </p>
-              <br>
-              <p class="text-subtitle text-weight-medium">Kontakt:</p>
-              <p class="text-body-1 text-weight-regular">
-                Telefon: 01234-789456<br>
-                Fax: 1234-56789<br>
-                E-Mail: max@muster.de<br>
-              </p>
-              <p class="text-subtitle text-weight-medium">Registereintrag:</p>
-              <p class="text-body-1 text-weight-regular">
-                Eintragung im Registergericht: Musterstadt<br>
-                Registernummer: 12345
-              </p>
-              <br>
-              <p class="text-subtitle text-weight-medium">Umsatzsteuer-ID:</p>
-              <br>
-              <p class="text-body-1 text-weight-regular">
-                Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz: Musterustid.
-              </p>
-              <br>
-              <p class="text-subtitle text-weight-medium">Wirtschafts-ID:</p>
-              <p class="text-body-1 text-weight-regular">
-                Musterwirtschaftsid
-              </p>
-              <br>
-              <p class="text-subtitle text-weight-medium">Aufsichtsbehörde:</p>
-              <p class="text-body-1 text-weight-regular">
-                Musteraufsicht Musterstadt
-              </p>
-              <br>
-              <p class="text-subtitle text-weight-medium">Haftungsausschluss:</p>
-              <br>
-              <p class="text-subtitle text-weight-medium">Datenschutz</p>
-              <p class="text-body-1 text-weight-regular">
-                Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies, soweit
-                möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
-                Wir weisen darauf hin, dass die Datenübertragung im Internet (z.B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
-                Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber
-                der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.
-              </p>
+            <div class="col-sm-6 col-md-4 col-lg-3 product">
+              <a href="pages/products/product.php?id=">
+                <div class="row">
+                  <!-- image part -->
+                  <div class="col-sm-12 margin-a-0 product-image-container">
+                    <img src="../../images/placeholders/product.png" class="product-image" alt="product">
+                    <div class="product-price-container">
+                      <p class="product-price">€400</p>
+                    </div>
+                  </div>
+
+                  <!-- title -->
+                  <div class="col-sm-12 margin-a-0 margin-t-3">
+                    <p class="product-title">RTX 3090</p>
+                  </div>
+
+                  <!-- location -->
+                  <div class="col-sm-12 margin-a-0 margin-t-2">
+                    <p class="product-location">Trier-Nord</p>
+                  </div>
+
+                </div>
+              </a>
             </div>
 
+            <div class="col-sm-6 col-md-4 col-lg-3 product">
+              <a href="pages/products/product.php?id=">
+                <div class="row">
+                  <!-- image part -->
+                  <div class="col-sm-12 margin-a-0 product-image-container">
+                    <img src="../../images/placeholders/product.png" class="product-image" alt="product">
+                    <div class="product-price-container">
+                      <p class="product-price">€700</p>
+                    </div>
+                  </div>
+
+                  <!-- title -->
+                  <div class="col-sm-12 margin-a-0 margin-t-3">
+                    <p class="product-title">RTX 3080</p>
+                  </div>
+
+                  <!-- location -->
+                  <div class="col-sm-12 margin-a-0 margin-t-2">
+                    <p class="product-location">Trier-S&uuml;d</p>
+                  </div>
+
+                </div>
+              </a>
+
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 product">
+              <a href="pages/products/product.php?id=">
+                <div class="row">
+                  <!-- image part -->
+                  <div class="col-sm-12 margin-a-0 product-image-container">
+                    <img src="../../images/placeholders/product.png" class="product-image" alt="product">
+                    <div class="product-price-container">
+                      <p class="product-price">€700</p>
+                    </div>
+                  </div>
+
+                  <!-- title -->
+                  <div class="col-sm-12 margin-a-0 margin-t-3">
+                    <p class="product-title">RTX 3080</p>
+                  </div>
+
+                  <!-- location -->
+                  <div class="col-sm-12 margin-a-0 margin-t-2">
+                    <p class="product-location">Trier-S&uuml;d</p>
+                  </div>
+
+                </div>
+              </a>
+
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 product">
+              <a href="pages/products/product.php?id=">
+                <div class="row">
+                  <!-- image part -->
+                  <div class="col-sm-12 margin-a-0 product-image-container">
+                    <img src="../../images/placeholders/product.png" class="product-image" alt="product">
+                    <div class="product-price-container">
+                      <p class="product-price">€700</p>
+                    </div>
+                  </div>
+
+                  <!-- title -->
+                  <div class="col-sm-12 margin-a-0 margin-t-3">
+                    <p class="product-title">RTX 3080</p>
+                  </div>
+
+                  <!-- location -->
+                  <div class="col-sm-12 margin-a-0 margin-t-2">
+                    <p class="product-location">Trier-S&uuml;d</p>
+                  </div>
+
+                </div>
+              </a>
+
+            </div>
+
+            <div class="col-sm-6 col-md-4 col-lg-3 product">
+              <a href="pages/products/product.php?id=">
+                <div class="row">
+                  <!-- image part -->
+                  <div class="col-sm-12 margin-a-0 product-image-container">
+                    <img src="../../images/placeholders/product.png" class="product-image" alt="product">
+                    <div class="product-price-container">
+                      <p class="product-price">€700</p>
+                    </div>
+                  </div>
+
+                  <!-- title -->
+                  <div class="col-sm-12 margin-a-0 margin-t-3">
+                    <p class="product-title">RTX 3080</p>
+                  </div>
+
+                  <!-- location -->
+                  <div class="col-sm-12 margin-a-0 margin-t-2">
+                    <p class="product-location">Trier-S&uuml;d</p>
+                  </div>
+
+                </div>
+              </a>
+
+            </div>
           </div>
         </div>
 
@@ -188,13 +262,13 @@
         <div class="col-xs-12 col-m-2 col-lg-2">
           <p class="footer-title">Informationen</p>
 
-          <a href="about_us.html">
+          <a href="../informationen/about_us.html">
             <p class="footer-content">Über uns</p>
           </a>
-          <a href="impressum.html">
+          <a href="../informationen/impressum.html">
             <p class="footer-content">Impressum</p>
           </a>
-          <a href="agb.html">
+          <a href="../informationen/agb.html">
             <p class="footer-content">AGB</p>
           </a>
 
