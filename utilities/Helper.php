@@ -253,14 +253,4 @@ class Helper {
 
         return $array;
     }
-
-    function checkLogin($email, $password){
-      $user_information = $this->jsonDatabase->website_secret->login;
-      $user_email = $user_information->user_email;
-      $user_password = $user_information->user_password;
-      // we use PHP's own function to hash our password
-      $input_password_encrypted = password_hash($password, PASSWORD_BCRYPT, [ 'cost' => 6 ]);
-      echo $input_password_encrypted;
-      return $user_email == $email && password_verify($password, $user_password) == true;
-    }
 }

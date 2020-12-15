@@ -200,11 +200,5 @@
         "type": "Products"
       }
     ]
-  },
-  "website_secret": {
-    "login": {
-      "user_email": "login@portapc.de",
-      "user_password": "$2y$15$KdpQyFADY6x0a4ahnqm4ZeRnVMSVsjHfUGVUy3b1HIvPfrtVLw7qC"
-    }
   }
 }
