@@ -4,7 +4,7 @@ class Helper {
     // Just like Java, we create a private variable and a "getter"
     private $jsonDatabase;
     private $page_products_limit = 20;
-    public $homepage_products_latest_limit = 3;
+    public $homepage_products_latest_limit = 15;
 
     public function __construct() {
         $this->jsonDatabase = file_get_contents(__DIR__ . '/../database.json');
