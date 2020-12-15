@@ -499,13 +499,13 @@ color: hange the text's color color
 .filters-categories-item:hover {
   background-color: rgba(221, 187, 118, 0.2);
   border-radius: 15px;
-  padding: 3px 6px;
+  padding: 6px 6px;
 }
 
 .filters-categories-item-selected {
   background-color: #dcbb76 !important;
   border-radius: 15px;
-  padding: 3px 6px !important;
+  padding: 6px 6px !important;
 }
 
 .filters-categories-item {
