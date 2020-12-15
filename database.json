@@ -20,6 +20,11 @@
     ]
   },
   "website_constants": {
+    "information": {
+      "contact_email": "kontakt@portapc.de",
+      "about_us_title": "PortaPC",
+      "about_us_summary": "Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine Zusammenfassung von diesem Projekt sein."
+    },
     "social_links": {
       "facebook": "https://www.facebook.com/",
       "twitter": "https://www.twitter.com/",
@@ -36,81 +41,34 @@
       "Peripheriegeräte",
       "Komplettsysteme"
     ],
-    "locations": [{
-        "title": "Trier"
-      },
-      {
-        "title": "Petrisberg"
-      },
-      {
-        "title": "Biewer"
-      },
-      {
-        "title": "Ehrang"
-      },
-      {
-        "title": "Eitelsbach"
-      },
-      {
-        "id": "6",
-        "title": "Euren"
-      },
-      {
-        "title": "Feyen"
-      },
-      {
-        "title": "Filsch"
-      },
-      {
-        "title": "Heiligkreuz"
-      },
-      {
-        "title": "Irsch"
-      },
-      {
-        "title": "Kernscheid"
-      },
-      {
-        "title": "Kürenz"
-      },
-      {
-        "title": "Mariahof"
-      },
-      {
-        "title": "Oberkirch"
-      },
-      {
-        "title": "Olewig"
-      },
-      {
-        "title": "Pallien"
-      },
-      {
-        "title": "Pfalzel"
-      },
-      {
-        "title": "Ruwer"
-      },
-      {
-        "title": "Tarforst"
-      },
-      {
-        "title": "Trier-Ost"
-      },
-      {
-        "title": "Trier-Nord"
-      },
-      {
-        "title": "Trier-Süd"
-      },
-      {
-        "title": "Trier-West"
-      },
-      {
-        "title": "Zewen"
-      }
+    "locations": [
+       "Petrisberg",
+       "Biewer",
+       "Ehrang",
+       "Eitelsbach",
+       "Euren",
+       "Feyen",
+       "Filsch",
+       "Heiligkreuz",
+       "Irsch",
+       "Kernscheid",
+       "Kürenz",
+       "Mariahof",
+       "Oberkirch",
+       "Olewig",
+       "Pallien",
+       "Pfalzel",
+       "Ruwer",
+       "Tarforst",
+       "Trier",
+       "Trier-Ost",
+       "Trier-Nord",
+       "Trier-Süd",
+       "Trier-West",
+       "Zewen"
+
     ],
-    "product_conditions": [
+    "conditions": [
       "Neu",
       "Gebraucht",
       "Generalüberholt",
@@ -122,25 +80,25 @@
   "website_database": {
     "products": [{
         "id": 1,
-        "title": "Test",
+        "title": "Ta",
         "description": "",
         "thumbnail": "sample.png",
         "price": 100,
-        "location": "Trier-West",
-        "condition": "",
-        "category": "",
+        "location": "Trier",
+        "condition": "Generalüberholt",
+        "category": "CPUs",
         "created_at": 2000,
         "updated_at": 0
       },
       {
         "id": 2,
-        "title": "Teff",
+        "title": "Te",
         "description": "",
         "thumbnail": "sample.png",
-        "price": 600,
-        "location": "Trier-Ost",
-        "condition": "",
-        "category": "",
+        "price": 95,
+        "location": "Trier",
+        "condition": "Neu",
+        "category": "CPUs",
         "created_at": 3000,
         "updated_at": 0
       },
@@ -152,7 +110,7 @@
         "price": 300,
         "location": "Trier",
         "condition": "",
-        "category": "",
+        "category": "CPUs",
         "created_at": 4000,
         "updated_at": 0
       },
@@ -164,7 +122,7 @@
         "price": 400,
         "location": "Trier-Nord",
         "condition": "",
-        "category": "",
+        "category": "CPUs",
         "created_at": 5000,
         "updated_at": 0
       },

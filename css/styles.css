@@ -7,6 +7,13 @@ p {
   padding: 0;
 }
 
+/* remove arrows from input that has type=number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 /**
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
@@ -37,7 +44,7 @@ nav .nav-wrapper {
 .navbar-fixed {
   position: absolute;
   height: 56px;
-  z-index: 997;
+  z-index: 2;
 }
 
 /* By default, the navbar is hidden */
@@ -54,8 +61,12 @@ nav .nav-wrapper {
   transition: opacity 0.2s linear;
 }
 
+/*
+  box-shadow: x-offset, y-offset, blur, spread, color
+*/
 .navbar-fixed nav {
   position: fixed;
+  box-shadow: 0 2px 5px -2px rgba(0,0,0, 0.2);
 }
 
 .container {
@@ -126,11 +137,11 @@ color: hange the text's color color
   color: #d1d1d1 !important;
 }
 
-.search-input, input:focus {
+.search-input, search-input:focus {
   font-size: 16px;
   height: 100% !important;
   border-bottom: 0px !important;
-  -webkit-box-shadow: 0px !important;
+
   box-shadow: none !important;
   background-color: transparent;
   border: none;
@@ -143,6 +154,7 @@ color: hange the text's color color
 */
 .searchbar-category-container {
   display: flex;
+
 }
 
 /*
@@ -152,6 +164,7 @@ color: hange the text's color color
   width: let it take the available space
 */
 .searchbar-category-dropdown {
+  font-size: 16px;
   vertical-align: middle;
   text-align: center;
   text-overflow: ellipsis;
@@ -226,6 +239,7 @@ color: hange the text's color color
   border-radius: 5px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   margin-top: 10px;
+  left: -100%;
   z-index: 1;
 }
 
@@ -434,15 +448,344 @@ color: hange the text's color color
   font-weight: bold and thick, to give it proper attention
 */
 .category-title {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
   color: black;
 }
 
 .category-show-more {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   color: black;
+}
+
+/* filters styles */
+
+.filters-container {
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  list-style-type: none;
+  padding: 16px;
+}
+
+.filters-apply-button {
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dcbb76;
+  border: none;
+  outline: none;
+}
+
+.filters-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+.filters-categories-list {
+  list-style-type: none;
+  margin: 0 !important;
+  padding: 0px !important;
+}
+
+.filters-categories-list li {
+  padding: 6px 0px;
+}
+
+.filters-categories-item:hover {
+  background-color: rgba(221, 187, 118, 0.2);
+  border-radius: 15px;
+  padding: 3px 6px;
+}
+
+.filters-categories-item-selected {
+  background-color: #dcbb76 !important;
+  border-radius: 15px;
+  padding: 3px 6px !important;
+}
+
+.filters-categories-item {
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+  color: black;
+  padding: 6px 6px;
+}
+
+.filters-price-input::placeholder {
+  color: #d1d1d1 !important;
+}
+
+/*
+  remove any unwanted styles, such as border, outline, shadow
+*/
+.filters-price-input {
+  font-size: 16px;
+  height: 100% !important;
+  box-shadow: none !important;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: none;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
+
+.checkbox-container {
+
+}
+
+/*
+  Creating our own custom checkbox
+  the idea is simple: we hide the default checkbox
+  then, we use the label with the before & after selectors to create the checkbox we want
+*/
+/* hide the default checkbox, it makes him unrelavent to our document */
+.checkbox:not(:checked),
+.checkbox:checked {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+}
+
+/* To understand more about the "+" selector, please read this: https://www.w3schools.com/cssref/sel_element_pluss.asp */
+/* The following styles was "inspired" by external tutorials */
+/* Yet, it's easy to understad what's going on and how to replicate what's happening in this code */
+/* normal state of the checkbox with the label */
+.checkbox:not(:checked) + label,
+.checkbox:checked + label {
+  position: relative;
+  padding-left: 25px;
+  cursor: pointer;
+}
+
+/* checkbox aspect, not checked */
+.checkbox:not(:checked) + label:before,
+.checkbox:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 15px; height: 15px;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+/* keep it focused with the primary color */
+.checkbox:checked + label:before {
+  background: #dcbb76;
+  border: 2px solid #dcbb76 !important;
+}
+/* checked mark aspect, checked */
+.checkbox:not(:checked) + label:after,
+.checkbox:checked + label:after {
+  content: 'check';
+  position: absolute;
+  top: 2px; left: 2px;
+  font-size: 15px;
+  color: #fff;
+  background: #dcbb76;
+  transition: all .2s;
+  font-family: 'Material Icons';
+}
+/* checked mark aspect changes, transition state for the checked state */
+.checkbox:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.checkbox:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+
+/*
+  We are using the same approach to mimic a onclick event without any javascript
+  here, we will be using this for our chip class
+  we will be removing the check icon
+*/
+
+.chip:not(:checked),
+.chip:checked {
+  position: absolute;
+  opacity: 0;
+  left: -100%;
+}
+
+.chip:not(:checked) + label,
+.chip:checked + label {
+  position: relative;
+  padding-left: 10px;
+  cursor: pointer;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  background: #ccc;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+/* checkbox aspect, not checked */
+.chip:not(:checked) + label:before,
+.chip:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+}
+
+/* keep it focused with the primary color */
+
+/* checked mark aspect, checked */
+.chip:not(:checked) + label:after,
+.chip:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  border-radius: 5px;
+}
+
+.chip:checked + label {
+  background: #dcbb76;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+/* checked mark aspect changes, transition state for the checked state */
+.chip:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+.chip:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/*
+  color: our own choice
+  padding: y x padding
+  display: block, to make it visible and standalone
+  cursor: make the item clickable
+*/
+.sorting-dropdown-item {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  cursor: pointer;
+}
+
+/*
+  change the color of the dropdown item after hovering over it
+*/
+.sorting-dropdown-item:hover {
+  background-color: rgba(0, 0, 0, 0.1)
+}
+
+/*
+  position: relative, to let the items inside be relative to the parent
+  display: inline-block, to have a row-like structure
+*/
+.sorting-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.sorting-dropdown-text::after {
+  font-size: 15px !important;
+  font-family: 'Material Icons';
+  content: "expand_more";
+  margin-left: 5px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+/*
+  Modify the text in the search category dropdown
+  text-align: center the text
+  text-overflow, overflow, white-space: replace the text with dots if there's no space for it (helpful with responsive design)
+  width: let it take the available space
+*/
+.sorting-dropdown-text {
+  font-size: 16px;
+  vertical-align: middle;
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
+  align-self: center;
+  cursor: pointer;
+}
+
+
+/*
+  vertical & horizontal align of the content
+  align-items: vertical
+  justify-content: horizontal
+*/
+.sorting-dropdown-container {
+  align-items: center !important;
+  justify-content: center !important;
+  display: flex;
+  background-color: #f5f5f5;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+
+.sorting-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f2f2f2;
+  min-width: 200px;
+  border-radius: 5px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+  z-index: 1;
+}
+
+.products-list-information-text {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.products-empty-text {
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.75);
+  text-align: center;
+}
+
+.pagination-icon {
+  color: #000000;
+  font-size: 22px;
+  padding: 5px;
+}
+
+.pagination-icon-disabled {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+.pagination-current-text {
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 50%;
+  background-color: #dcbb76;
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  /* prevent the onfocus color change */
+  color: inherit;
 }
 
 .categories-container {
@@ -478,10 +821,6 @@ color: hange the text's color color
   padding: 8px;
 }
 
-.categories-item .selected {
-  background-color: rgba(0, 0, 0, 0.1)
-}
-
 .separator-line {
   border-top: 1px solid rgba(0, 0, 0, 0.25);
 }
@@ -514,7 +853,7 @@ color: hange the text's color color
   /* Place the button at the bottom of the page */
   right: 30px;
   /* Place the button 30px from the right */
-  z-index: 99;
+  z-index: 2;
   /* Make sure it does not overlap */
   cursor: pointer;
   /* Add a mouse pointer on hover */
@@ -647,6 +986,11 @@ color: hange the text's color color
   margin-bottom: 0 !important;
 }
 
+.margin-x-0 {
+  margin-right: 0px !important;
+  margin-left: 0px !important;
+}
+
 .margin-x-1 {
   margin-right: 4px !important;
   margin-left: 4px !important;
@@ -655,6 +999,10 @@ color: hange the text's color color
 .margin-x-2 {
   margin-right: 8px !important;
   margin-left: 8px !important;
+}
+
+.margin-t-0 {
+  margin-top: 0px !important;
 }
 
 .margin-t-1 {
@@ -673,6 +1021,10 @@ color: hange the text's color color
   margin-top: 16px !important;
 }
 
+.margin-b-0 {
+  margin-bottom: 0px !important;
+}
+
 .margin-b-1 {
   margin-bottom: 4px !important;
 }
@@ -689,6 +1041,22 @@ color: hange the text's color color
   margin-bottom: 16px !important;
 }
 
+.margin-l-0 {
+  margin-left: 0px !important;
+}
+
+.margin-l-1 {
+  margin-left: 4px !important;
+}
+
+.margin-l-2 {
+  margin-left: 8px !important;
+}
+
+.margin-l-3 {
+  margin-left: 12px !important;
+}
+
 .margin-r-1 {
   margin-right: 4px !important;
 }
@@ -703,6 +1071,23 @@ color: hange the text's color color
 
 .margin-r-4 {
   margin-right: 16px !important;
+}
+
+.padding-x-0 {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.padding-l-0 {
+  padding-left: 0px !important;
+}
+
+.padding-l-1 {
+  padding-left: 4px !important;
+}
+
+.padding-l-2 {
+  padding-left: 8px !important;
 }
 
 .padding-r-1 {
@@ -1108,5 +1493,164 @@ col-xs {
   .col-lg-12 {
     flex-basis: 100%;
     max-width: 100%;
+  }
+}
+
+/* z-index helper */
+
+.z-4 {
+  z-index: 4 !important;
+}
+
+.z-5 {
+  z-index: 5 !important;
+}
+
+.mobile-side-navigation-container {
+  position: absolute;
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .mobile-side-navigation-container {
+      position: fixed;
+      display: flex;
+      height: 56px;
+      width: 25%;
+      z-index: 3;
+      align-items: center;
+  }
+
+  .mobile-side-navigation-menu {
+    position: fixed;
+    font-size: 24px;
+    color: #000000;
+    z-index: 3;
+    left: 20px;
+    cursor: pointer;
+    /* make it like the navbar transition */
+    transition: margin-top 0.2s linear;
+    user-select: none;
+    outline: none;
+  }
+
+  .categories-col-container {
+    opacity: 1;
+    position: fixed;
+    background-color: #f5f5f5;
+    width: 75vw;
+    height: 100vh;
+    left: -100%;
+    /* 56 + margin-t-2 = 56 + 8 = 64 */
+    top: 64px;
+    padding-top: 11% !important;
+    z-index: 4;
+    box-shadow: 2px 0px 5px -2px rgba(0,0,0, 0.2);
+    transition: opacity 0.3s linear, left 0.3s linear, top 0.3s linear;
+  }
+
+  .categories-col-container-visible {
+    opacity: 1 !important;
+    left: 0% !important;
+    transition: opacity 0.3s linear, left 0.3s linear, top 0.3s linear;
+  }
+
+  .categories-list {
+    padding-top: 0px !important;
+  }
+
+  .filters-container {
+    padding-top: 0px !important;
+  }
+
+  .category-title {
+    font-size: 16px;
+  }
+
+  .slide-previous, .slide-next {
+    font-size: 20px;
+  }
+
+  .category-show-more {
+    font-size: 17px;
+  }
+
+  .slide-dot {
+    width: 7px;
+    height: 7px;
+    margin: 0 1px;
+  }
+
+  .product-image-container {
+    padding: 15px !important;
+  }
+
+  .product-price-container {
+    position: absolute;
+    top: 10px;
+    right: 0px;
+  }
+  .product-price {
+    font-size: 11px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+
+  .product-title {
+    font-size: 14px;
+  }
+
+  .product-location {
+    font-size: 11px;
+  }
+
+  .searchbar-category-dropdown {
+    font-size: 12px;
+  }
+
+  .sorting-dropdown-text {
+    font-size: 12px;
+  }
+
+  .pagination-current-text {
+    font-size: 12px;
+  }
+
+  .pagination-icon {
+    font-size: 18px;
+  }
+
+  .products-list-information-text {
+    font-size: 12px;
+  }
+
+  .products-empty-text {
+    font-size: 15px;
+  }
+
+  .footer-title {
+    font-size: 14px;
+
+  }
+
+  .footer-content {
+    font-size: 12px;
+  }
+
+  .text-subtitle {
+    font-size: 14px;
+  }
+
+  .text-body-1 {
+    font-size: 12px;
+  }
+
+  .text-body-2 {
+    font-size: 12px;
+    font-weight: 500 !important;
   }
 }

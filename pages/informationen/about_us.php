@@ -6,17 +6,14 @@ We want to try our best to keep it a bit secure, even if it's not the best appro
 
 First, include the class once. We don't want any duplicated includes of the same file (prevent any conflicts)
 */
-include_once("utilities/Helper.php");
+include_once("../../utilities/Helper.php");
 
 // Create an instance of our Helper class
 $helper                      = new Helper();
 
 // create an instance of our latest products
-$products_latest_sort_object = (object) ["sort_by" => "created_at", "sort_order" => "desc"];
-$products_latest_json        = json_decode($helper->getProducts(null, $products_latest_sort_object, $helper->homepage_products_latest_limit, null));
 
 $categories                  = $helper->getCategories(false);
-$sliders                     = $helper->getSliders();
 ?>
 
 <!DOCTYPE html>
@@ -33,15 +30,13 @@ $sliders                     = $helper->getSliders();
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen" />
-  <script src="js/scripts.js"></script>
+  <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
+  <script src="../../js/scripts.js"></script>
   <script>
     let categories = <?php echo $helper->getCategories(true) ?>;
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
-        handleSlider(0);
-        handleSliderAutomatic();
         handleScroll();
         handleSearchCategoryList();
       }
@@ -70,7 +65,7 @@ $sliders                     = $helper->getSliders();
     <div class="row">
       <!--Logo column-->
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
-        <a href="/"><div class="website-logo" ></div></a>
+        <a href="/"><div class="website-logo"></div></a>
       </div>
       <!--End of Logo column-->
 
@@ -134,22 +129,16 @@ $sliders                     = $helper->getSliders();
           <div class="row">
             <!-- Category title -->
             <div class="col-xs-12 col-sm-12">
-              <p class="category-title text-uppercase">Entdecken</p>
+              <p class="category-title text-uppercase">Informationen</p>
             </div>
 
             <!-- Category card -->
             <div class="col-xs-12 col-sm-12">
               <div class="categories-container">
                 <ul class="categories-list" id="categories-list">
-
-
-                  <?php
-                  foreach($categories as $category){
-                  ?>
-                  <li><a class="categories-item" href="/pages/products/category.php?category=<?php echo $category ?>"><?php echo $category ?></a></li>
-                  <?php
-                  }
-                  ?>
+                  <li><a class="categories-item categories-item-selected" href="/pages/informationen/about_us.php">Über uns</a></li>
+                  <li><a class="categories-item" href="/pages/informationen/agb.php">AGB</a></li>
+                  <li><a class="categories-item" href="/pages/informationen/impressum.php">Impressum</a></li>
                 </ul>
               </div>
             </div>
@@ -160,103 +149,13 @@ $sliders                     = $helper->getSliders();
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 margin-a-0 padding-a-0">
           <div class="row">
 
-            <div class="col-xs-12 col-sm-12">
-              <p class="category-title text-uppercase">Homepage</p>
+            <div class="col-sm-12">
+              <p class="category-title text-uppercase">Über uns</p>
             </div>
 
-            <!-- Slider placeholder -->
-            <div class="col-xs-12 col-sm-12">
-
-              <div class="slider">
-                <?php
-                foreach($sliders as $slider){
-                  $thumbnail = $slider->thumbnail;
-                  $redirect_url = $slider->redirect_url;
-                ?>
-                <a class="slide slide-fade-in" href="<?php echo $redirect_url ?>">
-                  <img class="slide-image" src="/images/slider/<?php echo $thumbnail ?>">
-                </a>
-                <?php
-                }
-                ?>
-                <!-- Next and previous buttons -->
-                <i class="material-icons slide-previous" onclick="applySlider(-1, true)">arrow_back_ios</i>
-                <i class="material-icons slide-next" onclick="applySlider(1, true)">arrow_forward_ios</i>
-
-                <!-- The dots/circles -->
-                <div class="slider-dots">
-                  <?php
-                  for($i = 0; $i < sizeof($sliders); $i++){
-                  ?>
-                  <span class="slide-dot" onclick="applySlider(<?php echo $i ?>, false)"></span>
-                  <?php
-                  }
-                  ?>
-                </div>
-              </div>
+            <div class="col-sm-12">
             </div>
 
-            <div class="col-xs-6 col-sm-6">
-              <p class="category-title text-uppercase">Neueste Anzeige</p>
-            </div>
-
-            <!-- Combine PHP and HTML, if the if clause is true, then the HTML code will be shown -->
-            <?php if ($products_latest_json->has_more === true){
-              ?>
-
-              <div class="col-xs-6 col-sm-6">
-                <a class="category-show-more text-uppercase clickable float-right" href="/pages/products/category.php?sort_by=created_at&sort_order=desc">alles anzeigen</a>
-              </div>
-
-              <!-- Close the if clause -->
-              <?php
-            } else {
-              ?>
-
-              <!-- We need to take the 6 columns grid space, when the "ALLES ANZEIGEN" is not enabled -->
-              <div class="col-xs-6 col-sm-6"></div>
-              <?php
-            }
-            ?>
-
-
-            <?php
-            $products_latest = $products_latest_json->products;
-            foreach($products_latest as $product){
-              $id = $product->id;
-              $title = $product->title;
-              $thumbnail = $product->thumbnail;
-              $price = $product->price;
-              $location = $product->location;
-              ?>
-
-              <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 product">
-                <a href="/pages/products/product.php?id=<?php echo $id ?>">
-                  <div class="row">
-                    <!-- image part -->
-                    <div class="col-xs-12 col-sm-12 margin-a-0 product-image-container">
-                      <img src="/images/products/<?php echo $thumbnail ?>" class="product-image" alt="product">
-                      <div class="product-price-container">
-                        <p class="product-price">€<?php echo $price ?></p>
-                      </div>
-                    </div>
-
-                    <!-- title -->
-                    <div class="col-xs-12 col-sm-12 margin-a-0 margin-t-2">
-                      <p class="product-title"><?php echo $title ?></p>
-                    </div>
-
-                    <!-- location -->
-                    <div class="col-xs-12 col-sm-12 margin-a-0 margin-t-1">
-                      <p class="product-location"><?php echo $location ?></p>
-                    </div>
-
-                  </div>
-                </a>
-              </div>
-              <?php
-            }
-            ?>
           </div>
         </div>
 
