@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 /*
 We will use a Helper class in PHP to get our Json content.
 If we use JavaScript, our Json file will be exposed.
@@ -12,15 +11,28 @@ include_once("../utilities/Helper.php");
 
 // Create an instance of our Helper class
 $helper                      = new Helper();
-
-if(isset($_SESSION["email"]) === false && isset($_SESSION["password"]) === false){
-  header('Location: login.php');
+if(isset($_SESSION["email"]) === true && isset($_SESSION["password"]) === true && $helper->checkLogin($_SESSION["email"], $_SESSION["password"]) === true){
+  header('Location: index.php');
   exit;
-} else {
-  if($helper->checkLogin($_SESSION["email"], $_SESSION["password"]) === false){
-    header('Location: login.php');
+}
+
+
+$login_result = "pending";
+
+if(isset($_POST["input_email"]) && isset($_POST["input_password"])){
+  $email = $_POST["input_email"];
+  $password = $_POST["input_password"];
+  if($helper->checkLogin($email, $password) === true){
+    $login_result = "done";
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    header('Location: index.php');
     exit;
+  } else {
+    $login_result = "rejected";
   }
+} else {
+
 }
 
 ?>
@@ -44,7 +56,10 @@ if(isset($_SESSION["email"]) === false && isset($_SESSION["password"]) === false
   <script>
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
-
+        let login_result = "<?php echo $login_result ?>";
+        if(login_result == "rejected"){
+          alert("Anmeldung war nicht erfolgreich!");
+        }
       }
     }
   </script>
@@ -78,11 +93,20 @@ if(isset($_SESSION["email"]) === false && isset($_SESSION["password"]) === false
 
   <main id="homepage-content" class="margin-t-4">
     <div class="container">
-      <div class="row">
-
+      <div class="row justify-content-center">
         <!-- login -->
-        <div class="col-xs-12">
-
+        <div class="col-xs-12 col-sm-12 col-md-4">
+          <form class="row cardview justify-content-center" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+            <div class="col-xs-12 col-sm-12 col-md-8">
+              <input class="login-input" name="input_email" placeholder="Email"/>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-8">
+              <input class="login-input" name="input_password" placeholder="Passwort"/>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-5">
+              <button class="login-button text-uppercase clickable">Anmelden</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>

@@ -203,9 +203,8 @@
   },
   "website_secret": {
     "login": {
-      "user_name": "PortaPC",
       "user_email": "login@portapc.de",
-      "password": "$2y$12$V7WYXIRAJ5DxaxUmdWinIuVH7FL..CWUOtNo4z4.JjDOf3gx6IsHq"
+      "user_password": "$2y$15$KdpQyFADY6x0a4ahnqm4ZeRnVMSVsjHfUGVUy3b1HIvPfrtVLw7qC"
     }
   }
 }

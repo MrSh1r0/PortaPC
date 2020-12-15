@@ -11,11 +11,6 @@ class Helper {
         $this->jsonDatabase = json_decode($this->jsonDatabase);
     }
 
-    // This is the getter for $jsonDatabase
-    public function getJson() {
-        return $this->jsonDatabase;
-    }
-
     // Get the categories.
     // JsonDatabase is an object, which has the object website_constants
     // website_constants has an array, which is categories
@@ -257,5 +252,15 @@ class Helper {
         }
 
         return $array;
+    }
+
+    function checkLogin($email, $password){
+      $user_information = $this->jsonDatabase->website_secret->login;
+      $user_email = $user_information->user_email;
+      $user_password = $user_information->user_password;
+      // we use PHP's own function to hash our password
+      $input_password_encrypted = password_hash($password, PASSWORD_BCRYPT, [ 'cost' => 6 ]);
+      echo $input_password_encrypted;
+      return $user_email == $email && password_verify($password, $user_password) == true;
     }
 }

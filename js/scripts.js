@@ -455,6 +455,7 @@ function handleMobileNavigation(){
   }
 }
 
+
 function handleScroll() {
   let element_button = document.getElementById("scroll-top-button");
 

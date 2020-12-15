@@ -499,13 +499,13 @@ color: hange the text's color color
 .filters-categories-item:hover {
   background-color: rgba(221, 187, 118, 0.2);
   border-radius: 15px;
-  padding: 6px 6px;
+  padding: 4px 6px;
 }
 
 .filters-categories-item-selected {
   background-color: #dcbb76 !important;
   border-radius: 15px;
-  padding: 6px 6px !important;
+  padding: 4px 6px !important;
 }
 
 .filters-categories-item {
@@ -513,7 +513,7 @@ color: hange the text's color color
   font-weight: 400;
   text-decoration: none;
   color: black;
-  padding: 6px 6px;
+  padding: 4px 6px;
 }
 
 .filters-price-input::placeholder {
@@ -873,6 +873,48 @@ color: hange the text's color color
   transition: opacity 0.2s linear;
 }
 
+
+
+.cardview {
+  width: 100%;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px 0px rgba(0,0,0, 0.2)
+}
+
+
+.login-input::placeholder {
+  color: #d1d1d1 !important;
+}
+
+/*
+  remove any unwanted styles, such as border, outline, shadow
+*/
+.login-input {
+  font-size: 16px;
+  height: 100% !important;
+  box-shadow: none !important;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: none;
+  font-weight: 400;
+  width: 100%;
+  text-align: center;
+}
+
+.login-button {
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dcbb76;
+  border: none;
+  outline: none;
+}
+
 /*
   helper class for text
 */
@@ -1104,6 +1146,17 @@ color: hange the text's color color
 
 .padding-r-4 {
   padding-right: 16px !important;
+}
+
+
+/* z-index helper */
+
+.z-4 {
+  z-index: 4 !important;
+}
+
+.z-5 {
+  z-index: 5 !important;
 }
 
 /*
@@ -1494,16 +1547,6 @@ col-xs {
     flex-basis: 100%;
     max-width: 100%;
   }
-}
-
-/* z-index helper */
-
-.z-4 {
-  z-index: 4 !important;
-}
-
-.z-5 {
-  z-index: 5 !important;
 }
 
 .mobile-side-navigation-container {
