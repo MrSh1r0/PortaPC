@@ -82,85 +82,85 @@
         "id": 1,
         "title": "Ta",
         "description": "",
-        "thumbnail": "sample.png",
+        "images": ["sample.png"],
         "price": 100,
         "location": "Trier",
         "condition": "Generalüberholt",
         "category": "CPUs",
         "created_at": 2000,
-        "updated_at": 0
+        "created_at_human": ""
       },
       {
         "id": 2,
         "title": "Te",
         "description": "",
-        "thumbnail": "sample.png",
+        "images": ["sample.png"],
         "price": 95,
         "location": "Trier",
         "condition": "Neu",
         "category": "CPUs",
         "created_at": 3000,
-        "updated_at": 0
+        "created_at_human": ""
       },
       {
         "id": 3,
         "title": "Fasda",
         "description": "",
-        "thumbnail": "sample.png",
+        "images": ["sample.png"],
         "price": 300,
         "location": "Trier",
-        "condition": "",
-        "category": "CPUs",
+        "condition": "Neu",
+        "category": "GPUs",
         "created_at": 4000,
-        "updated_at": 0
+        "created_at_human": ""
       },
       {
         "id": 4,
-        "title": "Bdsa",
-        "description": "",
-        "thumbnail": "sample.png",
+        "title": "Asus Strix Nvidia RTX 3080",
+        "description": "<div id=\"ds_div\"> <b>Verkaufe meine Mega-Grafikkarte, die ASUS ROG GeForce RTX 3080 10GB GDDR6X. <\/b>Die Grafikkarte habe ich in einem neuen PC von einem deutschen Hersteller gekauft und ist einfach der Hammer. <br><br><div>F\u00FCr mich als Casual-Gamer ist das Ding einfach zu schade und daher verkaufe ich sie lieber an einen Hardcore-Gamer f\u00FCr Anspruchvolles spielen.<br><br><\/div><div><\/div><div><b>Sie lief bei mir jetzt eine Woche perfekt<\/b> und der FurMark (siehe Bild) zeigt auch sch\u00F6n die Leistung und das es hier kein Fake-Schnickschnack Angebot ist (\"Kaufe Bild einer RTX 3080\")<\/div><div><\/div><div>Karte und Bedienungsanleitung sind dabei und reichen f\u00FCr den Einbau (Treiber im Netz). Wie gesagt war bis heute in einem PC eingebaut und wurde so geliefert.<br><br><\/div><div><\/div><div><\/div><div><b><\/div><\/div>",
+        "images": ["sample.png", "sample.png", "sample.png"],
         "price": 400,
         "location": "Trier-Nord",
-        "condition": "",
-        "category": "CPUs",
-        "created_at": 5000,
-        "updated_at": 0
+        "condition": "Neu",
+        "category": "GPUs",
+        "created_at": 4000,
+        "created_at_human": "16.12.2020"
       },
       {
         "id": 5,
         "title": "Bdsa",
         "description": "",
-        "thumbnail": "sample.png",
+        "images": ["sample.png"],
         "price": 400,
         "location": "Trier-Nord",
-        "condition": "",
-        "category": "",
+        "condition": "Neu",
+        "category": "GPUs",
         "created_at": 5000,
-        "updated_at": 0
+        "created_at_human": ""
       },
       {
         "id": 6,
         "title": "Bdsa",
         "description": "",
-        "thumbnail": "sample.png",
+        "images": ["sample.png"],
         "price": 400,
         "location": "Trier-Nord",
-        "condition": "",
-        "category": "",
+        "condition": "B-Ware",
+        "category": "GPUs",
         "created_at": 5000,
-        "updated_at": 0
+        "created_at_human": ""
       },
       {
         "id": 7,
         "title": "Bdsa",
         "description": "",
-        "thumbnail": "sample.png",
+        "images": ["sample.png"],
         "price": 400,
         "location": "Trier-Nord",
-        "condition": "",
-        "category": "",
+        "condition": "Neu",
+        "category": "GPUs",
         "created_at": 5000,
-        "updated_at": 0
+        "created_at_human": ""
       }
     ],
     "sliders": [{

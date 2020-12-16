@@ -366,7 +366,7 @@ $products             = $products_json->products;
             foreach($products as $product){
               $id = $product->id;
               $title = $product->title;
-              $thumbnail = $product->thumbnail;
+              $images = $product->images;
               $price = $product->price;
               $location = $product->location;
               ?>
@@ -376,7 +376,7 @@ $products             = $products_json->products;
                   <div class="row">
                     <!-- image part -->
                     <div class="col-xs-12 col-sm-12 margin-a-0 product-image-container">
-                      <img src="/images/products/<?php echo $thumbnail ?>" class="product-image" alt="product">
+                      <img src="/images/products/<?php echo $id ?>/<?php echo $images[0] ?>" class="product-image" alt="product">
                       <div class="product-price-container">
                         <p class="product-price">€<?php echo $price ?></p>
                       </div>

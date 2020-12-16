@@ -341,7 +341,7 @@ color: hange the text's color color
 }
 
 .slide-dot-active, .slide-dot:hover {
-  background-color: #dcbb76;
+  background-color: #dcbb76 !important;
 }
 
 /*
@@ -882,38 +882,44 @@ color: hange the text's color color
   box-shadow: 0 2px 5px 0px rgba(0,0,0, 0.2)
 }
 
+.product-slider-col {
+  background-color: #f2f2f2;
+  border-radius: 15px;
 
-.login-input::placeholder {
-  color: #d1d1d1 !important;
 }
 
-/*
-  remove any unwanted styles, such as border, outline, shadow
-*/
-.login-input {
-  font-size: 16px;
-  height: 100% !important;
-  box-shadow: none !important;
-  background-color: transparent;
-  border: 2px solid rgba(0, 0, 0, 0.2);
-  border-radius: 5px;
-  outline: none;
-  font-weight: 400;
-  width: 100%;
-  text-align: center;
+.product-slide {
+  padding: 40px 0px;
 }
 
-.login-button {
+.slide-button-product {
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.slide-button-product:hover {
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.slide-product-dot {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.product-slide {
+  width: 65%;
+  margin: auto;
+}
+
+.product-page-subtitle {
   font-size: 14px;
   font-weight: 500;
-  width: 100%;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #dcbb76;
-  border: none;
-  outline: none;
 }
+
+.product-page-description {
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.
 
 /*
   helper class for text
@@ -1555,6 +1561,21 @@ col-xs {
 }
 
 @media only screen and (max-width: 800px) {
+  .product-slide {
+    width: 75%;
+    margin: auto;
+  }
+
+  .product-page-subtitle {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .product-page-description {
+    font-size: 12px;
+    font-weight: 400;
+  }
+
   .mobile-side-navigation-container {
       position: fixed;
       display: flex;

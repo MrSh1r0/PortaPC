@@ -48,6 +48,16 @@ class Helper {
         return $this->jsonDatabase->website_constants->social_links;
     }
 
+    public function getProduct($id){
+      $products = $this->jsonDatabase->website_database->products;
+      $products = $this->filterArray($products, "id", $id, false, false);
+      if(sizeof($products) > 0){
+        return $products[0];
+      } else {
+        return null;
+      }
+    }
+
     public function getProducts($search, $sort, $limit, $page) {
         /*
         $search: include a search object that has values to search for (Search page).

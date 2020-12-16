@@ -473,17 +473,25 @@ function handleScroll() {
     let element_mobile_nav_menu = document.getElementById("mobile_side_navigation_menu");
     let categories_col_container = document.getElementById("categories-col-container");
     if (window_scroll_position > offset_top) {
-      element_mobile_nav_menu.classList.remove("margin-t-2");
-      element_nav.classList.add("nav-visible");
-      element_nav_container.classList.add("nav-visible");
+      if(element_mobile_nav_menu)
+        element_mobile_nav_menu.classList.remove("margin-t-2");
+      if(element_nav)
+        element_nav.classList.add("nav-visible");
+      if(element_nav_container)
+        element_nav_container.classList.add("nav-visible");
       // there will be a white space in between, so remove the extra space
-      categories_col_container.style.top = "56px";
+      if(categories_col_container)
+        categories_col_container.style.top = "56px";
     } else {
-      element_mobile_nav_menu.classList.add("margin-t-2");
-      element_nav.classList.remove("nav-visible");
-      element_nav_container.classList.remove("nav-visible");
+      if(element_mobile_nav_menu)
+        element_mobile_nav_menu.classList.add("margin-t-2");
+      if(element_nav)
+        element_nav.classList.remove("nav-visible");
+      if(element_nav_container)
+        element_nav_container.classList.remove("nav-visible");
       // make it back normal after the fixed navbar is removed
-      categories_col_container.style.top = "64px";
+      if(categories_col_container)
+        categories_col_container.style.top = "64px";
     }
   };
 
