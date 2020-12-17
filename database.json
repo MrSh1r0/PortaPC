@@ -2,22 +2,18 @@
   "website_info": {
     "website_title": "PortaPC",
     "website_devs": [{
-        "name": "Anh",
-        "profile_picture": ""
-      },
-      {
-        "name": "Tung",
-        "profile_picture": ""
-      },
-      {
-        "name": "Mohammad Hammado",
-        "profile_picture": ""
-      },
-      {
-        "name": "Leon",
-        "profile_picture": ""
-      }
-    ]
+      "name": "Anh",
+      "profile_picture": ""
+    }, {
+      "name": "Tung",
+      "profile_picture": ""
+    }, {
+      "name": "Mohammad Hammado",
+      "profile_picture": ""
+    }, {
+      "name": "Leon",
+      "profile_picture": ""
+    }]
   },
   "website_constants": {
     "information": {
@@ -26,179 +22,100 @@
       "about_us_summary": "Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine Zusammenfassung von diesem Projekt sein."
     },
     "social_links": {
-      "facebook": "https://www.facebook.com/",
-      "twitter": "https://www.twitter.com/",
-      "instagram": "https://www.instagram.com/",
-      "youtube": "https://www.youtube.com/"
+      "facebook": "https:\/\/www.facebook.com\/",
+      "twitter": "https:\/\/www.twitter.com\/",
+      "instagram": "https:\/\/www.instagram.com\/",
+      "youtube": "https:\/\/www.youtube.com\/"
     },
-    "categories": [
-      "GPUs",
-      "CPUs",
-      "Motherboards",
-      "Netzteile",
-      "Festplatten",
-      "Arbeitsspeicher",
-      "Peripheriegeräte",
-      "Komplettsysteme"
-    ],
-    "locations": [
-       "Petrisberg",
-       "Biewer",
-       "Ehrang",
-       "Eitelsbach",
-       "Euren",
-       "Feyen",
-       "Filsch",
-       "Heiligkreuz",
-       "Irsch",
-       "Kernscheid",
-       "Kürenz",
-       "Mariahof",
-       "Oberkirch",
-       "Olewig",
-       "Pallien",
-       "Pfalzel",
-       "Ruwer",
-       "Tarforst",
-       "Trier",
-       "Trier-Ost",
-       "Trier-Nord",
-       "Trier-Süd",
-       "Trier-West",
-       "Zewen"
-
-    ],
-    "conditions": [
-      "Neu",
-      "Gebraucht",
-      "Generalüberholt",
-      "B-Ware",
-      "Defekt",
-      "Sonstiges"
-    ]
+    "categories": ["GPUs", "CPUs", "Motherboards", "Netzteile", "Festplatten", "Arbeitsspeicher", "Peripherieger\u00e4te", "Komplettsysteme"],
+    "locations": ["Petrisberg", "Biewer", "Ehrang", "Eitelsbach", "Euren", "Feyen", "Filsch", "Heiligkreuz", "Irsch", "Kernscheid", "K\u00fcrenz", "Mariahof", "Oberkirch", "Olewig", "Pallien", "Pfalzel", "Ruwer", "Tarforst", "Trier", "Trier-Ost", "Trier-Nord", "Trier-S\u00fcd", "Trier-West", "Zewen"],
+    "conditions": ["Neu", "Gebraucht", "General\u00fcberholt", "B-Ware", "Defekt", "Sonstiges"]
   },
   "website_database": {
     "products": [{
-        "id": 1,
-        "title": "Ta",
-        "description": "",
-        "images": ["sample.png"],
-        "price": 100,
-        "location": "Trier",
-        "condition": "Generalüberholt",
-        "category": "CPUs",
-        "created_at": 2000,
-        "created_at_human": ""
+      "id": 1,
+      "title": "Asus Strix Nvidia RTX 3080",
+      "description": "<p><span style=\"background-color: #000000;\"><\/span><\/p>\r\n<h3 style=\"color: #5e9ca0;\"><span style=\"color: #000000;\"><strong>Verkaufe meine Mega-Grafikkarte, die ASUS ROG GeForce RTX 3080 10GB GDDR6X.&nbsp;<\/strong><\/span><\/h3>\r\n<p><span style=\"color: #000000;\">Die Grafikkarte habe ich in einem neuen PC von einem deutschen Hersteller gekauft und ist einfach der Hammer.<\/span><\/p>\r\n<div><span style=\"color: #000000;\">F&uuml;r mich als Casual-Gamer ist das Ding einfach zu schade und daher verkaufe ich sie lieber an einen Hardcore-Gamer f&uuml;r Anspruchvolles spielen.<\/span><\/div>\r\n<div>&nbsp;<\/div>\r\n<div><span style=\"color: #000000;\"><strong>Sie lief bei mir jetzt eine Woche perfekt<\/strong>&nbsp;und der FurMark (siehe Bild) zeigt auch sch&ouml;n die Leistung und das es hier kein Fake-Schnickschnack Angebot ist (\"Kaufe Bild einer RTX 3080\")<\/span><\/div>\r\n<div>&nbsp;<\/div>\r\n<div><span style=\"color: #000000;\">Karte und Bedienungsanleitung sind dabei und reichen f&uuml;r den Einbau (Treiber im Netz). Wie gesagt war bis heute in einem PC eingebaut und wurde so geliefert.<\/span><\/div>",
+      "images": ["sample.png", "sample.png", "sample.png"],
+      "price": 400,
+      "location": "Trier-Nord",
+      "condition": "Neu",
+      "category": "GPUs",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "products@portapc.de",
+        "user_type": "admin"
       },
-      {
-        "id": 2,
-        "title": "Te",
-        "description": "",
-        "images": ["sample.png"],
-        "price": 95,
-        "location": "Trier",
-        "condition": "Neu",
-        "category": "CPUs",
-        "created_at": 3000,
-        "created_at_human": ""
+      "created_at": 4000,
+      "created_at_human": "16.12.2020"
+    }, {
+      "id": 2,
+      "title": "ads",
+      "description": "sad",
+      "location": "Petrisberg",
+      "price": 3,
+      "category": "GPUs",
+      "condition": "Neu",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "admin@portapc.de",
+        "user_type": "admin"
       },
-      {
-        "id": 3,
-        "title": "Fasda",
-        "description": "",
-        "images": ["sample.png"],
-        "price": 300,
-        "location": "Trier",
-        "condition": "Neu",
-        "category": "GPUs",
-        "created_at": 4000,
-        "created_at_human": ""
+      "created_at": 1608168957,
+      "created_at_human": "17.12.2020",
+      "images": ["1.jpg"]
+    },  {
+      "id": 4,
+      "title": "dasd",
+      "description": "sfff",
+      "location": "Petrisberg",
+      "price": 444,
+      "category": "GPUs",
+      "condition": "Neu",
+      "owner": {
+        "username": "sa",
+        "user_email": "mohammad.hammado.de@gmail.com",
+        "user_type": "user"
       },
-      {
-        "id": 4,
-        "title": "Asus Strix Nvidia RTX 3080",
-        "description": "<div id=\"ds_div\"> <b>Verkaufe meine Mega-Grafikkarte, die ASUS ROG GeForce RTX 3080 10GB GDDR6X. <\/b>Die Grafikkarte habe ich in einem neuen PC von einem deutschen Hersteller gekauft und ist einfach der Hammer. <br><br><div>F\u00FCr mich als Casual-Gamer ist das Ding einfach zu schade und daher verkaufe ich sie lieber an einen Hardcore-Gamer f\u00FCr Anspruchvolles spielen.<br><br><\/div><div><\/div><div><b>Sie lief bei mir jetzt eine Woche perfekt<\/b> und der FurMark (siehe Bild) zeigt auch sch\u00F6n die Leistung und das es hier kein Fake-Schnickschnack Angebot ist (\"Kaufe Bild einer RTX 3080\")<\/div><div><\/div><div>Karte und Bedienungsanleitung sind dabei und reichen f\u00FCr den Einbau (Treiber im Netz). Wie gesagt war bis heute in einem PC eingebaut und wurde so geliefert.<br><br><\/div><div><\/div><div><\/div><div><b><\/div><\/div>",
-        "images": ["sample.png", "sample.png", "sample.png"],
-        "price": 400,
-        "location": "Trier-Nord",
-        "condition": "Neu",
-        "category": "GPUs",
-        "created_at": 4000,
-        "created_at_human": "16.12.2020"
-      },
-      {
-        "id": 5,
-        "title": "Bdsa",
-        "description": "",
-        "images": ["sample.png"],
-        "price": 400,
-        "location": "Trier-Nord",
-        "condition": "Neu",
-        "category": "GPUs",
-        "created_at": 5000,
-        "created_at_human": ""
-      },
-      {
-        "id": 6,
-        "title": "Bdsa",
-        "description": "",
-        "images": ["sample.png"],
-        "price": 400,
-        "location": "Trier-Nord",
-        "condition": "B-Ware",
-        "category": "GPUs",
-        "created_at": 5000,
-        "created_at_human": ""
-      },
-      {
-        "id": 7,
-        "title": "Bdsa",
-        "description": "",
-        "images": ["sample.png"],
-        "price": 400,
-        "location": "Trier-Nord",
-        "condition": "Neu",
-        "category": "GPUs",
-        "created_at": 5000,
-        "created_at_human": ""
-      }
-    ],
+      "created_at": 1608169094,
+      "created_at_human": "17.12.2020",
+      "images": ["1.jpg", "2.jpg", "3.jpg"]
+    }],
     "sliders": [{
-        "id": 1,
-        "thumbnail": "sample.png",
-        "redirect_url": "https://hochschule-trier.de/",
-        "type": "Homepage"
-      },
-      {
-        "id": 2,
-        "thumbnail": "sample.png",
-        "redirect_url": "https://hochschule-trier.de/",
-        "type": "Homepage"
-      },
-      {
-        "id": 3,
-        "thumbnail": "sample.png",
-        "redirect_url": "https://hochschule-trier.de/",
-        "type": "Homepage"
-      },
-      {
-        "id": 4,
-        "thumbnail": "sample.png",
-        "redirect_url": "https://hochschule-trier.de/",
-        "type": "Products"
-      },
-      {
-        "id": 5,
-        "thumbnail": "sample.png",
-        "redirect_url": "https://hochschule-trier.de/",
-        "type": "Products"
-      },
-      {
-        "id": 6,
-        "thumbnail": "sample.png",
-        "redirect_url": "https://hochschule-trier.de/",
-        "type": "Products"
-      }
-    ]
+      "id": 1,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Homepage"
+    }, {
+      "id": 2,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Homepage"
+    }, {
+      "id": 3,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Homepage"
+    }, {
+      "id": 4,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Products"
+    }, {
+      "id": 5,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Products"
+    }, {
+      "id": 6,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Products"
+    }]
+  },
+  "website_login": {
+    "admin_username": "PortaPC",
+    "admin_email": "admin@portapc.de",
+    "admin_password": "$2y$06$v6TeomTXYHIzfq5lyczaV.W9SAuGo9utqSLFGjTSUOi\/TQZcCoqW2"
   }
 }

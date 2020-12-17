@@ -48,6 +48,30 @@ class Helper {
         return $this->jsonDatabase->website_constants->social_links;
     }
 
+    // we just increase the id by one and we have a new available id for us
+    public function getNextAvailableProductID(){
+      return $this->getLastProductID() + 1;
+    }
+
+    // get the last saved id in the products list
+    public function getLastProductID(){
+      $products = $this->jsonDatabase->website_database->products;
+      $biggest_id = 0;
+      foreach($products as $product){
+        if($product->id > $biggest_id){
+          $biggest_id = $product->id;
+        }
+      }
+
+      return $biggest_id;
+    }
+
+    public function addProduct($product){
+        $json_placeholder = $this->jsonDatabase;
+        array_push($json_placeholder->website_database->products, $product);
+        file_put_contents("../database.json", json_encode($json_placeholder));
+    }
+
     public function getProduct($id){
       $products = $this->jsonDatabase->website_database->products;
       $products = $this->filterArray($products, "id", $id, false, false);
@@ -262,5 +286,14 @@ class Helper {
         }
 
         return $array;
+    }
+
+    public function loginAdmin($input_email, $input_password){
+      $admin_user = $this->jsonDatabase->website_login;
+      $admin_email = $admin_user->admin_email;
+      $admin_password = $admin_user->admin_password;
+
+      // PHP core function: https://www.php.net/manual/en/function.password-hash.php
+      return json_encode(["result" => $input_email == $admin_email && password_verify($input_password, $admin_password) === true, "admin_username" => $admin_user->admin_username]);
     }
 }

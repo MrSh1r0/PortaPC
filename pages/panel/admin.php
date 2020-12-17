@@ -12,10 +12,25 @@ include_once("../../utilities/Helper.php");
 // Create an instance of our Helper class
 $helper                      = new Helper();
 
-// create an instance of our latest products
-$product_id                  = $_GET["id"];
-$product                     = $helper->getProduct($product_id);
+
 $categories                  = $helper->getCategories(false);
+$conditions                  = $helper->getConditions();
+$locations                   = $helper->getLocations(false);
+
+$login_status = false;
+if(isset($_SESSION["user_email"]) === true && isset($_SESSION["user_password"])){
+  $email = $_SESSION["user_email"];
+  $password = $_SESSION["user_password"];
+  $login_status = $helper->loginAdmin($email, $password);
+}
+
+if(isset($_GET["result"]) && isset($_GET["action"])){
+  $result = $_GET["result"];
+  $action = $_GET["action"];
+  $message = $_GET["message"];
+  echo "<script type='text/javascript'>alert('" . $message . "')</script>";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +54,6 @@ $categories                  = $helper->getCategories(false);
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
-        handleSlider(0);
-        //handleSliderAutomatic();
         handleScroll();
         handleSearchCategoryList();
       }
@@ -50,6 +63,10 @@ $categories                  = $helper->getCategories(false);
 
 <body>
 
+  <!-- Side nav -->
+  <div class="mobile-side-navigation-container " id="mobile_side_navigation_container">
+    <i class="material-icons mobile-side-navigation-menu margin-t-2" id="mobile_side_navigation_menu" onclick="handleMobileNavigation()">menu</i>
+  </div>
 
   <!-- Navbar -->
   <!-- By default, the navbar is hidden -->
@@ -70,7 +87,7 @@ $categories                  = $helper->getCategories(false);
       <!--End of Logo column-->
 
       <!--Search & Category parent-->
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-8">
 
         <!--Search & Category row-->
         <div class="row search-container margin-a-0 padding-a-0">
@@ -117,6 +134,9 @@ $categories                  = $helper->getCategories(false);
       </div>
       <!--End of Search & Category parent-->
 
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 align-self-center banner-product-add">
+        <a href="/pages/panel/product_add.php"><p class="banner-product-add-text clickable text-align-center">Anzeige aufgeben</p></a>
+      </div>
     </div>
   </div>
 
@@ -125,74 +145,77 @@ $categories                  = $helper->getCategories(false);
       <div class="row">
 
         <!-- Left side of the content -->
-        <div class="col-xs-12 col-sm-12 col-md-6 margin-a-0 padding-a-0 padding-r-3 ">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 margin-a-0 padding-a-0 padding-r-3 categories-col-container" id="categories-col-container">
           <div class="row">
+            <!-- Category title -->
+            <div class="col-xs-12 col-sm-12">
+              <p class="category-title text-uppercase">Entdecken</p>
+            </div>
 
             <!-- Category card -->
-              <div class="col-xs-12 col-sm-12 product-slider-col">
-                <?php if(empty($product) === false) {
-                  ?>
-                <div class="slider">
+            <div class="col-xs-12 col-sm-12">
+              <div class="categories-container">
+                <ul class="categories-list" id="categories-list">
+
+
                   <?php
-                  foreach($product->images as $image){
+                  foreach($categories as $category){
                   ?>
-                  <a class="slide slide-fade-in product-slide">
-                    <img class="slide-image" src="/images/products/<?php echo $product->id ?>/<?php echo $image ?>">
-                  </a>
+                  <li><a class="categories-item" href="/pages/products/category.php?category=<?php echo $category ?>"><?php echo $category ?></a></li>
                   <?php
                   }
                   ?>
-                  <!-- Next and previous buttons -->
-                  <i class="material-icons slide-previous slide-button-product" onclick="applySlider(-1, true)">arrow_back_ios</i>
-                  <i class="material-icons slide-next slide-button-product" onclick="applySlider(1, true)">arrow_forward_ios</i>
-
-                  <!-- The dots/circles -->
-                  <div class="slider-dots">
-                    <?php
-                    for($i = 0; $i < sizeof($product->images); $i++){
-                    ?>
-                    <span class="slide-dot slide-product-dot" onclick="applySlider(<?php echo $i ?>, false)"></span>
-                    <?php
-                    }
-                    ?>
-                  </div>
-                </div>
-              <?php } ?>
+                </ul>
               </div>
-
-              <!-- contact / report section -->
+            </div>
           </div>
         </div>
 
         <!-- Right side of the content -->
-        <div class="col-xs-12 col-sm-12 col-md-6 margin-a-0 padding-a-0">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 margin-a-0 padding-a-0">
           <div class="row">
 
-            <?php if(empty($product) === true) {
-              ?>
-              <div class="col-xs-12 col-sm-12">
-                <p class="category-title text-uppercase">Anzeige wurde nicht gefunden</p>
+            <div class="col-xs-12 col-sm-12">
+              <p class="category-title text-uppercase">
+                <?php
+                if($login_status === true){
+                  echo "Admin";
+                } else {
+                  echo "Anmelden";
+                }
+                ?>
+              </p>
+            </div>
+
+            <?php
+            if($login_status === false){
+            ?>
+            <form class="row padding-a-0 margin-a-0" action="../../utilities/Admin.php" method="POST">
+              <!-- title -->
+              <div class="col-xs-12">
+                <input class="product-listing-input-title" placeholder="Email" name="email"></input>
               </div>
-              <?php
+              <!-- Description -->
+              <div class="col-xs-12">
+                <input class="product-listing-input-title" placeholder="Passwort" name="password"></input>
+              </div>
+
+              <!-- submit -->
+              <div class="col-xs-12 text-align-right">
+                <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_login">Anmelden</button>
+              </div>
+            </form>
+            <?php
             } else {
               ?>
-              <div class="col-xs-12 col-sm-12">
-                <p class="category-title text-uppercase"><?php echo $product->title ?></p>
-              </div>
-
-              <div class="col-xs-12 col-sm-12 margin-t-0 margin-b-0">
-                <p class="product-page-subtitle text-uppercase"><?php echo $product->condition ?> • €<?php echo $product->price ?> • <?php echo $product->location ?> • erstellt am <?php echo $product->created_at_human ?></p>
-              </div>
-
-              <div class="col-xs-12 col-sm-12 margin-t-0">
-                <p class="product-page-description text-uppercase"><?php echo $product->description ?></p>
-              </div>
+              <form class="row padding-a-0 margin-a-0" action="../../utilities/Admin.php" method="POST">
+                <div class="col-xs-12 text-align-right">
+                  <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_logout">Abmelden</button>
+                </div>
+              </form>
               <?php
             }
             ?>
-
-
-
 
           </div>
         </div>

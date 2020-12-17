@@ -280,6 +280,7 @@ color: hange the text's color color
 
 .slide-image {
   width: 100%;
+  border-radius: 15px;
 }
 
 .slide-fade-in {
@@ -396,7 +397,7 @@ color: hange the text's color color
   text-overflow: ellipsis;
   display: -webkit-box;
   /* number of lines to show */
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
 }
 
@@ -441,6 +442,30 @@ color: hange the text's color color
   padding-bottom: 5px;
   padding-right: 14px;
   padding-left: 14px;
+}
+
+.product-owner-check {
+  font-size: 12px;
+  background-color: #259425;
+  color: white;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.product-owner-check:hover + .product-owner-check-info {
+  display: flex;
+}
+
+.banner-product-add {
+  background-color: #dcbb76a3;
+  border-radius: 15px;
+  padding: 8px;
+}
+
+.banner-product-add-text {
+  color: #000000;
+  font-weight: 500;
+  font-size: 14px;
 }
 
 /*
@@ -919,7 +944,68 @@ color: hange the text's color color
   font-weight: 400;
 }
 
-.
+.product-listing-input-title, .product-listing-input-description, .product-listing-input-price {
+  font-size: 16px;
+  width: 100%;
+  box-shadow: none !important;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: none;
+  font-weight: 400;
+  text-align: left;
+  padding: 5px;
+  /* to understad why, please check this: https://stackoverflow.com/a/16907625/5646429 */
+  box-sizing: border-box;
+}
+
+.product-listing-input-file{
+  font-size: 16px;
+  width: 100%;
+  box-shadow: none !important;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: none;
+  font-weight: 400;
+  text-align: left;
+  padding: 5px;
+  /* to understad why, please check this: https://stackoverflow.com/a/16907625/5646429 */
+  box-sizing: border-box;
+}
+
+.product-listing-input-description {
+  min-height: 50px;
+  resize: vertical;
+}
+
+.product-listing-input-title::placeholder, .product-listing-input-description::placeholder, .product-listing-input-price::placeholder {
+  color: #d1d1d1 !important;
+}
+
+.product-listing-select {
+  font-size: 16px;
+  box-shadow: none !important;
+  background-color: transparent;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  outline: none;
+  font-weight: 400;
+  width: 100%;
+  text-align: left;
+  padding: 5px;
+}
+
+.product-listing-submit {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dcbb76;
+  border: none;
+  outline: none;
+}
 
 /*
   helper class for text
@@ -984,8 +1070,16 @@ color: hange the text's color color
   align-self: center !important;
 }
 
+.text-align-right {
+  text-align: right !important;
+}
+
 .text-align-center {
   text-align: center !important;
+}
+
+.text-align-left {
+  text-align: left !important;
 }
 
 .float-right {
@@ -1668,6 +1762,11 @@ col-xs {
     font-size: 14px;
   }
 
+  .product-owner-check {
+    font-size: 10px;
+    padding: 2px;
+  }
+
   .product-location {
     font-size: 11px;
   }
@@ -1716,5 +1815,33 @@ col-xs {
   .text-body-2 {
     font-size: 12px;
     font-weight: 500 !important;
+  }
+
+  .search-input::placeholder {
+    font-size: 12px;
+  }
+
+  .product-listing-input-title::placeholder, .product-listing-input-description::placeholder, .product-listing-input-price::placeholder {
+    font-size: 12px;
+  }
+
+  .filters-apply-button {
+    font-size: 12px;
+  }
+
+  .product-listing-select {
+    font-size: 12px;
+  }
+
+  .search-input, search-input:focus {
+    font-size: 12px;
+  }
+
+  .search-icon {
+    font-size: 20px;
+  }
+
+  .banner-product-add-text {
+    font-size: 12px;
   }
 }

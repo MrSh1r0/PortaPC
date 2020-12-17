@@ -12,10 +12,27 @@ include_once("../../utilities/Helper.php");
 // Create an instance of our Helper class
 $helper                      = new Helper();
 
-// create an instance of our latest products
-$product_id                  = $_GET["id"];
-$product                     = $helper->getProduct($product_id);
+
 $categories                  = $helper->getCategories(false);
+$conditions                  = $helper->getConditions();
+$locations                   = $helper->getLocations(false);
+
+$login_status = false;
+if(isset($_SESSION["user_email"]) && isset($_SESSION["user_password"])){
+  if(json_decode($helper->loginAdmin($_SESSION["user_email"], $_SESSION["user_password"]))->result === true){
+    $login_status = true;
+  }
+}
+
+if(isset($_GET["result"]) && isset($_GET["action"])){
+  $result = $_GET["result"];
+  $action = $_GET["action"];
+  $message = $_GET["message"];
+  echo "<script type='text/javascript'>alert('" . $message . "')</script>";
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -39,8 +56,6 @@ $categories                  = $helper->getCategories(false);
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
-        handleSlider(0);
-        //handleSliderAutomatic();
         handleScroll();
         handleSearchCategoryList();
       }
@@ -50,6 +65,10 @@ $categories                  = $helper->getCategories(false);
 
 <body>
 
+  <!-- Side nav -->
+  <div class="mobile-side-navigation-container " id="mobile_side_navigation_container">
+    <i class="material-icons mobile-side-navigation-menu margin-t-2" id="mobile_side_navigation_menu" onclick="handleMobileNavigation()">menu</i>
+  </div>
 
   <!-- Navbar -->
   <!-- By default, the navbar is hidden -->
@@ -116,7 +135,6 @@ $categories                  = $helper->getCategories(false);
 
       </div>
       <!--End of Search & Category parent-->
-
     </div>
   </div>
 
@@ -125,74 +143,116 @@ $categories                  = $helper->getCategories(false);
       <div class="row">
 
         <!-- Left side of the content -->
-        <div class="col-xs-12 col-sm-12 col-md-6 margin-a-0 padding-a-0 padding-r-3 ">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-3 margin-a-0 padding-a-0 padding-r-3 categories-col-container" id="categories-col-container">
           <div class="row">
+            <!-- Category title -->
+            <div class="col-xs-12 col-sm-12">
+              <p class="category-title text-uppercase">Entdecken</p>
+            </div>
 
             <!-- Category card -->
-              <div class="col-xs-12 col-sm-12 product-slider-col">
-                <?php if(empty($product) === false) {
-                  ?>
-                <div class="slider">
+            <div class="col-xs-12 col-sm-12">
+              <div class="categories-container">
+                <ul class="categories-list" id="categories-list">
+
+
                   <?php
-                  foreach($product->images as $image){
+                  foreach($categories as $category){
                   ?>
-                  <a class="slide slide-fade-in product-slide">
-                    <img class="slide-image" src="/images/products/<?php echo $product->id ?>/<?php echo $image ?>">
-                  </a>
+                  <li><a class="categories-item" href="/pages/products/category.php?category=<?php echo $category ?>"><?php echo $category ?></a></li>
                   <?php
                   }
                   ?>
-                  <!-- Next and previous buttons -->
-                  <i class="material-icons slide-previous slide-button-product" onclick="applySlider(-1, true)">arrow_back_ios</i>
-                  <i class="material-icons slide-next slide-button-product" onclick="applySlider(1, true)">arrow_forward_ios</i>
-
-                  <!-- The dots/circles -->
-                  <div class="slider-dots">
-                    <?php
-                    for($i = 0; $i < sizeof($product->images); $i++){
-                    ?>
-                    <span class="slide-dot slide-product-dot" onclick="applySlider(<?php echo $i ?>, false)"></span>
-                    <?php
-                    }
-                    ?>
-                  </div>
-                </div>
-              <?php } ?>
+                </ul>
               </div>
-
-              <!-- contact / report section -->
+            </div>
           </div>
         </div>
 
         <!-- Right side of the content -->
-        <div class="col-xs-12 col-sm-12 col-md-6 margin-a-0 padding-a-0">
+        <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 margin-a-0 padding-a-0">
           <div class="row">
 
-            <?php if(empty($product) === true) {
-              ?>
-              <div class="col-xs-12 col-sm-12">
-                <p class="category-title text-uppercase">Anzeige wurde nicht gefunden</p>
-              </div>
+            <div class="col-xs-12 col-sm-12">
+              <p class="category-title text-uppercase">Anzeige aufgaben</p>
+            </div>
+
+            <form class="row padding-a-0 margin-a-0" action="../../utilities/Product.php" method="POST" enctype='multipart/form-data'>
               <?php
-            } else {
+
+              if($login_status === false){
+                ?>
+                <!-- username -->
+                <div class="col-xs-6">
+                  <input class="product-listing-input-title" placeholder="Name" name="name"></input>
+                </div>
+
+                <div class="col-xs-6">
+                  <input class="product-listing-input-title" type="email" placeholder="Email" name="email"></input>
+                </div>
+                <?php
+              }
               ?>
-              <div class="col-xs-12 col-sm-12">
-                <p class="category-title text-uppercase"><?php echo $product->title ?></p>
+              <!-- title -->
+              <div class="col-xs-12">
+                <input class="product-listing-input-title" placeholder="Titel" name="title"></input>
               </div>
-
-              <div class="col-xs-12 col-sm-12 margin-t-0 margin-b-0">
-                <p class="product-page-subtitle text-uppercase"><?php echo $product->condition ?> • €<?php echo $product->price ?> • <?php echo $product->location ?> • erstellt am <?php echo $product->created_at_human ?></p>
+              <!-- Description -->
+              <div class="col-xs-12">
+                <textarea class="product-listing-input-description" placeholder="Beschreibung" name="description"></textarea>
               </div>
-
-              <div class="col-xs-12 col-sm-12 margin-t-0">
-                <p class="product-page-description text-uppercase"><?php echo $product->description ?></p>
+              <!-- price -->
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <input type="number" name="price" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" oninput="validity.valid || (value = this.previousValue)" class="product-listing-input-price" placeholder="Preis"></input>
               </div>
-              <?php
-            }
-            ?>
-
-
-
+              <!-- category -->
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <select class="product-listing-select" name="category" id="category">
+                  <?php
+                  foreach($categories as $category){
+                    ?>
+                    <option value="<?php echo $category ?>"><?php echo $category ?></option>
+                    <?php
+                  }
+                  ?>
+                </select>
+              </div>
+              <!-- condition -->
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <select class="product-listing-select" name="condition" id="condition">
+                  <?php
+                  foreach($conditions as $condition){
+                    ?>
+                    <option value="<?php echo $condition ?>"><?php echo $condition ?></option>
+                    <?php
+                  }
+                  ?>
+                </select>
+              </div>
+              <!-- location -->
+              <div class="col-xs-12 col-sm-12 col-md-3">
+                <select class="product-listing-select" name="location" id="location">
+                  <?php
+                  foreach($locations as $location){
+                    ?>
+                    <option value="<?php echo $location ?>"><?php echo $location ?></option>
+                    <?php
+                  }
+                  ?>
+                </select>
+              </div>
+              <!-- images -->
+              <div class="col-xs-12">
+                <div class="product-listing-input-file">
+                  <label for="images">Bilder auswählen: </label>
+                  <input id="images" type="file" name="images_upload[]" accept="image/x-png,image/gif,image/jpeg" multiple="multiple"/>
+                </div>
+              </div>
+              <!-- submit -->
+              <div class="col-xs-12 text-align-right">
+                <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_add">Aufgeben</button>
+              </div>
+            </form>
 
           </div>
         </div>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*
 We will use a Helper class in PHP to get our Json content.
 If we use JavaScript, our Json file will be exposed.
@@ -74,7 +75,7 @@ $sliders                     = $helper->getSliders();
       <!--End of Logo column-->
 
       <!--Search & Category parent-->
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-8">
 
         <!--Search & Category row-->
         <div class="row search-container margin-a-0 padding-a-0">
@@ -120,6 +121,10 @@ $sliders                     = $helper->getSliders();
 
       </div>
       <!--End of Search & Category parent-->
+
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 align-self-center banner-product-add">
+        <a href="/pages/panel/product_add.php"><p class="banner-product-add-text clickable text-align-center">Anzeige aufgeben</p></a>
+      </div>
 
     </div>
   </div>
@@ -195,6 +200,7 @@ $sliders                     = $helper->getSliders();
               </div>
             </div>
 
+
             <div class="col-xs-6 col-sm-6">
               <p class="category-title text-uppercase">Neueste Anzeige</p>
             </div>
@@ -227,6 +233,8 @@ $sliders                     = $helper->getSliders();
               $images = $product->images;
               $price = $product->price;
               $location = $product->location;
+              $owner = $product->owner;
+              $is_admin = $owner->user_type == "admin";
               ?>
 
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 product">
@@ -235,14 +243,22 @@ $sliders                     = $helper->getSliders();
                     <!-- image part -->
                     <div class="col-xs-12 col-sm-12 margin-a-0 product-image-container">
                       <img src="/images/products/<?php echo $id ?>/<?php echo $images[0] ?>" class="product-image" alt="product">
-                      <div class="product-price-container">
-                        <p class="product-price">€<?php echo $price ?></p>
-                      </div>
+                        <div class="product-price-container">
+                          <p class="product-price">€<?php echo $price ?></p>
+                        </div>
+                      </img>
                     </div>
 
                     <!-- title -->
                     <div class="col-xs-12 col-sm-12 margin-a-0 margin-t-2">
-                      <p class="product-title"><?php echo $title ?></p>
+                      <p class="product-title"><?php
+                      if($is_admin === true) {
+                        ?>
+                        <i class="material-icons product-owner-check">check</i>
+                        <?php
+                      }
+                      echo $title;
+                      ?></p>
                     </div>
 
                     <!-- location -->

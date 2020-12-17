@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*
 We will use a Helper class in PHP to get our Json content.
 If we use JavaScript, our Json file will be exposed.
@@ -369,6 +370,8 @@ $products             = $products_json->products;
               $images = $product->images;
               $price = $product->price;
               $location = $product->location;
+              $owner = $product->owner;
+              $is_admin = $owner->user_type == "admin";
               ?>
 
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 product">
@@ -377,14 +380,21 @@ $products             = $products_json->products;
                     <!-- image part -->
                     <div class="col-xs-12 col-sm-12 margin-a-0 product-image-container">
                       <img src="/images/products/<?php echo $id ?>/<?php echo $images[0] ?>" class="product-image" alt="product">
-                      <div class="product-price-container">
-                        <p class="product-price">€<?php echo $price ?></p>
-                      </div>
+                        <div class="product-price-container">
+                          <p class="product-price">€<?php echo $price ?></p>
+                        </div>
+                      </img>
                     </div>
-
                     <!-- title -->
                     <div class="col-xs-12 col-sm-12 margin-a-0 margin-t-2">
-                      <p class="product-title"><?php echo $title ?></p>
+                      <p class="product-title"><?php
+                      if($is_admin === true) {
+                        ?>
+                        <i class="material-icons product-owner-check">check</i>
+                        <?php
+                      }
+                      echo $title;
+                      ?></p>
                     </div>
 
                     <!-- location -->
