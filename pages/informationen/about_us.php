@@ -56,7 +56,7 @@ $categories                  = $helper->getCategories(false);
   <div class="navbar-fixed nav-default" id="nav-container">
     <nav class="nav-default" id="nav">
       <div class="nav-wrapper">
-        <a href="/"><div class="website-logo"></div></a>
+        <a href="/PortaPC"><div class="website-logo"></div></a>
       </div>
     </nav>
   </div>
@@ -65,7 +65,7 @@ $categories                  = $helper->getCategories(false);
     <div class="row">
       <!--Logo column-->
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
-        <a href="/"><div class="website-logo"></div></a>
+        <a href="/PortaPC"><div class="website-logo"></div></a>
       </div>
       <!--End of Logo column-->
 
@@ -136,9 +136,9 @@ $categories                  = $helper->getCategories(false);
             <div class="col-xs-12 col-sm-12">
               <div class="categories-container">
                 <ul class="categories-list" id="categories-list">
-                  <li><a class="categories-item categories-item-selected" href="/pages/informationen/about_us.php">Über uns</a></li>
-                  <li><a class="categories-item" href="/pages/informationen/agb.php">AGB</a></li>
-                  <li><a class="categories-item" href="/pages/informationen/impressum.php">Impressum</a></li>
+                  <li><a class="categories-item categories-item-selected" href="/PortaPC/pages/informationen/about_us.php">Über uns</a></li>
+                  <li><a class="categories-item" href="/PortaPC/pages/informationen/agb.php">AGB</a></li>
+                  <li><a class="categories-item" href="/PortaPC/pages/informationen/impressum.php">Impressum</a></li>
                 </ul>
               </div>
             </div>
@@ -182,13 +182,13 @@ $categories                  = $helper->getCategories(false);
         <div class="col-xs-12 col-md-2 col-lg-2">
           <p class="footer-title">Informationen</p>
 
-          <a href="/pages/informationen/about_us.php">
+          <a href="/PortaPC/pages/informationen/about_us.php">
             <p class="footer-content">Über uns</p>
           </a>
-          <a href="/pages/informationen/impressum.php">
+          <a href="/PortaPC/pages/informationen/impressum.php">
             <p class="footer-content">Impressum</p>
           </a>
-          <a href="/pages/informationen/agb.php">
+          <a href="/PortaPC/pages/informationen/agb.php">
             <p class="footer-content">AGB</p>
           </a>
 
@@ -206,16 +206,16 @@ $categories                  = $helper->getCategories(false);
               <p class="footer-title">Folge uns</p>
               <div class="row margin-t-2">
                 <div class="col-xs margin-a-0 padding-a-0 margin-r-1">
-                  <a href="<?php echo $helper->getSocialLinks()->facebook ?>"><img class="footer-social-icon" src="/images/footer/social_icons/facebook.svg" alt="Facebook"></a>
+                  <a href="<?php echo $helper->getSocialLinks()->facebook ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/facebook.svg" alt="Facebook"></a>
                 </div>
                 <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
-                  <a href="<?php echo $helper->getSocialLinks()->twitter ?>"><img class="footer-social-icon" src="/images/footer/social_icons/twitter.svg" alt="Twitter"></a>
+                  <a href="<?php echo $helper->getSocialLinks()->twitter ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/twitter.svg" alt="Twitter"></a>
                 </div>
                 <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
-                  <a href="<?php echo $helper->getSocialLinks()->instagram ?>"><img class="footer-social-icon" src="/images/footer/social_icons/instagram.svg" alt="Instagram"></a>
+                  <a href="<?php echo $helper->getSocialLinks()->instagram ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/instagram.svg" alt="Instagram"></a>
                 </div>
                 <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
-                  <a href="<?php echo $helper->getSocialLinks()->youtube ?>"><img class="footer-social-icon" src="/images/footer/social_icons/youtube.svg" alt="Youtube"></a>
+                  <a href="<?php echo $helper->getSocialLinks()->youtube ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/youtube.svg" alt="Youtube"></a>
                 </div>
               </div>
             </div>

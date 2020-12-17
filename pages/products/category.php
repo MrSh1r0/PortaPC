@@ -140,7 +140,7 @@ $products             = $products_json->products;
   <div class="navbar-fixed nav-default" id="nav-container">
     <nav class="nav-default" id="nav">
       <div class="nav-wrapper">
-        <a href="/"><div class="website-logo"></div></a>
+        <a href="/PortaPC"><div class="website-logo"></div></a>
       </div>
     </nav>
   </div>
@@ -149,7 +149,7 @@ $products             = $products_json->products;
     <div class="row">
       <!--Logo column-->
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
-        <a href="/"><div class="website-logo"></div></a>
+        <a href="/PortaPC"><div class="website-logo"></div></a>
       </div>
       <!--End of Logo column-->
 
@@ -302,7 +302,7 @@ $products             = $products_json->products;
                   <?php
                   foreach($categories as $category){
                   ?>
-                  <li><a class="categories-item" href="/pages/products/category.php?category=<?php echo $category ?>"><?php echo $category ?></a></li>
+                  <li><a class="categories-item" href="/PortaPC/pages/products/category.php?category=<?php echo $category ?>"><?php echo $category ?></a></li>
                   <?php
                   }
                   ?>
@@ -375,11 +375,11 @@ $products             = $products_json->products;
               ?>
 
               <div class="col-xs-4 col-sm-4 col-md-4 col-lg-3 product">
-                <a href="/pages/products/product.php?id=<?php echo $id ?>">
+                <a href="/PortaPC/pages/products/product.php?id=<?php echo $id ?>">
                   <div class="row">
                     <!-- image part -->
                     <div class="col-xs-12 col-sm-12 margin-a-0 product-image-container">
-                      <img src="/images/products/<?php echo $id ?>/<?php echo $images[0] ?>" class="product-image" alt="product">
+                      <img src="/PortaPC/images/products/<?php echo $id ?>/<?php echo $images[0] ?>" class="product-image" alt="product">
                         <div class="product-price-container">
                           <p class="product-price">€<?php echo $price ?></p>
                         </div>
@@ -525,13 +525,13 @@ $products             = $products_json->products;
         <div class="col-xs-12 col-md-2 col-lg-2">
           <p class="footer-title">Informationen</p>
 
-          <a href="/pages/informationen/about_us.php">
+          <a href="/PortaPC/pages/informationen/about_us.php">
             <p class="footer-content">Über uns</p>
           </a>
-          <a href="/pages/informationen/impressum.php">
+          <a href="/PortaPC/pages/informationen/impressum.php">
             <p class="footer-content">Impressum</p>
           </a>
-          <a href="/pages/informationen/agb.php">
+          <a href="/PortaPC/pages/informationen/agb.php">
             <p class="footer-content">AGB</p>
           </a>
 
@@ -549,16 +549,16 @@ $products             = $products_json->products;
               <p class="footer-title">Folge uns</p>
               <div class="row margin-t-2">
                 <div class="col-xs margin-a-0 padding-a-0 margin-r-1">
-                  <a href="<?php echo $helper->getSocialLinks()->facebook ?>"><img class="footer-social-icon" src="/images/footer/social_icons/facebook.svg" alt="Facebook"></a>
+                  <a href="<?php echo $helper->getSocialLinks()->facebook ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/facebook.svg" alt="Facebook"></a>
                 </div>
                 <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
-                  <a href="<?php echo $helper->getSocialLinks()->twitter ?>"><img class="footer-social-icon" src="/images/footer/social_icons/twitter.svg" alt="Twitter"></a>
+                  <a href="<?php echo $helper->getSocialLinks()->twitter ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/twitter.svg" alt="Twitter"></a>
                 </div>
                 <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
-                  <a href="<?php echo $helper->getSocialLinks()->instagram ?>"><img class="footer-social-icon" src="/images/footer/social_icons/instagram.svg" alt="Instagram"></a>
+                  <a href="<?php echo $helper->getSocialLinks()->instagram ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/instagram.svg" alt="Instagram"></a>
                 </div>
                 <div class="col-xs margin-a-0 padding-a-0 margin-x-1">
-                  <a href="<?php echo $helper->getSocialLinks()->youtube ?>"><img class="footer-social-icon" src="/images/footer/social_icons/youtube.svg" alt="Youtube"></a>
+                  <a href="<?php echo $helper->getSocialLinks()->youtube ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/youtube.svg" alt="Youtube"></a>
                 </div>
               </div>
             </div>
