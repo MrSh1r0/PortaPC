@@ -159,7 +159,7 @@ $categories                  = $helper->getCategories(false);
                 </div>
               <?php } ?>
               </div>
-
+              <!-- TODO -->
               <!-- contact / report section -->
           </div>
         </div>

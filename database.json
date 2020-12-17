@@ -64,7 +64,7 @@
       "created_at": 1608168957,
       "created_at_human": "17.12.2020",
       "images": ["1.jpg"]
-    },  {
+    }, {
       "id": 4,
       "title": "dasd",
       "description": "sfff",
@@ -80,6 +80,38 @@
       "created_at": 1608169094,
       "created_at_human": "17.12.2020",
       "images": ["1.jpg", "2.jpg", "3.jpg"]
+    }, {
+      "id": 5,
+      "title": "ddddd",
+      "description": "adsadasdasdsadasdsaa",
+      "location": "Petrisberg",
+      "price": 3,
+      "category": "GPUs",
+      "condition": "Neu",
+      "owner": {
+        "username": "Leon",
+        "user_email": "test@gmail.com",
+        "user_type": "user"
+      },
+      "created_at": 1608207578,
+      "created_at_human": "17.12.2020",
+      "images": ["1f506e56e791e99ae58bf476238aa131.1000x1000x1.jpg"]
+    }, {
+      "id": 6,
+      "title": "ADMIN",
+      "description": "sdaasds",
+      "location": "Petrisberg",
+      "price": 32112,
+      "category": "GPUs",
+      "condition": "Neu",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "admin@portapc.de",
+        "user_type": "admin"
+      },
+      "created_at": 1608207687,
+      "created_at_human": "17.12.2020",
+      "images": ["1f506e56e791e99ae58bf476238aa131.1000x1000x1.jpg"]
     }],
     "sliders": [{
       "id": 1,

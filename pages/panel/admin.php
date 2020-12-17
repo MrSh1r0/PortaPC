@@ -1,3 +1,5 @@
+<!-- TODO: list of products per id, enable edit and delete -->
+
 <?php
 session_start();
 /*

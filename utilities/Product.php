@@ -90,7 +90,7 @@ if(isset($_POST["submit_add"]) && isset($_POST["title"]) && isset($_POST["descri
       array_push($product->images, $_FILES['images_upload']['name'][$i]);
     }
 
-
+    // TODO: add a token or link for this product to edit or to delete
     // now let's redirect the user back to product_add or whatever
     $message = "";
     if($failed_images_count == $images_count){

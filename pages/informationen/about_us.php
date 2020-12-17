@@ -154,6 +154,9 @@ $categories                  = $helper->getCategories(false);
             </div>
 
             <div class="col-sm-12">
+              <p class="text-subtitle text-weight-medium">TITLE</p>
+              <!-- <br></br> SPACE -->
+              <p class="text-body-1 text-weight-regular">BODY</p>
             </div>
 
           </div>

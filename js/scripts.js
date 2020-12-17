@@ -1,23 +1,3 @@
-// Custom scripts
-function ajax_example() {
-  let xmlhttp = new XMLHttpRequest();
-
-  xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == XMLHttpRequest.DONE) { // XMLHttpRequest.DONE == 4
-      if (xmlhttp.status == 200) {
-        // the response is successful
-        response_json = JSON.parse(xmlhttp.responseText);
-      } else {
-        // response wasn't successful, log this into the console
-        console.log(`Response received with status ${xmlhttp.status}`);
-      }
-    }
-  };
-  // parameter is "request_type" with the value "overview"
-  xmlhttp.open("GET", "../utilities/ajax_helper.php?request_type=overview", true);
-  xmlhttp.send();
-}
-
 function applyFilters(){
   // create the url params builder
   let urlParams = new URLSearchParams();
