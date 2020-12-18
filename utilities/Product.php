@@ -51,6 +51,10 @@ if(isset($_POST["submit_add"]) && isset($_POST["title"]) && isset($_POST["descri
   $owner->username = $user_name;
   $owner->user_email = $user_email;
   $owner->user_type = $user_type;
+  // see https://www.php.net/manual/en/function.random-bytes.php
+  // we will use two tokens/two generated strings with short & long lengths to use as an email & password (something similar, just to look like we are being secure of our product and let it make sense)
+  $owner->post_token_id = random_bytes(5);
+  $owner->post_token_password = random_bytes(15);
 
   // if the directory doesn't exist, create it
   if (!file_exists($images_target_dir)) {
@@ -90,8 +94,7 @@ if(isset($_POST["submit_add"]) && isset($_POST["title"]) && isset($_POST["descri
       array_push($product->images, $_FILES['images_upload']['name'][$i]);
     }
 
-    // TODO: add a token or link for this product to edit or to delete
-    // now let's redirect the user back to product_add or whatever
+    // now let's redirect the user back to product_add
     $message = "";
     if($failed_images_count == $images_count){
       $message = "Ihre Anzeige wurde nicht erstellt, da keine Bilder hochgeladen wurden!";
@@ -102,8 +105,7 @@ if(isset($_POST["submit_add"]) && isset($_POST["title"]) && isset($_POST["descri
       $helper->addProduct($product);
       $message = "Ihre Anzeige wurde erstellt!";
     }
-
-    header("Location: ../pages/panel/product_add.php?result=success&action=add&message=" . $message);
+    header("Location: ../pages/panel/product_add.php?result=success&action=add&message=" . $message . "&post_token_id=" . $owner->post_token_id . "&post_token_password=" . $owner->post_token_password . "&id=" . $product->id);
     exit;
   } else {
     header("Location: ../pages/panel/product_add.php?result=failure&action=add&message=Bitte vollständigen Sie alle Angaben!");

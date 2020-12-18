@@ -66,7 +66,7 @@ $sliders                     = $helper->getSliders();
     </nav>
   </div>
 
-  <div class="container top-bar" id="top-bar">
+  <div class="container" id="top-bar">
     <div class="row">
       <!--Logo column-->
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">

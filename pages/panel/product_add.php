@@ -24,11 +24,21 @@ if(isset($_SESSION["user_email"]) && isset($_SESSION["user_password"])){
   }
 }
 
+$result = null;
+$message = null;
+$product_token_id = null;
+$post_token_password = null;
+$product_id = null;
 if(isset($_GET["result"]) && isset($_GET["action"])){
   $result = $_GET["result"];
   $action = $_GET["action"];
   $message = $_GET["message"];
-  echo "<script type='text/javascript'>alert('" . $message . "')</script>";
+  if($result == "success" && isset($_GET["product_token_id"]) && isset($_GET["product_token_password"]) && isset($_GET["product_id"])){
+    $product_token_id = $_GET["product_token_id"];
+    $product_token_password = $_GET["product_token_password"];
+    $product_id = $_GET["product_id"];
+
+  }
 }
 
 
@@ -179,6 +189,25 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
 
             <form class="row padding-a-0 margin-a-0" action="../../utilities/Product.php" method="POST" enctype='multipart/form-data'>
               <?php
+
+              if(empty($message) === false){
+                ?>
+                <div class="col-xs-12">
+                  <p class="listing-response-message"><?php echo $message ?></p>
+                </div>
+                <?php
+              }
+
+              if($result == "success" && empty($product_token_id) === false && empty($product_token_password) === false){
+                $page_edit = $_SERVER["HTTP_HOST"] . "PortaPC/pages/panel/product_edit.php?id=" . $product_id . "&product_token_id=" . $product_token_id . "&product_token_password=" . $product_token_password;
+                $page_delete = $_SERVER["HTTP_HOST"] . "PortaPC/pages/panel/product_delete.php?id=" . $product_id . "&product_token_id=" . $product_token_id . "&product_token_password=" . $product_token_password;
+                ?>
+                <div class="col-xs-12">
+                  <p class="listing-response-message">Um die Anzeige zu bearbeiten, klicken Sie bitte diesen Link: <?php $page_edit ?></p>
+                  <p class="listing-response-message">Um die Anzeige zu löschen, klicken Sie bitte diesen Link: <?php $page_delete ?></p>
+                </div>
+                <?php
+              }
 
               if($login_status === false){
                 ?>

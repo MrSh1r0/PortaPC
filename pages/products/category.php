@@ -145,7 +145,7 @@ $products             = $products_json->products;
     </nav>
   </div>
 
-  <div class="container top-bar" id="top-bar">
+  <header class="container" id="top-bar">
     <div class="row">
       <!--Logo column-->
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
@@ -154,7 +154,7 @@ $products             = $products_json->products;
       <!--End of Logo column-->
 
       <!--Search & Category parent-->
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10 fill-width">
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-8 fill-width">
 
         <!--Search & Category row-->
         <div class="row search-container">
@@ -201,8 +201,11 @@ $products             = $products_json->products;
       </div>
       <!--End of Search & Category parent-->
 
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 align-self-center banner-product-add">
+        <a href="/PortaPC/pages/panel/product_add.php"><p class="banner-product-add-text clickable text-align-center">Anzeige aufgeben</p></a>
+      </div>
     </div>
-  </div>
+  </header>
 
   <main id="homepage-content" class="margin-t-4">
     <div class="container">

@@ -279,10 +279,10 @@ function handleSearch(element) {
         }
       } else {
         // it doesn't, just add title query and category query then
-        future_url = `${location.protocol}//${location.host}/pages/products/category.php?title=${title_query}&category=${category}`;
+        future_url = `${location.protocol}//${location.host}/PortaPC/pages/products/category.php?title=${title_query}&category=${category}`;
       }
     } else {
-      future_url = `${location.protocol}//${location.host}/pages/products/category.php?title=${title_query}&category=${category}`;
+      future_url = `${location.protocol}//${location.host}/PortaPC/pages/products/category.php?title=${title_query}&category=${category}`;
     }
     visitURL(future_url);
   }
