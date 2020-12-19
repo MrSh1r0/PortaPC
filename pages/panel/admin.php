@@ -1,5 +1,3 @@
-<!-- TODO: list of products per id, enable edit and delete -->
-
 <?php
 session_start();
 /*
@@ -14,23 +12,22 @@ include_once("../../utilities/Helper.php");
 // Create an instance of our Helper class
 $helper                      = new Helper();
 
-
 $categories                  = $helper->getCategories(false);
 $conditions                  = $helper->getConditions();
 $locations                   = $helper->getLocations(false);
 
 $login_status = false;
-if(isset($_SESSION["user_email"]) === true && isset($_SESSION["user_password"])){
-  $email = $_SESSION["user_email"];
-  $password = $_SESSION["user_password"];
-  $login_status = $helper->loginAdmin($email, $password);
+if (isset($_SESSION["user_email"]) === true && isset($_SESSION["user_password"])) {
+    $email = $_SESSION["user_email"];
+    $password = $_SESSION["user_password"];
+    $login_status = $helper->loginAdmin($email, $password);
 }
 
-if(isset($_GET["result"]) && isset($_GET["action"])){
-  $result = $_GET["result"];
-  $action = $_GET["action"];
-  $message = $_GET["message"];
-  echo "<script type='text/javascript'>alert('" . $message . "')</script>";
+$message = null;
+if (isset($_GET["result"]) && isset($_GET["action"])) {
+    $result = $_GET["result"];
+    $action = $_GET["action"];
+    $message = $_GET["message"];
 }
 
 ?>
@@ -60,6 +57,7 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
         handleSearchCategoryList();
       }
     }
+
   </script>
 </head>
 
@@ -117,8 +115,8 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
               <p class='searchbar-category-dropdown' id="searchbar-category-text"><?php echo $categories[0] ?></p>
               <div id="categories-dropdown-content" class="categories-dropdown-content">
                 <?php
-                foreach($categories as $category){
-                ?>
+                foreach ($categories as $category) {
+                    ?>
 
                 <p class="categories-dropdown-item" onclick="handleSearchCategroyText('<?php echo $category ?>')"><?php echo $category ?></p>
 
@@ -161,8 +159,8 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
 
 
                   <?php
-                  foreach($categories as $category){
-                  ?>
+                  foreach ($categories as $category) {
+                      ?>
                   <li><a class="categories-item" href="/PortaPC/pages/products/category.php?category=<?php echo $category ?>"><?php echo $category ?></a></li>
                   <?php
                   }
@@ -180,41 +178,99 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
             <div class="col-xs-12 col-sm-12">
               <p class="category-title text-uppercase">
                 <?php
-                if($login_status === true){
-                  echo "Admin";
+                if ($login_status === true) {
+                    echo "Admin";
                 } else {
-                  echo "Anmelden";
+                    echo "Anmelden";
                 }
                 ?>
               </p>
             </div>
 
-            <?php
-            if($login_status === false){
-            ?>
-            <form class="row padding-a-0 margin-a-0" action="../../utilities/Admin.php" method="POST">
-              <!-- title -->
-              <div class="col-xs-12">
-                <input class="product-listing-input-title" placeholder="Email" name="email"></input>
-              </div>
-              <!-- Description -->
-              <div class="col-xs-12">
-                <input class="product-listing-input-title" placeholder="Passwort" name="password"></input>
-              </div>
 
-              <!-- submit -->
-              <div class="col-xs-12 text-align-right">
-                <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_login">Anmelden</button>
-              </div>
-            </form>
+
             <?php
-            } else {
-              ?>
+            if (empty($message) === false) {
+                ?>
+              <div class="col-xs-12">
+                <p class="listing-response-message"><?php echo $message ?></p>
+              </div>
+              <?php
+            }
+
+            if ($login_status === false) {
+                ?>
+            <div class="col-xs-12 margin-a-0 padding-a-0">
               <form class="row padding-a-0 margin-a-0" action="../../utilities/Admin.php" method="POST">
+                <!-- title -->
+                <div class="col-xs-12">
+                  <input class="product-listing-input-title" placeholder="Email" name="email"></input>
+                </div>
+                <!-- Description -->
+                <div class="col-xs-12">
+                  <input class="product-listing-input-title" placeholder="Passwort" name="password"></input>
+                </div>
+
+                <!-- submit -->
                 <div class="col-xs-12 text-align-right">
-                  <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_logout">Abmelden</button>
+                  <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_login">Anmelden</button>
                 </div>
               </form>
+            </div>
+            <?php
+            } else {
+                ?>
+              <div class="col-xs-12 padding-a-0 margin-a-0">
+                <div class="row padding-a-0 margin-a-0">
+                  <form class="col-xs-12 text-align-right" action="../../utilities/Admin.php" method="POST">
+                    <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_logout">Abmelden</button>
+                  </form>
+
+                  <!-- php_self means that we want the server to call this file itself, because we want to handle the scripting here, not in an another file. -->
+                  <form class="row padding-a-0 margin-a-0 fill-width" method="GET" action="<?php echo $_SERVER["PHP_SELF"] ?>">
+                    <div class="col-xs-8 col-sm-8 col-md-10">
+                      <input class="product-listing-input-title" placeholder="Suche nach einem ID" name="id"</input>
+                    </div>
+                    <div class="col-xs-4 col-sm-4 col-md-2">
+                      <button class="fill-width product-listing-submit product-listing-search text-uppercase clickable" type="submit" >Suche</button>
+                    </div>
+                  </form>
+
+                  <?php
+                  if (isset($_GET["id"]) === true && empty($_GET["id"]) === false) {
+                      $product_id = $_GET["id"];
+                      $product = $helper->getProduct($product_id);
+                      if (empty($product) === true) {
+                          // empty, show that in the interface
+                      ?>
+                      <div class="col-xs-12 col-sm-12">
+                        <p class="products-empty-text">Leider haben wir keine Ergebnisse gefunden 😔</p>
+                      </div>
+                      <?php
+                      } else {
+                        $page_edit = "/PortaPC/pages/panel/product_edit.php?id=" . $product->id . "&post_token_id=" . $product->owner->post_token_id . "&post_token_password=" . $product->owner->post_token_password;
+                        $page_delete = "/PortaPC/pages/panel/product_delete.php?id=" . $product->id . "&post_token_id=" . $product->owner->post_token_id . "&post_token_password=" . $product->owner->post_token_password;
+                        $product_link = "/PortaPC/pages/products/product.php?id=" . $product->id;
+                      ?>
+                      <div class="col-xs-12">
+                        <div class="row padding-a-2 product-listing-search-result-container">
+                          <div class="col-xs-8 col-sm-8 col-md-8 align-self-center">
+                            <a class="link-remove-effects" href="<?php echo $product_link ?>"><p class="listing-product-title">#<?php echo $product->id ?>: <?php echo $product->title ?></p></a>
+                          </div>
+                          <div class="col-xs-2 col-sm-2 col-md-2 align-self-center">
+                            <a href="<?php echo $page_edit ?>"><button class="fill-width product-listing-actions-button text-uppercase clickable">Bearbeiten</button></a>
+                          </div>
+                          <div class="col-xs-2 col-sm-2 col-md-2 align-self-center">
+                            <a href="<?php echo $page_delete ?>"><button class="fill-width product-listing-actions-button-dangerous text-uppercase clickable">Löschen</button></a>
+                          </div>
+                        </div>
+                      </div>
+                      <?php
+                      }
+                  } ?>
+
+                </div>
+              </div>
               <?php
             }
             ?>

@@ -1,4 +1,5 @@
 <?php
+session_start();
 /*
 We will use a Helper class in PHP to get our Json content.
 If we use JavaScript, our Json file will be exposed.
@@ -11,16 +12,34 @@ include_once("../../utilities/Helper.php");
 // Create an instance of our Helper class
 $helper                      = new Helper();
 
-// create an instance of our latest products
 
-$categories                  = $helper->getCategories(false);
+$categories = $helper->getCategories(false);
+$login_status = false;
+if(isset($_SESSION["user_email"]) && isset($_SESSION["user_password"])){
+  if(json_decode($helper->loginAdmin($_SESSION["user_email"], $_SESSION["user_password"]))->result === true){
+    $login_status = true;
+  }
+}
+
+$message = null;
+if(isset($_GET["message"]) === true && empty($_GET["messaage"]) === false){
+  $message = $_GET["message"];
+}
+
+$product = null;
+if(isset($_GET["id"]) === true && empty($_GET["id"]) === false){
+  $product_id = $_GET["id"];
+  $product = $helper->getProduct($product_id);
+}
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="de" dir="ltr">
 
 <head>
-  <title>Über uns</title>
+  <title>Melden</title>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -39,7 +58,16 @@ $categories                  = $helper->getCategories(false);
       if (document.readyState == "complete") {
         handleScroll();
         handleSearchCategoryList();
+        updateEmailLink();
       }
+    }
+
+    function updateEmailLink(){
+      let tag_a_element = document.getElementById("email_send_button_a");
+      let title = document.getElementById("title").value;
+      let description = document.getElementById("description").value;
+
+      tag_a_element.href = `mailto:<?php echo $helper->getInformation()->contact_report_email ?>?subject=${title}&body=${description}`;
     }
   </script>
 </head>
@@ -61,11 +89,11 @@ $categories                  = $helper->getCategories(false);
     </nav>
   </div>
 
-  <div class="container" id="top-bar">
+  <div class="container top-bar" id="top-bar">
     <div class="row">
       <!--Logo column-->
       <div class="col-xs-12 col-sm-12 col-md-12 col-lg-2">
-        <a href="/PortaPC"><div class="website-logo"></div></a>
+        <a href="/PortaPC"><div class="website-logo" ></div></a>
       </div>
       <!--End of Logo column-->
 
@@ -116,7 +144,6 @@ $categories                  = $helper->getCategories(false);
 
       </div>
       <!--End of Search & Category parent-->
-
       <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 align-self-center banner-product-add">
         <a href="/PortaPC/pages/panel/product_add.php"><p class="banner-product-add-text clickable text-align-center">Anzeige aufgeben</p></a>
       </div>
@@ -132,16 +159,22 @@ $categories                  = $helper->getCategories(false);
           <div class="row">
             <!-- Category title -->
             <div class="col-xs-12 col-sm-12">
-              <p class="category-title text-uppercase">Informationen</p>
+              <p class="category-title text-uppercase">Entdecken</p>
             </div>
 
             <!-- Category card -->
             <div class="col-xs-12 col-sm-12">
               <div class="categories-container">
                 <ul class="categories-list" id="categories-list">
-                  <li><a class="categories-item categories-item-selected" href="/PortaPC/pages/informationen/about_us.php">Über uns</a></li>
-                  <li><a class="categories-item" href="/PortaPC/pages/informationen/agb.php">AGB</a></li>
-                  <li><a class="categories-item" href="/PortaPC/pages/informationen/impressum.php">Impressum</a></li>
+
+
+                  <?php
+                  foreach($categories as $category){
+                  ?>
+                  <li><a class="categories-item" href="/PortaPC/pages/products/category.php?category=<?php echo $category ?>"><?php echo $category ?></a></li>
+                  <?php
+                  }
+                  ?>
                 </ul>
               </div>
             </div>
@@ -152,36 +185,50 @@ $categories                  = $helper->getCategories(false);
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 margin-a-0 padding-a-0">
           <div class="row">
 
-            <div class="col-xs-12">
-              <p class="category-title text-uppercase">Über uns</p>
+            <div class="col-xs-12 col-sm-12">
+              <p class="category-title text-uppercase">Melden</p>
             </div>
 
-            <div class="col-xs-12">
-              <p class="text-subtitle text-weight-medium">TITLE</p>
-              <!-- <br></br> SPACE -->
-              <p class="text-body-1 text-weight-regular">BODY</p>
-            </div>
-
-            <div class="col-xs-12">
-              <p class="text-subtitle text-weight-medium">PortaPC Team</p>
-            </div>
-            <?php
-
-            foreach($helper->getWebsiteDevs() as $dev){
-              ?>
-              <div class="col-xs-6 col-sm-6 col-md-2">
-                <div class="row padding-a-0 margin-a-0">
-                  <div class="col-xs-12  text-align-center">
-                    <img class="dev-profile-picture" src="<?php echo $dev->profile_picture ?>" alt="Profile picture"/>
-                  </div>
-                  <div class="col-xs-12 text-align-center margin-t-0">
-                    <p class="text-subtitle text-weight-medium"><?php echo $dev->name ?></p>
-                  </div>
-                </div>
-              </div>
+            <div class="row padding-a-0 margin-a-0">
               <?php
-            }
-            ?>
+
+              if(empty($message) === false){
+                ?>
+                <div class="col-xs-12">
+                  <p class="listing-response-message"><?php echo $message ?></p>
+                </div>
+                <?php
+              }
+
+              if(empty($product) === false){
+                ?>
+                <div class="col-xs-12">
+                  <p class="listing-response-message">Ersteller: <?php echo $product->owner->username ?></p>
+                </div>
+                <!-- title -->
+                <div class="col-xs-12">
+                  <input oninput="updateEmailLink()" id="title" class="product-listing-input-title" placeholder="Titel" value="Meldung: Anzeige Nr. <?php echo $product->id ?> - <?php echo $product->title ?>"></input>
+                </div>
+                <!-- Description -->
+                <div class="col-xs-12">
+                  <textarea oninput="updateEmailLink()" id="description" class="product-listing-input-description" placeholder="Beschreibung"></textarea>
+                </div>
+
+                <!-- submit -->
+                <div class="col-xs-12 text-align-right">
+                  <a id="email_send_button_a"><button class="product-listing-submit text-uppercase clickable">Abschicken</button></a>
+                </div>
+                <?php
+              } else {
+                ?>
+                <div class="col-xs-12">
+                  <p class="listing-response-message">Wir können keine Anzeige mit diesem ID finden!</p>
+                </div>
+                <?php
+              }
+              ?>
+
+            </div>
 
           </div>
         </div>

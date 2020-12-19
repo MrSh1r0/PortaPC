@@ -92,7 +92,7 @@ $products             = $products_json->products;
 <html lang="de" dir="ltr">
 
 <head>
-  <title>PortaPC</title>
+  <title>Suche</title>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -283,7 +283,7 @@ $products             = $products_json->products;
                     $location_id = 0;
                     foreach($locations as $location){
                     ?>
-                      <div class="col margin-t-2 margin-r-1">
+                      <div class="col margin-t-2">
                         <label class="checkbox-container">
                           <input class="chip" id="location_<?php echo $location_id ?>" type="checkbox">
                           <label id="location_label_<?php echo $location_id ?>" for="location_<?php echo $location_id ?>"><?php echo $location ?></label>
@@ -342,7 +342,7 @@ $products             = $products_json->products;
                 </div>
 
                 <!-- Number of products -->
-                <div class="col fill-height align-self-center margin-l-3">
+                <div class="col fill-height align-self-center">
                   <p class="products-list-information-text"><?php echo $products_json->products_total_count ?> Anzeige
 
 
@@ -446,7 +446,7 @@ $products             = $products_json->products;
               <!-- Page controller -->
               <div class="col-xs-12 col-sm-12">
                 <div class="row margin-a-0 padding-a-0 justify-content-center">
-                  <div class="col fill-height align-self-center margin-l-3">
+                  <div class="col fill-height align-self-center">
                     <?php if($has_previous === false){
                       ?>
                       <a class="material-icons pagination-icon pagination-icon-disabled">first_page</a>
@@ -458,7 +458,7 @@ $products             = $products_json->products;
                     }
                     ?>
                   </div>
-                  <div class="col fill-height align-self-center margin-l-3">
+                  <div class="col fill-height align-self-center">
                     <?php if($has_previous === false){
                       ?>
                       <a class="material-icons pagination-icon pagination-icon-disabled">navigate_before</a>
@@ -471,11 +471,11 @@ $products             = $products_json->products;
                     ?>
                   </div>
 
-                  <div class="col fill-height align-self-center margin-l-3">
+                  <div class="col fill-height align-self-center">
                     <a class="pagination-current-text" href="<?php echo $page_current_url ?>"><?php echo $page_current ?></a>
                   </div>
 
-                  <div class="col fill-height align-self-center margin-l-3">
+                  <div class="col fill-height align-self-center">
                     <?php if($has_next === false){
                       ?>
                       <a class="material-icons pagination-icon pagination-icon-disabled">navigate_next</a>
@@ -488,7 +488,7 @@ $products             = $products_json->products;
                     ?>
                   </div>
 
-                  <div class="col fill-height align-self-center margin-l-3">
+                  <div class="col fill-height align-self-center">
                     <?php if($has_next === false){
                       ?>
                       <a class="material-icons pagination-icon pagination-icon-disabled">last_page</a>

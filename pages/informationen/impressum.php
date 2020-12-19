@@ -20,7 +20,7 @@ $categories                  = $helper->getCategories(false);
 <html lang="de" dir="ltr">
 
 <head>
-  <title>PortaPC</title>
+  <title>Impressum</title>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -152,11 +152,11 @@ $categories                  = $helper->getCategories(false);
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 margin-a-0 padding-a-0">
           <div class="row">
 
-            <div class="col-sm-12">
+            <div class="col-xs-12">
               <p class="category-title text-uppercase">Impressum</p>
             </div>
 
-            <div class="col-sm-12">
+            <div class="col-xs-12">
               <p class="text-subtitle text-weight-medium">Angaben gemäß § 5 TMG</p>
               <p class="text-body-1 text-weight-regular">Max Muster<br>
                 Musterweg<br>

@@ -22,7 +22,7 @@ $categories                  = $helper->getCategories(false);
 <html lang="de" dir="ltr">
 
 <head>
-  <title>PortaPC</title>
+  <title><?php echo $product->title ?></title>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -140,7 +140,7 @@ $categories                  = $helper->getCategories(false);
                   foreach($product->images as $image){
                   ?>
                   <a class="slide slide-fade-in product-slide">
-                    <img class="slide-image" src="/PortaPC/images/products/<?php echo $product->id ?>/<?php echo $image ?>">
+                    <img class="slide-image" src="/PortaPC/images/products/<?php echo $product->id ?>/<?php echo $image ?>" alt="Slider image">
                   </a>
                   <?php
                   }
@@ -162,8 +162,21 @@ $categories                  = $helper->getCategories(false);
                 </div>
               <?php } ?>
               </div>
-              <!-- TODO -->
               <!-- contact / report section -->
+              <?php
+              if(empty($product) === false){
+                ?>
+                <div class="col-xs-12">
+                  <p class="product-seller-information-text text-align-center">Die Anzeige wurde von <span class="text-weight-bold"><?php echo $product->owner->username ?></span> erstellt.</p>
+                </div>
+
+                <div class="col-xs-12 text-align-center">
+                  <a href="/PortaPC/pages/panel/product_contact.php?id=<?php echo $product_id ?>"><button class="product-seller-contact text-uppercase clickable">Kontakt</button></a>
+                  <a href="/PortaPC/pages/panel/product_report.php?id=<?php echo $product_id ?>"><button class="product-seller-report text-uppercase clickable margin-l-2">Melden</button></a>
+                </div>
+                <?php
+              }
+              ?>
           </div>
         </div>
 
@@ -187,7 +200,7 @@ $categories                  = $helper->getCategories(false);
                 <p class="product-page-subtitle text-uppercase"><?php echo $product->condition ?> • €<?php echo $product->price ?> • <?php echo $product->location ?> • erstellt am <?php echo $product->created_at_human ?></p>
               </div>
 
-              <div class="col-xs-12 col-sm-12 margin-t-0">
+              <div class="col-xs-12 col-sm-12 margin-t-3">
                 <p class="product-page-description text-uppercase"><?php echo $product->description ?></p>
               </div>
               <?php

@@ -28,6 +28,14 @@ class Helper {
         }
     }
 
+    public function getWebsiteDevs(){
+      return $this->jsonDatabase->website_info->website_devs;
+    }
+
+    public function getAdminLogin(){
+      return $this->jsonDatabase->website_login;
+    }
+
     public function getConditions() {
         return $this->jsonDatabase->website_constants->conditions;
     }
@@ -69,6 +77,19 @@ class Helper {
     public function addProduct($product){
         $json_placeholder = $this->jsonDatabase;
         array_push($json_placeholder->website_database->products, $product);
+        file_put_contents("../database.json", json_encode($json_placeholder));
+    }
+
+    public function deleteProduct($id){
+        $json_placeholder = $this->jsonDatabase;
+        for($i = 0; $i < sizeof($json_placeholder->website_database->products); $i++){
+          // we use double == because we might give an int in "2", and here we want to compare the value ONLY, not the value AND the type of the value. So == will compare only the value!
+          if($json_placeholder->website_database->products[$i]->id == $id){
+            // unset will delete the element from the original array without the need to create a new instance
+            array_splice($json_placeholder->website_database->products, $i, 1);
+            break;
+          }
+        }
         file_put_contents("../database.json", json_encode($json_placeholder));
     }
 
@@ -289,7 +310,7 @@ class Helper {
     }
 
     public function loginAdmin($input_email, $input_password){
-      $admin_user = $this->jsonDatabase->website_login;
+      $admin_user = $this->getAdminLogin();
       $admin_email = $admin_user->admin_email;
       $admin_password = $admin_user->admin_password;
 

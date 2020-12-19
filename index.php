@@ -178,7 +178,8 @@ $sliders                     = $helper->getSliders();
                   $redirect_url = $slider->redirect_url;
                 ?>
                 <a class="slide slide-fade-in" href="<?php echo $redirect_url ?>">
-                  <img class="slide-image" src="/PortaPC/images/slider/<?php echo $thumbnail ?>">
+                  <img class="slide-image" src="/PortaPC/images/slider/<?php echo $thumbnail ?>" alt="Slider image">
+                  <div class="image-overlay"></div>
                 </a>
                 <?php
                 }

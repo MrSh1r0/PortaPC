@@ -20,7 +20,7 @@ $categories                  = $helper->getCategories(false);
 <html lang="de" dir="ltr">
 
 <head>
-  <title>PortaPC</title>
+  <title>AGB</title>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -152,11 +152,11 @@ $categories                  = $helper->getCategories(false);
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-9 margin-a-0 padding-a-0">
           <div class="row">
 
-            <div class="col-sm-12">
+            <div class="col-xs-12">
               <p class="category-title text-uppercase">Allgemeine Geschäftsbedingungen der Firma PortaPc</p>
             </div>
 
-            <div class="col-sm-12">
+            <div class="col-xs-12">
               <p class="text-subtitle text-weight-medium">§1 Geltung gegenüber Unternehmern und Begriffsdefinitionen</p>
               </br>
               <p class="text-body-1 text-weight-regular">(1) Die nachfolgenden Allgemeinen Geschäftbedingungen gelten für alle Lieferungen zwischen uns und einem Verbraucher in ihrer zum Zeitpunkt der Bestellung gültigen Fassung.

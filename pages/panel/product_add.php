@@ -26,17 +26,17 @@ if(isset($_SESSION["user_email"]) && isset($_SESSION["user_password"])){
 
 $result = null;
 $message = null;
-$product_token_id = null;
+$post_token_id = null;
 $post_token_password = null;
 $product_id = null;
 if(isset($_GET["result"]) && isset($_GET["action"])){
   $result = $_GET["result"];
   $action = $_GET["action"];
   $message = $_GET["message"];
-  if($result == "success" && isset($_GET["product_token_id"]) && isset($_GET["product_token_password"]) && isset($_GET["product_id"])){
-    $product_token_id = $_GET["product_token_id"];
-    $product_token_password = $_GET["product_token_password"];
-    $product_id = $_GET["product_id"];
+  if($result == "success" && isset($_GET["post_token_id"]) && isset($_GET["post_token_password"]) && isset($_GET["id"])){
+    $post_token_id = $_GET["post_token_id"];
+    $post_token_password = $_GET["post_token_password"];
+    $product_id = $_GET["id"];
 
   }
 }
@@ -49,7 +49,7 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
 <html lang="de" dir="ltr">
 
 <head>
-  <title>PortaPC</title>
+  <title>Anzeige aufgeben</title>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -99,7 +99,7 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
       <!--End of Logo column-->
 
       <!--Search & Category parent-->
-      <div class="col-xs-12 col-sm-12 col-md-12 col-lg-10">
+      <div class="col-xs-10 col-sm-10 col-md-10 col-lg-8">
 
         <!--Search & Category row-->
         <div class="row search-container margin-a-0 padding-a-0">
@@ -145,6 +145,9 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
 
       </div>
       <!--End of Search & Category parent-->
+      <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 align-self-center banner-product-add">
+        <a href="/PortaPC/pages/panel/product_add.php"><p class="banner-product-add-text clickable text-align-center">Anzeige aufgeben</p></a>
+      </div>
     </div>
   </div>
 
@@ -187,101 +190,104 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
               <p class="category-title text-uppercase">Anzeige aufgaben</p>
             </div>
 
-            <form class="row padding-a-0 margin-a-0" action="../../utilities/Product.php" method="POST" enctype='multipart/form-data'>
-              <?php
+            <!-- https://www.w3schools.com/tags/att_form_enctype.asp -->
+            <div class="col-xs-12 padding-a-0 margin-a-0">
+              <form class="row padding-a-0 margin-a-0" action="../../utilities/Product.php" method="POST" enctype='multipart/form-data'>
+                <?php
 
-              if(empty($message) === false){
+                if(empty($message) === false){
+                  ?>
+                  <div class="col-xs-12">
+                    <p class="listing-response-message"><?php echo $message ?></p>
+                  </div>
+                  <?php
+                }
+
+                if($result == "success" && empty($post_token_id) === false && empty($post_token_password) === false){
+                  $page_edit = "/PortaPC/pages/panel/product_edit.php?id=" . $product_id . "&post_token_id=" . $post_token_id . "&post_token_password=" . $post_token_password;
+                  $page_delete = "/PortaPC/pages/panel/product_delete.php?id=" . $product_id . "&post_token_id=" . $post_token_id . "&post_token_password=" . $post_token_password;
+                  ?>
+                  <div class="col-xs-12">
+                    <p class="listing-response-message">Um die Anzeige zu bearbeiten, klicken Sie bitte diesen <?php echo "<a href='" . $page_edit . "'>Link</a>" ?> (speichern Sie diesen Link ab!).</p>
+                    <p class="listing-response-message">Um die Anzeige zu löschen, klicken Sie bitte diesen <?php echo "<a href='" . $page_delete . "'>Link</a>" ?> (speichern Sie diesen Link ab!).</p>
+                  </div>
+                  <?php
+                }
+
+                if($login_status === false){
+                  ?>
+                  <!-- username -->
+                  <div class="col-xs-6">
+                    <input class="product-listing-input-title" placeholder="Name" name="name"></input>
+                  </div>
+
+                  <div class="col-xs-6">
+                    <input class="product-listing-input-title" type="email" placeholder="Email" name="email"></input>
+                  </div>
+                  <?php
+                }
                 ?>
+                <!-- title -->
                 <div class="col-xs-12">
-                  <p class="listing-response-message"><?php echo $message ?></p>
+                  <input class="product-listing-input-title" placeholder="Titel" name="title"></input>
                 </div>
-                <?php
-              }
-
-              if($result == "success" && empty($product_token_id) === false && empty($product_token_password) === false){
-                $page_edit = $_SERVER["HTTP_HOST"] . "PortaPC/pages/panel/product_edit.php?id=" . $product_id . "&product_token_id=" . $product_token_id . "&product_token_password=" . $product_token_password;
-                $page_delete = $_SERVER["HTTP_HOST"] . "PortaPC/pages/panel/product_delete.php?id=" . $product_id . "&product_token_id=" . $product_token_id . "&product_token_password=" . $product_token_password;
-                ?>
+                <!-- Description -->
                 <div class="col-xs-12">
-                  <p class="listing-response-message">Um die Anzeige zu bearbeiten, klicken Sie bitte diesen Link: <?php $page_edit ?></p>
-                  <p class="listing-response-message">Um die Anzeige zu löschen, klicken Sie bitte diesen Link: <?php $page_delete ?></p>
+                  <textarea class="product-listing-input-description" placeholder="Beschreibung (Sie können HTML tags verwenden)" name="description"></textarea>
                 </div>
-                <?php
-              }
-
-              if($login_status === false){
-                ?>
-                <!-- username -->
-                <div class="col-xs-6">
-                  <input class="product-listing-input-title" placeholder="Name" name="name"></input>
+                <!-- price -->
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                  <input type="number" name="price" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" oninput="validity.valid || (value = this.previousValue)" class="product-listing-input-price" placeholder="Preis"></input>
                 </div>
-
-                <div class="col-xs-6">
-                  <input class="product-listing-input-title" type="email" placeholder="Email" name="email"></input>
-                </div>
-                <?php
-              }
-              ?>
-              <!-- title -->
-              <div class="col-xs-12">
-                <input class="product-listing-input-title" placeholder="Titel" name="title"></input>
-              </div>
-              <!-- Description -->
-              <div class="col-xs-12">
-                <textarea class="product-listing-input-description" placeholder="Beschreibung" name="description"></textarea>
-              </div>
-              <!-- price -->
-              <div class="col-xs-12 col-sm-12 col-md-3">
-                <input type="number" name="price" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" oninput="validity.valid || (value = this.previousValue)" class="product-listing-input-price" placeholder="Preis"></input>
-              </div>
-              <!-- category -->
-              <div class="col-xs-12 col-sm-12 col-md-3">
-                <select class="product-listing-select" name="category" id="category">
-                  <?php
-                  foreach($categories as $category){
-                    ?>
-                    <option value="<?php echo $category ?>"><?php echo $category ?></option>
+                <!-- category -->
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                  <select class="product-listing-select" name="category" id="category">
                     <?php
-                  }
-                  ?>
-                </select>
-              </div>
-              <!-- condition -->
-              <div class="col-xs-12 col-sm-12 col-md-3">
-                <select class="product-listing-select" name="condition" id="condition">
-                  <?php
-                  foreach($conditions as $condition){
+                    foreach($categories as $category){
+                      ?>
+                      <option value="<?php echo $category ?>"><?php echo $category ?></option>
+                      <?php
+                    }
                     ?>
-                    <option value="<?php echo $condition ?>"><?php echo $condition ?></option>
-                    <?php
-                  }
-                  ?>
-                </select>
-              </div>
-              <!-- location -->
-              <div class="col-xs-12 col-sm-12 col-md-3">
-                <select class="product-listing-select" name="location" id="location">
-                  <?php
-                  foreach($locations as $location){
-                    ?>
-                    <option value="<?php echo $location ?>"><?php echo $location ?></option>
-                    <?php
-                  }
-                  ?>
-                </select>
-              </div>
-              <!-- images -->
-              <div class="col-xs-12">
-                <div class="product-listing-input-file">
-                  <label for="images">Bilder auswählen: </label>
-                  <input id="images" type="file" name="images_upload[]" accept="image/x-png,image/gif,image/jpeg" multiple="multiple"/>
+                  </select>
                 </div>
-              </div>
-              <!-- submit -->
-              <div class="col-xs-12 text-align-right">
-                <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_add">Aufgeben</button>
-              </div>
-            </form>
+                <!-- condition -->
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                  <select class="product-listing-select" name="condition" id="condition">
+                    <?php
+                    foreach($conditions as $condition){
+                      ?>
+                      <option value="<?php echo $condition ?>"><?php echo $condition ?></option>
+                      <?php
+                    }
+                    ?>
+                  </select>
+                </div>
+                <!-- location -->
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                  <select class="product-listing-select" name="location" id="location">
+                    <?php
+                    foreach($locations as $location){
+                      ?>
+                      <option value="<?php echo $location ?>"><?php echo $location ?></option>
+                      <?php
+                    }
+                    ?>
+                  </select>
+                </div>
+                <!-- images -->
+                <div class="col-xs-12">
+                  <div class="product-listing-input-file">
+                    <label for="images">Bilder auswählen: </label>
+                    <input id="images" type="file" name="images_upload[]" accept="image/x-png,image/gif,image/jpeg" multiple="multiple"/>
+                  </div>
+                </div>
+                <!-- submit -->
+                <div class="col-xs-12 text-align-right">
+                  <button class="product-listing-submit text-uppercase clickable" type="submit" name="submit_add">Aufgeben</button>
+                </div>
+              </form>
+            </div>
 
           </div>
         </div>

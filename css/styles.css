@@ -7,6 +7,12 @@ p {
   padding: 0;
 }
 
+
+/* made for a tags */
+.link-remove-effects, .link-remove-effects:hover, .link-remove-effects:focus {
+  color: inherit;
+}
+
 /* remove arrows from input that has type=number */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -18,10 +24,10 @@ input::-webkit-inner-spin-button {
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
-a {
-  background-color: transparent;
-  text-decoration: none;
-}
+ a, a:hover, a:focus {
+   background-color: transparent;
+   text-decoration: none;
+ }
 
 body {
   margin: 0px !important;
@@ -170,6 +176,7 @@ color: hange the text's color color
   text-overflow: ellipsis;
   overflow: hidden;
   width: 100%;
+  word-break: break-all;
   white-space: nowrap;
   align-self: center;
   cursor: pointer;
@@ -263,10 +270,35 @@ color: hange the text's color color
   background-color: rgba(0, 0, 0, 0.1)
 }
 
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.2s;
+  border-radius: 15px;
+}
+
+.image-overlay:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+  transition: background-color 0.2s;
+}
+
 .slider {
   width: 100%;
   position: relative;
   margin: auto;
+}
+
+.slider-overlay {
+  background: #fff;
+}
+
+.slider-overlay:hover {
+
 }
 
 /* Hide the images by default */
@@ -276,12 +308,18 @@ color: hange the text's color color
 
 .slide-active {
   display: flex !important;
+
+
 }
+
 
 .slide-image {
   width: 100%;
   border-radius: 15px;
 }
+
+
+
 
 .slide-fade-in {
   animation-name: slide-fade-in;
@@ -371,6 +409,12 @@ color: hange the text's color color
   padding: 30px !important;
   position: relative;
   height: 130px;
+  transition: box-shadow 0.2s;
+}
+
+.product-image-container:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
 }
 
 /*
@@ -397,6 +441,7 @@ color: hange the text's color color
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
+  word-break: break-all;
   /* number of lines to show */
   -webkit-line-clamp: 4;
   -webkit-box-orient: vertical;
@@ -461,6 +506,12 @@ color: hange the text's color color
   background-color: #dcbb76a3;
   border-radius: 15px;
   padding: 8px;
+  transition: box-shadow 0.2s;
+}
+
+.banner-product-add:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
 }
 
 .banner-product-add-text {
@@ -468,6 +519,7 @@ color: hange the text's color color
   font-weight: 500;
   font-size: 14px;
 }
+
 
 /*
   font-size: Category should have a big font size to grab the reader's attention
@@ -477,6 +529,13 @@ color: hange the text's color color
   font-size: 22px;
   font-weight: 700;
   color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  /* number of lines to show */
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
 }
 
 .category-show-more {
@@ -504,6 +563,12 @@ color: hange the text's color color
   background-color: #dcbb76;
   border: none;
   outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.filters-apply-button:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
 }
 
 .filters-title {
@@ -525,6 +590,7 @@ color: hange the text's color color
 .filters-categories-item:hover {
   background-color: rgba(221, 187, 118, 0.2);
   border-radius: 15px;
+  transition: background-color 0.2s;
   padding: 4px 6px;
 }
 
@@ -540,6 +606,8 @@ color: hange the text's color color
   text-decoration: none;
   color: black;
   padding: 4px 6px;
+  border-radius: 15px;
+  transition: background-color 0.2s;
 }
 
 .filters-price-input::placeholder {
@@ -599,6 +667,15 @@ color: hange the text's color color
   width: 15px; height: 15px;
   border: 2px solid #ccc;
   background: #fff;
+  border-radius: 5px;
+  transition: all .2s;
+}
+
+.checkbox:hover:not(:checked) + label:hover::before,
+.checkbox:hover:checked + label:hover::before {
+  content: 'check';
+  font-family: 'Material Icons';
+  background: rgba(221, 187, 118, 0.1);
   border-radius: 5px;
   transition: all .2s;
 }
@@ -664,6 +741,14 @@ color: hange the text's color color
   position: absolute;
   left: 0; top: 0;
   width: 100%; height: 100%;
+}
+
+.chip:hover:not(:checked) + label:hover,
+.chip:hover:checked + label:hover {
+  content: '';
+  background: rgba(221, 187, 118, 0.5);
+  border-radius: 5px;
+  transition: all .2s;
 }
 
 /* keep it focused with the primary color */
@@ -749,6 +834,7 @@ color: hange the text's color color
   white-space: nowrap;
   align-self: center;
   cursor: pointer;
+  word-break: break-all;
 }
 
 
@@ -845,6 +931,14 @@ color: hange the text's color color
   text-decoration: none;
   color: black;
   padding: 8px;
+  transition: background-color 0.2s;
+  border-radius: 15px;
+}
+
+.categories-item:hover {
+  background-color: rgba(221, 187, 118, 0.25);
+  border-radius: 15px;
+  transition: background-color 0.2s;
 }
 
 .separator-line {
@@ -867,6 +961,12 @@ color: hange the text's color color
 .footer-social-icon {
   width: 24px;
   height: 24px;
+  transition: color 0.2s;
+}
+
+.footer-social-icon:hover {
+  color: #dcbb76;
+  transition: all 0.2s;
 }
 
 .scroll-top-button {
@@ -896,7 +996,12 @@ color: hange the text's color color
 .scroll-top-button-show {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear, box-shadow 0.2s;
+}
+
+.scroll-top-button:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
 }
 
 .listing-response-message {
@@ -904,11 +1009,155 @@ color: hange the text's color color
   font-weight: 500;
 }
 
+.listing-product-title {
+  font-size: 16px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  word-break: break-all;
+  /* number of lines to show */
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+.product-function-body {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.product-seller-information-text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.product-seller-contact {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: #000000;
+  background-color: #ddbb76;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.product-seller-contact:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
+}
+
+.product-seller-report {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: #aa2e2e;
+  background-color: #eee;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.product-seller-report:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
+}
+
+.product-function-cancel {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: #232323;
+  background-color: #eee;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.product-function-report:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
+}
+
+.product-listing-search {
+  background-color: #eee !important;
+  color: #232323 !important;
+  transition: box-shadow 0.2s;
+}
+
+.product-listing-search:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
+}
+
+.product-listing-search-result-container {
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+.product-listing-actions-button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  color: #232323;
+  border: none;
+  background: none;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.product-listing-actions-button:hover {
+  background-color: rgb(34, 34, 34, 0.1);
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.product-listing-actions-button-dangerous {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  color: #aa2e2e;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.product-listing-actions-button-dangerous:hover {
+  background-color: rgba(170, 46, 46, 0.1);
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+.dev-profile-picture {
+  object-fit: contain;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  transition: box-shadow 0.2s;
+}
+
+.dev-profile-picture:hover {
+  border-radius: 50%;
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
+}
+
 .cardview {
   width: 100%;
   padding: 15px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px 0px rgba(0,0,0, 0.2)
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
 }
 
 .product-slider-col {
@@ -1002,13 +1251,19 @@ color: hange the text's color color
 
 .product-listing-submit {
   font-size: 14px;
-  font-weight: 500;
-  padding: 5px 10px;
+  font-weight: 600;
+  padding: 8px 15px;
   border: none;
   border-radius: 5px;
   background-color: #dcbb76;
   border: none;
   outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.product-listing-submit:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
 }
 
 /*
@@ -1123,8 +1378,24 @@ color: hange the text's color color
   margin: 0 !important;
 }
 
+.margin-a-1 {
+  margin: 4px !important;
+}
+
+.margin-a-2 {
+  margin: 4px !important;
+}
+
 .padding-a-0 {
   padding: 0 !important;
+}
+
+.padding-a-1 {
+  padding: 4px !important;
+}
+
+.padding-a-2 {
+  padding: 8px !important;
 }
 
 .margin-y-0 {
@@ -1291,6 +1562,15 @@ color: hange the text's color color
   flex-grow: how much space it would take (src: https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
   flex-basis: the base, default value before any content/space taken (src: https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 */
+
+.col {
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin: 8px 0;
+}
+
 .col-xs,
 .col-xs-1,
 .col-xs-2,
@@ -1711,13 +1991,13 @@ col-xs {
     padding-top: 15px !important;
     z-index: 4;
     box-shadow: 2px 0px 5px -2px rgba(0,0,0, 0.2);
-    transition: opacity 0.3s linear, left 0.3s linear, top 0.3s linear;
+    transition: opacity 0.2s linear, left 0.2s linear, top 0.2s linear;
   }
 
   .categories-col-container-visible {
     opacity: 1 !important;
     left: 0% !important;
-    transition: opacity 0.3s linear, left 0.3s linear, top 0.3s linear;
+    transition: opacity 0.2s linear, left 0.2s linear, top 0.2s linear;
   }
 
   .categories-list {
@@ -1854,6 +2134,38 @@ col-xs {
   }
 
   .listing-response-message {
+    font-size: 13px;
+  }
+
+  .product-function-body {
+    font-size: 13px;
+  }
+
+  .product-seller-information-text {
+    font-size: 12px;
+  }
+
+  .product-seller-contact {
+    font-size: 12px;
+  }
+
+  .product-seller-report {
+    font-size: 12px;
+  }
+
+  .product-listing-submit {
+    font-size: 12px;
+  }
+
+  .product-listing-actions-button {
+    font-size: 12px;
+  }
+
+  .product-listing-actions-button-dangerous {
+    font-size: 12px;
+  }
+
+  .listing-product-title {
     font-size: 13px;
   }
 }
