@@ -90,10 +90,14 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
 
 
     for($i=0; $i < $images_count; $i++){
-      $image_target_dir = $images_target_dir . $_FILES['images_upload']['name'][$i];
+      // we want a random name for the file to avoid duplication
+      // https://www.php.net/manual/en/function.uniqid.php
+      $file_extension = pathinfo($_FILES['images_upload']['name'][$i], PATHINFO_EXTENSION);
+      $file_name = uniqid() . "." . $file_extension;
+      $image_target_dir = $images_target_dir . $file_name;
       if(move_uploaded_file($_FILES['images_upload']['tmp_name'][$i], $image_target_dir)){
         $uploaded_images_count++;
-        array_push($product->images, $_FILES['images_upload']['name'][$i]);
+        array_push($product->images, $file_name);
       }
     }
 
@@ -256,9 +260,11 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
 
       $images_count = count($_FILES['images_upload']['name']);
       for($i=0; $i < $images_count; $i++){
-        $image_target_dir = $images_target_dir . $_FILES['images_upload']['name'][$i];
+        $file_extension = pathinfo($_FILES['images_upload']['name'][$i], PATHINFO_EXTENSION);
+        $file_name = uniqid() . "." . $file_extension;
+        $image_target_dir = $images_target_dir . $file_name;
         if(move_uploaded_file($_FILES['images_upload']['tmp_name'][$i], $image_target_dir)){
-          array_push($images_total, $_FILES['images_upload']['name'][$i]);
+          array_push($images_total, $file_name);
           $uploaded_images_count++;
         }
       }
@@ -295,8 +301,8 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
       $message = "Ihre Anzeige wurde bearbeitet!";
     }
     $helper->editProduct($product);
-    //header("Location: ../pages/panel/product_edit.php?result=success&action=edit&message=" . $message);
-    //exit;
+    header("Location: ../pages/panel/product_edit.php?result=success&action=edit&message=" . $message);
+    exit;
   } else {
     header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Bitte vollständigen Sie alle Angaben!");
     exit;
