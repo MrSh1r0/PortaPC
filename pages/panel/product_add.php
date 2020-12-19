@@ -50,6 +50,7 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
 
 <head>
   <title>Anzeige aufgeben</title>
+  <link rel="icon" type="image/png" href="../../favicon.png"/>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">

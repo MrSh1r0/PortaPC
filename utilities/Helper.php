@@ -80,6 +80,19 @@ class Helper {
         file_put_contents("../database.json", json_encode($json_placeholder));
     }
 
+    public function editProduct($product){
+        $json_placeholder = $this->jsonDatabase;
+        for($i = 0; $i < sizeof($json_placeholder->website_database->products); $i++){
+          // we use double == because we might give an int in "2", and here we want to compare the value ONLY, not the value AND the type of the value. So == will compare only the value!
+          if($json_placeholder->website_database->products[$i]->id == $product->id){
+            // unset will delete the element from the original array without the need to create a new instance
+            $json_placeholder->website_database->products[$i] = $product;
+            break;
+          }
+        }
+        file_put_contents("../database.json", json_encode($json_placeholder));
+    }
+
     public function deleteProduct($id){
         $json_placeholder = $this->jsonDatabase;
         for($i = 0; $i < sizeof($json_placeholder->website_database->products); $i++){

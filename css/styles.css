@@ -1085,6 +1085,30 @@ color: hange the text's color color
   transition: box-shadow 0.2s;
 }
 
+.product-listing-edit-image, .product-listing-edit-image:hover, .product-listing-edit-image:focus, .product-listing-edit-image:active {
+  width: 100px;
+  height: 100px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  border: none !important;
+  user-select: none !important;
+  pointer-events: none;
+  color: transparent !important;
+}
+
+.user-select-none {
+  user-select: none;
+}
+
+.product-listing-edit-image-overlay::before {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+  background-color: rgba(34, 34, 34, 0.3);
+}
+
 .product-listing-search {
   background-color: #eee !important;
   color: #232323 !important;
@@ -1099,6 +1123,34 @@ color: hange the text's color color
 .product-listing-search-result-container {
   border-radius: 5px;
   background-color: #f5f5f5;
+}
+
+.product-listing-edit-image-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.product-listing-edit-image-label-no-results {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.product-listing-edit-image-remove {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 4px;
+  border: none;
+  border-radius: 5px;
+  color: #232323;
+  background-color: #eee;
+  border: none;
+  outline: none;
+  transition: box-shadow 0.2s;
+}
+
+.product-listing-edit-image-remove:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
 }
 
 .product-listing-actions-button {
@@ -2166,6 +2218,14 @@ col-xs {
   }
 
   .listing-product-title {
+    font-size: 13px;
+  }
+
+  .product-listing-edit-image-label {
+    font-size: 12px;
+  }
+
+  .product-listing-edit-image-no-results {
     font-size: 13px;
   }
 }

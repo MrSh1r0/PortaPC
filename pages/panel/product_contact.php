@@ -40,6 +40,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false){
 
 <head>
   <title>Kontakt</title>
+  <link rel="icon" type="image/png" href="../../favicon.png"/>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
