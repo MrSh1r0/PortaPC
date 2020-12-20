@@ -22,7 +22,7 @@ $categories                  = $helper->getCategories(false);
 <html lang="de" dir="ltr">
 
 <head>
-  <title><?php echo $product->title ?></title>
+  <title><?php if(empty($product) === false && empty($product->title) === false) echo $product->title; else echo "Nicht gefunden" ?></title>
   <meta charset="utf-8">
   <link rel="icon" type="image/png" href="../../favicon.png"/>
   <!-- Import Google's Roboto font -->

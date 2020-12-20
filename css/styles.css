@@ -24,7 +24,7 @@ input::-webkit-inner-spin-button {
  * 1. Remove the gray background on active links in IE 10.
  * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
  */
- a, a:hover, a:focus {
+ a {
    background-color: transparent;
    text-decoration: none;
  }
@@ -899,6 +899,13 @@ color: hange the text's color color
   text-decoration: none;
   /* prevent the onfocus color change */
   color: inherit;
+  transition: box-shadow 0.2s;
+
+}
+
+.pagination-current-text:hover {
+  box-shadow: 0 3px 5px 0px rgba(0,0,0,0.2);
+  transition: box-shadow 0.2s;
 }
 
 .categories-container {

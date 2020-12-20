@@ -222,6 +222,7 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
         }
       }
     } else {
+      $has_pictures = false;
       // no uploaded pics, so we delete every uploaded pic from this product and we upload the new ones
       // it's correct, delete the directory of the pictures and delete the product from the json
       // we need to delete the files first, then the folder
@@ -247,7 +248,7 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
     $uploaded_images_count = 0;
     $images_count = 0;
     $images_target_dir = "../images/products/" . $product_original->id . "/";
-    if(isset($_FILES["images_upload"]) === false){
+    if(isset($_FILES["images_upload"]) === false || (isset($_FILES["images_upload"]) === true && empty($_FILES["images_upload"]) === true)){
       if($has_pictures === false){
         // no uploaded pics, so tell him it's not accepted
         header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Ihre Anzeige wurde nicht bearbeitet, da es keine Bilder gibt!");
@@ -259,6 +260,13 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
       }
 
       $images_count = count($_FILES['images_upload']['name']);
+
+      if($has_pictures === false && ($images_count === 0 || ($images_count === 1 && empty($_FILES['images_upload']['name'][0]) === true))){
+        // no uploaded pics, so tell him it's not accepted
+        header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Ihre Anzeige wurde nicht bearbeitet, da es keine Bilder gibt!");
+        exit;
+      }
+
       for($i=0; $i < $images_count; $i++){
         $file_extension = pathinfo($_FILES['images_upload']['name'][$i], PATHINFO_EXTENSION);
         $file_name = uniqid() . "." . $file_extension;
