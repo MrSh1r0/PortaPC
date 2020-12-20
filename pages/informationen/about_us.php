@@ -158,9 +158,28 @@ $categories                  = $helper->getCategories(false);
             </div>
 
             <div class="col-xs-12">
-              <p class="text-subtitle text-weight-medium">TITLE</p>
+              <p class="text-subtitle text-weight-medium">Das sind wir:</p>
               <!-- <br></br> SPACE -->
-              <p class="text-body-1 text-weight-regular">BODY</p>
+              <p class="text-body-1 text-weight-regular">
+                Wir sind vier Informatikstudenten aus der schönen Stadt Trier. Wir sind im ersten Semester und dachten uns, was braucht die Welt noch.
+                Na klar, eine Webseite, auf der man einfach, günstig und vorallem sicher, Hardware für seinen PC kaufen kann.
+              </p>
+              <br><br>
+              <p class="text-subtitle text-weight-medium">Unsere Idee:</p>
+              <p class="text-body-1 text-weight-regular">
+                Unsere Idee war es eine Webseite zu entwickeln, auf der Benutzer ihre benutzte Hardware zum verkauf anbieten kann und gleichzeitig Anderen
+                die Möglichkeit zu bieten für wenig Geld ihr Setup aufzurüsten. Zudem gibt es Angebote die verifiziert sind, das heißt, dass diese Artikel von unserem Team
+                geprüft wurden und generalüberholt worden sind.
+              </p>
+              <br><br>
+              <p class="text-subtitle text-weight-medium">Wie funktioniert es:</p>
+              <p class="text-body-1 text-weight-regular">
+                Es ist einfacher als man denkt, wenn man ein Produkt sucht, gibt man den Namen in der Suchleiste ein und man bekommt direkt alle Produkte angzeigt.
+                Wenn man zum Beispiel noch nicht genau weiß welche Grafikkarte man haben will, kann man einfach im Filtersystem seine Kriterien eingeben und man bekommt die Produkte angezeigt, die darauf zutreffen.
+                Eine Anzeige aufgeben ist genauso leicht, alles was man dafür braucht ist ein Bild des Produkts und eine E-Mailadresse. Man klickt auf dem Button in der rechten, oberen Ecke und wir zu einem Forular weitergeleitet,
+                indem man seine Daten eingibt. Falls sich dann ein andere Benutzer für dein Produkt interessiert, kann er über die E-Mailadresse mit Ihnen in Kontakt treten.
+              </p>
+              <br>
             </div>
 
             <div class="col-xs-12">
