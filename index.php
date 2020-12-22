@@ -7,6 +7,7 @@ TODO:
 4. add short description
 5. Fix the editing for a non-admin in products editing (deleting a picture)
 6. Improve the search
+7. Chagne the "Anzeige aufgeben" in the Editing file
 
 -->
 

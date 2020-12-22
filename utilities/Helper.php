@@ -62,6 +62,12 @@ class Helper {
     }
 
     // get the last saved id in the products list
+
+    // how to use an array:
+    // get the last biggest id 
+    // check from the smalles to the biggest
+    // if there's an id that doesn't exist
+    // if there's, take it
     public function getLastProductID(){
       $products = $this->jsonDatabase->website_database->products;
       $biggest_id = 0;
