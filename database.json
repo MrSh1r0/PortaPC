@@ -1,1 +1,344 @@
-{"website_info":{"website_title":"PortaPC","website_devs":[{"name":"Anh","profile_picture":"\/PortaPC\/images\/devs\/mohammad.jpg"},{"name":"Tung","profile_picture":"\/PortaPC\/images\/devs\/mohammad.jpg"},{"name":"Mohammad Hammado","profile_picture":"\/PortaPC\/images\/devs\/mohammad.jpg"},{"name":"Leon","profile_picture":"\/PortaPC\/images\/devs\/mohammad.jpg"}]},"website_constants":{"information":{"contact_email":"kontakt@portapc.de","contact_report_email":"report@portapc.de","about_us_title":"PortaPC","about_us_summary":"Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine Zusammenfassung von diesem Projekt sein."},"social_links":{"facebook":"https:\/\/www.facebook.com\/","twitter":"https:\/\/www.twitter.com\/","instagram":"https:\/\/www.instagram.com\/","youtube":"https:\/\/www.youtube.com\/"},"categories":["GPUs","CPUs","Motherboards","Netzteile","Festplatten","Arbeitsspeicher","Peripherieger\u00e4te","Komplettsysteme"],"locations":["Petrisberg","Biewer","Ehrang","Eitelsbach","Euren","Feyen","Filsch","Heiligkreuz","Irsch","Kernscheid","K\u00fcrenz","Mariahof","Oberkirch","Olewig","Pallien","Pfalzel","Ruwer","Tarforst","Trier","Trier-Ost","Trier-Nord","Trier-S\u00fcd","Trier-West","Zewen"],"conditions":["Neu","Gebraucht","General\u00fcberholt","B-Ware","Defekt","Sonstiges"]},"website_database":{"products":[{"id":1,"title":"RTX2080 Super","description":"General\u00fcberholte Nvidia Rtx2080 Super. 1 1\/2 Jahre alt.","location":"Trier","price":350,"category":"GPUs","condition":"General\u00fcberholt","owner":{"username":"PortaPC","user_email":"admin@portapc.de","user_type":"admin","post_token_id":"7dd607ac28","post_token_password":"c3cef78c4db1ece10d84be3b308e89"},"created_at":1608481667,"created_at_human":"20.12.2020","images":["5fdf7b83bbce5.png"]},{"id":2,"title":"Nvidia RTX3070","description":"Gebrauchte Nvidia Rtx 3070. 1 Jahr alt. Nicht \u00fcbertaktet. ","location":"Trier-S\u00fcd","price":400,"category":"GPUs","condition":"Gebraucht","owner":{"username":"Leon Busert","user_email":"leon.busert@gmail.com","user_type":"user","post_token_id":"21239a6136","post_token_password":"7d445d2f8392d9cb18bf416448655b"},"created_at":1608481769,"created_at_human":"20.12.2020","images":["5fdf7be96fb5a.png"]},{"id":3,"title":"Rtx 3080","description":"Neue Rtx 3080 von Nvidia. Fehlkauf, daher noch in Orginalverpackung und unbenutzt.","location":"Euren","price":700,"category":"GPUs","condition":"Neu","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"71e8a4d5aa","post_token_password":"9a49b6fced47756c76ddf4d16c4d77"},"created_at":1608481876,"created_at_human":"20.12.2020","images":["5fdf7c5471c92.png"]},{"id":4,"title":"AMD Ryzen 7 3700x","description":"Gebrauchter Prozessor, 3 Monate alt. Mit neuem K\u00fchler.","location":"Olewig","price":270,"category":"CPUs","condition":"Gebraucht","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"7eb377b753","post_token_password":"af52306dd785a94eea91b373193ab8"},"created_at":1608482238,"created_at_human":"20.12.2020","images":["5fdf7dbeb0f79.png"]},{"id":5,"title":"i7 9700k","description":"Neu und Orignalverpackt. ","location":"Feyen","price":450,"category":"CPUs","condition":"Neu","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"07a62c0531","post_token_password":"303efe8ac7eb7d2d949336328bcd0c"},"created_at":1608482307,"created_at_human":"20.12.2020","images":["5fdf7e036cc8a.png"]},{"id":6,"title":"AMD Ryzen 5","description":"Generall\u00fcberholt und gepr\u00fcft. 2 1\/2 Jahre alt.","location":"Oberkirch","price":125,"category":"CPUs","condition":"General\u00fcberholt","owner":{"username":"PortaPC","user_email":"admin@portapc.de","user_type":"admin","post_token_id":"1de0e200c5","post_token_password":"cc8595543aa2fb8893b5d554925938"},"created_at":1608482405,"created_at_human":"20.12.2020","images":["5fdf7e658f617.png"]},{"id":7,"title":"i9 9900k","description":"Neuer i9 9900k von Intel.","location":"K\u00fcrenz","price":600,"category":"CPUs","condition":"Neu","owner":{"username":"PortaPC","user_email":"admin@portapc.de","user_type":"admin","post_token_id":"d6241c6469","post_token_password":"3937f92a8c929b0735203588b21501"},"created_at":1608482449,"created_at_human":"20.12.2020","images":["5fdf7e91a29bc.png"]},{"id":8,"title":"Asus Rog Strix Z490","description":"Neu und Originalverpackt.","location":"Ruwer","price":450,"category":"Motherboards","condition":"Neu","owner":{"username":"PortaPC","user_email":"admin@portapc.de","user_type":"admin","post_token_id":"26916f4549","post_token_password":"9b7fb554c93e369a016e5461292501"},"created_at":1608482617,"created_at_human":"20.12.2020","images":["5fdf7f394ee42.png"]},{"id":9,"title":"MSI MPG Z390","description":"Gebrauchtes Motherboard von MSI. 1 Jahr alt.","location":"Zewen","price":350,"category":"Motherboards","condition":"Gebraucht","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"1e2d1204c9","post_token_password":"8eddd3750bcbbbe9a8a0248d8c9fee"},"created_at":1608482692,"created_at_human":"20.12.2020","images":["5fdf7f844cbd3.png"]},{"id":10,"title":"Bequit 750W Netzteil","description":"Gebraucht, sehr leise. 2 Jahre alt.","location":"Mariahof","price":200,"category":"Netzteile","condition":"Gebraucht","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"d3d305c5a7","post_token_password":"3c7e7c5ae0046856c7af2f70a3667a"},"created_at":1608482845,"created_at_human":"20.12.2020","images":["5fdf801d9e7b3.png"]},{"id":11,"title":"Corsair RM850","description":"*B-Ware* leichte Kratzer an der Unterseite.","location":"Irsch","price":150,"category":"Netzteile","condition":"B-Ware","owner":{"username":"PortaPC","user_email":"admin@portapc.de","user_type":"admin","post_token_id":"b88ac018db","post_token_password":"3f15b281cb34be56db8c4517ee28da"},"created_at":1608482924,"created_at_human":"20.12.2020","images":["5fdf806c000ff.png"]},{"id":12,"title":"Samsung SSD 1TB","description":"Komplett formatiert, so gut wie neu.","location":"Ehrang","price":100,"category":"Festplatten","condition":"Gebraucht","owner":{"username":"PortaPC","user_email":"admin@portapc.de","user_type":"admin","post_token_id":"c3f9fd79d2","post_token_password":"f268ec303231399ba17e96027af60c"},"created_at":1608483113,"created_at_human":"20.12.2020","images":["5fdf812904577.png"]},{"id":13,"title":"Samsung M2 SSD 500GB","description":"Neu. Fehlkauf. Verpackung ge\u00f6ffnet.","location":"Biewer","price":70,"category":"Festplatten","condition":"B-Ware","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"90e9dcd03f","post_token_password":"8864a7f169ad810052f6cb3f768d54"},"created_at":1608483198,"created_at_human":"20.12.2020","images":["5fdf817e6049b.png"]},{"id":14,"title":"Samung UHD 28Zoll Monitor","description":"Gebraucht. Kleine Gebracuhsspuren.","location":"Filsch","price":400,"category":"Peripherieger\u00e4te","condition":"Gebraucht","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"a7d69c3032","post_token_password":"0c1f9223779fe7bbd1d7136913ff76"},"created_at":1608483337,"created_at_human":"20.12.2020","images":["5fdf8209a3583.png"]},{"id":15,"title":"LG 34GN850 Ultrawide","description":"Ultrawide 34Zoll Gaming Monitor ","location":"Pfalzel","price":740,"category":"GPUs","condition":"Neu","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"da0ba6428d","post_token_password":"6552ff9b980a0738c9a122cd61fc46"},"created_at":1608483667,"created_at_human":"20.12.2020","images":["5fdf83535b470.png"]},{"id":16,"title":"HighEnd Komplettsetup","description":"Nur die besten Komponenten. ","location":"Pallien","price":20,"category":"Komplettsysteme","condition":"Gebraucht","owner":{"username":"Max Mustermann","user_email":"max.muster@gmail.com","user_type":"user","post_token_id":"af6d1f71b8","post_token_password":"fd352a7262dbcf6272411866259d65"},"created_at":1608483952,"created_at_human":"20.12.2020","images":["5fdf84706ee4d.png"]}],"sliders":[{"id":1,"thumbnail":"sample.png","redirect_url":"https:\/\/hochschule-trier.de\/","type":"Homepage"},{"id":2,"thumbnail":"sample.png","redirect_url":"https:\/\/hochschule-trier.de\/","type":"Homepage"},{"id":3,"thumbnail":"sample.png","redirect_url":"https:\/\/hochschule-trier.de\/","type":"Homepage"},{"id":4,"thumbnail":"sample.png","redirect_url":"https:\/\/hochschule-trier.de\/","type":"Products"},{"id":5,"thumbnail":"sample.png","redirect_url":"https:\/\/hochschule-trier.de\/","type":"Products"},{"id":6,"thumbnail":"sample.png","redirect_url":"https:\/\/hochschule-trier.de\/","type":"Products"}]},"website_login":{"admin_username":"PortaPC","admin_email":"admin@portapc.de","admin_password":"$2y$06$v6TeomTXYHIzfq5lyczaV.W9SAuGo9utqSLFGjTSUOi\/TQZcCoqW2"}}
+{
+  "website_info": {
+    "website_title": "PortaPC",
+    "website_devs": [{
+      "name": "Anh",
+      "profile_picture": "\/PortaPC\/images\/devs\/anh.jpg"
+    }, {
+      "name": "Tung",
+      "profile_picture": "\/PortaPC\/images\/devs\/tung.jpg"
+    }, {
+      "name": "Mohammad Hammado",
+      "profile_picture": "\/PortaPC\/images\/devs\/mohammad.jpg"
+    }, {
+      "name": "Leon",
+      "profile_picture": "\/PortaPC\/images\/devs\/leon.jpg"
+    }]
+  },
+  "website_constants": {
+    "information": {
+      "contact_email": "kontakt@portapc.de",
+      "contact_report_email": "report@portapc.de",
+      "about_us_title": "PortaPC",
+      "about_us_summary": "Hier eine einfache, kurze Beschreibung von uns. Dies soll als eine Zusammenfassung von diesem Projekt sein."
+    },
+    "social_links": {
+      "facebook": "https:\/\/www.facebook.com\/",
+      "twitter": "https:\/\/www.twitter.com\/",
+      "instagram": "https:\/\/www.instagram.com\/",
+      "youtube": "https:\/\/www.youtube.com\/"
+    },
+    "categories": ["GPUs", "CPUs", "Motherboards", "Netzteile", "Festplatten", "Arbeitsspeicher", "Peripherieger\u00e4te", "Komplettsysteme"],
+    "locations": ["Petrisberg", "Biewer", "Ehrang", "Eitelsbach", "Euren", "Feyen", "Filsch", "Heiligkreuz", "Irsch", "Kernscheid", "K\u00fcrenz", "Mariahof", "Oberkirch", "Olewig", "Pallien", "Pfalzel", "Ruwer", "Tarforst", "Trier", "Trier-Ost", "Trier-Nord", "Trier-S\u00fcd", "Trier-West", "Zewen"],
+    "conditions": ["Neu", "Gebraucht", "General\u00fcberholt", "B-Ware", "Defekt", "Sonstiges"]
+  },
+  "website_database": {
+    "products": [{
+      "id": 1,
+      "title": "RTX2080 Super",
+      "description": "General\u00fcberholte Nvidia Rtx2080 Super. 1 1\/2 Jahre alt.",
+      "location": "Trier",
+      "price": 350,
+      "category": "GPUs",
+      "condition": "General\u00fcberholt",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "admin@portapc.de",
+        "user_type": "admin",
+        "post_token_id": "7dd607ac28",
+        "post_token_password": "c3cef78c4db1ece10d84be3b308e89"
+      },
+      "created_at": 1608481667,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7b83bbce5.png"]
+    }, {
+      "id": 2,
+      "title": "Nvidia RTX3070",
+      "description": "Gebrauchte Nvidia Rtx 3070. 1 Jahr alt. Nicht \u00fcbertaktet. ",
+      "location": "Trier-S\u00fcd",
+      "price": 400,
+      "category": "GPUs",
+      "condition": "Gebraucht",
+      "owner": {
+        "username": "Leon Busert",
+        "user_email": "leon.busert@gmail.com",
+        "user_type": "user",
+        "post_token_id": "21239a6136",
+        "post_token_password": "7d445d2f8392d9cb18bf416448655b"
+      },
+      "created_at": 1608481769,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7be96fb5a.png"]
+    }, {
+      "id": 3,
+      "title": "Rtx 3080",
+      "description": "Neue Rtx 3080 von Nvidia. Fehlkauf, daher noch in Orginalverpackung und unbenutzt.",
+      "location": "Euren",
+      "price": 700,
+      "category": "GPUs",
+      "condition": "Neu",
+      "owner": {
+        "username": "Max Mustermann",
+        "user_email": "max.muster@gmail.com",
+        "user_type": "user",
+        "post_token_id": "71e8a4d5aa",
+        "post_token_password": "9a49b6fced47756c76ddf4d16c4d77"
+      },
+      "created_at": 1608481876,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7c5471c92.png"]
+    }, {
+      "id": 4,
+      "title": "AMD Ryzen 7 3700x",
+      "description": "Gebrauchter Prozessor, 3 Monate alt. Mit neuem K\u00fchler.",
+      "location": "Olewig",
+      "price": 270,
+      "category": "CPUs",
+      "condition": "Gebraucht",
+      "owner": {
+        "username": "Max Mustermann",
+        "user_email": "max.muster@gmail.com",
+        "user_type": "user",
+        "post_token_id": "7eb377b753",
+        "post_token_password": "af52306dd785a94eea91b373193ab8"
+      },
+      "created_at": 1608482238,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7dbeb0f79.png"]
+    }, {
+      "id": 5,
+      "title": "i7 9700k",
+      "description": "Neu und Orignalverpackt. ",
+      "location": "Feyen",
+      "price": 450,
+      "category": "CPUs",
+      "condition": "Neu",
+      "owner": {
+        "username": "Max Mustermann",
+        "user_email": "max.muster@gmail.com",
+        "user_type": "user",
+        "post_token_id": "07a62c0531",
+        "post_token_password": "303efe8ac7eb7d2d949336328bcd0c"
+      },
+      "created_at": 1608482307,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7e036cc8a.png"]
+    }, {
+      "id": 6,
+      "title": "AMD Ryzen 5",
+      "description": "Generall\u00fcberholt und gepr\u00fcft. 2 1\/2 Jahre alt.",
+      "location": "Oberkirch",
+      "price": 125,
+      "category": "CPUs",
+      "condition": "General\u00fcberholt",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "admin@portapc.de",
+        "user_type": "admin",
+        "post_token_id": "1de0e200c5",
+        "post_token_password": "cc8595543aa2fb8893b5d554925938"
+      },
+      "created_at": 1608482405,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7e658f617.png"]
+    }, {
+      "id": 7,
+      "title": "i9 9900k",
+      "description": "Neuer i9 9900k von Intel.",
+      "location": "K\u00fcrenz",
+      "price": 600,
+      "category": "CPUs",
+      "condition": "Neu",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "admin@portapc.de",
+        "user_type": "admin",
+        "post_token_id": "d6241c6469",
+        "post_token_password": "3937f92a8c929b0735203588b21501"
+      },
+      "created_at": 1608482449,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7e91a29bc.png"]
+    }, {
+      "id": 8,
+      "title": "Asus Rog Strix Z490",
+      "description": "Neu und Originalverpackt.",
+      "location": "Ruwer",
+      "price": 450,
+      "category": "Motherboards",
+      "condition": "Neu",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "admin@portapc.de",
+        "user_type": "admin",
+        "post_token_id": "26916f4549",
+        "post_token_password": "9b7fb554c93e369a016e5461292501"
+      },
+      "created_at": 1608482617,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7f394ee42.png"]
+    }, {
+      "id": 9,
+      "title": "MSI MPG Z390",
+      "description": "Gebrauchtes Motherboard von MSI. 1 Jahr alt.",
+      "location": "Zewen",
+      "price": 350,
+      "category": "Motherboards",
+      "condition": "Gebraucht",
+      "owner": {
+        "username": "Max Mustermann",
+        "user_email": "max.muster@gmail.com",
+        "user_type": "user",
+        "post_token_id": "1e2d1204c9",
+        "post_token_password": "8eddd3750bcbbbe9a8a0248d8c9fee"
+      },
+      "created_at": 1608482692,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf7f844cbd3.png"]
+    }, {
+      "id": 10,
+      "title": "Bequit 750W Netzteil",
+      "description": "Gebraucht, sehr leise. 2 Jahre alt.",
+      "location": "Mariahof",
+      "price": 200,
+      "category": "Netzteile",
+      "condition": "Gebraucht",
+      "owner": {
+        "username": "Max Mustermann",
+        "user_email": "max.muster@gmail.com",
+        "user_type": "user",
+        "post_token_id": "d3d305c5a7",
+        "post_token_password": "3c7e7c5ae0046856c7af2f70a3667a"
+      },
+      "created_at": 1608482845,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf801d9e7b3.png"]
+    }, {
+      "id": 11,
+      "title": "Corsair RM850",
+      "description": "*B-Ware* leichte Kratzer an der Unterseite.",
+      "location": "Irsch",
+      "price": 150,
+      "category": "Netzteile",
+      "condition": "B-Ware",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "admin@portapc.de",
+        "user_type": "admin",
+        "post_token_id": "b88ac018db",
+        "post_token_password": "3f15b281cb34be56db8c4517ee28da"
+      },
+      "created_at": 1608482924,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf806c000ff.png"]
+    }, {
+      "id": 12,
+      "title": "Samsung SSD 1TB",
+      "description": "Komplett formatiert, so gut wie neu.",
+      "location": "Ehrang",
+      "price": 100,
+      "category": "Festplatten",
+      "condition": "Gebraucht",
+      "owner": {
+        "username": "PortaPC",
+        "user_email": "admin@portapc.de",
+        "user_type": "admin",
+        "post_token_id": "c3f9fd79d2",
+        "post_token_password": "f268ec303231399ba17e96027af60c"
+      },
+      "created_at": 1608483113,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf812904577.png"]
+    }, {
+      "id": 13,
+      "title": "Samsung M2 SSD 500GB",
+      "description": "Neu. Fehlkauf. Verpackung ge\u00f6ffnet.",
+      "location": "Biewer",
+      "price": 70,
+      "category": "Festplatten",
+      "condition": "B-Ware",
+      "owner": {
+        "username": "Max Mustermann",
+        "user_email": "max.muster@gmail.com",
+        "user_type": "user",
+        "post_token_id": "90e9dcd03f",
+        "post_token_password": "8864a7f169ad810052f6cb3f768d54"
+      },
+      "created_at": 1608483198,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf817e6049b.png"]
+    }, {
+      "id": 14,
+      "title": "Samung UHD 28Zoll Monitor",
+      "description": "Gebraucht. Kleine Gebracuhsspuren.",
+      "location": "Filsch",
+      "price": 400,
+      "category": "Peripherieger\u00e4te",
+      "condition": "Gebraucht",
+      "owner": {
+        "username": "Max Mustermann",
+        "user_email": "max.muster@gmail.com",
+        "user_type": "user",
+        "post_token_id": "a7d69c3032",
+        "post_token_password": "0c1f9223779fe7bbd1d7136913ff76"
+      },
+      "created_at": 1608483337,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf8209a3583.png"]
+    }, {
+      "id": 15,
+      "title": "LG 34GN850 Ultrawide",
+      "description": "Ultrawide 34Zoll Gaming Monitor ",
+      "location": "Pfalzel",
+      "price": 740,
+      "category": "GPUs",
+      "condition": "Neu",
+      "owner": {
+        "username": "Max Mustermann",
+        "user_email": "max.muster@gmail.com",
+        "user_type": "user",
+        "post_token_id": "da0ba6428d",
+        "post_token_password": "6552ff9b980a0738c9a122cd61fc46"
+      },
+      "created_at": 1608483667,
+      "created_at_human": "20.12.2020",
+      "images": ["5fdf83535b470.png"]
+    }],
+    "sliders": [{
+      "id": 1,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Homepage"
+    }, {
+      "id": 2,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Homepage"
+    }, {
+      "id": 3,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Homepage"
+    }, {
+      "id": 4,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Products"
+    }, {
+      "id": 5,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Products"
+    }, {
+      "id": 6,
+      "thumbnail": "sample.png",
+      "redirect_url": "https:\/\/hochschule-trier.de\/",
+      "type": "Products"
+    }]
+  },
+  "website_login": {
+    "admin_username": "PortaPC",
+    "admin_email": "admin@portapc.de",
+    "admin_password": "$2y$06$v6TeomTXYHIzfq5lyczaV.W9SAuGo9utqSLFGjTSUOi\/TQZcCoqW2"
+  }
+}

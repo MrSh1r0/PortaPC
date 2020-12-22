@@ -40,8 +40,7 @@ $categories                  = $helper->getCategories(false);
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
-        handleSlider(0);
-        //handleSliderAutomatic();
+        handleSlider();
         handleScroll();
         handleSearchCategoryList();
       }
