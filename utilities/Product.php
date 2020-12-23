@@ -7,7 +7,9 @@ $helper                      = new Helper();
 
 // here we check for all the variables if they are SET
 // this is only for ADDING product
-if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && isset($_POST["description"]) === true  && isset($_POST["category"]) === true  && isset($_POST["condition"]) === true  && isset($_POST["location"]) === true  && isset($_POST["price"]) === true  && isset($_FILES["images_upload"]) === true ) {
+if(isset($_POST["submit_add"]) === true && isset($_POST["name"]) === true && isset($_POST["email"]) === true  && isset($_POST["title"]) === true  && isset($_POST["description"]) === true  && isset($_POST["category"]) === true  && isset($_POST["condition"]) === true  && isset($_POST["location"]) === true  && isset($_POST["price"]) === true  && isset($_FILES["images_upload"]) === true ) {
+  $user_name = $_POST["name"];
+  $user_email = $_POST["email"];
   $title = $_POST["title"];
   $description = $_POST["description"];
   $category = $_POST["category"];
@@ -19,38 +21,29 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
   $images_target_dir = "../images/products/" . $product_id . "/";
 
 
-  $user_name = "";
-  $user_email = "";
-  $user_type = "";
+  $user_type = "user";
   $has_logged = false;
 
-  if(isset($_SESSION["user_email"]) === true  && isset($_SESSION["user_password"]) === true ){
-    $admin_email = $_SESSION["user_email"];
-    $admin_password = $_SESSION["user_password"];
-    $login_response = json_decode($helper->loginAdmin($admin_email, $admin_password));
-    if($login_response->result === true){
-      $has_logged = true;
-      $user_name = $login_response->admin_username;
-      $user_email = $admin_email;
-      $user_type = "admin";
-    }
-  }
-  // maybe the user uses an admin email to spam?
-
-  if($has_logged === false){
-    if(isset($_POST["name"]) === true && isset($_POST["email"]) === true && empty($_POST["name"]) === false && empty($_POST["email"]) === false){
-      $user_name = $_POST["name"];
-      $user_email = $_POST["email"];
-      // check if the user put the admin email, if so, we reject it and tell him that
-      if($user_email == $helper->getAdminLogin()->admin_email){
-        header("Location: ../pages/panel/product_add.php?result=failure&action=add&message=Sie dürfen dieses Email nicht benutzten!");
-        exit;
+  if(empty($_POST["name"]) === false && empty($_POST["email"]) === false){
+    if(isset($_SESSION["user_email"]) === true  && isset($_SESSION["user_password"]) === true){
+      // the user is logged in (admin)
+      // check for the login info
+      $admin_email = $_SESSION["user_email"];
+      $admin_password = $_SESSION["user_password"];
+      $login_response = json_decode($helper->loginAdmin($admin_email, $admin_password));
+      if($login_response->result === true){
+        $user_type = "admin";
+        $has_logged = true;
       }
-      $user_type = "user";
-    } else {
-      header("Location: ../pages/panel/product_add.php?result=failure&action=add&message=Name oder Email waren entweder nicht eingegeben oder leer.");
+    }
+    // https://www.php.net/manual/en/function.stristr.php
+    if(stristr($user_email,'portapc') === true && $has_logged === false){
+      header("Location: ../pages/panel/product_add.php?result=failure&action=add&message=Sie dürfen dieses Email nicht benutzten!");
       exit;
     }
+  } else {
+    header("Location: ../pages/panel/product_add.php?result=failure&action=add&message=Name oder Email waren entweder nicht eingegeben oder leer.");
+    exit;
   }
 
   $owner = new stdclass();
@@ -121,7 +114,9 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
     header("Location: ../pages/panel/product_add.php?result=failure&action=add&message=Bitte vollständigen Sie alle Angaben!");
     exit;
   }
-} else if(isset($_POST["submit_edit"]) === true && isset($_POST["title"]) === true  && isset($_POST["description"]) === true  && isset($_POST["category"]) === true  && isset($_POST["condition"]) === true  && isset($_POST["location"]) === true  && isset($_POST["price"]) === true  && isset($_POST["id"]) === true  && isset($_POST["post_token_password"]) === true  && isset($_POST["post_token_id"]) === true ) {
+} else if(isset($_POST["submit_edit"]) === true && isset($_POST["name"]) === true && isset($_POST["email"]) === true && isset($_POST["title"]) === true  && isset($_POST["description"]) === true  && isset($_POST["category"]) === true  && isset($_POST["condition"]) === true  && isset($_POST["location"]) === true  && isset($_POST["price"]) === true  && isset($_POST["id"]) === true  && isset($_POST["post_token_password"]) === true  && isset($_POST["post_token_id"]) === true ) {
+  $user_name = $_POST["name"];
+  $user_email = $_POST["email"];
   $title = $_POST["title"];
   $description = $_POST["description"];
   $category = $_POST["category"];
@@ -133,52 +128,32 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
   $post_token_password = $_POST["post_token_password"];
   $product_original = $helper->getProduct($product_id);
   $does_product_exist = empty($product_original) === false;
+
   if($does_product_exist === false){
     header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Die Anzeige kann nicht gefunden werden!");
     exit;
   }
 
-  $user_name = "";
-  $user_email = "";
-  $user_type = "";
   $has_logged = false;
-
-  if(isset($_SESSION["user_email"]) === true  && isset($_SESSION["user_password"]) === true ){
-    $admin_email = $_SESSION["user_email"];
-    $admin_password = $_SESSION["user_password"];
-    $login_response = json_decode($helper->loginAdmin($admin_email, $admin_password));
-    if($login_response->result === true){
-      $has_logged = true;
-      $user_name = $login_response->admin_username;
-      $user_email = $admin_email;
-      $user_type = "admin";
+  if(empty($_POST["name"]) === false && empty($_POST["email"]) === false){
+    if(isset($_SESSION["user_email"]) === true  && isset($_SESSION["user_password"]) === true){
+      $admin_email = $_SESSION["user_email"];
+      $admin_password = $_SESSION["user_password"];
+      $login_response = json_decode($helper->loginAdmin($admin_email, $admin_password));
+      if($login_response->result === true){
+        $has_logged = true;
+      }
     }
-  }
-  // maybe the user uses an admin email to spam?
-
-  if($has_logged === false){
-    if(isset($_POST["name"]) === true && isset($_POST["email"]) === true && empty($_POST["name"]) === false && empty($_POST["email"]) === false){
-      $user_name = $_POST["name"];
-      $user_email = $_POST["email"];
-
-      // if the user somehow managed to get the token and access an admin post, don't let him unless he is logged in
-      if($product_original->owner->user_type == "admin"){
-        header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Sie dürfen diese Anzeige nicht zugreifen!");
-        exit;
-      }
-
-      // check if the user put the admin email, if so, we reject it and tell him that
-      if($user_email == $helper->getAdminLogin()->admin_email){
-        header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Sie dürfen dieses Email nicht benutzten!");
-        exit;
-      }
-
-      $user_type = "user";
-    } else {
-      header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Name oder Email waren entweder nicht eingegeben oder leer.");
+    if($product_original->owner->user_type == "admin" && $has_logged === false){
+      // the user is not allowed to access this
+      header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Sie dürfen diese Anzeige nicht zugreifen!");
       exit;
     }
+  } else {
+    header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Name oder Email waren entweder nicht eingegeben oder leer.");
+    exit;
   }
+
 
 
   // we either have uploaded pics from before, or we have new pics
@@ -187,7 +162,7 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
     $owner = new stdclass();
     $owner->username = $user_name;
     $owner->user_email = $user_email;
-    $owner->user_type = $user_type;
+    $owner->user_type = $product_original->owner->user_type;
     $owner->post_token_id = $post_token_id;
     $owner->post_token_password = $post_token_password;
 
@@ -325,6 +300,28 @@ if(isset($_POST["submit_add"]) === true  && isset($_POST["title"]) === true  && 
       header("Location: ../pages/panel/product_delete.php?result=failure&action=delete&message=Die Anzeige kann nicht gefunden werden");
       exit;
     }
+
+    if($product->owner->user_type == "admin"){
+      $is_allowed = false;
+      if(isset($_SESSION["user_email"]) === true && isset($_SESSION["user_password"]) === true){
+        $admin_email = $_SESSION["user_email"];
+        $admin_password = $_SESSION["user_password"];
+        $login_response = json_decode($helper->loginAdmin($admin_email, $admin_password));
+        if($login_response->result === true){
+          $is_allowed = true;
+        }
+      }
+
+      if($is_allowed === false){
+        header("Location: ../pages/panel/product_delete.php?result=failure&action=delete&message=Sie dürfen diese Anzeige nicht zugreifen!");
+        exit;
+      }
+
+    }
+
+
+
+
 
     $product_token_id = $product->owner->post_token_id;
     $product_token_password = $product->owner->post_token_password;

@@ -1,13 +1,12 @@
 <!--
 
 TODO:
+1. add pics for the devs (Leon, Anh, Tung)
+2. add short description (Leon)
+
 1. Fix responsive design for the side menu
-2. Fix the deletion for a non-admin in products deletion (deleting a product when the user is logged out)
-3. add pics for the devs
-4. add short description
 5. Fix the editing for a non-admin in products editing (deleting a picture)
 6. Improve the search
-7. Chagne the "Anzeige aufgeben" in the Editing file
 
 -->
 

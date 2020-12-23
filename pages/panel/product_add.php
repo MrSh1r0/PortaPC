@@ -214,19 +214,17 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
                   </div>
                   <?php
                 }
-
-                if($login_status === false){
                   ?>
                   <!-- username -->
                   <div class="col-xs-6">
-                    <input class="product-listing-input-title" placeholder="Name" name="name"></input>
+                    <input class="product-listing-input-title" placeholder="Name" name="name" value="<?php if($login_status === true) echo $_SESSION["username"] ?>"></input>
                   </div>
 
                   <div class="col-xs-6">
-                    <input class="product-listing-input-title" type="email" placeholder="Email" name="email"></input>
+                    <input class="product-listing-input-title" type="email" placeholder="Email" name="email" value="<?php if($login_status === true) echo $_SESSION["user_email"] ?>"></input>
                   </div>
                   <?php
-                }
+
                 ?>
                 <!-- title -->
                 <div class="col-xs-12">

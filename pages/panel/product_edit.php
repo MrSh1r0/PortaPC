@@ -51,7 +51,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
 <html lang="de" dir="ltr">
 
 <head>
-  <title>Anzeige aufgeben</title>
+  <title>Anzeige bearbeiten</title>
   <link rel="icon" type="image/png" href="../../favicon.png"/>
   <meta charset="utf-8">
   <!-- Import Google's Roboto font -->
@@ -169,7 +169,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
       </div>
       <!--End of Search & Category parent-->
       <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 align-self-center banner-product-add">
-        <a href="/PortaPC/pages/panel/product_add.php"><p class="banner-product-add-text clickable text-align-center">Anzeige aufgeben</p></a>
+        <a href="/PortaPC/pages/panel/product_add.php"><p class="banner-product-add-text clickable text-align-center">Anzeige bearbeiten</p></a>
       </div>
     </div>
   </div>
@@ -253,18 +253,17 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
                   </div>
 
                   <?php
-                  if($login_status === false){
                     ?>
                     <!-- username -->
                     <div class="col-xs-6">
-                      <input class="product-listing-input-title" placeholder="Name" name="name" value="<?php echo $product->owner->username ?>"></input>
+                      <input class="product-listing-input-title" placeholder="Name" name="name" value="<?php if($login_status === true) echo $_SESSION["username"] ?>"></input>
                     </div>
 
                     <div class="col-xs-6">
-                      <input class="product-listing-input-title" type="email" placeholder="Email" name="email" value="<?php echo $product->owner->user_email ?>"></input>
+                      <input class="product-listing-input-title" type="email" placeholder="Email" name="email" value="<?php if($login_status === true) echo $_SESSION["user_email"] ?>"></input>
                     </div>
                     <?php
-                  }
+
                   ?>
 
                   <!-- title -->
