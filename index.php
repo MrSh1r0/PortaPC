@@ -1,7 +1,7 @@
 <!--
 
 TODO:
-1. add pics for the devs (Leon, Anh, Tung)
+1. add pics for the devs (Leon, Anh)
 2. add short description (Leon)
 
 1. Fix responsive design for the side menu
