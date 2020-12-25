@@ -40,7 +40,7 @@ $categories                  = $helper->getCategories(false);
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
-        handleSlider();
+        handleSlider(0);
         handleScroll();
         handleSearchCategoryList();
       }
@@ -165,9 +165,13 @@ $categories                  = $helper->getCategories(false);
               <!-- contact / report section -->
               <?php
               if(empty($product) === false){
+                $email_spam_safe = $product->owner->user_email;
+                $email_spam_safe = str_replace('.', '[dot]', $email_spam_safe);
+                $email_spam_safe = str_replace('@', '[at]', $email_spam_safe);
+
                 ?>
                 <div class="col-xs-12">
-                  <p class="product-seller-information-text text-align-center">Die Anzeige wurde von <span class="text-weight-bold"><?php echo $product->owner->username ?></span> erstellt.</p>
+                  <p class="product-seller-information-text text-align-center">Die Anzeige wurde von <span class="text-weight-bold"><?php echo $product->owner->username . " " . "(" . $email_spam_safe . ")" ?></span> erstellt.</p>
                 </div>
 
                 <div class="col-xs-12 text-align-center">
@@ -191,13 +195,16 @@ $categories                  = $helper->getCategories(false);
               </div>
               <?php
             } else {
+              $is_admin = $product->owner->user_type == "admin";
               ?>
               <div class="col-xs-12 col-sm-12">
-                <p class="category-title text-uppercase"><?php echo $product->title ?></p>
+
+                <p class="category-title text-uppercase"><?php if($is_admin === true) { ?> <i class="material-icons product-owner-check">check</i> <?php } echo $product->title ?></p>
               </div>
 
               <div class="col-xs-12 col-sm-12 margin-t-0 margin-b-0">
-                <p class="product-page-subtitle text-uppercase"><?php echo $product->condition ?> • €<?php echo $product->price ?> • <?php echo $product->location ?> • erstellt am <?php echo $product->created_at_human ?></p>
+                <p class="product-page-subtitle text-uppercase"><?php echo $product->category . " " . "•" . " " . $product->condition . " " . "•" . " " . $product->price . " "?></p>
+                <p class="product-page-subtitle text-uppercase"><?php echo $product->location . " " . "•" . " " . "erstellt am" . " " . $product->created_at_human ?></p>
               </div>
 
               <div class="col-xs-12 col-sm-12 margin-t-3">

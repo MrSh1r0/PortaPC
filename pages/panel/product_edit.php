@@ -256,11 +256,11 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
                     ?>
                     <!-- username -->
                     <div class="col-xs-6">
-                      <input class="product-listing-input-title" placeholder="Name" name="name" value="<?php if($login_status === true) echo $_SESSION["username"] ?>"></input>
+                      <input class="product-listing-input-title" placeholder="Name" name="name" value="<?php echo $product->owner->username ?>"></input>
                     </div>
 
                     <div class="col-xs-6">
-                      <input class="product-listing-input-title" type="email" placeholder="Email" name="email" value="<?php if($login_status === true) echo $_SESSION["user_email"] ?>"></input>
+                      <input class="product-listing-input-title" type="email" placeholder="Email" name="email" value="<?php echo $product->owner->user_email ?>"></input>
                     </div>
                     <?php
 

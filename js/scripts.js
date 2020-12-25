@@ -31,6 +31,15 @@ function applyFilters(){
     urlParams.set("category", category);
   }
 
+  // get selected search filter
+  let search_type = document.getElementsByClassName("search-type-item-selected");
+  if(search_type && search_type[0]){
+    // it's possible that the user wants to search in all categories
+    // in case there's no selected category, then we don't specify that.
+    search_type = search_type[0].innerHTML;
+    urlParams.set("search_type", search_type);
+  }
+
   // get the selected min and max price
   let price_min = document.getElementById("filters_price_min").value;
   let price_max = document.getElementById("filters_price_max").value;
@@ -115,12 +124,43 @@ function refreshFilters(search_filters, sorting_filters){
   if(search_filters){
     let title = search_filters.title;
     let category = search_filters.category;
+    let search_type = search_filters.search_type;
     let locations = search_filters.locations;
     let conditions = search_filters.conditions;
     let price = search_filters.price;
 
     if(title){
       document.getElementById("search_input").value = title;
+    }
+
+    if(search_type){
+      let search_type_elements = document.getElementsByClassName("search-type-item");
+      for(let i = 0; i < search_type_elements.length; i++){
+        let item_search_type = search_type_elements[i];
+        let item_search_type_text = item_search_type.innerHTML;
+        if(item_search_type_text === search_type){
+          // to avoid duplications, remove and add the class
+          item_search_type.classList.remove("search-type-item-selected");
+          item_search_type.classList.add("search-type-item-selected");
+
+        } else {
+          item_search_type.classList.remove("search-type-item-selected");
+        }
+      }
+    } else {
+      let search_type_elements = document.getElementsByClassName("search-type-item");
+      for(let i = 0; i < search_type_elements.length; i++){
+        let item_search_type = search_type_elements[i];
+        let item_search_type_text = item_search_type.innerHTML;
+        if(item_search_type_text === "Normal"){
+          // to avoid duplications, remove and add the class
+          item_search_type.classList.remove("search-type-item-selected");
+          item_search_type.classList.add("search-type-item-selected");
+
+        } else {
+          item_search_type.classList.remove("search-type-item-selected");
+        }
+      }
     }
 
     if(category){
@@ -243,6 +283,33 @@ function refreshFiltersCategory(category){
       }
     } else {
       item_category.classList.remove("filters-categories-item-selected");
+    }
+  }
+}
+
+function refreshSearchType(search_type){
+  let categories_elements = document.getElementsByClassName("search-type-item");
+
+  for(let i = 0; i < categories_elements.length; i++){
+    let item_search_type = categories_elements[i];
+    let item_search_type_text = item_search_type.innerHTML;
+    if(item_search_type_text === search_type){
+      // check if this item is already selected, if so, then remove the selection
+      // we get an array, so we check if it's defined and the length > 0
+      let item_search_type_selected = document.getElementsByClassName("search-type-item-selected");
+      if(item_search_type_selected && item_search_type_selected.length > 0){
+        // we have a selected element
+        item_search_type_selected = item_search_type_selected[0].innerHTML;
+        item_search_type.classList.remove("search-type-item-selected");
+        item_search_type.classList.add("search-type-item-selected");
+
+      } else {
+        // to avoid duplications, remove and add the class
+        item_search_type.classList.remove("search-type-item-selected");
+        item_search_type.classList.add("search-type-item-selected");
+      }
+    } else {
+      item_search_type.classList.remove("search-type-item-selected");
     }
   }
 }
@@ -460,8 +527,10 @@ function handleScroll() {
       if(element_nav_container)
         element_nav_container.classList.add("nav-visible");
       // there will be a white space in between, so remove the extra space
-      if(categories_col_container)
-        categories_col_container.style.top = "56px";
+      if(categories_col_container){
+        categories_col_container.style.top = "0px";
+      }
+
     } else {
       if(element_mobile_nav_menu)
         element_mobile_nav_menu.classList.add("margin-t-2");
@@ -471,7 +540,7 @@ function handleScroll() {
         element_nav_container.classList.remove("nav-visible");
       // make it back normal after the fixed navbar is removed
       if(categories_col_container)
-        categories_col_container.style.top = "64px";
+        categories_col_container.style.top = "8px";
     }
   };
 

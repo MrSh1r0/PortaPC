@@ -4,10 +4,6 @@ TODO:
 1. add pics for the devs (Leon, Anh)
 2. add short description (Leon)
 
-1. Fix responsive design for the side menu
-5. Fix the editing for a non-admin in products editing (deleting a picture)
-6. Improve the search
-
 -->
 
 <?php
@@ -247,6 +243,7 @@ $sliders                     = $helper->getSliders();
               $images = $product->images;
               $price = $product->price;
               $location = $product->location;
+              $category = $product->category;
               $owner = $product->owner;
               $is_admin = $owner->user_type == "admin";
               ?>

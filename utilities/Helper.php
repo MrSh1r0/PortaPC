@@ -58,13 +58,23 @@ class Helper {
 
     // we just increase the id by one and we have a new available id for us
     public function getNextAvailableProductID(){
-      return $this->getLastProductID() + 1;
+      $biggest_id = $this->getLastProductID();
+      // we check if every id exists until the last biggest id
+      // if so, then we take the next one (bigger than the biggest)
+      // if not, we take the available
+      for($i = 1; $i <= $biggest_id; $i++){
+        if(empty($this->getProduct($i)) === true){
+          return $i;
+        }
+      }
+
+      return $biggest_id + 1;
     }
 
     // get the last saved id in the products list
 
     // how to use an array:
-    // get the last biggest id 
+    // get the last biggest id
     // check from the smalles to the biggest
     // if there's an id that doesn't exist
     // if there's, take it
@@ -114,7 +124,7 @@ class Helper {
 
     public function getProduct($id){
       $products = $this->jsonDatabase->website_database->products;
-      $products = $this->filterArray($products, "id", $id, false, false);
+      $products = $this->filterArray($products, "id", $id, false, false, false);
       if(sizeof($products) > 0){
         return $products[0];
       } else {
@@ -137,7 +147,19 @@ class Helper {
         if (empty($search) === false) {
             if (empty($search->title) === false) {
                 $query_title = $search->title;
-                $products = $this->filterArray($products, "title", $query_title, true, true);
+                // we have a few products, e.g. "Nvidia RTX 2080", "RTX 3080", "RTX 3090"
+                // the user searches for "3080 RTX"
+                // the following function will get all the products above
+                // because it's based on what's contained, which is 3080
+                // so to remove the not needed products
+                // we should create another function that reduces the results based on what's actually existing, because we should only get the "RTX 3080" and not all the products back!
+                // this is intended and we can leave it like this, but we want a more accurate search result
+
+                $products = $this->filterArray($products, "title", $query_title, true, true, true);
+
+                if(empty($search->search_type) === false && $search->search_type == "Erweitert"){
+                  $products = $this->refineArray($products, "title", $query_title);
+                }
             }
 
             if (empty($search->price) === false) {
@@ -155,19 +177,19 @@ class Helper {
 
             if (empty($search->category) === false) {
                 $query_category = $search->category;
-                $products = $this->filterArray($products, "category", $query_category, false, false);
+                $products = $this->filterArray($products, "category", $query_category, false, false, false);
             }
 
             if (empty($search->locations) === false) {
                 $query_locations = $search->locations;
                 $query_locations = explode(",", $query_locations);
-                $products = $this->filterArray($products, "location", $query_locations, false, false);
+                $products = $this->filterArray($products, "location", $query_locations, false, false, false);
             }
 
             if (empty($search->conditions) === false) {
                 $query_conditions = $search->conditions;
                 $query_conditions = explode(",", $query_conditions);
-                $products = $this->filterArray($products, "condition", $query_conditions, false, false);
+                $products = $this->filterArray($products, "condition", $query_conditions, false, false, false);
             }
         }
 
@@ -229,7 +251,8 @@ class Helper {
     // in the case of conditions & locations, we have an array of keys
     // so sometimes, we need to check if "values" is an array or just a single item
     // if it's an array, we can loop through it
-    private function filterArray($array, $key, $values, $like, $case_insensitive) {
+    // if $white_space_split is true, then we split the string by the white space and check for each word
+    private function filterArray($array, $key, $values, $like, $case_insensitive, $white_space_split) {
         // Create an empty array for our response
         $array_response = array();
         // Loop through the array of objects
@@ -257,9 +280,20 @@ class Helper {
                       $object_value = strtolower($object_value);
                       $values = strtolower($values);
                     }
-                    if (strpos($object_value, $values) !== false) {
-                        array_push($array_response, $object);
+                    if($white_space_split === true){
+                      $values_array = explode(" ", $values);
+                      foreach($values_array as $value_word){
+                        if (empty($value_word) === false && strpos($object_value, $value_word) !== false) {
+                            array_push($array_response, $object);
+                            break;
+                        }
+                      }
+                    } else {
+                      if (strpos($object_value, $values) !== false) {
+                          array_push($array_response, $object);
+                      }
                     }
+
                 }
             } else {
                 if (is_array($values) === true) {
@@ -326,6 +360,33 @@ class Helper {
         }
 
         return $array;
+    }
+
+    private function refineArray($array, $key, $value){
+      // here we make an array of the value
+      $refined_array = array();
+      $value_array = explode(" ", $value);
+      $value_array_count = sizeof($value_array);
+      foreach($array as $element){
+        $element_value = $element->$key;
+        // the idea is simple, we count how many words from the $value_array are matched with the $element_value
+        // then, we get the highest hits, it should be >= 75%
+        // we don't care about the case-sensitive, etc.
+        $element_words_match_count = 0;
+        foreach($value_array as $value_array_element){
+          if(empty($value_array_element) === false && empty(stristr($element_value, $value_array_element)) === false){
+            $element_words_match_count++;
+          }
+        }
+
+        $query_matching_percentage = (int)(($element_words_match_count * 100) / $value_array_count);
+        if($query_matching_percentage >= 75){
+          array_push($refined_array, $element);
+        }
+
+      }
+
+      return $refined_array;
     }
 
     public function loginAdmin($input_email, $input_password){

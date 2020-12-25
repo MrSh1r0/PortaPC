@@ -37,7 +37,7 @@ if(isset($_POST["submit_add"]) === true && isset($_POST["name"]) === true && iss
       }
     }
     // https://www.php.net/manual/en/function.stristr.php
-    if(stristr($user_email,'portapc') === true && $has_logged === false){
+    if(empty(stristr($user_email,'portapc')) === false && $has_logged === false){
       header("Location: ../pages/panel/product_add.php?result=failure&action=add&message=Sie dürfen dieses Email nicht benutzten!");
       exit;
     }
@@ -149,6 +149,12 @@ if(isset($_POST["submit_add"]) === true && isset($_POST["name"]) === true && iss
       header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Sie dürfen diese Anzeige nicht zugreifen!");
       exit;
     }
+
+    // https://www.php.net/manual/en/function.stristr.php
+    if(empty(stristr($user_email,'portapc')) === false && $has_logged === false){
+      header("Location: ../pages/panel/product_add.php?result=failure&action=add&message=Sie dürfen dieses Email nicht benutzten!");
+      exit;
+    }
   } else {
     header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Name oder Email waren entweder nicht eingegeben oder leer.");
     exit;
@@ -175,7 +181,7 @@ if(isset($_POST["submit_add"]) === true && isset($_POST["name"]) === true && iss
       foreach($product_original->images as $original_image){
         $does_original_image_exist = false;
         foreach($uploaded_images as $uploaded_image){
-          if(strpos($uploaded_image, $original_image) !== false){
+          if(empty(stristr($uploaded_image, $original_image)) === false){
             $does_original_image_exist = true;
             break;
           }
@@ -198,26 +204,7 @@ if(isset($_POST["submit_add"]) === true && isset($_POST["name"]) === true && iss
       }
     } else {
       $has_pictures = false;
-      // no uploaded pics, so we delete every uploaded pic from this product and we upload the new ones
-      // it's correct, delete the directory of the pictures and delete the product from the json
-      // we need to delete the files first, then the folder
-      $path = "../images/products/" . $product_original->id . "/";
-      // https://www.php.net/manual/en/function.glob.php
-      // search for the files in that path
-      // the star here is to choose all the files
-      // this doesn't include the hidden files!!
-      // file_exists checks if the directory actually exists
-      if(file_exists($path) === true){
-        $files = glob($path . "*");
-        foreach($files as $file){
-          // check if is a file, https://www.php.net/manual/en/function.is-file.php
-          if(is_file($file) === true) {
-            // delete the file, https://www.php.net/manual/en/function.unlink.php
-            unlink($file);
-          }
-        }
-        rmdir($path);
-      }
+
     }
 
     $uploaded_images_count = 0;
@@ -230,6 +217,7 @@ if(isset($_POST["submit_add"]) === true && isset($_POST["name"]) === true && iss
         exit;
       }
     } else {
+
       if (!file_exists($images_target_dir)) {
         mkdir($images_target_dir, 0755, true);
       }
@@ -242,13 +230,48 @@ if(isset($_POST["submit_add"]) === true && isset($_POST["name"]) === true && iss
         exit;
       }
 
+
+      $new_uploaded_pictures_array = [];
       for($i=0; $i < $images_count; $i++){
         $file_extension = pathinfo($_FILES['images_upload']['name'][$i], PATHINFO_EXTENSION);
         $file_name = uniqid() . "." . $file_extension;
         $image_target_dir = $images_target_dir . $file_name;
         if(move_uploaded_file($_FILES['images_upload']['tmp_name'][$i], $image_target_dir)){
           array_push($images_total, $file_name);
+          array_push($new_uploaded_pictures_array, $file_name);
           $uploaded_images_count++;
+        }
+      }
+
+      if($uploaded_images_count === 0 && $has_uploaded === false){
+        header("Location: ../pages/panel/product_edit.php?result=failure&action=edit&message=Ihre Anzeige wurde nicht bearbeitet, da es keine Bilder gibt!");
+        exit;
+      } else if ($uploaded_images_count > 0 && $has_uploaded === false){
+        // no uploaded pics, so we delete every uploaded pic from this product and we upload the new ones
+        // it's correct, delete the directory of the pictures and delete the product from the json
+        // we need to delete the files first, then the folder
+        $path = "../images/products/" . $product_original->id . "/";
+        // https://www.php.net/manual/en/function.glob.php
+        // search for the files in that path
+        // the star here is to choose all the files
+        // this doesn't include the hidden files!!
+        // file_exists checks if the directory actually exists
+        if(file_exists($path) === true){
+          $files = glob($path . "*");
+          foreach($files as $file){
+            // check if is a file, https://www.php.net/manual/en/function.is-file.php
+            if(is_file($file) === true) {
+              // delete the file, https://www.php.net/manual/en/function.unlink.php
+              // only if it's not a newly uploaded picture
+              foreach($new_uploaded_pictures_array as $new_uploaded_picture){
+                if(empty(stristr($file, $new_uploaded_picture)) === false){
+                  unlink($file);
+                }
+              }
+
+            }
+          }
+          rmdir($path);
         }
       }
     }
@@ -318,9 +341,6 @@ if(isset($_POST["submit_add"]) === true && isset($_POST["name"]) === true && iss
       }
 
     }
-
-
-
 
 
     $product_token_id = $product->owner->post_token_id;

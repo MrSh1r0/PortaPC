@@ -26,6 +26,11 @@ if(isset($_GET['title']) === true){
   $products_search_object += ['title' => $title];
 }
 
+if(isset($_GET['search_type']) === true){
+  $search_type = $_GET['search_type'];
+  $products_search_object += ['search_type' => $search_type];
+}
+
 if(isset($_GET['price']) === true){
   $price = $_GET['price'];
   $price_range = explode(",", $price);
@@ -225,6 +230,14 @@ $products             = $products_json->products;
 
                 <div class="row padding-a-0 margin-a-0">
                   <div class="col-xs-12 col-sm-12">
+                    <p class="filters-title">Suche</p>
+                    <ul class="filters-categories-list" id="search-type-list">
+                      <li><a class="search-type-item clickable" onclick="refreshSearchType('Normal')">Normal</a></li>
+                      <li><a class="search-type-item clickable" onclick="refreshSearchType('Erweitert')">Erweitert</a></li>
+                    </ul>
+                  </div>
+
+                  <div class="col-xs-12 col-sm-12">
                     <p class="filters-title">Kategorien</p>
                     <ul class="filters-categories-list" id="filters-categories-list">
                       <?php
@@ -331,7 +344,7 @@ $products             = $products_json->products;
                   <div class="sorting-dropdown">
                     <p class='sorting-dropdown-text' id="sorting-dropdown-text"></p>
                     <div id="sorting-dropdown-content" class="sorting-dropdown-content">
-                      <p id="sorting_filters_item" data-sort-by="default" data-sort-order="default" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Default')">PortaPC präsentiert</p>
+                      <p id="sorting_filters_item" data-sort-by="default" data-sort-order="default" class="sorting-dropdown-item" onclick="handleSortingDropdownText('PortaPC präsentiert')">PortaPC präsentiert</p>
                       <p id="sorting_filters_item_0" data-sort-by="price" data-sort-order="asc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Preis (Aufsteigend)')">Preis (Aufsteigend)</p>
                       <p id="sorting_filters_item_1" data-sort-by="price" data-sort-order="desc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Preis (Absteigend)')">Preis (Absteigend)</p>
                       <p id="sorting_filters_item_2" data-sort-by="title" data-sort-order="asc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Title (Aufsteigend)')">Title (Aufsteigend)</p>
@@ -373,6 +386,7 @@ $products             = $products_json->products;
               $title = $product->title;
               $images = $product->images;
               $price = $product->price;
+              $category = $product->category;
               $location = $product->location;
               $owner = $product->owner;
               $is_admin = $owner->user_type == "admin";
