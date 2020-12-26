@@ -1667,7 +1667,7 @@ color: hange the text's color color
   margin: 8px 0;
 }
 
-col-xs {
+.col-xs {
   flex-grow: 1;
   flex-basis: 0;
   max-width: 100%;
