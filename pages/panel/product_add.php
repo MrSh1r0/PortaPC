@@ -333,7 +333,7 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
 
             <div class="col-xs-12 margin-a-0 padding-l-0">
               <p class="footer-title">Folge uns</p>
-              <div class="row margin-t-2">
+              <div class="footer-social-icon-list row margin-t-2">
                 <div class="margin-a-0 padding-a-0 margin-r-1">
                   <a href="<?php echo $helper->getSocialLinks()->facebook ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/facebook.svg" alt="Facebook"></a>
                 </div>
@@ -343,7 +343,7 @@ if(isset($_GET["result"]) && isset($_GET["action"])){
                 <div class="margin-a-0 padding-a-0 margin-x-1">
                   <a href="<?php echo $helper->getSocialLinks()->instagram ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/instagram.svg" alt="Instagram"></a>
                 </div>
-                <div class="margin-a-0 padding-a-0 margin-x-1">
+                <div class="margin-a-0 padding-a-0 margin-l-1">
                   <a href="<?php echo $helper->getSocialLinks()->youtube ?>"><img class="footer-social-icon" src="/PortaPC/images/footer/social_icons/youtube.svg" alt="Youtube"></a>
                 </div>
               </div>
