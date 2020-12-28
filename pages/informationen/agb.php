@@ -319,6 +319,7 @@ $categories                  = $helper->getCategories(false);
               Telefon: 0151 123456789<br>
               Telefax: 0151 123456789<br>
               E-Mail: kontakt@portapc.de<br>
+              <br>
               zur Verfügung.</p>
             </div>
 
