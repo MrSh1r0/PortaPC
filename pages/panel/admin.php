@@ -205,11 +205,11 @@ if (isset($_GET["result"]) && isset($_GET["action"])) {
               <form class="row padding-a-0 margin-a-0" action="../../utilities/Admin.php" method="POST">
                 <!-- title -->
                 <div class="col-xs-12">
-                  <input class="product-listing-input-title" placeholder="Email" name="email"></input>
+                  <input type="text" class="product-listing-input-title" placeholder="Email" name="email"></input>
                 </div>
                 <!-- Description -->
                 <div class="col-xs-12">
-                  <input class="product-listing-input-title" placeholder="Passwort" name="password"></input>
+                  <input type="password" class="product-listing-input-title" placeholder="Passwort" name="password"></input>
                 </div>
 
                 <!-- submit -->
