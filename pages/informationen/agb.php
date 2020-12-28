@@ -244,7 +244,7 @@ $categories                  = $helper->getCategories(false);
               Hochschule Trier<br>
               Schneidershof<br>
               D-54293 Trier<br>
-              E-Mail widerruft@portapc.de<br>
+              E-Mail: widerruft@portapc.de<br>
               mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über Ihren Entschluss, diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular verwenden, das jedoch nicht vorgeschrieben ist. <br>
               <br>
               Zur Wahrung der Widerrufsfrist reicht es aus, dass Sie die Mitteilung über die Ausübung des Widerrufsrechts vor Ablauf der Widerrufsfrist absenden.
@@ -289,8 +289,9 @@ $categories                  = $helper->getCategories(false);
               <p class="text-subtitle text-weight-medium">§8 Gewährleistung</p>
               <br>
               <p class="text-body-1 text-weight-regular">Es gelten die gesetzlichen Gewährleistungsregelungen.</p>
-
+              <br>
               <p class="text-subtitle text-weight-medium">§9 Verhaltenskodex</p>
+              <br>
               <p class="text-body-1 text-weight-regular">
                 Wir haben uns den Verhaltenskodizes der folgenden Einrichtungen unterworfen:<br>
                 Euro-Label Germany<br>
@@ -349,12 +350,13 @@ $categories                  = $helper->getCategories(false);
           <a href="/PortaPC/pages/informationen/about_us.php">
             <p class="footer-content">Über uns</p>
           </a>
-          <a href="/PortaPC/pages/informationen/impressum.php">
-            <p class="footer-content">Impressum</p>
-          </a>
           <a href="/PortaPC/pages/informationen/agb.php">
             <p class="footer-content">AGB</p>
           </a>
+          <a href="/PortaPC/pages/informationen/impressum.php">
+            <p class="footer-content">Impressum</p>
+          </a>
+
 
 
         </div>

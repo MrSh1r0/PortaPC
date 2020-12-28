@@ -302,12 +302,13 @@ if (isset($_GET["result"]) && isset($_GET["action"])) {
           <a href="/PortaPC/pages/informationen/about_us.php">
             <p class="footer-content">Über uns</p>
           </a>
-          <a href="/PortaPC/pages/informationen/impressum.php">
-            <p class="footer-content">Impressum</p>
-          </a>
           <a href="/PortaPC/pages/informationen/agb.php">
             <p class="footer-content">AGB</p>
           </a>
+          <a href="/PortaPC/pages/informationen/impressum.php">
+            <p class="footer-content">Impressum</p>
+          </a>
+
 
 
         </div>
