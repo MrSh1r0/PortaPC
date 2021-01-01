@@ -203,12 +203,16 @@ $categories                  = $helper->getCategories(false);
               </div>
 
               <div class="col-xs-12 col-sm-12 margin-t-0 margin-b-0">
-                <p class="product-page-subtitle text-uppercase"><?php echo $product->category . " " . "•" . " " . $product->condition . " " . "•" . " " . $product->price . " "?></p>
-                <p class="product-page-subtitle text-uppercase"><?php echo $product->location . " " . "•" . " " . "erstellt am" . " " . $product->created_at_human ?></p>
+
+                <p class="product-page-subtitle"><strong class="text-uppercase">Kategorie: </strong><?php echo $product->category ?></p>
+                <p class="product-page-subtitle"><strong class="text-uppercase">Zustand: </strong><?php echo $product->condition ?></p>
+                <p class="product-page-subtitle"><strong class="text-uppercase">Preis: €</strong><?php echo $product->price ?></p>
+                <p class="product-page-subtitle"><strong class="text-uppercase">Ort: </strong><?php echo $product->location ?></p>
+                <p class="product-page-subtitle"><strong class="text-uppercase">Datum: </strong><?php echo $product->created_at_human ?></p>
               </div>
 
               <div class="col-xs-12 col-sm-12 margin-t-3">
-                <p class="product-page-description text-uppercase"><?php echo $product->description ?></p>
+                <p class="product-page-description"><strong class="text-uppercase">Beschriebung: </strong><br><?php echo $product->description ?></p>
               </div>
               <?php
             }
