@@ -2061,7 +2061,7 @@ color: hange the text's color color
     position: fixed;
     overflow-y: scroll;
     background-color: #f5f5f5;
-    width: 218px;
+    width: 75vw;
     /* we are doing a top with value of 64px, so we can't scroll to the bottom with a fixed position, webkit-fill-available will help us fix the issue here.  */
     height: -webkit-fill-available;
     left: -100%;
