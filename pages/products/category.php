@@ -265,7 +265,7 @@ $products             = $products_json->products;
                         <input type="number" class="filters-price-input" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" oninput="validity.valid || (value = this.previousValue)" id="filters_price_min" pattern="\d+" placeholder="Von"/>
                       </div>
                       <div class="col-xs-6 col-sm-6">
-                        <input type="number" class="filters-price-input" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" id="filters_price_max" pattern="\d+" placeholder="Bis"/>
+                        <input type="number" class="filters-price-input" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" oninput="validity.valid || (value = this.previousValue)" id="filters_price_max" pattern="\d+" placeholder="Bis"/>
                       </div>
                     </div>
                   </div>
