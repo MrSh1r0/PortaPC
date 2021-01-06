@@ -265,7 +265,7 @@ $products             = $products_json->products;
                         <input type="number" class="filters-price-input" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" oninput="validity.valid || (value = this.previousValue)" id="filters_price_min" placeholder="Von"/>
                       </div>
                       <div class="col-xs-6 col-sm-6">
-                        <input type="number" class="filters-price-input" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" pattern="\d+" id="filters_price_max" placeholder="Bis"/>
+                        <input type="number" class="filters-price-input" min="0" step="1" onfocus="this.previousValue = this.value" onkeydown="this.previousValue = this.value" id="filters_price_max" placeholder="Bis"/>
                       </div>
                     </div>
                   </div>
@@ -278,10 +278,10 @@ $products             = $products_json->products;
                     foreach($conditions as $condition){
                     ?>
                       <div class="col-xs-12 col-sm-12 margin-b-0">
-                        <label class="checkbox-container">
+                        <div class="checkbox-container">
                           <input class="checkbox" id="condition_<?php echo $condition_id ?>" type="checkbox">
                           <label id="condition_label_<?php echo $condition_id ?>" for="condition_<?php echo $condition_id ?>"><?php echo $condition ?></label>
-                        </label>
+                        </div>
                       </div>
                     <?php
                     $condition_id++;
@@ -298,10 +298,10 @@ $products             = $products_json->products;
                     foreach($locations as $location){
                     ?>
                       <div class="col margin-t-2">
-                        <label class="checkbox-container">
+                        <div class="checkbox-container">
                           <input class="chip" id="location_<?php echo $location_id ?>" type="checkbox">
                           <label id="location_label_<?php echo $location_id ?>" for="location_<?php echo $location_id ?>"><?php echo $location ?></label>
-                        </label>
+                        </div>
                       </div>
                     <?php
                     $location_id++;

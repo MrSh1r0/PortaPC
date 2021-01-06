@@ -175,8 +175,8 @@ $categories                  = $helper->getCategories(false);
                 </div>
 
                 <div class="col-xs-12 text-align-center">
-                  <a href="/PortaPC/pages/panel/product_contact.php?id=<?php echo $product_id ?>"><button class="product-seller-contact text-uppercase clickable">Kontakt</button></a>
-                  <a href="/PortaPC/pages/panel/product_report.php?id=<?php echo $product_id ?>"><button class="product-seller-report text-uppercase clickable margin-l-2">Melden</button></a>
+                  <button class="product-seller-contact text-uppercase clickable" onclick="location.href='/PortaPC/pages/panel/product_contact.php?id=<?php echo $product_id ?>'">Kontakt</button>
+                  <button class="product-seller-report text-uppercase clickable margin-l-2" onclick="location.href='/PortaPC/pages/panel/product_report.php?id=<?php echo $product_id ?>'">Melden</button>
                 </div>
                 <?php
               }
