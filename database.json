@@ -327,13 +327,13 @@
     "sliders": [{
       "id": 1,
       "thumbnail": "default.png",
-      "redirect_url": "https:\/\/hochschule-trier.de\/",
-      "type": "Homepage"
+      "redirect_url": "\/PortaPC\/pages\/informationen\/about_us.php",
+      "type": "About Us"
     }, {
       "id": 2,
       "thumbnail": "sample.png",
       "redirect_url": "https:\/\/hochschule-trier.de\/",
-      "type": "Homepage"
+      "type": "Sample"
     }, {
       "id": 3,
       "thumbnail": "sample.png",
@@ -343,12 +343,12 @@
       "id": 4,
       "thumbnail": "cpu.png",
       "redirect_url": "\/PortaPC\/pages\/products\/category.php?category=CPUs",
-      "type": "Products"
+      "type": "CPUs"
     }, {
       "id": 5,
       "thumbnail": "gpu.png",
       "redirect_url": "\/PortaPC\/pages\/products\/category.php?category=GPUs",
-      "type": "Products"
+      "type": "GPUs"
     }, {
       "id": 6,
       "thumbnail": "sample.png",
