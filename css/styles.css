@@ -315,8 +315,7 @@ color: hange the text's color color
 .slide-image {
   width: 100%;
   border-radius: 15px;
-  object-fit: cover;
-  margin: auto;
+  object-fit: contain;
 }
 
 
