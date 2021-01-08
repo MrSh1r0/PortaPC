@@ -223,7 +223,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false){
               } else {
                 ?>
                 <div class="col-xs-12">
-                  <p class="listing-response-message">Wir können keine Anzeige mit diesem ID finden!</p>
+                  <p class="listing-response-message">Wir können keine Anzeige mit dieser ID finden!</p>
                 </div>
                 <?php
               }
