@@ -1,8 +1,6 @@
 <!--
 
 TODO:
-1. Add pics for the Devs (Leon, Anh)
-2. Add short description (Leon)
 3. Improve the "About us" page
 4. Provide a presentation script
 
