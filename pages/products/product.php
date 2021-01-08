@@ -15,7 +15,7 @@ $helper                      = new Helper();
 // create an instance of our latest products
 $product_id                  = $_GET["id"];
 $product                     = $helper->getProduct($product_id);
-$categories                  = $helper->getCategories(false);
+$categories                  = $helper->getCategories();
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +36,7 @@ $categories                  = $helper->getCategories(false);
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
   <script src="../../js/scripts.js"></script>
   <script>
-    let categories = <?php echo $helper->getCategories(true) ?>;
+    
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {

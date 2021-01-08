@@ -13,7 +13,7 @@ include_once("../../utilities/Helper.php");
 $helper                      = new Helper();
 
 
-$categories = $helper->getCategories(false);
+$categories = $helper->getCategories();
 $login_status = false;
 if(isset($_SESSION["user_email"]) && isset($_SESSION["user_password"])){
   if(json_decode($helper->loginAdmin($_SESSION["user_email"], $_SESSION["user_password"]))->result === true){
@@ -53,7 +53,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false){
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
   <script src="../../js/scripts.js"></script>
   <script>
-    let categories = <?php echo $helper->getCategories(true) ?>;
+    
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {

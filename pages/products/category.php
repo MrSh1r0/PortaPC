@@ -87,7 +87,7 @@ if(isset($_GET['page_current']) === true){
 
 $products_json        = json_decode($helper->getProducts($products_search_object, $products_sort_object, null, $page_current));
 
-$categories           = $helper->getCategories(false);
+$categories           = $helper->getCategories();
 $conditions           = $helper->getConditions();
 $locations            = $helper->getLocations();
 $products             = $products_json->products;
@@ -111,7 +111,7 @@ $products             = $products_json->products;
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
   <script src="../../js/scripts.js"></script>
   <script>
-    let categories = <?php echo $helper->getCategories(true) ?>;
+    
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {

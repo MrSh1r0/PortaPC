@@ -20,12 +20,8 @@ class Helper {
     // BUT, because we have a dropdown list that needs Javascript
     // It's better (not actually, but just less confusing) to let Javascript handle everything
     // instead of renedering the categories via PHP and then
-    public function getCategories($encode) {
-        if ($encode === true) {
-            return json_encode($this->jsonDatabase->website_constants->categories);
-        } else {
-            return $this->jsonDatabase->website_constants->categories;
-        }
+    public function getCategories() {
+        return $this->jsonDatabase->website_constants->categories;
     }
 
     public function getWebsiteDevs(){

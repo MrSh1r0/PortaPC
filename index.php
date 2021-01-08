@@ -24,7 +24,7 @@ $helper                      = new Helper();
 $products_latest_sort_object = (object) ["sort_by" => "created_at", "sort_order" => "desc"];
 $products_latest_json        = json_decode($helper->getProducts(null, $products_latest_sort_object, $helper->homepage_products_latest_limit, null));
 
-$categories                  = $helper->getCategories(false);
+$categories                  = $helper->getCategories();
 $sliders                     = $helper->getSliders();
 ?>
 
@@ -46,7 +46,7 @@ $sliders                     = $helper->getSliders();
   <link type="text/css" rel="stylesheet" href="css/styles.css" media="screen" />
   <script src="js/scripts.js"></script>
   <script>
-    let categories = <?php echo $helper->getCategories(true) ?>;
+
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {

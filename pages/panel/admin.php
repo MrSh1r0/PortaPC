@@ -12,7 +12,7 @@ include_once("../../utilities/Helper.php");
 // Create an instance of our Helper class
 $helper                      = new Helper();
 
-$categories                  = $helper->getCategories(false);
+$categories                  = $helper->getCategories();
 $conditions                  = $helper->getConditions();
 $locations                   = $helper->getLocations(false);
 
@@ -50,7 +50,7 @@ if (isset($_GET["result"]) && isset($_GET["action"])) {
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
   <script src="../../js/scripts.js"></script>
   <script>
-    let categories = <?php echo $helper->getCategories(true) ?>;
+    
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
