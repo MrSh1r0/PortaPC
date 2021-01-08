@@ -212,7 +212,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false){
                 </div>
                 <!-- Description -->
                 <div class="col-xs-12">
-                  <textarea oninput="updateEmailLink()" id="description" class="product-listing-input-description" placeholder="Beschreibung"></textarea>
+                  <textarea oninput="updateEmailLink()" id="description" class="product-listing-input-description" placeholder="Nachricht"></textarea>
                 </div>
 
                 <!-- submit -->
