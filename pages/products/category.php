@@ -111,7 +111,7 @@ $products             = $products_json->products;
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
   <script src="../../js/scripts.js"></script>
   <script>
-    
+
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
@@ -183,7 +183,7 @@ $products             = $products_json->products;
           </div>
           <!--End of Search column-->
 
-          <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 margin-a-0 fill-height searchbar-category-container vertical-left-line categories-dropdown-container">
+          <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3 margin-a-0 fill-height searchbar-category-container vertical-left-line categories-dropdown-container" style="display:none">
             <div class="categories-dropdown">
               <p class='searchbar-category-dropdown' id="searchbar-category-text"><?php echo $categories[0] ?></p>
               <div id="categories-dropdown-content" class="categories-dropdown-content">
