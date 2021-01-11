@@ -53,7 +53,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false){
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
   <script src="../../js/scripts.js"></script>
   <script>
-    
+
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
@@ -217,7 +217,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false){
 
                 <!-- submit -->
                 <div class="col-xs-12 text-align-right">
-                  <a id="email_send_button_a"><button class="product-listing-submit text-uppercase clickable">Abschicken</button></a>
+                  <button class="product-listing-submit text-uppercase clickable" id="email_send_button_a">Abschicken</button>
                 </div>
                 <?php
               } else {

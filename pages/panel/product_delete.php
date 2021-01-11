@@ -66,7 +66,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
   <script src="../../js/scripts.js"></script>
   <script>
-    
+
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
@@ -228,7 +228,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
 
                   <!-- submit -->
                   <div class="col-xs-12 text-align-right">
-                    <a href="/PortaPC/"><button class="product-function-cancel text-uppercase clickable">Abbrechen</button></a>
+                    <button class="product-function-cancel text-uppercase clickable" href="/PortaPC/">Abbrechen</button>
                     <button class="product-listing-submit text-uppercase clickable margin-l-2" type="submit" name="submit_delete">Löschen</button>
                   </div>
 
