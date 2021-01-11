@@ -201,14 +201,16 @@ $categories                  = $helper->getCategories();
               <div class="col-xs-12 col-sm-12">
 
                 <p class="category-title text-uppercase"><?php if($is_admin === true) { ?> <i class="material-icons product-owner-check">check</i> <?php } echo $product->title ?></p>
+
               </div>
 
               <div class="col-xs-12 col-sm-12 margin-t-0 margin-b-0">
-                <p class="product-page-subtitle"><strong>&#8364;<?php echo $product->price ?></strong></p>
-                <p class="product-page-subtitle"><strong>Zustand: </strong><?php echo $product->condition ?></p>
-                <p class="product-page-subtitle"><strong>Ort: </strong><?php echo $product->location ?></p>
+                <p class="category-title text-uppercase">&#8364;<?php echo $product->price ?></p>
+
               </div>
               <div class="col-xs-12 col-sm-12 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><strong>Zustand: </strong><?php echo $product->condition ?></p>
+                <p class="product-page-subtitle"><strong>Ort: </strong><?php echo $product->location ?></p>
                 <p class="product-page-subtitle"><strong>Kategorie: </strong><?php echo $product->category ?></p>
                 <p class="product-page-subtitle"><strong >Datum: </strong><?php echo $product->created_at_human ?></p>
               </div>
