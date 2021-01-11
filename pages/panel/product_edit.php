@@ -337,7 +337,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
                           <div class="col-xs-6 col-sm-6 col-md-3 col-lg-2 text-align-center" id="uploaded_image_<?php echo $i ?>">
                             <div class="row">
                               <div class="col-xs-12 padding-a-0 margin-a-0 text-align-center user-select-none">
-                                <input readonly class="product-listing-edit-image" style="background: url('/PortaPC/images/products/<?php echo $product->id ?>/<?php echo $image ?>')" name="images_uploaded[]" value="<?php echo $image ?>" alt="Bild"></input>
+                                <input readonly class="product-listing-edit-image" style="background: url('/PortaPC/images/products/<?php echo $product->id ?>/<?php echo $image ?>')" name="images_uploaded[]" value="<?php echo $image ?>" title="Bild"></input>
                               </div>
                               <div class="col-xs-12 padding-a-0 margin-a-0 text-align-center">
                                 <button class="product-listing-edit-image-remove clickable text-uppercase" onclick="removeUploadedPicture('uploaded_image_<?php echo $i ?>', <?php echo sizeof($product->images) ?>)">Löschen</button>
