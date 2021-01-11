@@ -483,10 +483,16 @@ function handleDropdowns() {
   }
 }
 
+function applySortingDropdownAfterChange(selected_item){
+  handleSortingDropdownText(selected_item);
+  applyFilters();
+}
+
 function handleSortingDropdownText(selected_item){
   let element_sorting_dropdown_text = document.getElementById("sorting-dropdown-text");
   element_sorting_dropdown_text.innerHTML = selected_item;
 }
+
 
 
 // selected_item is the text of the selected category

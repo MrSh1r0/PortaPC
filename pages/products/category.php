@@ -344,13 +344,13 @@ $products             = $products_json->products;
                   <div class="sorting-dropdown">
                     <p class='sorting-dropdown-text' id="sorting-dropdown-text"></p>
                     <div id="sorting-dropdown-content" class="sorting-dropdown-content">
-                      <p id="sorting_filters_item" data-sort-by="default" data-sort-order="default" class="sorting-dropdown-item" onclick="handleSortingDropdownText('PortaPC präsentiert')">PortaPC präsentiert</p>
-                      <p id="sorting_filters_item_0" data-sort-by="price" data-sort-order="asc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Preis (Aufsteigend)')">Preis (Aufsteigend)</p>
-                      <p id="sorting_filters_item_1" data-sort-by="price" data-sort-order="desc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Preis (Absteigend)')">Preis (Absteigend)</p>
-                      <p id="sorting_filters_item_2" data-sort-by="title" data-sort-order="asc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Title (Aufsteigend)')">Title (Aufsteigend)</p>
-                      <p id="sorting_filters_item_3" data-sort-by="title" data-sort-order="desc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Title (Absteigend)')">Title (Absteigend)</p>
-                      <p id="sorting_filters_item_4" data-sort-by="created_at" data-sort-order="asc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Datum (Aufsteigend)')">Datum (Aufsteigend)</p>
-                      <p id="sorting_filters_item_5" data-sort-by="created_at" data-sort-order="desc" class="sorting-dropdown-item" onclick="handleSortingDropdownText('Datum (Absteigend)')">Datum (Absteigend)</p>
+                      <p id="sorting_filters_item" data-sort-by="default" data-sort-order="default" class="sorting-dropdown-item" onclick="applySortingDropdownAfterChange('PortaPC präsentiert')">PortaPC präsentiert</p>
+                      <p id="sorting_filters_item_0" data-sort-by="price" data-sort-order="asc" class="sorting-dropdown-item" onclick="applySortingDropdownAfterChange('Preis (Aufsteigend)')">Preis (Aufsteigend)</p>
+                      <p id="sorting_filters_item_1" data-sort-by="price" data-sort-order="desc" class="sorting-dropdown-item" onclick="applySortingDropdownAfterChange('Preis (Absteigend)')">Preis (Absteigend)</p>
+                      <p id="sorting_filters_item_2" data-sort-by="title" data-sort-order="asc" class="sorting-dropdown-item" onclick="applySortingDropdownAfterChange('Title (Aufsteigend)')">Title (Aufsteigend)</p>
+                      <p id="sorting_filters_item_3" data-sort-by="title" data-sort-order="desc" class="sorting-dropdown-item" onclick="applySortingDropdownAfterChange('Title (Absteigend)')">Title (Absteigend)</p>
+                      <p id="sorting_filters_item_4" data-sort-by="created_at" data-sort-order="asc" class="sorting-dropdown-item" onclick="applySortingDropdownAfterChange('Datum (Aufsteigend)')">Datum (Aufsteigend)</p>
+                      <p id="sorting_filters_item_5" data-sort-by="created_at" data-sort-order="desc" class="sorting-dropdown-item" onclick="applySortingDropdownAfterChange('Datum (Absteigend)')">Datum (Absteigend)</p>
                     </div>
                   </div>
                 </div>
