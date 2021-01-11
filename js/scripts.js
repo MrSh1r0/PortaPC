@@ -326,9 +326,12 @@ function handleSearch(element) {
     // therefore, we get the url of the page, check if we are in that page
     // then we change the title parameter, or ADD it if it doesn't exist
     // otherwise, we just visit the page normally
+    let should_include_category = category !== "Alle Kategorien";
+
     if (current_url.includes("category.php")) {
       // get the ?query=blabla&query2=blablabla string
       let queryString = window.location.search;
+
       // check if the page has any parameters
       if (queryString) {
         // parse it
@@ -349,8 +352,10 @@ function handleSearch(element) {
         future_url = `${location.protocol}//${location.host}/PortaPC/pages/products/category.php?title=${title_query}&category=${category}`;
       }
     } else {
-      future_url = `${location.protocol}//${location.host}/PortaPC/pages/products/category.php?title=${title_query}&category=${category}`;
+
+      future_url = `${location.protocol}//${location.host}/PortaPC/pages/products/category.php?title=${title_query}${should_include_category ? `&category=${category}` : ''}`;
     }
+
     visitURL(future_url);
   }
 }

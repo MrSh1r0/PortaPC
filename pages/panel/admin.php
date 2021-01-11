@@ -50,7 +50,7 @@ if (isset($_GET["result"]) && isset($_GET["action"])) {
   <link type="text/css" rel="stylesheet" href="../../css/styles.css" media="screen" />
   <script src="../../js/scripts.js"></script>
   <script>
-    
+
 
     document.onreadystatechange = function() {
       if (document.readyState == "complete") {
@@ -113,8 +113,9 @@ if (isset($_GET["result"]) && isset($_GET["action"])) {
 
           <div class="col-xs-4 col-sm-3 margin-a-0 fill-height searchbar-category-container vertical-left-line categories-dropdown-container">
             <div class="categories-dropdown">
-              <p class='searchbar-category-dropdown' id="searchbar-category-text"><?php echo $categories[0] ?></p>
+              <p class='searchbar-category-dropdown' id="searchbar-category-text">Alle Kategorien</p>
               <div id="categories-dropdown-content" class="categories-dropdown-content">
+                <p class="categories-dropdown-item" onclick="handleSearchCategroyText('Alle Kategorien')">Alle Kategorien</p>
                 <?php
                 foreach ($categories as $category) {
                     ?>
