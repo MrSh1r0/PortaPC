@@ -1117,8 +1117,9 @@ color: hange the text's color color
 .product-listing-edit-image, .product-listing-edit-image:hover, .product-listing-edit-image:focus, .product-listing-edit-image:active {
   width: 100px;
   height: 100px;
-  object-fit:contain !important;
-  object-position: center !important;
+  background-size:contain !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   border: none !important;
   user-select: none !important;
   pointer-events: none;
