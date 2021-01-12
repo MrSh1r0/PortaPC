@@ -211,7 +211,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
           <div class="row">
 
             <div class="col-xs-12 col-sm-12">
-              <p class="category-title text-uppercase">Anzeige aufgaben</p>
+              <p class="category-title text-uppercase">Anzeige bearbeiten</p>
             </div>
 
             <!-- https://www.w3schools.com/tags/att_form_enctype.asp -->
