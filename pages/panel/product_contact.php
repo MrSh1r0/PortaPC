@@ -218,7 +218,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false){
 
                 <!-- submit -->
                 <div class="col-xs-12 text-align-right">
-                  <a id="email_send_button_a"><button class="product-listing-submit text-uppercase clickable">Abschicken</button></a>
+                  <a id="email_send_button_a" class="product-listing-submit text-uppercase clickable">Abschicken</a>
                 </div>
                 <?php
               } else {

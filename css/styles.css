@@ -1346,6 +1346,11 @@ color: hange the text's color color
   transition: box-shadow 0.2s;
 }
 
+#email_send_button_a {
+  text-decoration: none;
+  color: black;
+}
+
 /*
   helper class for text
 */
