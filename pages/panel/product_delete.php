@@ -229,7 +229,7 @@ if(isset($_GET["id"]) === true && empty($_GET["id"]) === false && isset($_GET["p
 
                   <!-- submit -->
                   <div class="col-xs-12 text-align-right">
-                    <button class="product-function-cancel text-uppercase clickable" href="/PortaPC/">Abbrechen</button>
+                    <a href="/PortaPC/" class="product-function-cancel text-uppercase clickable">Abbrechen</a>
                     <button class="product-listing-submit text-uppercase clickable margin-l-2" type="submit" name="submit_delete">Löschen</button>
                   </div>
 
