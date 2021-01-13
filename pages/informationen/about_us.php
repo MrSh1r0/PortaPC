@@ -173,14 +173,39 @@ $categories                  = $helper->getCategories();
                 geprüft wurden und generalüberholt worden sind.
               </p>
               <br><br>
-              <p class="text-subtitle text-weight-medium">Wie funktioniert es:</p>
-              <p class="text-body-1 text-weight-regular">
-                Es ist einfacher als man denkt, wenn man ein Produkt sucht, gibt man den Namen in der Suchleiste ein und man bekommt direkt alle Produkte angzeigt.
-                Wenn man zum Beispiel noch nicht genau weiß welche Grafikkarte man haben will, kann man einfach im Filtersystem seine Kriterien eingeben und man bekommt die Produkte angezeigt, die darauf zutreffen.
-                Eine Anzeige aufgeben ist genauso leicht, alles was man dafür braucht ist ein Bild des Produkts und eine E-Mailadresse. Man klickt auf dem Button in der rechten, oberen Ecke und wir zu einem Forular weitergeleitet,
-                indem man seine Daten eingibt. Falls sich dann ein andere Benutzer für dein Produkt interessiert, kann er über die E-Mailadresse mit Ihnen in Kontakt treten.
-              </p>
+              <p class="text-subtitle text-weight-medium">Ein Produkt zum Kauf anbieten:</p>
               <br>
+              <p class="text-body-1 text-weight-regular">Um ein Produkt zu verkaufen, klicken Sie einfach auf den Knopf "Anzeige aufgeben" in der oberen, rechten Ecke.</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Füllen Sie bitte alle offenen Felder mit Ihren Daten, sowie Name, Email, etc. aus und wählen Sie aus in welcher Kategorien ihr Produkt angezeigt werden soll.</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Dann einfach auf "Aufgeben" drücken. Wichtig: Bitte speicher den Link zur Bearbeitung und zum Löschen.</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Wenn jemand Interesse an deinem Produkt hat, wird er sich bei dir melden.</p>
+              <br>
+              <br>
+              <p class="text-subtitle text-weight-medium">Ein Produkt kaufen:</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Um ein Produkt zu kaufen gehen Sie wie folgt vor:</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Suchen Sie nach einem geeignetem Produkt. Überprüfen Sie, ob das Produkt zu ihren anderen Komponenten passt.</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Wenn Sie sich sicher sind, klicken Sie auf den Knopf, Kontakt und fühlen Sie alle Felder auf der Seite aus.</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Dann werden Sie zu ihrer Email weitergeleitet. Die eingegebenen Details sind schon in der Mail enthalten, prüfen Sie zuletzt noch einmal ihre Eingaben und schicken die Mail dann ab.</p>
+              <br>
+              <br>
+              <p class="text-subtitle text-weight-medium">Fragen oder Beschwerden?</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Kontaktieren Sie uns unter kontakt[at]portapc[dot]com . Wir werden Ihre Anfrage so schnell wie möglich bearbeiten und melden uns bei Ihnen.</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Wenn Sie eine Anzeige melden möchten, dann gibt es einen "Melden"-Knopf in der Anzeige, wir werden uns dann darum kümmern.</p>
+              <br>
+              <p class="text-body-1 text-weight-regular">Um binnen 48 Stunden antworten zu können, bitten wir Sie nur eine Meldung pro Vorfall zu schreiben. Vielen Dank.</p>
+              <br>
+
+
+
             </div>
 
             <div class="col-xs-12">

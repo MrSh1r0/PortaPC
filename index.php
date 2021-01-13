@@ -1,7 +1,7 @@
 <!--
 
 TODO:
-3. Improve the "About us" page
+
 4. Provide a presentation script
 
 -->
