@@ -129,7 +129,7 @@ $categories                  = $helper->getCategories();
       <div class="row">
 
         <!-- Left side of the content -->
-        <div class="col-xs-12 col-sm-12 col-md-6 margin-a-0 padding-a-0 padding-r-3 ">
+        <div class="col-xs-12 col-sm-12 col-md-5 margin-a-0 padding-a-0 padding-r-3 ">
           <div class="row">
 
             <!-- Category card -->
@@ -163,39 +163,25 @@ $categories                  = $helper->getCategories();
                 </div>
               <?php } ?>
               </div>
-              <!-- contact / report section -->
-              <?php
-              if(empty($product) === false){
-                $email_spam_safe = $product->owner->user_email;
-                $email_spam_safe = str_replace('.', '[dot]', $email_spam_safe);
-                $email_spam_safe = str_replace('@', '[at]', $email_spam_safe);
 
-                ?>
-                <div class="col-xs-12">
-                  <p class="product-seller-information-text text-align-center">Die Anzeige wurde von <span class="text-weight-bold"><?php echo $product->owner->username . " " . "(" . $email_spam_safe . ")" ?></span> erstellt.</p>
-                </div>
-
-                <div class="col-xs-12 text-align-center">
-                  <button class="product-seller-contact text-uppercase clickable" onclick="location.href='/PortaPC/pages/panel/product_contact.php?id=<?php echo $product_id ?>'">Kontakt</button>
-                  <button class="product-seller-report text-uppercase clickable margin-l-2" onclick="location.href='/PortaPC/pages/panel/product_report.php?id=<?php echo $product_id ?>'">Melden</button>
-                </div>
-                <?php
-              }
-              ?>
           </div>
         </div>
 
         <!-- Right side of the content -->
-        <div class="col-xs-12 col-sm-12 col-md-6 margin-a-0 padding-a-0">
+        <div class="col-xs-12 col-sm-12 col-md-7 margin-a-0 padding-a-0">
           <div class="row">
 
             <?php if(empty($product) === true) {
+
               ?>
               <div class="col-xs-12 col-sm-12">
                 <p class="category-title text-uppercase">Anzeige wurde nicht gefunden</p>
               </div>
               <?php
             } else {
+              $email_spam_safe = $product->owner->user_email;
+              $email_spam_safe = str_replace('.', '[dot]', $email_spam_safe);
+              $email_spam_safe = str_replace('@', '[at]', $email_spam_safe);
               $is_admin = $product->owner->user_type == "admin";
               ?>
               <div class="col-xs-12 col-sm-12">
@@ -206,18 +192,65 @@ $categories                  = $helper->getCategories();
 
               <div class="col-xs-12 col-sm-12 margin-t-0 margin-b-0">
                 <p class="category-title text-uppercase">&#8364;<?php echo $product->price ?></p>
+              </div>
 
+              <!-- Condition -->
+              <div class="col-xs-7 col-sm-5 col-md-2 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><strong>Zustand:</strong></p>
               </div>
-              <div class="col-xs-12 col-sm-12 margin-t-3 margin-b-0">
-                <p class="product-page-subtitle"><strong>Zustand: </strong><?php echo $product->condition ?></p>
-                <p class="product-page-subtitle"><strong>Ort: </strong><?php echo $product->location ?></p>
-                <p class="product-page-subtitle"><strong>Kategorie: </strong><?php echo $product->category ?></p>
-                <p class="product-page-subtitle"><strong >Datum: </strong><?php echo $product->created_at_human ?></p>
+              <div class="col-xs-4 col-sm-6 col-md-3 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><?php echo $product->condition ?></p>
               </div>
-              <div class="col-xs-12 col-sm-12 margin-t-3">
-                <p class="product-page-subtitle"><strong>Beschriebung: </strong></p>
-                <p class="product-page-description"><?php echo $product->description ?></p>
+
+              <!-- Space -->
+              <div class="col-xs-1">
               </div>
+
+              <!-- Location -->
+              <div class="col-xs-7 col-sm-5 col-md-2 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><strong>Ort:</strong></p>
+              </div>
+              <div class="col-xs-4 col-sm-6 col-md-3 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><?php echo $product->location ?></p>
+              </div>
+
+              <!-- Space -->
+              <div class="col-xs-1">
+              </div>
+
+              <!-- Category -->
+              <div class="col-xs-7 col-sm-5 col-md-2 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><strong>Kategorie:</strong></p>
+              </div>
+              <div class="col-xs-4 col-sm-6 col-md-3 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><?php echo $product->category ?></p>
+              </div>
+
+              <!-- Space -->
+              <div class="col-xs-1">
+              </div>
+
+              <!-- Category -->
+              <div class="col-xs-7 col-sm-5 col-md-2 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><strong>Datum:</strong></p>
+              </div>
+              <div class="col-xs-4 col-sm-6 col-md-3 margin-t-3 margin-b-0">
+                <p class="product-page-subtitle"><?php echo $product->created_at_human ?></p>
+              </div>
+
+              <!-- Space -->
+              <div class="col-xs-12">
+              </div>
+
+              <div class="col-xs-12">
+                <p class="product-seller-information-text text-align-center">Die Anzeige wurde von <span class="text-weight-bold"><?php echo $product->owner->username . " " . "(" . $email_spam_safe . ")" ?></span> erstellt.</p>
+              </div>
+
+              <div class="col-xs-12 text-align-center">
+                <button class="product-seller-contact text-uppercase clickable" onclick="location.href='/PortaPC/pages/panel/product_contact.php?id=<?php echo $product_id ?>'">Kontakt</button>
+                <button class="product-seller-report text-uppercase clickable margin-l-2" onclick="location.href='/PortaPC/pages/panel/product_report.php?id=<?php echo $product_id ?>'">Melden</button>
+              </div>
+
               <?php
             }
             ?>
@@ -228,6 +261,17 @@ $categories                  = $helper->getCategories();
           </div>
         </div>
 
+        <!-- Space -->
+        <div class="col-xs-12">
+        </div>
+
+        <div class="col-xs-12">
+          <p class="product-page-subtitle"><strong>Beschreibung:</strong></p>
+        </div>
+
+        <div class="col-xs-12">
+          <p class="product-page-description"><?php echo $product->description ?></p>
+        </div>
       </div>
     </div>
   </main>
