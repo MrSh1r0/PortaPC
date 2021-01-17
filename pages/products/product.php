@@ -265,6 +265,10 @@ $categories                  = $helper->getCategories();
         <div class="col-xs-12">
         </div>
 
+        <?php if(empty($product) === false) {
+
+          ?>
+
         <div class="col-xs-12">
           <p class="product-page-subtitle"><strong>Beschreibung:</strong></p>
         </div>
@@ -272,6 +276,10 @@ $categories                  = $helper->getCategories();
         <div class="col-xs-12">
           <p class="product-page-description"><?php echo $product->description ?></p>
         </div>
+
+        <?php
+        }
+        ?>
       </div>
     </div>
   </main>
