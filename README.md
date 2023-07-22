@@ -1,4 +1,4 @@
 # PortaPC
 
 ## Idea
-Simple online webpage for an electronic shop to sell computer parts
+Wir sind eine Gruppe von Studenten, die sich auf die lokale Vermittlung von neuen und gebrauchten Pc-Komponenten spezialiesiert hat.
